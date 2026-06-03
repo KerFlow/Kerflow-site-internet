@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
+import ProjectSection from "../components/sections/ProjectSection.astro";
 ---
 
 <BaseLayout
@@ -34,32 +35,7 @@ import SiteFooter from "../components/SiteFooter.astro";
       </div>
     </section>
 
-    <section class="page-section section-pad">
-      <div class="section-head two">
-        <div>
-          <p class="eyebrow">Le nom</p>
-          <h2><em>Ker</em> pour la maison,<br /><em>Flow</em> pour le mouvement.</h2>
-        </div>
-        <p>Le nom dit l'essentiel : un ancrage, un cadre accueillant, et une maniere de remettre de la fluidite dans le quotidien.</p>
-      </div>
-      <div class="page-card-grid">
-        <article class="page-card accent-location">
-          <p class="mini">Ker</p>
-          <h3>Maison</h3>
-          <p>Un lieu ou l'on arrive, ou l'on depose, ou l'on retrouve des reperes.</p>
-        </article>
-        <article class="page-card accent-studio">
-          <p class="mini">Flow</p>
-          <h3>Mouvement</h3>
-          <p>Une pratique adaptee, progressive, qui redonne de l'aisance sans forcer.</p>
-        </article>
-        <article class="page-card accent-consult">
-          <p class="mini">Care</p>
-          <h3>Prevention</h3>
-          <p>Une approche qui regarde le corps, le sommeil, l'alimentation et le stress comme un tout.</p>
-        </article>
-      </div>
-    </section>
+    <ProjectSection />
 
     <section class="page-section section-pad deep">
       <div class="section-head two">

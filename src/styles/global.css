@@ -270,8 +270,8 @@ h1 {
 
 h2 {
   margin: 0;
-  font-size: clamp(38px, 4.7vw, 64px);
-  line-height: 1.04;
+  font-size: clamp(36px, 4.8vw, 64px);
+  line-height: 1.03;
   letter-spacing: -0.02em;
 }
 
@@ -859,13 +859,6 @@ article:hover .photo span,
   transform: translateY(-4px);
 }
 
-.care-grid span {
-  color: var(--clay);
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.2em;
-}
-
 .care-grid h3 {
   color: var(--petrol-deep);
   font-size: clamp(26px, 2.4vw, 34px);
@@ -881,6 +874,7 @@ article:hover .photo span,
 
 .pillars {
   border-top: 1px solid var(--rule);
+  background: var(--paper);
 }
 
 .pillar-grid {
@@ -1071,9 +1065,9 @@ article:hover .photo span,
 .space-grid p,
 .offer-copy p,
 .workshop-card p,
-.editorial-copy p,
-.charter p,
-.final-cta p,
+.editorial-copy p:not(.eyebrow),
+.charter p:not(.eyebrow),
+.final-cta p:not(.eyebrow),
 .footer p {
   color: var(--granite-500);
 }
@@ -1215,7 +1209,7 @@ article:hover .photo span,
   padding: 120px 64px;
   border-top: 1px solid var(--rule);
   border-bottom: 1px solid var(--rule);
-  background: var(--paper);
+  background: var(--linen);
   color: var(--petrol-deep);
 }
 
@@ -1229,7 +1223,6 @@ article:hover .photo span,
 
 .planning-cards .eyebrow {
   margin-bottom: 18px;
-  color: var(--studio-500);
 }
 
 .planning-cards h2 {
@@ -1683,6 +1676,11 @@ article:hover .photo span,
   margin-bottom: 88px;
 }
 
+.reassurance {
+  background: var(--paper);
+  border-top: 1px solid var(--rule);
+}
+
 .testimonial-grid h2 {
   font-size: clamp(36px, 3.4vw, 44px);
 }
@@ -1769,13 +1767,83 @@ figcaption {
   transform: translateY(-3px);
 }
 
+.responsible {
+  border-top: 1px solid var(--rule);
+  background: var(--linen);
+}
+
+.responsible-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.35fr);
+  gap: clamp(48px, 7vw, 104px);
+  align-items: start;
+}
+
+.responsible h2 {
+  max-width: 560px;
+  font-size: clamp(42px, 5vw, 72px);
+  line-height: 1.02;
+}
+
+.responsible > div > div > p:not(.eyebrow) {
+  max-width: 420px;
+  margin: 28px 0 0;
+  color: var(--granite-500);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.responsible-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--rule);
+  border-left: 1px solid var(--rule);
+}
+
+.responsible-list article {
+  min-height: 260px;
+  padding: clamp(24px, 3vw, 38px);
+  border-right: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  background: rgba(250, 246, 238, 0.48);
+  transition: background 260ms ease, border-color 260ms ease, transform 360ms var(--ease-out), box-shadow 360ms var(--ease-out);
+}
+
+.responsible-list article:hover {
+  background: rgba(201, 218, 215, 0.36);
+  border-color: rgba(28, 66, 68, 0.24);
+  transform: translateY(-4px);
+  box-shadow: 0 18px 34px rgba(31, 38, 34, 0.08);
+}
+
+.responsible-list span {
+  color: var(--clay);
+  font-family: var(--serif);
+  font-size: 28px;
+  font-style: italic;
+}
+
+.responsible-list h3 {
+  margin: 42px 0 12px;
+  color: var(--petrol-deep);
+  font-size: 25px;
+}
+
+.responsible-list p {
+  max-width: 330px;
+  margin: 0;
+  color: var(--granite-500);
+  font-size: 15.5px;
+  line-height: 1.7;
+}
+
 .charter-grid {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   gap: 80px;
 }
 
-.charter p {
+.charter p:not(.eyebrow) {
   max-width: 480px;
   margin-top: 32px;
   color: rgba(241, 235, 225, 0.78);
@@ -1974,6 +2042,7 @@ figcaption {
 
 .final-cta {
   border-top: 1px solid var(--rule);
+  background: var(--paper);
 }
 
 .final-cta > div {
@@ -1988,7 +2057,18 @@ figcaption {
   line-height: 1;
 }
 
-.final-cta p {
+.section-pad h2 {
+  color: var(--petrol-deep);
+  font-size: clamp(36px, 4.8vw, 64px);
+  line-height: 1.03;
+  letter-spacing: -0.02em;
+}
+
+.section-pad.deep h2 {
+  color: var(--linen);
+}
+
+.final-cta p:not(.eyebrow) {
   margin: 0;
   font-size: 15px;
 }
@@ -2046,8 +2126,18 @@ figcaption {
 
 .footer {
   padding: 72px clamp(20px, 4.5vw, 64px) 36px;
-  border-top: 1px solid var(--rule-soft);
-  background: var(--linen);
+  border-top: 0;
+  background: var(--petrol-deep);
+  color: var(--linen);
+}
+
+.footer .brand {
+  color: var(--linen);
+}
+
+.footer .brand:hover,
+.footer .brand:focus-visible {
+  color: var(--clay-light);
 }
 
 .footer-grid {
@@ -2060,12 +2150,13 @@ figcaption {
 .footer p {
   margin: 22px 0 0;
   max-width: 250px;
+  color: rgba(241, 235, 225, 0.72);
   font-size: 13.5px;
 }
 
 .footer h4 {
   margin: 0 0 18px;
-  color: var(--granite-500);
+  color: var(--clay-light);
   font-size: 10.5px;
   letter-spacing: 0.24em;
 }
@@ -2073,10 +2164,17 @@ figcaption {
 .footer-grid a:not(.brand) {
   position: relative;
   display: block;
-  color: var(--petrol-deep);
+  color: rgba(241, 235, 225, 0.84);
   font-size: 13.5px;
   line-height: 2.05;
   width: fit-content;
+}
+
+.footer-grid a:not(.brand):hover,
+.footer-grid a:not(.brand):focus-visible,
+.footer-bottom a:hover,
+.footer-bottom a:focus-visible {
+  color: var(--clay-light);
 }
 
 .footer-bottom {
@@ -2086,8 +2184,8 @@ figcaption {
   gap: 24px;
   margin-top: 64px;
   padding-top: 24px;
-  border-top: 1px solid var(--rule-soft);
-  color: var(--granite-500);
+  border-top: 1px solid rgba(241, 235, 225, 0.14);
+  color: rgba(241, 235, 225, 0.62);
   font-size: 10px;
   letter-spacing: 0.18em;
 }
@@ -2319,6 +2417,7 @@ figcaption {
   .planning-cards-head,
   .section-head.two,
   .visit-grid,
+  .responsible-grid,
   .charter-grid,
   .final-cta > div {
     grid-template-columns: 1fr;
@@ -2409,7 +2508,7 @@ figcaption {
   }
 
   .planning-cards h2 {
-    font-size: clamp(44px, 12vw, 76px);
+    font-size: clamp(36px, 4.8vw, 64px);
   }
 
   .course-feature-grid,
@@ -2430,6 +2529,7 @@ figcaption {
   .space-grid,
   .workshop-grid,
   .testimonial-grid,
+  .responsible-list,
   .footer-grid,
   .partners {
     grid-template-columns: 1fr;
