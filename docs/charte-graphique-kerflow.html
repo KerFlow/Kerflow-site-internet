@@ -1,0 +1,708 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KerFlow - Charte graphique</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --lin: #f1ebe1;
+        --logo-main: #e8e6dd;
+        --paper: #faf6ee;
+        --bone: #f6f2e8;
+        --petrol: #1c4244;
+        --petrol-deep: #0e2a2c;
+        --granite: #1f2622;
+        --granite-500: #545d57;
+        --stone: #d6d8d3;
+        --sea-mist: #c9dad7;
+        --studio-100: #d4dcc6;
+        --studio-300: #8aa074;
+        --studio-500: #4f6b3c;
+        --rituel: #ecd7c8;
+        --clay: #a05a3a;
+        --clay-light: #d99a78;
+        --rule: rgba(31, 38, 34, 0.14);
+        --rule-soft: rgba(31, 38, 34, 0.08);
+        --serif: "Fraunces", Georgia, serif;
+        --sans: "Manrope", Inter, system-ui, sans-serif;
+        --mono: "DM Mono", ui-monospace, monospace;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--lin);
+        color: var(--petrol-deep);
+        font-family: var(--sans);
+        font-size: 16px;
+        line-height: 1.55;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .page {
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 56px clamp(20px, 5vw, 72px) 96px;
+      }
+
+      .mono,
+      .eyebrow,
+      .chip,
+      .spec-meta,
+      th {
+        font-family: var(--mono);
+        text-transform: uppercase;
+      }
+
+      .cover {
+        min-height: 68vh;
+        display: grid;
+        grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+        gap: clamp(48px, 7vw, 96px);
+        align-items: end;
+        padding-bottom: 56px;
+        border-bottom: 1px solid var(--rule);
+      }
+
+      .cover h1 {
+        margin: 0;
+        color: var(--petrol);
+        font-family: var(--serif);
+        font-size: clamp(72px, 10vw, 144px);
+        font-weight: 300;
+        line-height: 0.9;
+        letter-spacing: -0.025em;
+        font-variation-settings: "opsz" 144;
+      }
+
+      .cover h1 span {
+        display: block;
+        color: var(--petrol-deep);
+        font-size: clamp(40px, 5vw, 76px);
+        font-style: italic;
+      }
+
+      .cover-copy {
+        max-width: 420px;
+      }
+
+      .cover-copy p {
+        margin: 18px 0 0;
+        color: var(--granite);
+        font-family: var(--serif);
+        font-size: 22px;
+        font-weight: 300;
+        line-height: 1.35;
+      }
+
+      .meta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 30px;
+      }
+
+      .chip {
+        border: 1px solid var(--rule);
+        padding: 7px 11px;
+        color: var(--granite-500);
+        font-size: 10px;
+        letter-spacing: 0.18em;
+      }
+
+      section {
+        padding: 72px 0;
+        border-bottom: 1px solid var(--rule);
+      }
+
+      .section-head {
+        display: grid;
+        grid-template-columns: 240px minmax(0, 1fr);
+        gap: 48px;
+        margin-bottom: 40px;
+      }
+
+      .eyebrow {
+        margin: 0;
+        color: var(--clay);
+        font-size: 11px;
+        letter-spacing: 0.24em;
+      }
+
+      h2 {
+        margin: 0;
+        max-width: 760px;
+        font-family: var(--serif);
+        font-size: clamp(36px, 4.8vw, 64px);
+        font-weight: 400;
+        line-height: 1.03;
+        letter-spacing: -0.02em;
+        font-variation-settings: "opsz" 144;
+      }
+
+      h3 {
+        margin: 0 0 12px;
+        font-family: var(--serif);
+        font-size: 28px;
+        font-weight: 400;
+        line-height: 1.05;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .lead {
+        max-width: 700px;
+        color: var(--granite);
+        font-size: 18px;
+        line-height: 1.65;
+      }
+
+      .rules {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 36px;
+      }
+
+      .rule-card {
+        min-height: 210px;
+        padding: 28px;
+        border: 1px solid var(--rule);
+        background: rgba(250, 246, 238, 0.35);
+      }
+
+      .rule-card strong {
+        display: block;
+        margin-bottom: 18px;
+        color: var(--petrol);
+        font-family: var(--mono);
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+      }
+
+      .rule-card p {
+        color: var(--granite);
+        font-size: 15px;
+      }
+
+      .swatch-grid {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        border-top: 1px solid var(--rule);
+        border-left: 1px solid var(--rule);
+      }
+
+      .swatch {
+        min-height: 210px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 20px;
+        border-right: 1px solid var(--rule);
+        border-bottom: 1px solid var(--rule);
+        background: var(--color);
+        color: var(--text, var(--petrol-deep));
+      }
+
+      .swatch.dark {
+        --text: var(--lin);
+      }
+
+      .swatch b {
+        font-family: var(--serif);
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 1;
+      }
+
+      .swatch span {
+        display: block;
+        margin-top: 6px;
+        font-family: var(--mono);
+        font-size: 10px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .service-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .service-card {
+        min-height: 310px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 28px;
+        border: 1px solid rgba(31, 38, 34, 0.16);
+        background: var(--service);
+      }
+
+      .service-card h3 {
+        color: var(--petrol);
+      }
+
+      .service-card p {
+        color: rgba(31, 38, 34, 0.72);
+        font-size: 14.5px;
+      }
+
+      .service-card .spec-meta {
+        color: var(--accent, var(--petrol));
+        font-size: 10px;
+        letter-spacing: 0.2em;
+      }
+
+      .mini-swatches {
+        display: flex;
+        gap: 8px;
+        margin-top: 22px;
+      }
+
+      .mini-swatches span {
+        width: 22px;
+        height: 22px;
+        border: 1px solid rgba(31, 38, 34, 0.18);
+        border-radius: 999px;
+        background: var(--dot);
+      }
+
+      .type-specimen {
+        display: grid;
+        gap: 18px;
+      }
+
+      .type-row {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 180px;
+        gap: 36px;
+        align-items: baseline;
+        padding: 28px 0;
+        border-bottom: 1px solid var(--rule-soft);
+      }
+
+      .display {
+        font-family: var(--serif);
+        font-size: clamp(64px, 8vw, 112px);
+        font-weight: 300;
+        line-height: 0.95;
+        letter-spacing: -0.025em;
+        font-variation-settings: "opsz" 144;
+      }
+
+      .title {
+        font-family: var(--serif);
+        font-size: clamp(36px, 4vw, 56px);
+        font-style: italic;
+        font-weight: 300;
+        line-height: 1.05;
+      }
+
+      .body {
+        max-width: 620px;
+        color: var(--granite);
+        font-size: 18px;
+        line-height: 1.65;
+      }
+
+      .spec-meta {
+        color: var(--granite-500);
+        font-size: 10px;
+        letter-spacing: 0.18em;
+        text-align: right;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        border-top: 1px solid var(--rule);
+      }
+
+      th,
+      td {
+        padding: 18px 0;
+        border-bottom: 1px solid var(--rule-soft);
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        color: var(--granite-500);
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.2em;
+      }
+
+      td {
+        color: var(--granite);
+        font-size: 15px;
+      }
+
+      td:first-child {
+        width: 220px;
+        color: var(--petrol);
+        font-weight: 700;
+      }
+
+      .logo-panel {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+
+      .logo-sample {
+        min-height: 280px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 14px;
+        padding: 36px;
+        border: 1px solid var(--rule);
+        background: var(--bg);
+        color: var(--color);
+      }
+
+      .wordmark {
+        font-family: var(--serif);
+        font-size: clamp(52px, 6vw, 84px);
+        font-weight: 300;
+        line-height: 1;
+        letter-spacing: -0.02em;
+        font-variation-settings: "opsz" 144;
+      }
+
+      .tagline {
+        font-family: var(--mono);
+        font-size: 11px;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+      }
+
+      .notes {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .note {
+        padding: 28px;
+        border: 1px solid var(--rule);
+        background: rgba(250, 246, 238, 0.34);
+      }
+
+      .note h3 {
+        color: var(--petrol);
+        font-size: 24px;
+      }
+
+      .note ul {
+        margin: 18px 0 0;
+        padding-left: 20px;
+        color: var(--granite);
+      }
+
+      .note li + li {
+        margin-top: 8px;
+      }
+
+      @media print {
+        body {
+          background: white;
+        }
+
+        .page {
+          max-width: none;
+          padding: 32px;
+        }
+
+        section,
+        .cover {
+          break-inside: avoid;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .cover,
+        .section-head,
+        .rules,
+        .service-grid,
+        .logo-panel,
+        .notes {
+          grid-template-columns: 1fr;
+        }
+
+        .swatch-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .type-row {
+          grid-template-columns: 1fr;
+        }
+
+        .spec-meta {
+          text-align: left;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <header class="cover">
+        <div>
+          <p class="eyebrow">Charte graphique - Juin 2026</p>
+          <h1>KerFlow <span>Galet / Pierre & Mer</span></h1>
+        </div>
+        <div class="cover-copy">
+          <p>Base minérale, douce et lisible, enrichie par quatre couleurs de service utilisees comme accents.</p>
+          <div class="meta-row">
+            <span class="chip">Clamart</span>
+            <span class="chip">Prevention-sante</span>
+            <span class="chip">Maison du mouvement</span>
+          </div>
+        </div>
+      </header>
+
+      <section>
+        <div class="section-head">
+          <p class="eyebrow">01 - Principe</p>
+          <h2>Une palette principale commune, puis des couleurs de service en accent.</h2>
+        </div>
+        <p class="lead">Le site KerFlow garde la direction Galet / Pierre & Mer comme base: fonds, textes, navigation, footer, boutons principaux et grandes sections. Les couleurs Studio, Consult, Rituel et Ateliers servent a identifier les entrees, les cartes, les pastilles, les details graphiques et certains boutons secondaires. Sur la homepage, elles doivent rester ponctuelles pour conserver une lecture calme et coherente.</p>
+        <div class="rules">
+          <article class="rule-card">
+            <strong>Structure</strong>
+            <p>Utiliser le lin, le papier, le petrol et le granite pour construire la page. Ce sont les couleurs de fondation.</p>
+          </article>
+          <article class="rule-card">
+            <strong>Identification</strong>
+            <p>Utiliser les couleurs de service pour aider a reperer une offre, pas pour recolorer toute la page.</p>
+          </article>
+          <article class="rule-card">
+            <strong>Hierarchie</strong>
+            <p>Garder le petrol pour les textes de marque, les liens importants et les CTA principaux.</p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <p class="eyebrow">02 - Palette principale</p>
+          <h2>Galet / Pierre & Mer reste le socle visuel du site.</h2>
+        </div>
+        <div class="swatch-grid" aria-label="Palette principale">
+          <div class="swatch" style="--color: #f1ebe1"><b>Lin</b><span>#f1ebe1</span><span>Fond principal</span></div>
+          <div class="swatch" style="--color: #e8e6dd"><b>Logo principal</b><span>#e8e6dd</span><span>Fond / version logo</span></div>
+          <div class="swatch dark" style="--color: #1c4244"><b>Petrole</b><span>#1c4244</span><span>Mot KerFlow</span></div>
+          <div class="swatch dark" style="--color: #0e2a2c"><b>Maree</b><span>#0e2a2c</span><span>Sections profondes</span></div>
+          <div class="swatch dark" style="--color: #1f2622"><b>Granite</b><span>#1f2622</span><span>Texte fort</span></div>
+          <div class="swatch" style="--color: #545d57"><b>Pierre</b><span>#545d57</span><span>Texte secondaire</span></div>
+          <div class="swatch" style="--color: #d6d8d3"><b>Pierre claire</b><span>#d6d8d3</span><span>Fond doux</span></div>
+          <div class="swatch" style="--color: #c9dad7"><b>Embrun</b><span>#c9dad7</span><span>Consult / accents frais</span></div>
+          <div class="swatch" style="--color: #a05a3a"><b>Argile</b><span>#a05a3a</span><span>Accent editorial</span></div>
+          <div class="swatch" style="--color: #faf6ee"><b>Papier</b><span>#faf6ee</span><span>Respiration</span></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <p class="eyebrow">03 - Services</p>
+          <h2>Les quatre univers couleur identifient les offres sans remplacer la base commune.</h2>
+        </div>
+        <div class="service-grid">
+          <article class="service-card" style="--service: #d4dcc6; --accent: #4f6b3c">
+            <div>
+              <p class="spec-meta">KerFlow Studio</p>
+              <h3>Pratique, mouvement, cours</h3>
+              <p>Couleur principale: vert doux. Elle peut etre plus presente que les autres accents, car le Studio porte l'offre coeur.</p>
+              <div class="mini-swatches">
+                <span style="--dot: #d4dcc6"></span>
+                <span style="--dot: #8aa074"></span>
+                <span style="--dot: #4f6b3c"></span>
+              </div>
+            </div>
+            <span class="spec-meta">#d4dcc6 / #8aa074 / #4f6b3c</span>
+          </article>
+          <article class="service-card" style="--service: #c9dad7; --accent: #1c4244">
+            <div>
+              <p class="spec-meta">KerFlow Consult</p>
+              <h3>Consultations, prevention, suivi</h3>
+              <p>Couleur fraiche et claire, a utiliser pour les cartes de consultation, pictogrammes, pastilles et fonds secondaires.</p>
+            </div>
+            <span class="spec-meta">#c9dad7</span>
+          </article>
+          <article class="service-card" style="--service: #ecd7c8; --accent: #a05a3a">
+            <div>
+              <p class="spec-meta">KerFlow Rituel</p>
+              <h3>Soins, massages, ralentir</h3>
+              <p>Accent chaud et enveloppant, a reserver aux soins, aux moments de repos et aux contenus plus sensoriels.</p>
+            </div>
+            <span class="spec-meta">#ecd7c8</span>
+          </article>
+          <article class="service-card" style="--service: #d6d8d3; --accent: #545d57">
+            <div>
+              <p class="spec-meta">KerFlow Ateliers</p>
+              <h3>Rencontres, ateliers, ressources</h3>
+              <p>Teinte pierre claire, neutre et modulable. Elle evite d'ajouter une couleur trop forte a la homepage.</p>
+            </div>
+            <span class="spec-meta">#d6d8d3</span>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <p class="eyebrow">04 - Vert Studio</p>
+          <h2>Studio utilise une famille de verts limitee et hierarchisee.</h2>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Couleur</th>
+              <th>Usage recommande</th>
+              <th>Usage a eviter</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#d4dcc6</td>
+              <td>Fond de carte Studio, pastilles, zone douce, aplats legers.</td>
+              <td>Texte principal ou CTA seul: contraste insuffisant.</td>
+            </tr>
+            <tr>
+              <td>#8aa074</td>
+              <td>Accent secondaire, filet, hover, pictogramme, petit detail graphique.</td>
+              <td>Grand aplat dominant sur toute la homepage.</td>
+            </tr>
+            <tr>
+              <td>#4f6b3c</td>
+              <td>Accent fort Studio, icones, titres courts, boutons secondaires sur fond clair.</td>
+              <td>Texte long ou remplacement du petrol pour le mot KerFlow.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <p class="eyebrow">05 - Logo & nom</p>
+          <h2>KerFlow reste toujours ecrit en petrole.</h2>
+        </div>
+        <div class="logo-panel">
+          <div class="logo-sample" style="--bg: #e8e6dd; --color: #1c4244">
+            <span class="wordmark">KerFlow</span>
+            <span class="tagline">Studio · Consult · Rituel · Ateliers</span>
+          </div>
+          <div class="logo-sample" style="--bg: #1c4244; --color: #f1ebe1">
+            <span class="wordmark">KerFlow</span>
+            <span class="tagline">Version sombre / noir & blanc</span>
+          </div>
+        </div>
+        <div class="notes" style="margin-top: 18px">
+          <article class="note">
+            <h3>A respecter</h3>
+            <ul>
+              <li>Le mot KerFlow est toujours en #1c4244 en version couleur.</li>
+              <li>La base logo principale utilise #e8e6dd.</li>
+              <li>La version noir et blanc peut utiliser #f1ebe1.</li>
+            </ul>
+          </article>
+          <article class="note">
+            <h3>A eviter</h3>
+            <ul>
+              <li>Ne pas mettre KerFlow dans les couleurs de service.</li>
+              <li>Ne pas multiplier les verts au-dela des trois verts Studio valides.</li>
+              <li>Ne pas utiliser toutes les couleurs service en grands aplats simultanes.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <p class="eyebrow">06 - Typographies</p>
+          <h2>Une expression editoriale douce, lisible et contemporaine.</h2>
+        </div>
+        <div class="type-specimen">
+          <div class="type-row">
+            <div class="display">Une maison pour bouger, respirer, revenir a soi.</div>
+            <div class="spec-meta">Fraunces<br>Display / titres</div>
+          </div>
+          <div class="type-row">
+            <div class="title">Ni studio de yoga, ni centre wellness. Une maison.</div>
+            <div class="spec-meta">Fraunces italic<br>Accent editorial</div>
+          </div>
+          <div class="type-row">
+            <div class="body">KerFlow est une maison de prevention-sante et de mieux-etre. Le ton doit rester clair, humain, pose et sans injonction.</div>
+            <div class="spec-meta">Manrope<br>Texte courant</div>
+          </div>
+          <div class="type-row">
+            <div class="mono">Clamart - 92140 - ouverture prochaine</div>
+            <div class="spec-meta">DM Mono<br>Micro-infos</div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <p class="eyebrow">07 - Applications</p>
+          <h2>Recommandations d'integration sur le site.</h2>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Element</th>
+              <th>Regle couleur</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Fonds generaux</td>
+              <td>Lin #f1ebe1, papier #faf6ee, pierre claire #d6d8d3 en alternance sobre.</td>
+            </tr>
+            <tr>
+              <td>Navigation / footer</td>
+              <td>Petrole #1c4244, maree #0e2a2c, lin #f1ebe1. Eviter les couleurs de service dans la structure globale.</td>
+            </tr>
+            <tr>
+              <td>CTA principal</td>
+              <td>Fond petrole #1c4244, texte lin #f1ebe1. Les couleurs de service peuvent servir aux CTA secondaires.</td>
+            </tr>
+            <tr>
+              <td>Cartes service</td>
+              <td>Fond dans la couleur de service, texte en petrol/granite, accent interne plus soutenu si necessaire.</td>
+            </tr>
+            <tr>
+              <td>Homepage</td>
+              <td>Utiliser les 4 couleurs comme reperes ponctuels. Garder une dominance Galet / Pierre & Mer.</td>
+            </tr>
+            <tr>
+              <td>Pages dediees</td>
+              <td>La couleur du service peut devenir plus presente: fond de hero, filtres, sections courtes, pictogrammes.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </body>
+</html>
