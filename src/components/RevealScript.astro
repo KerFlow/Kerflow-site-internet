@@ -1,0 +1,48 @@
+<script is:inline>
+      (() => {
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        if (reduceMotion || !("IntersectionObserver" in window)) {
+          return;
+        }
+
+        const revealItems = document.querySelectorAll([
+          "section:not(.hero)",
+          ".care-grid article",
+          ".pillar-grid article",
+          ".space-grid article",
+          ".course-card",
+          ".course-mini-grid article",
+          ".offer-grid article",
+          ".workshop-card",
+          ".editorial-feature",
+          ".testimonial-grid figure",
+          ".partners div span",
+          ".charter li",
+          ".info-list div",
+          ".map-card",
+          ".final-newsletter"
+        ].join(","));
+
+        revealItems.forEach((item, index) => {
+          item.dataset.reveal = "";
+          item.style.setProperty("--reveal-delay", `${Math.min((index % 8) * 70, 420)}ms`);
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+              return;
+            }
+
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          });
+        }, {
+          rootMargin: "0px 0px -8%",
+          threshold: 0.14
+        });
+
+        revealItems.forEach((item) => observer.observe(item));
+      })();
+    </script>
