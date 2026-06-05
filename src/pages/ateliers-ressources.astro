@@ -231,10 +231,10 @@ import SiteFooter from "../components/SiteFooter.astro";
 
   .workshops-hero {
     display: grid;
-    min-height: calc(100vh - 86px);
-    min-height: calc(100svh - 86px);
+    min-height: var(--site-hero-min-h-fallback);
+    min-height: var(--site-hero-min-h);
     align-content: center;
-    padding-block: clamp(40px, 6vw, 72px) clamp(40px, 5vw, 64px);
+    padding-block: var(--site-hero-pad-block);
     border-bottom: 1px solid var(--rule);
     background: var(--ateliers);
   }
