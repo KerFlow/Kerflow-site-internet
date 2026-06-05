@@ -9,7 +9,7 @@ import SiteFooter from "../components/SiteFooter.astro";
   description="Ateliers, conférences, soirées, week-ends thématiques et journal KerFlow autour du sommeil, du stress, de l'alimentation, de la mobilité et de la prévention santé."
 >
   <SiteHeader />
-  <main class="workshops-page page svc-ateliers">
+  <main class="workshops-page page svc-ateliers wrapped-sections">
     <section class="workshops-hero" data-screen-label="Ateliers - Hero">
       <div class="workshops-wrap">
         <div class="page-hero-grid">
@@ -25,7 +25,7 @@ import SiteFooter from "../components/SiteFooter.astro";
                 Voir l'agenda
                 <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"></path></svg>
               </a>
-              <a href="#newsletter" class="btn btn-line">Recevoir le journal</a>
+              <a href="#newsletter" class="btn-line">Recevoir le journal</a>
             </div>
           </div>
           <aside class="page-hero-aside">
@@ -38,70 +38,72 @@ import SiteFooter from "../components/SiteFooter.astro";
       </div>
     </section>
 
-    <section class="section-pad rule-top band-paper" id="agenda" data-screen-label="Événements">
+    <section class="planning planning-cards section-pad events-planning" id="agenda" data-screen-label="Événements">
       <div class="workshops-wrap">
-        <div class="sec-head">
-          <span class="sec-num">01 - Événements à venir</span>
-          <h2 class="title">Ce qui se passe<br /><i class="h c-petrol">à la maison.</i></h2>
-          <p class="sec-intro">
-            Petits groupes, places limitées. La réservation se fait en ligne - ouverte aux abonné·es comme aux visiteur·ses.
-          </p>
+        <div class="planning-cards-head">
+          <div>
+            <p class="eyebrow">01 - Événements à venir</p>
+            <h2>Ce qui se passe<br /><em>à la maison.</em></h2>
+          </div>
+          <div>
+            <p>
+              Petits groupes, places limitées. La réservation se fait en ligne - ouverte aux abonné·es comme aux visiteur·ses.
+            </p>
+            <a class="btn-line light" href="/contact/">Réserver sa place →</a>
+          </div>
         </div>
 
-        <div class="events">
-          <a href="/contact/" class="event">
-            <div class="ev-date"><span class="d serif">14</span><span class="m">Juin</span></div>
-            <div class="ev-body">
-              <h3 class="serif">Mieux dormir : atelier sommeil & respiration</h3>
-              <p>Soirée · 19h00 - 21h00 · comprendre son sommeil, repartir avec des outils concrets</p>
+        <div class="course-feature-grid">
+          <article class="course-card course-card-feature" data-event-topic="Sommeil">
+            <div class="course-card-copy">
+              <p class="course-kicker">↘ À la une ce mois-ci</p>
+              <h3>Mieux dormir : atelier sommeil & respiration<br /><em>14 juin</em></h3>
+              <p>Soirée · 19h00 - 21h00 · comprendre son sommeil, repartir avec des outils concrets.</p>
+              <footer>
+                <a href="/contact/">Réserver →</a>
+              </footer>
             </div>
-            <span class="ev-tag">Sommeil</span>
-          </a>
-          <a href="/contact/" class="event">
-            <div class="ev-date"><span class="d serif">21</span><span class="m">Juin</span></div>
-            <div class="ev-body">
-              <h3 class="serif">Mobilité & douleurs : matinée articulations</h3>
-              <p>Samedi · 10h00 - 12h30 · dénouer le dos, les épaules, les hanches en douceur</p>
+            <div class="photo photo-clay"><span>[ photo - atelier sommeil, lumière chaude ]</span></div>
+          </article>
+
+          <article class="course-card course-card-photo" data-event-topic="Mobilité Douleurs">
+            <div class="photo photo-petrol"><span>[ photo - mobilité douce ]</span></div>
+            <div class="course-card-copy">
+              <p class="course-kicker">21 juin · 10h00</p>
+              <h4>Mobilité & douleurs</h4>
+              <p>Samedi · 10h00 - 12h30 · dénouer le dos, les épaules, les hanches en douceur.</p>
+              <footer>
+                <a href="/contact/">Réserver →</a>
+              </footer>
             </div>
-            <span class="ev-tag">Mobilité</span>
-          </a>
-          <a href="/contact/" class="event">
-            <div class="ev-date"><span class="d serif">28</span><span class="m">Juin</span></div>
-            <div class="ev-body">
-              <h3 class="serif">Ménopause : mouvement & mieux-être</h3>
-              <p>Samedi · 14h00 - 17h00 · cycle, énergie, sommeil - un temps pour comprendre et bouger</p>
+          </article>
+
+          <article class="course-card course-card-photo" data-event-topic="Ménopause">
+            <div class="photo photo-foam"><span>[ photo - mouvement & mieux-être ]</span></div>
+            <div class="course-card-copy">
+              <p class="course-kicker">28 juin · 14h00</p>
+              <h4>Ménopause : mouvement & mieux-être</h4>
+              <p>Samedi · 14h00 - 17h00 · cycle, énergie, sommeil - un temps pour comprendre et bouger.</p>
+              <footer>
+                <a href="/contact/">Réserver →</a>
+              </footer>
             </div>
-            <span class="ev-tag">Ménopause</span>
-          </a>
-          <a href="/contact/" class="event">
-            <div class="ev-date"><span class="d serif">05</span><span class="m">Juil.</span></div>
-            <div class="ev-body">
-              <h3 class="serif">Conférence : manger sans s'interdire</h3>
-              <p>Soirée · 19h00 - 20h30 · NAPSOthérapie, comportement alimentaire, sans régime ni culpabilité</p>
-            </div>
-            <span class="ev-tag">Alimentation</span>
-          </a>
-          <a href="/contact/" class="event">
-            <div class="ev-date"><span class="d serif">12</span><span class="m">Juil.</span></div>
-            <div class="ev-body">
-              <h3 class="serif">Week-end post-partum : retrouver son corps</h3>
-              <p>Samedi & dimanche · reprise douce, périnée, mobilité, repos - accompagné·e</p>
-            </div>
-            <span class="ev-tag">Post-partum</span>
-          </a>
+          </article>
         </div>
 
-        <div class="topics">
-          <span class="fill"><b>Thématiques</b></span>
-          <span>Sommeil</span>
-          <span>Stress</span>
-          <span>Alimentation</span>
-          <span>Mobilité</span>
-          <span>Ménopause</span>
-          <span>Douleurs</span>
-          <span>Post-partum</span>
-          <span>Bien vieillir</span>
+        <div class="course-mini-grid events-mini-grid" aria-label="Autres événements à venir">
+          <article data-event-topic="Alimentation">
+            <p>05 juil. · 19h00</p>
+            <h4>Conférence : manger sans s'interdire</h4>
+            <a href="/contact/">Réserver →</a>
+          </article>
+          <article data-event-topic="Post-partum">
+            <p>12 juil.</p>
+            <h4>Week-end post-partum : retrouver son corps</h4>
+            <a href="/contact/">Réserver →</a>
+          </article>
         </div>
+
       </div>
     </section>
 
@@ -148,8 +150,8 @@ import SiteFooter from "../components/SiteFooter.astro";
         </div>
 
         <div class="archive-link">
-          <a href="#archives" class="btn btn-line">
-            Tous les articles & archives
+          <a href="/blog/" class="btn-line">
+            Tous les articles
             <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"></path></svg>
           </a>
         </div>
@@ -184,11 +186,14 @@ import SiteFooter from "../components/SiteFooter.astro";
           </div>
           <div>
             <form class="news-form">
-              <label class="sr-only" for="newsletter-email">Adresse e-mail</label>
-              <input id="newsletter-email" type="email" placeholder="Votre adresse e-mail" />
-              <button type="submit">S'inscrire</button>
+              <label for="newsletter-email">
+                <span class="sr-only">Adresse e-mail</span>
+                <input id="newsletter-email" type="email" placeholder="Votre adresse e-mail" />
+              </label>
+              <div class="actions news-form-actions">
+                <button class="btn btn-accent" type="submit">S'inscrire <span aria-hidden="true">→</span></button>
+              </div>
             </form>
-            <p class="mono">Désinscription en un clic · vos données ne sont jamais partagées</p>
           </div>
         </div>
       </div>
@@ -207,13 +212,13 @@ import SiteFooter from "../components/SiteFooter.astro";
 
   .workshops-wrap {
     width: 100%;
-    max-width: 1320px;
+    max-width: var(--site-max);
     margin-inline: auto;
-    padding-inline: clamp(20px, 5.2vw, 92px);
+    padding-inline: var(--site-pad-x);
   }
 
   .section-pad {
-    padding-block: clamp(72px, 10vw, 128px);
+    padding-block: var(--site-section-y);
   }
 
   .rule-top {
@@ -324,16 +329,37 @@ import SiteFooter from "../components/SiteFooter.astro";
   }
 
   .btn-line {
-    border: 0;
-    border-bottom: 1px solid currentColor;
+    position: relative;
+    border-bottom: 1px solid transparent;
     background: transparent;
     color: var(--petrol-deep);
     padding-inline: 0;
   }
 
+  .btn-line::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 4px;
+    left: 0;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 360ms var(--ease-out, cubic-bezier(0.22, 1, 0.36, 1)), background 260ms ease;
+  }
+
   .btn-line:hover,
   .btn-line:focus-visible {
-    gap: 16px;
+    background: transparent;
+    color: var(--clay);
+    transform: translateY(-1px);
+    box-shadow: none;
+  }
+
+  .btn-line:hover::after,
+  .btn-line:focus-visible::after {
+    transform: scaleX(0.28);
   }
 
   .ic {
@@ -380,6 +406,19 @@ import SiteFooter from "../components/SiteFooter.astro";
     color: var(--ink-soft);
     font-size: 16.5px;
     line-height: 1.68;
+  }
+
+  #agenda.events-planning {
+    background: var(--paper);
+    padding: var(--site-section-y) 0;
+  }
+
+  #agenda .eyebrow,
+  #agenda .course-kicker,
+  #agenda h2 em,
+  #agenda .course-card-feature h3 em,
+  #agenda .course-mini-grid p {
+    color: var(--ateliers-ink);
   }
 
   .events {
@@ -452,29 +491,6 @@ import SiteFooter from "../components/SiteFooter.astro";
   .ev-tag {
     color: var(--ateliers-ink);
     white-space: nowrap;
-  }
-
-  .topics {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: clamp(28px, 3vw, 42px);
-  }
-
-  .topics span {
-    border: 1px solid var(--rule);
-    padding: 10px 15px;
-    color: var(--granite-500);
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-  }
-
-  .topics .fill {
-    border-color: var(--ateliers);
-    background: var(--ateliers);
-    color: var(--ateliers-ink);
   }
 
   .journal-head {
@@ -675,43 +691,45 @@ import SiteFooter from "../components/SiteFooter.astro";
   }
 
   .news-form {
-    display: flex;
+    display: grid;
+    gap: 24px;
     max-width: 520px;
     margin-top: 34px;
-    border-bottom: 1.5px solid var(--ateliers-ink);
+  }
+
+  .news-form label {
+    border-bottom: 1px solid rgba(14, 42, 44, 0.45);
+    transition: border-color 260ms ease;
+  }
+
+  .news-form label:focus-within {
+    border-color: var(--ateliers-ink);
   }
 
   .news-form input {
-    flex: 1;
-    min-width: 0;
+    width: 100%;
     border: 0;
     background: transparent;
     color: var(--petrol-deep);
     font-family: var(--sans);
-    font-size: 16px;
+    font-size: 15px;
     outline: 0;
-    padding: 14px 0;
+    padding: 12px 0;
   }
 
   .news-form input::placeholder {
     color: var(--granite-500);
+    transition: color 260ms ease;
   }
 
-  .news-form button {
-    border: 0;
-    background: transparent;
-    color: var(--petrol-deep);
-    cursor: pointer;
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    padding: 14px 0 14px 16px;
-    text-transform: uppercase;
+  .news-form label:focus-within input::placeholder {
+    color: color-mix(in srgb, var(--ateliers-ink) 70%, transparent);
   }
 
-  .mono {
-    margin: 18px 0 0;
-    color: var(--granite-500);
+  .news-form-actions {
+    align-items: stretch;
+    flex-wrap: nowrap;
+    margin-top: 2px;
   }
 
   @media (max-width: 900px) {
@@ -734,6 +752,10 @@ import SiteFooter from "../components/SiteFooter.astro";
   }
 
   @media (max-width: 640px) {
+    #agenda .planning-cards-head h2 {
+      font-size: clamp(36px, 4.8vw, 64px);
+    }
+
     .event,
     .list-row {
       grid-template-columns: 1fr;
@@ -749,19 +771,8 @@ import SiteFooter from "../components/SiteFooter.astro";
       grid-template-columns: 1fr;
     }
 
-    .news-form {
-      display: grid;
-      gap: 10px;
-      border-bottom: 0;
-    }
-
-    .news-form input {
-      border-bottom: 1.5px solid var(--ateliers-ink);
-    }
-
-    .news-form button {
-      justify-self: start;
-      padding-left: 0;
+    .news-form-actions {
+      justify-content: flex-start;
     }
   }
 </style>

@@ -9,7 +9,7 @@ import SiteFooter from "../components/SiteFooter.astro";
   description="Location d'espaces KerFlow pour professeur·es, thérapeutes, praticien·nes, ateliers, conférences et professionnel·les de prévention santé."
 >
   <SiteHeader />
-  <main class="rent-page page">
+  <main class="rent-page page wrapped-sections">
     <section class="page-hero tinted" data-screen-label="Louer · Hero">
       <div class="wrap">
         <div class="page-hero-grid">
@@ -25,7 +25,7 @@ import SiteFooter from "../components/SiteFooter.astro";
                 Faire une demande
                 <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"></path></svg>
               </a>
-              <a href="#espaces" class="btn btn-line">Voir les espaces</a>
+              <a href="#espaces" class="btn-line">Voir les espaces</a>
             </div>
           </div>
           <aside class="page-hero-aside">
@@ -261,9 +261,9 @@ import SiteFooter from "../components/SiteFooter.astro";
   }
 
   .wrap {
-    max-width: 1320px;
+    max-width: var(--site-max);
     margin: 0 auto;
-    padding-inline: clamp(20px, 5.2vw, 92px);
+    padding-inline: var(--site-pad-x);
   }
 
   .serif {
@@ -287,7 +287,7 @@ import SiteFooter from "../components/SiteFooter.astro";
   }
 
   .section-pad {
-    padding-block: clamp(72px, 10vw, 128px);
+    padding-block: var(--site-section-y);
   }
 
   .rule-top {
@@ -416,15 +416,29 @@ import SiteFooter from "../components/SiteFooter.astro";
   }
 
   .btn-line {
-    border: 0;
-    border-bottom: 1px solid currentColor;
+    position: relative;
+    border-bottom: 1px solid transparent;
     background: transparent;
     color: var(--petrol-deep);
     padding-inline: 0;
   }
 
   .btn-line::after {
-    content: none;
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 4px;
+    left: 0;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 360ms var(--ease-out, cubic-bezier(0.22, 1, 0.36, 1)), background 260ms ease;
+  }
+
+  .btn-line:hover::after,
+  .btn-line:focus-visible::after {
+    transform: scaleX(0.28);
   }
 
   .ic {

@@ -69,7 +69,7 @@ import SiteFooter from "../../components/SiteFooter.astro";
 
     <section class="pv-section pv-consult-band" id="bulle">
       <div class="pv-wrap pv-space-grid">
-        <div>
+        <div class="pv-space-main">
           <span class="pv-lock">KerFlow <small>Consult</small></span>
           <h2>La Bulle,<br />le cabinet<br /><em>qui écoute.</em></h2>
           <p class="pv-copy">
@@ -126,7 +126,7 @@ import SiteFooter from "../../components/SiteFooter.astro";
 
     <section class="pv-section pv-rituel-band" id="cocon">
       <div class="pv-wrap pv-space-grid">
-        <div>
+        <div class="pv-space-main">
           <span class="pv-lock pv-lock-rituel">KerFlow <small>Rituel</small></span>
           <h2>Le Cocon,<br />le box<br /><em>qui enveloppe.</em></h2>
           <p class="pv-copy">
@@ -278,8 +278,8 @@ import SiteFooter from "../../components/SiteFooter.astro";
             la bonne personne. Sans engagement.
           </p>
           <div class="pv-actions">
-            <a href="/contact/" class="btn btn-light">Prendre rendez-vous</a>
-            <a href="#intervenants" class="btn-line light">Voir les intervenants</a>
+            <a href="/contact/" class="btn btn-primary">Prendre rendez-vous</a>
+            <a href="#intervenants" class="btn-line">Voir les intervenants</a>
           </div>
         </div>
       </div>
@@ -290,6 +290,7 @@ import SiteFooter from "../../components/SiteFooter.astro";
 
 <style>
   .prevention-page {
+    --base-accent: var(--clay);
     --consult: #c9dad7;
     --consult-ink: #2f6a6c;
     --rituel: #ecd7c8;
@@ -299,13 +300,13 @@ import SiteFooter from "../../components/SiteFooter.astro";
   }
 
   .pv-wrap {
-    width: min(100%, 1440px);
+    width: min(100%, var(--site-max));
     margin-inline: auto;
-    padding-inline: clamp(20px, 6vw, 88px);
+    padding-inline: var(--site-pad-x);
   }
 
   .pv-section {
-    padding-block: clamp(72px, 8vw, 112px);
+    padding-block: var(--site-section-y);
     border-top: 1px solid var(--rule);
   }
 
@@ -341,7 +342,7 @@ import SiteFooter from "../../components/SiteFooter.astro";
   .pv-head span,
   .pv-team-head p,
   .pv-role {
-    color: var(--consult-ink);
+    color: var(--base-accent);
     font-size: 11px;
     letter-spacing: 0.2em;
   }
@@ -383,12 +384,14 @@ import SiteFooter from "../../components/SiteFooter.astro";
   }
 
   .pv-hero em,
-  .pv-head em,
-  .pv-space-grid em {
+  .pv-head em {
+    color: var(--base-accent);
+  }
+
+  .pv-consult-band em {
     color: var(--consult-ink);
   }
 
-  .pv-hero .pv-rituel,
   .pv-rituel-band em {
     color: var(--rituel-ink);
   }
@@ -456,6 +459,16 @@ import SiteFooter from "../../components/SiteFooter.astro";
     color: var(--rituel-ink);
   }
 
+  .pv-consult-band .pv-label,
+  .pv-consult-band .pv-list article > span,
+  .pv-consult-band .pv-tags span {
+    color: var(--consult-ink);
+  }
+
+  .pv-consult-band .pv-tags span {
+    border-color: var(--consult-ink);
+  }
+
   .pv-choice h3,
   .pv-list h3,
   .pv-team h3,
@@ -502,19 +515,21 @@ import SiteFooter from "../../components/SiteFooter.astro";
   }
 
   .pv-lock small {
-    color: var(--consult-ink);
+    color: var(--base-accent);
     font-family: var(--mono);
     font-size: 10px;
     letter-spacing: 0.26em;
     text-transform: uppercase;
   }
 
+  .pv-consult-band .pv-lock small {
+    color: var(--consult-ink);
+  }
+
   .pv-lock-rituel small,
   .pv-label-rituel,
   .pv-list-rituel article > span,
-  .pv-tags-rituel span,
-  .pv-role-rituel,
-  .pv-team-head-spaced p {
+  .pv-tags-rituel span {
     color: var(--rituel-ink);
   }
 
@@ -580,7 +595,7 @@ import SiteFooter from "../../components/SiteFooter.astro";
 
   .pv-list article > span,
   .pv-steps article > span {
-    color: var(--consult-ink);
+    color: var(--base-accent);
     font-family: var(--serif);
     font-size: 30px;
     font-style: italic;
@@ -595,9 +610,9 @@ import SiteFooter from "../../components/SiteFooter.astro";
   }
 
   .pv-tags span {
-    border: 1px solid var(--consult-ink);
+    border: 1px solid var(--base-accent);
     padding: 7px 12px;
-    color: var(--consult-ink);
+    color: var(--base-accent);
     font-family: var(--mono);
     font-size: 10.5px;
     letter-spacing: 0.16em;
@@ -628,7 +643,6 @@ import SiteFooter from "../../components/SiteFooter.astro";
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: clamp(18px, 2vw, 28px);
-    max-width: 760px;
   }
 
   .pv-team article {
@@ -637,7 +651,7 @@ import SiteFooter from "../../components/SiteFooter.astro";
   }
 
   .pv-person-media {
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 16 / 9;
     padding: 20px;
   }
 
@@ -690,8 +704,9 @@ import SiteFooter from "../../components/SiteFooter.astro";
 
   .pv-cta {
     padding-block: clamp(72px, 8vw, 104px);
-    background: var(--petrol-deep);
-    color: var(--linen);
+    border-top: 1px solid var(--rule);
+    background: var(--paper);
+    color: var(--petrol-deep);
   }
 
   .pv-cta .pv-wrap {
@@ -702,19 +717,19 @@ import SiteFooter from "../../components/SiteFooter.astro";
   }
 
   .pv-cta h2 {
-    color: var(--linen);
+    color: var(--petrol-deep);
     font-size: clamp(42px, 6vw, 86px);
     line-height: 0.96;
   }
 
   .pv-cta em {
-    color: var(--clay-light);
+    color: var(--base-accent);
   }
 
   .pv-cta p {
     max-width: 520px;
     margin: 0;
-    color: rgba(241, 235, 225, 0.78);
+    color: var(--ink-soft);
     font-size: 17px;
     line-height: 1.7;
   }

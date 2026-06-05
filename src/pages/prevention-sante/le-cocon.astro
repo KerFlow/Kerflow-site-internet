@@ -195,13 +195,13 @@ import SiteFooter from "../../components/SiteFooter.astro";
   }
 
   .cocon-wrap {
-    width: min(100%, 1440px);
+    width: min(100%, var(--site-max));
     margin-inline: auto;
-    padding-inline: clamp(20px, 6vw, 88px);
+    padding-inline: var(--site-pad-x);
   }
 
   .cocon-section {
-    padding-block: clamp(72px, 8vw, 112px);
+    padding-block: var(--site-section-y);
     border-top: 1px solid var(--rule);
   }
 

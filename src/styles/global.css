@@ -22,13 +22,19 @@
   --sans: "Manrope", Inter, system-ui, sans-serif;
   --mono: "DM Mono", ui-monospace, monospace;
   --max: 1440px;
+  --site-max: 1440px;
+  --site-pad-x: clamp(20px, 6vw, 88px);
+  --site-section-y: clamp(72px, 8vw, 112px);
+  --site-section-y-deep: clamp(72px, 10vw, 128px);
+  --site-header-y: 22px;
+  --site-footer-y: 72px;
 }
 
 .cours-page {
   --cours-accent: var(--studio-500);
   --cours-soft: var(--studio-100);
-  --cours-max: 1320px;
-  --cours-pad-x: clamp(20px, 5.2vw, 92px);
+  --cours-max: var(--site-max);
+  --cours-pad-x: var(--site-pad-x);
   --cours-hero-type: clamp(46px, 7vw, 104px);
   --cours-title-type: clamp(34px, 5.4vw, 72px);
   --cours-header-height: 86px;
@@ -145,7 +151,7 @@
 }
 
 .cours-section {
-  padding-block: clamp(72px, 10vw, 128px);
+  padding-block: var(--site-section-y);
   border-top: 1px solid var(--rule);
 }
 
@@ -747,7 +753,7 @@ input {
   align-items: center;
   justify-content: space-between;
   gap: 28px;
-  padding: 22px clamp(20px, 4.5vw, 64px);
+  padding: var(--site-header-y) var(--site-pad-x);
   border-bottom: 1px solid var(--rule-soft);
   background: rgba(241, 235, 225, 0.88);
   backdrop-filter: blur(14px) saturate(1.05);
@@ -952,7 +958,12 @@ input {
 }
 
 .section-pad {
-  padding: clamp(72px, 8vw, 112px) clamp(20px, 6vw, 88px);
+  padding: var(--site-section-y) var(--site-pad-x);
+}
+
+/* Pages with their own inner container keep horizontal rhythm on the wrapper only. */
+.wrapped-sections > section.section-pad {
+  padding-inline: 0;
 }
 
 .alt {
@@ -1025,7 +1036,7 @@ h3 {
   min-height: calc(100svh - 86px);
   align-content: center;
   padding-block: clamp(32px, 4vw, 56px);
-  padding-inline: clamp(20px, 6vw, 88px);
+  padding-inline: var(--site-pad-x);
 }
 
 .hero-meta {
@@ -1066,7 +1077,7 @@ h3 {
 
 .home-gallery-section {
   overflow: hidden;
-  padding: clamp(40px, 6vw, 80px) clamp(20px, 6vw, 88px) clamp(72px, 8vw, 112px);
+  padding: clamp(40px, 6vw, 80px) var(--site-pad-x) var(--site-section-y);
 }
 
 .actions {
@@ -1128,6 +1139,7 @@ h3 {
   font-family: var(--mono);
   font-size: 11px;
   letter-spacing: 0.22em;
+  text-decoration: none;
   text-transform: uppercase;
   transition: color 260ms ease, transform 300ms var(--ease-out);
 }
@@ -2859,7 +2871,7 @@ figcaption {
 }
 
 .footer {
-  padding: 72px clamp(20px, 4.5vw, 64px) 36px;
+  padding: var(--site-footer-y) var(--site-pad-x) 36px;
   border-top: 0;
   background: var(--petrol-deep);
   color: var(--linen);
@@ -3423,7 +3435,7 @@ figcaption {
 }
 
 .contact-page > section {
-  padding-inline: clamp(20px, 6vw, 88px);
+  padding-inline: var(--site-pad-x);
 }
 
 .contact-section > div,
@@ -3876,7 +3888,7 @@ figcaption {
   grid-template-columns: minmax(0, 1.4fr) minmax(280px, 1fr);
   gap: clamp(32px, 5vw, 64px);
   align-items: center;
-  padding: clamp(56px, 7vw, 96px) clamp(20px, 6vw, 88px);
+  padding: clamp(56px, 7vw, 96px) var(--site-pad-x);
   background: var(--petrol);
   color: var(--linen);
 }
@@ -3933,7 +3945,7 @@ figcaption {
 
 @media (max-width: 760px) {
   .contact-page > section {
-    padding-inline: 20px;
+    padding-inline: var(--site-pad-x);
   }
 
   .contact-hero h1 {
@@ -4117,7 +4129,7 @@ figcaption {
   }
 
   .planning-cards {
-    padding: 84px 20px;
+    padding: 84px var(--site-pad-x);
   }
 
   .planning-cards h2 {

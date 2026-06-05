@@ -52,9 +52,13 @@ import SiteHeader from "../components/SiteHeader.astro";
         --script: "Pinyon Script", cursive;
       
         /* — Mesures fluides — */
-        --pad-x:  clamp(20px, 5.2vw, 92px);
+        --site-max: 1440px;
+        --site-pad-x: clamp(20px, 6vw, 88px);
+        --site-section-y: clamp(72px, 8vw, 112px);
+        --site-header-y: 22px;
+        --pad-x:  var(--site-pad-x);
         --gap:    clamp(16px, 2.2vw, 24px);
-        --maxw:   1320px;
+        --maxw:   var(--site-max);
         --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
       
         --t-hero:    clamp(40px, 5.8vw, 92px);
@@ -95,7 +99,8 @@ import SiteHeader from "../components/SiteHeader.astro";
       /* ---------- Layout ---------- */
       .wrap{ max-width:var(--maxw); margin:0 auto; padding-inline:var(--pad-x); }
       section{ position:relative; }
-      .section-pad{ padding-block:clamp(72px,10vw,128px); }
+      .section-pad{ padding-block:var(--site-section-y); }
+      .wrapped-sections > section.section-pad{ padding-inline:0; }
       .rule-top{ border-top:1px solid var(--rule); }
       
       .sec-head{ display:flex; flex-direction:column; gap:18px; max-width:920px; }
@@ -134,11 +139,32 @@ import SiteHeader from "../components/SiteHeader.astro";
       .btn-light{ background:var(--linen); color:var(--petrol-deep); }
       .btn-light:hover{ background:#fff; }
       .btn-line{
+        position:relative;
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        min-height:46px;
         font-family:var(--mono); font-size:11px; letter-spacing:0.22em; text-transform:uppercase;
         background:transparent; color:var(--petrol-deep); padding:11px 0; gap:10px;
-        border-bottom:1px solid currentColor;
+        border-bottom:1px solid transparent;
+        cursor:pointer;
+        text-decoration:none;
+        transition:color 260ms ease, transform 300ms var(--ease-out, cubic-bezier(0.22, 1, 0.36, 1));
       }
-      .btn-line:hover{ gap:16px; }
+      .btn-line::after{
+        content:"";
+        position:absolute;
+        right:0;
+        bottom:4px;
+        left:0;
+        height:1px;
+        background:currentColor;
+        transform:scaleX(1);
+        transform-origin:left;
+        transition:transform 360ms var(--ease-out, cubic-bezier(0.22, 1, 0.36, 1)), background 260ms ease;
+      }
+      .btn-line:hover,.btn-line:focus-visible{ color:var(--clay); transform:translateY(-1px); }
+      .btn-line:hover::after,.btn-line:focus-visible::after{ transform:scaleX(0.28); }
       .btn-line.on-dark{ color:var(--linen); }
       .btn-ghost{
         font-family:var(--mono); font-size:11px; letter-spacing:0.22em; text-transform:uppercase;
@@ -221,7 +247,7 @@ import SiteHeader from "../components/SiteHeader.astro";
       .site-header{
         position:sticky; top:0; z-index:50;
         display:flex; align-items:center; justify-content:space-between; gap:28px;
-        padding:22px clamp(20px,4.5vw,64px);
+        padding:var(--site-header-y) var(--site-pad-x);
         background:rgba(241,235,225,0.88); backdrop-filter:blur(14px) saturate(1.05);
         border-bottom:1px solid var(--rule-soft);
       }
@@ -794,7 +820,7 @@ import SiteHeader from "../components/SiteHeader.astro";
       
     </style>
   </head>
-  <body class="page">
+  <body class="page wrapped-sections">
     <SiteHeader />
     
     <!-- ===================== HERO ===================== -->
@@ -812,7 +838,7 @@ import SiteHeader from "../components/SiteHeader.astro";
             <a href="/cours-planning/" class="btn btn-primary">Découvrir les cours
               <svg class="ic" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"></path></svg>
             </a>
-            <a href="/contact/" class="btn btn-line">Prendre rendez-vous</a>
+            <a href="/contact/" class="btn-line">Prendre rendez-vous</a>
           </div>
         </div>
         <aside class="page-hero-aside">
