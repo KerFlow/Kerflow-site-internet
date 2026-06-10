@@ -9,8 +9,8 @@ import SiteFooter from "../components/SiteFooter.astro";
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Le lieu · KerFlow · Maison de prévention-santé · Clamart</title>
-    <meta name="description" content="Découvrir KerFlow, maison de prévention-santé et de mieux-être à Clamart : espaces, ambiance, histoire et approche." />
+    <title>Le lieu · KerFlow · Maison d'accompagnements & soins · Clamart</title>
+    <meta name="description" content="Découvrir KerFlow, maison d'accompagnements & soins et de mieux-être à Clamart : espaces, ambiance, histoire et approche." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Manrope:wght@300;400;500;600;700&family=Pinyon+Script&display=swap" rel="stylesheet" />
@@ -199,6 +199,7 @@ import SiteFooter from "../components/SiteFooter.astro";
         background:linear-gradient(180deg, transparent 52%, rgba(14,42,44,0.45) 100%);
       }
       .ph .cap{
+        display:none;
         position:absolute; left:14px; right:14px; bottom:12px; z-index:2;
         font-family:var(--mono); font-size:9.5px; letter-spacing:0.16em; text-transform:uppercase;
         color:rgba(241,235,225,0.82);
@@ -258,6 +259,7 @@ import SiteFooter from "../components/SiteFooter.astro";
       }
       .brand{ display:inline-flex; align-items:baseline; gap:10px; flex:0 0 auto; color:var(--petrol); text-decoration:none; }
       .brand:hover,.brand:focus-visible{ color:var(--clay); }
+      .brand-logo{ display:block; width:clamp(96px,8vw,132px); height:auto; }
       .brand-word{ font-family:var(--serif); font-size:20px; line-height:1; letter-spacing:-0.018em; font-variation-settings:"opsz" 144; }
       .brand-divider{ width:1px; height:12px; background:currentColor; opacity:0.35; }
       .brand-tag{ font-family:var(--mono); font-size:8px; letter-spacing:0.32em; text-transform:uppercase; opacity:0.7; }
@@ -1003,7 +1005,7 @@ import SiteFooter from "../components/SiteFooter.astro";
               <img class="sp-icon lotus" src="/assets/icons/kerflow-lotus.png" alt="" loading="lazy" decoding="async" />
               <div>
                 <h3 class="serif">Le positionnement</h3>
-                <p>Prévention-santé plutôt que performance. Pas d'injonction, pas de jugement —
+                <p>Accompagnements & Soins, plutôt que performance. Pas d'injonction, pas de jugement —
                   une approche douce et sérieuse, à taille humaine.</p>
               </div>
             </div>
@@ -1082,7 +1084,7 @@ import SiteFooter from "../components/SiteFooter.astro";
             <h3 class="serif">Le cabinet qui écoute.</h3>
             <p>Un bureau de consultation au rez-de-chaussée, baigné de lumière, sa grande fenêtre
               ouverte sur une cour calme et arborée. Le cadre apaisant des accompagnements
-              individuels — prévention santé, sommeil, nutrition, gestion du stress.</p>
+              individuels — accompagnements & soins, sommeil, nutrition, gestion du stress.</p>
             <div class="feature-meta">
               <span>11 m²</span><span>Rez-de-chaussée</span><span>Fenêtre sur cour</span><span>Accès PMR</span>
             </div>
@@ -1116,8 +1118,7 @@ import SiteFooter from "../components/SiteFooter.astro";
             <span class="sec-num">04 — Les fondatrices</span>
             <h2 class="title">Deux femmes,<br><i class="h c-petrol">une même attention.</i></h2>
             <p class="sec-intro">
-              KerFlow est porté par deux parcours qui se complètent — le mouvement et la prévention
-              santé — et une même façon d'accueillir : posée, humaine, sans esbroufe.
+              KerFlow est porté par deux parcours qui se complètent — le mouvement et les accompagnements & soins — et une même façon d'accueillir : posée, humaine, sans esbroufe.
             </p>
           </div>
         </div>
@@ -1126,7 +1127,7 @@ import SiteFooter from "../components/SiteFooter.astro";
             <div class="ph t-fern"><span class="cap">[ portrait · Gaëlle, lumière naturelle ]</span></div>
             <div class="p-body">
               <h3 class="p-name serif">Gaëlle</h3>
-              <span class="p-role">Mouvement &amp; prévention santé</span>
+              <span class="p-role">Mouvement &amp; accompagnements & soins</span>
               <p class="p-desc">Praticienne et enseignante, elle a pensé KerFlow comme un lieu de
                 reprise en douceur. Elle signe le journal de la maison et accompagne les premières venues.</p>
               <div class="p-links"><a href="/contact/">Contact</a><a href="#">Instagram</a></div>

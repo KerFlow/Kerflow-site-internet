@@ -2,6 +2,9 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
+
+const googleMapsApiKey = import.meta.env.PUBLIC_GOOGLE_MAPS_API_KEY;
+const mapsDirectionsUrl = "https://www.google.com/maps/dir/?api=1&destination=12%20rue%20de%20la%20Roche%2C%2092140%20Clamart";
 ---
 
 <BaseLayout
@@ -45,41 +48,20 @@ import SiteFooter from "../components/SiteFooter.astro";
         </div>
 
         <div class="contact-map-frame">
-          <div class="contact-map-card" aria-label="Plan d'accès KerFlow">
-            <div class="contact-map-illustration">
-              <svg viewBox="0 0 600 400" role="img" aria-label="Plan stylisé du quartier">
-                <g fill="none" stroke="rgba(241,235,225,0.12)" stroke-width="1">
-                  <path d="M-20 80 C140 64 260 110 400 86 C520 66 560 100 620 84"></path>
-                  <path d="M-20 150 C140 134 260 180 400 156 C520 136 560 170 620 154"></path>
-                  <path d="M-20 230 C140 214 260 260 400 236 C520 216 560 250 620 234"></path>
-                  <path d="M-20 310 C140 294 260 340 400 316 C520 296 560 330 620 314"></path>
-                </g>
-                <g fill="none" stroke="rgba(241,235,225,0.42)" stroke-width="2.5" stroke-linecap="round">
-                  <path d="M0 280 C140 266 260 300 400 286 C520 274 560 300 600 288"></path>
-                  <path d="M200 0 C212 100 224 220 240 340 C246 380 242 396 246 400"></path>
-                  <path d="M430 0 C442 110 452 220 458 330 C460 380 458 396 460 400"></path>
-                </g>
-                <g transform="translate(210 286)">
-                  <rect x="-28" y="-12" width="56" height="24" fill="#f1ebe1"></rect>
-                  <text x="0" y="4" font-family="DM Mono, monospace" font-size="10" letter-spacing="1" text-anchor="middle" fill="#0e2a2c">GARE</text>
-                  <text x="0" y="38" font-family="DM Mono, monospace" font-size="9.5" letter-spacing="2" text-anchor="middle" fill="rgba(241,235,225,0.7)">CLAMART · TRANSILIEN N</text>
-                </g>
-                <g transform="translate(360 168)">
-                  <circle class="pin-ring" cx="0" cy="0" r="46" fill="none" stroke="#d99a78" stroke-width="0.8" opacity="0.35"></circle>
-                  <circle cx="0" cy="0" r="26" fill="none" stroke="#d99a78" stroke-width="1.2" opacity="0.6"></circle>
-                  <circle class="pin" cx="0" cy="0" r="9" fill="#a05a3a"></circle>
-                  <text x="22" y="-4" font-family="Fraunces, serif" font-size="22" font-style="italic" fill="#f1ebe1">KerFlow</text>
-                  <text x="22" y="17" font-family="DM Mono, monospace" font-size="9.5" letter-spacing="2" fill="rgba(241,235,225,0.72)">12 RUE DE LA ROCHE</text>
-                </g>
-                <path class="walk" d="M212 278 C238 244 296 206 350 176" fill="none" stroke="#d99a78" stroke-width="2.5" stroke-dasharray="3 6"></path>
-              </svg>
-              <span class="map-coord top">N · 48.802 / E · 2.252</span>
-              <span class="map-coord bottom">5 min à pied · gare de Clamart</span>
-            </div>
+          <div
+            class="contact-map-card contact-google-map-card"
+            data-google-map
+            data-api-key={googleMapsApiKey}
+            aria-label="Carte Google Maps de KerFlow"
+          >
+            <div class="contact-google-map" data-google-map-canvas></div>
+            <a class="contact-map-fallback" href={mapsDirectionsUrl} target="_blank" rel="noreferrer">
+              Ouvrir l'itinéraire dans Google Maps
+            </a>
           </div>
           <footer>
             <span>Voir l'itinéraire</span>
-            <a class="btn-line" href="https://www.google.com/maps" target="_blank" rel="noreferrer">Ouvrir Google Maps</a>
+            <a class="btn-line" href={mapsDirectionsUrl} target="_blank" rel="noreferrer">Ouvrir Google Maps</a>
           </footer>
         </div>
       </div>
@@ -122,7 +104,7 @@ import SiteFooter from "../components/SiteFooter.astro";
               <div class="radio-row">
                 <label class="radio-chip"><input type="radio" name="sujet" checked /><span>Question générale</span></label>
                 <label class="radio-chip"><input type="radio" name="sujet" /><span>Première visite</span></label>
-                <label class="radio-chip"><input type="radio" name="sujet" /><span>Prévention santé</span></label>
+                <label class="radio-chip"><input type="radio" name="sujet" /><span>Accompagnements & Soins</span></label>
                 <label class="radio-chip"><input type="radio" name="sujet" /><span>Demande pro</span></label>
                 <label class="radio-chip"><input type="radio" name="sujet" /><span>Suggestion</span></label>
               </div>
@@ -158,3 +140,59 @@ import SiteFooter from "../components/SiteFooter.astro";
   </main>
   <SiteFooter />
 </BaseLayout>
+
+<script>
+  const mapShell = document.querySelector("[data-google-map]");
+  const mapCanvas = document.querySelector("[data-google-map-canvas]");
+  const apiKey = mapShell?.dataset.apiKey;
+  const kerflowPosition = { lat: 48.802, lng: 2.252 };
+
+  function showMapFallback() {
+    mapShell?.classList.add("is-fallback");
+  }
+
+  function initKerflowMap() {
+    if (!mapCanvas || !window.google?.maps) {
+      showMapFallback();
+      return;
+    }
+
+    const map = new window.google.maps.Map(mapCanvas, {
+      center: kerflowPosition,
+      zoom: 16,
+      disableDefaultUI: true,
+      zoomControl: true,
+      mapTypeControl: false,
+      fullscreenControl: true,
+      streetViewControl: false,
+      styles: [
+        { elementType: "geometry", stylers: [{ color: "#f1ebe1" }] },
+        { elementType: "labels.text.fill", stylers: [{ color: "#40595a" }] },
+        { elementType: "labels.text.stroke", stylers: [{ color: "#f8f4ed" }] },
+        { featureType: "poi", stylers: [{ visibility: "off" }] },
+        { featureType: "road", elementType: "geometry", stylers: [{ color: "#ffffff" }] },
+        { featureType: "road.arterial", elementType: "geometry", stylers: [{ color: "#ecd7c8" }] },
+        { featureType: "transit", elementType: "geometry", stylers: [{ color: "#d99a78" }] },
+        { featureType: "water", elementType: "geometry", stylers: [{ color: "#c7d7d5" }] }
+      ]
+    });
+
+    new window.google.maps.Marker({
+      position: kerflowPosition,
+      map,
+      title: "KerFlow · 12 rue de la Roche, Clamart"
+    });
+  }
+
+  if (apiKey) {
+    window.initKerflowMap = initKerflowMap;
+    const script = document.createElement("script");
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(apiKey)}&callback=initKerflowMap`;
+    script.async = true;
+    script.defer = true;
+    script.onerror = showMapFallback;
+    document.head.append(script);
+  } else {
+    showMapFallback();
+  }
+</script>

@@ -1,102 +1,99 @@
     <footer class="footer">
       <div class="footer-grid">
         <div>
-          <a class="brand stacked" href="/" aria-label="KerFlow Studio">
-            <span class="brand-word">KerFlow</span>
-            <span class="brand-tag">Studio</span>
+          <a class="brand footer-logo-link" href="/" aria-label="KerFlow">
+            <img class="footer-logo" src="/assets/logos/kerflow-main-web.png" width="955" height="679" alt="KerFlow" loading="eager" decoding="async" />
           </a>
-          <p>Maison de prévention-santé et mieux-être.<br>12 rue de la Roche - 92140 Clamart<br>Ouvert du mardi au samedi.</p>
+          <p>Maison d'accompagnements & soins et mieux-être.<br>12 rue de la Roche - 92140 Clamart<br>Ouvert du mardi au samedi.</p>
         </div>
-        <div>
-          <h4>Pratiquer</h4>
-          <a href="/cours-planning/">Cours & planning</a>
-          <a href="/cours-planning/#tarifs">Tarifs & carnets</a>
-          <a href="/faq/#premiere-visite">Première séance</a>
-          <a href="/cours-planning/">Réserver un cours</a>
-        </div>
-        <div>
-          <h4>Prévention santé</h4>
-          <a href="/prevention-sante/">Vue d'ensemble</a>
-          <a href="/prevention-sante/la-bulle/">La Bulle - consultations</a>
-          <a href="/prevention-sante/le-cocon/">Le Cocon - soins corps</a>
-          <a href="/contact/">Prendre rendez-vous</a>
-        </div>
-        <div>
-          <h4>La maison</h4>
-          <a href="/le-lieu/">Le lieu</a>
-          <a href="/le-lieu/#charte">Charte de la maison</a>
-          <a href="/louer-un-espace/">Louer un espace</a>
-          <a href="/ateliers-ressources/">Ateliers & ressources</a>
-          <a href="/contact/">Contact</a>
-          <a href="/contact/#newsletter">Newsletter</a>
+        <div class="footer-nav">
+          <div>
+            <h4>Pratiquer</h4>
+            <a href="/cours-planning/">Cours & planning</a>
+            <a href="/cours-planning/#tarifs">Tarifs & carnets</a>
+            <a href="/faq/#premiere-visite">Première séance</a>
+            <a href="/cours-planning/">Réserver un cours</a>
+          </div>
+          <div>
+            <h4>Accompagnements & Soins</h4>
+            <a href="/prevention-sante/">Vue d'ensemble</a>
+            <a href="/prevention-sante/la-bulle/">La Bulle - consultations</a>
+            <a href="/prevention-sante/le-cocon/">Le Cocon - soins corps</a>
+            <a href="/contact/">Prendre rendez-vous</a>
+          </div>
+          <div>
+            <h4>La maison</h4>
+            <a href="/le-lieu/">Le lieu</a>
+            <a href="/le-lieu/#charte">Charte de la maison</a>
+            <a href="/louer-un-espace/">Louer un espace</a>
+            <a href="/ateliers-ressources/">Ateliers & ressources</a>
+            <a href="/contact/">Contact</a>
+            <a href="/contact/#newsletter">Newsletter</a>
+          </div>
         </div>
       </div>
       <div class="footer-bottom mono">
-        <span>© 2026 KerFlow - Clamart - Maison de prévention-santé</span>
+        <span>© 2026 KerFlow - Clamart - Maison d'accompagnements & soins</span>
         <span><a href="#">Instagram</a><a href="/faq/">FAQ</a><a href="/blog/">Blog</a><a href="/mentions-legales/">Mentions légales</a><a href="/confidentialite/">Confidentialité</a></span>
       </div>
     </footer>
 
 <style>
   .footer {
-    padding: var(--site-footer-y, 72px) var(--site-pad-x, clamp(20px, 6vw, 88px)) 36px;
-    border-top: 0;
-    background: var(--petrol-deep);
-    color: var(--linen);
+    padding: var(--site-section-y, clamp(72px, 8vw, 112px)) var(--site-pad-x, clamp(20px, 6vw, 88px)) clamp(40px, 5vw, 64px);
+    border-top: 1px solid var(--rule);
+    background:
+      linear-gradient(180deg, rgba(250, 246, 238, 0.92), rgba(241, 235, 225, 0.98)),
+      var(--linen);
+    color: var(--petrol-deep);
   }
 
   .footer .brand {
     display: inline-flex;
     flex: 0 0 auto;
-    color: var(--linen);
+    color: var(--petrol-deep);
     text-decoration: none;
   }
 
-  .footer .brand.stacked {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0;
+  .footer .footer-logo-link {
+    width: clamp(150px, 16vw, 220px);
+    margin: -12px 0 8px -10px;
   }
 
-  .footer .brand:hover,
-  .footer .brand:focus-visible {
-    color: var(--clay-light);
-  }
-
-  .footer .brand-word {
-    font-family: var(--serif);
-    font-size: 20px;
-    line-height: 1;
-    letter-spacing: -0.018em;
-    font-variation-settings: "opsz" 144;
-  }
-
-  .footer .brand-tag {
-    font-family: var(--mono);
-    font-size: 8px;
-    letter-spacing: 0.32em;
-    line-height: 1.45;
-    text-transform: uppercase;
-    opacity: 0.7;
+  .footer .footer-logo {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter:
+      contrast(1.04)
+      saturate(1.02)
+      drop-shadow(0 14px 28px rgba(31, 38, 34, 0.1));
   }
 
   .footer-grid {
     display: grid;
-    grid-template-columns: 1.4fr repeat(3, 1fr);
-    gap: 48px;
+    grid-template-columns: minmax(240px, 1fr) auto;
+    gap: clamp(48px, 7vw, 112px);
     align-items: start;
+  }
+
+  .footer-nav {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    column-gap: clamp(44px, 5.4vw, 88px);
+    justify-self: end;
   }
 
   .footer p {
     margin: 22px 0 0;
     max-width: 250px;
-    color: rgba(241, 235, 225, 0.72);
+    color: var(--granite-500);
     font-size: 13.5px;
   }
 
   .footer h4 {
     margin: 0 0 18px;
-    color: var(--clay-light);
+    color: var(--clay);
     font-family: var(--mono);
     font-size: 10.5px;
     font-weight: 500;
@@ -109,7 +106,7 @@
     position: relative;
     display: block;
     width: fit-content;
-    color: rgba(241, 235, 225, 0.84);
+    color: var(--petrol-deep);
     font-size: 13.5px;
     line-height: 2.05;
     text-decoration: none;
@@ -133,7 +130,7 @@
   .footer-grid a:not(.brand):focus-visible,
   .footer-bottom a:hover,
   .footer-bottom a:focus-visible {
-    color: var(--clay-light);
+    color: var(--clay);
   }
 
   .footer-grid a:not(.brand):hover::after,
@@ -151,8 +148,8 @@
     gap: 24px;
     margin-top: 64px;
     padding-top: 24px;
-    border-top: 1px solid rgba(241, 235, 225, 0.14);
-    color: rgba(241, 235, 225, 0.62);
+    border-top: 1px solid var(--rule);
+    color: rgba(14, 42, 44, 0.68);
     font-family: var(--mono);
     font-size: 10px;
     letter-spacing: 0.18em;
@@ -172,13 +169,25 @@
 
   @media (max-width: 980px) {
     .footer-grid {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
+    }
+
+    .footer-nav {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      column-gap: clamp(24px, 4vw, 44px);
+      justify-self: stretch;
     }
   }
 
   @media (max-width: 760px) {
-    .footer-grid {
+    .footer-grid,
+    .footer-nav {
       grid-template-columns: 1fr;
+    }
+
+    .footer .footer-logo-link {
+      width: min(180px, 58vw);
+      margin: -10px 0 6px -8px;
     }
 
     .footer-bottom,

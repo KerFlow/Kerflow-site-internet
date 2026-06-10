@@ -6,7 +6,7 @@ import SiteFooter from "../../components/SiteFooter.astro";
 
 <BaseLayout
   title="La Bulle - KerFlow Consult"
-  description="La Bulle, espace KerFlow Consult pour les consultations en prevention sante, sommeil, alimentation, stress et comportements de sante a Clamart."
+  description="La Bulle, espace KerFlow Consult pour les consultations d'accompagnements & soins, sommeil, alimentation, stress et comportements de sante a Clamart."
 >
   <SiteHeader />
   <main class="cours-page bulle-page">
@@ -27,9 +27,9 @@ import SiteFooter from "../../components/SiteFooter.astro";
             </div>
           </div>
           <aside class="cours-hero-aside">
-            <img class="cours-hero-logo" src="/assets/logos/kerflow-consult.png" alt="KerFlow Consult" loading="eager" decoding="async" />
+            <img class="cours-hero-logo" src="/assets/logos/kerflow-consult-web.png" alt="KerFlow Consult" loading="eager" decoding="async" />
             <p>
-              Consultations en prevention sante, NAPSOthérapie, sommeil, stress et alimentation :
+              Consultations d'accompagnements & soins, NAPSOthérapie, sommeil, stress et alimentation :
               un espace individuel pour <em>poser une question</em> et repartir avec des pistes concretes.
             </p>
             <div class="cours-tags">
@@ -95,7 +95,7 @@ import SiteFooter from "../../components/SiteFooter.astro";
           <h2>Les praticien·nes<br /><em>de La Bulle.</em></h2>
           <p>
             Chacun·e accompagne avec serieux et douceur, dans une approche globale
-            du mode de vie et de la prevention sante.
+            du mode de vie et des accompagnements & soins.
           </p>
         </div>
 
@@ -104,7 +104,7 @@ import SiteFooter from "../../components/SiteFooter.astro";
             <div class="bulle-person-media bulle-foam"><span>[ portrait - praticienne ]</span></div>
             <div>
               <h3>Hélène Brunel</h3>
-              <p class="bulle-role">NAPSOthérapie · prévention santé</p>
+              <p class="bulle-role">NAPSOthérapie · accompagnements & soins</p>
               <p>Approche globale du mode de vie : alimentation, activité, sommeil, stress.</p>
               <div><a href="/contact/">Prendre rendez-vous</a><a href="#">Instagram</a></div>
             </div>
@@ -294,6 +294,11 @@ import SiteFooter from "../../components/SiteFooter.astro";
     margin-top: 30px;
     border: 12px solid var(--paper);
     padding: 22px;
+  }
+
+  .bulle-placeholder span,
+  .bulle-person-media span {
+    display: none;
   }
 
   .bulle-foam {

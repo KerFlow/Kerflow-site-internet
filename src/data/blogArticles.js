@@ -135,14 +135,14 @@ export const blogArticles = [
   {
     slug: "bien-vieillir-bouger-toute-sa-vie",
     title: "Bien vieillir : bouger toute sa vie",
-    tag: "Prévention",
+    tag: "Accompagnements",
     date: "Avr. 2026",
     readingTime: "5 min",
     excerpt: "Pourquoi la régularité compte plus que l'intensité.",
     imageClass: "t-foam",
     imageLabel: "[ photo · mouvement, tapis ]",
     intro:
-      "Bouger tout au long de la vie soutient l'équilibre, la force, la mobilité et la confiance. La prévention commence souvent par des gestes modestes répétés longtemps.",
+      "Bouger tout au long de la vie soutient l'équilibre, la force, la mobilité et la confiance. L'accompagnement commence souvent par des gestes modestes répétés longtemps.",
     sections: [
       {
         heading: "Entretenir les gestes du quotidien",
