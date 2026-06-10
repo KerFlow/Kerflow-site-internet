@@ -120,22 +120,24 @@ const mapsDirectionsUrl = "https://www.google.com/maps/dir/?api=1&destination=12
     </section>
 
     <section class="contact-cta" data-screen-label="CTA">
-      <div>
-        <h2>Suivez la vie<br />de la <em>maison.</em></h2>
-        <p>
-          Les coulisses, les rendez-vous, un conseil de temps en temps. On partage doucement,
-          sans inonder votre fil.
-        </p>
-      </div>
-      <form class="contact-newsletter-form" onsubmit="return false;" aria-label="Inscription au journal KerFlow">
-        <label for="contact-newsletter-email">
-          <span class="sr-only">Adresse e-mail</span>
-          <input id="contact-newsletter-email" type="email" placeholder="Votre adresse e-mail" />
-        </label>
-        <div class="cta-actions">
-          <button class="contact-newsletter-submit" type="submit">Recevoir le journal <span aria-hidden="true">→</span></button>
+      <div class="contact-cta-inner">
+        <div>
+          <h2>Suivez la vie<br />de la <em>maison.</em></h2>
+          <p>
+            Les coulisses, les rendez-vous, un conseil de temps en temps. On partage doucement,
+            sans inonder votre fil.
+          </p>
         </div>
-      </form>
+        <form class="contact-newsletter-form" onsubmit="return false;" aria-label="Inscription au journal KerFlow">
+          <label for="contact-newsletter-email">
+            <span class="sr-only">Adresse e-mail</span>
+            <input id="contact-newsletter-email" type="email" placeholder="Votre adresse e-mail" />
+          </label>
+          <div class="cta-actions">
+            <button class="contact-newsletter-submit" type="submit">Recevoir le journal <span aria-hidden="true">→</span></button>
+          </div>
+        </form>
+      </div>
     </section>
   </main>
   <SiteFooter />

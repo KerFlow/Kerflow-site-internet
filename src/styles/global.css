@@ -4121,14 +4121,19 @@ figcaption {
 }
 
 .contact-cta {
+  padding: var(--site-section-y) var(--site-pad-x);
+  border-top: 1px solid rgba(241, 235, 225, 0.16);
+  background: var(--clay);
+  color: var(--paper);
+}
+
+.contact-cta-inner {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
   gap: clamp(36px, 5vw, 80px);
   align-items: center;
-  padding: clamp(56px, 7vw, 96px) var(--site-pad-x);
-  border-top: 1px solid rgba(241, 235, 225, 0.16);
-  background: var(--clay);
-  color: var(--paper);
+  width: min(100%, var(--site-max));
+  margin-inline: auto;
 }
 
 .contact-cta h2 {
@@ -4243,7 +4248,7 @@ figcaption {
   .contact-hero-grid,
   .contact-grid,
   .contact-form-grid,
-  .contact-cta {
+  .contact-cta-inner {
     grid-template-columns: 1fr;
   }
 }
