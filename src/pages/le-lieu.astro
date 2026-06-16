@@ -463,7 +463,7 @@ import SiteFooter from "../components/SiteFooter.astro";
       .charte li span.txt{ font-size:15.5px; line-height:1.55; color:var(--linen); }
       
       /* =========================================================
-         SECTION 8 — Newsletter / 1er cours offert
+         SECTION 8 — Newsletter / 1er cours à 10 €
          ========================================================= */
       .news{ background:var(--studio); }
       .news-grid{ display:grid; grid-template-columns:1.2fr 1fr; gap:clamp(36px,5vw,80px); align-items:center; }
@@ -636,14 +636,8 @@ import SiteFooter from "../components/SiteFooter.astro";
       
       /* liste « constat / idée / positionnement » numérotée */
       .stack-points{ display:grid; gap:0; border-top:1px solid var(--rule); margin-top:8px; }
-      .stack-point{ display:grid; grid-template-columns:92px 1fr; gap:26px; padding:30px 0; border-bottom:1px solid var(--rule); align-items:center; }
+      .stack-point{ padding:30px 0; border-bottom:1px solid var(--rule); }
       .stack-point .sp-num{ font-family:var(--serif); font-style:italic; font-size:30px; color:var(--accent-ink); line-height:1; font-variation-settings:"opsz" 144; }
-      .stack-point .sp-icon{
-        width:78px; height:78px; object-fit:contain;
-        justify-self:center;
-      }
-      .stack-point .sp-icon.place{ width:80px; height:80px; }
-      .stack-point .sp-icon.lotus{ width:82px; height:82px; }
       .stack-point h3{ font-family:var(--serif); font-weight:400; font-size:clamp(21px,2vw,27px); margin:0 0 8px; line-height:1.08; font-variation-settings:"opsz" 144; }
       .stack-point p{ margin:0; font-size:15px; line-height:1.62; color:var(--granite); }
       
@@ -905,26 +899,6 @@ import SiteFooter from "../components/SiteFooter.astro";
         }
       }
 
-      @media (max-width:560px){
-        .stack-point{
-          grid-template-columns:1fr;
-          gap:14px;
-          align-items:start;
-        }
-
-        .stack-point .sp-num,
-        .stack-point .sp-icon{
-          justify-self:start;
-        }
-
-        .stack-point .sp-icon,
-        .stack-point .sp-icon.place,
-        .stack-point .sp-icon.lotus{
-          width:64px;
-          height:64px;
-        }
-      }
-      
     </style>
   </head>
   <body class="page wrapped-sections">
@@ -986,7 +960,6 @@ import SiteFooter from "../components/SiteFooter.astro";
           </div>
           <div class="stack-points">
             <div class="stack-point">
-              <img class="sp-icon" src="/assets/icons/kerflow-corps.png" alt="" loading="lazy" decoding="async" />
               <div>
                 <h3 class="serif">Le constat</h3>
                 <p>On court, on encaisse, on remet à plus tard. Le corps tient — puis il fatigue.
@@ -994,7 +967,6 @@ import SiteFooter from "../components/SiteFooter.astro";
               </div>
             </div>
             <div class="stack-point">
-              <img class="sp-icon place" src="/assets/icons/kerflow-lieu.png" alt="" loading="lazy" decoding="async" />
               <div>
                 <h3 class="serif">L'idée : un lieu hybride</h3>
                 <p>Mouvement + santé + soin + lien humain, sous un même toit. On pousse la porte
@@ -1002,7 +974,6 @@ import SiteFooter from "../components/SiteFooter.astro";
               </div>
             </div>
             <div class="stack-point">
-              <img class="sp-icon lotus" src="/assets/icons/kerflow-lotus.png" alt="" loading="lazy" decoding="async" />
               <div>
                 <h3 class="serif">Le positionnement</h3>
                 <p>Accompagnements & Soins, plutôt que performance. Pas d'injonction, pas de jugement —
@@ -1179,7 +1150,7 @@ import SiteFooter from "../components/SiteFooter.astro";
           <h2 class="serif">Le mieux, c'est<br>de <i>pousser la porte.</i></h2>
         </div>
         <div>
-          <p>Premier cours offert sur inscription. Et pour un accompagnement ou un soin, on en
+          <p>1er cours à 10 € sur inscription. Et pour un accompagnement ou un soin, on en
             parle avant de commencer — sans engagement.</p>
           <div class="cta-actions">
             <a href="/cours-planning/" class="btn btn-light">Découvrir les cours
