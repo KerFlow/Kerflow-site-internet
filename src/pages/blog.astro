@@ -3,10 +3,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import { featuredBlogArticles } from "../data/blogArticles.js";
+import { blogSettings } from "../data/cmsContent.js";
 
 const blogFilters = ["Tous", ...new Set(featuredBlogArticles.map((article) => article.tag))];
 const articleDuMoment =
-  featuredBlogArticles.find((article) => article.slug === "reprise-activite-apres-50-ans") ??
+  featuredBlogArticles.find((article) => article.slug === blogSettings.featuredArticleSlug) ??
   featuredBlogArticles[0];
 ---
 

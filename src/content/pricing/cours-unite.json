@@ -1,0 +1,15 @@
+{
+  "order": 1,
+  "name": "A l'unite",
+  "amount": "18",
+  "unit": "le cours - sans abonnement",
+  "featured": false,
+  "features": [
+    "Tous les cours collectifs",
+    "Tapis & materiel fournis",
+    "Annulation jusqu'a 4h avant"
+  ],
+  "ctaLabel": "Reserver un cours",
+  "ctaUrl": "/contact/",
+  "visible": true
+}

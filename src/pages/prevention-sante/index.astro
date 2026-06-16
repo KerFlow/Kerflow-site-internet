@@ -2,6 +2,10 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
+import { peopleForSpace } from "../../data/cmsContent.js";
+
+const bullePeople = peopleForSpace("la-bulle");
+const coconPeople = peopleForSpace("le-cocon");
 ---
 
 <BaseLayout
@@ -196,24 +200,20 @@ import SiteFooter from "../../components/SiteFooter.astro";
           <p>À La Bulle · accompagnement</p>
         </div>
         <div class="pv-team">
-          <article>
-            <div class="pv-person-media pv-foam"><span>[ portrait · praticienne ]</span></div>
-            <div>
-              <h3>Hélène Brunel</h3>
-              <p class="pv-role">NAPSOthérapie · accompagnements & soins</p>
-              <p>Approche globale du mode de vie : alimentation, activité, sommeil, stress.</p>
-              <div><a href="/contact/">Prendre rendez-vous</a><a href="#">Instagram</a></div>
-            </div>
-          </article>
-          <article>
-            <div class="pv-person-media pv-storm"><span>[ portrait · praticien ]</span></div>
-            <div>
-              <h3>Marc Lefèvre</h3>
-              <p class="pv-role">Sommeil · gestion du stress</p>
-              <p>Cohérence cardiaque, hygiène du sommeil, charge mentale. Des outils concrets.</p>
-              <div><a href="/contact/">Prendre rendez-vous</a><a href="#">Site</a></div>
-            </div>
-          </article>
+          {bullePeople.map((person) => (
+            <article>
+              <div class={`pv-person-media pv-${person.imageClass}`}><span>{person.imageLabel}</span></div>
+              <div>
+                <h3>{person.name}</h3>
+                <p class="pv-role">{person.specialty}</p>
+                <p>{person.bio}</p>
+                <div>
+                  <a href={person.primaryLinkUrl}>{person.primaryLinkLabel}</a>
+                  <a href={person.secondaryLinkUrl}>{person.secondaryLinkLabel}</a>
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
 
         <div class="pv-team-head pv-team-head-spaced">
@@ -221,24 +221,20 @@ import SiteFooter from "../../components/SiteFooter.astro";
           <p>Au Cocon · soin du corps</p>
         </div>
         <div class="pv-team">
-          <article>
-            <div class="pv-person-media pv-clay"><span>[ portrait · praticienne ]</span></div>
-            <div>
-              <h3>Inès Caron</h3>
-              <p class="pv-role pv-role-rituel">Massages · drainage lymphatique</p>
-              <p>Massages détente et drainage, dans le respect du rythme de chacun.</p>
-              <div><a href="/contact/">Prendre rendez-vous</a><a href="#">Instagram</a></div>
-            </div>
-          </article>
-          <article>
-            <div class="pv-person-media pv-sand"><span>[ portrait · praticien ]</span></div>
-            <div>
-              <h3>Thomas Riou</h3>
-              <p class="pv-role pv-role-rituel">Réflexologie · acupuncture</p>
-              <p>Par les points et les zones : sommeil, digestion, stress, récupération.</p>
-              <div><a href="/contact/">Prendre rendez-vous</a><a href="#">Site</a></div>
-            </div>
-          </article>
+          {coconPeople.map((person) => (
+            <article>
+              <div class={`pv-person-media pv-${person.imageClass}`}><span>{person.imageLabel}</span></div>
+              <div>
+                <h3>{person.name}</h3>
+                <p class="pv-role pv-role-rituel">{person.specialty}</p>
+                <p>{person.bio}</p>
+                <div>
+                  <a href={person.primaryLinkUrl}>{person.primaryLinkLabel}</a>
+                  <a href={person.secondaryLinkUrl}>{person.secondaryLinkLabel}</a>
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>

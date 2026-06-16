@@ -2,6 +2,10 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
+import { peopleForSpace } from "../data/cmsContent.js";
+
+const bullePeople = peopleForSpace("la-bulle");
+const coconPeople = peopleForSpace("le-cocon");
 ---
 
 <BaseLayout
@@ -63,6 +67,26 @@ import SiteFooter from "../components/SiteFooter.astro";
           <p>Chaque praticien aura une fiche avec sa specialite, son approche, sa photo et ses liens utiles. L'objectif est d'aider a choisir sans mettre toutes les pratiques sur le meme plan.</p>
           <p>La Bulle regroupe les consultations d'accompagnements & soins. Le Cocon regroupe les pratiques corporelles.</p>
         </div>
+      </div>
+      <div class="page-card-grid two">
+        {bullePeople.map((person) => (
+          <article class="page-card accent-consult">
+            <p class="mini">La Bulle</p>
+            <h3>{person.name}</h3>
+            <p><strong>{person.specialty}</strong></p>
+            <p>{person.bio}</p>
+            <a href={person.primaryLinkUrl}>{person.primaryLinkLabel}</a>
+          </article>
+        ))}
+        {coconPeople.map((person) => (
+          <article class="page-card accent-rituel">
+            <p class="mini">Le Cocon</p>
+            <h3>{person.name}</h3>
+            <p><strong>{person.specialty}</strong></p>
+            <p>{person.bio}</p>
+            <a href={person.primaryLinkUrl}>{person.primaryLinkLabel}</a>
+          </article>
+        ))}
       </div>
     </section>
 

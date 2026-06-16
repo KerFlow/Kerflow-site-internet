@@ -1,0 +1,15 @@
+{
+  "order": 20,
+  "name": "Ines Caron",
+  "visible": true,
+  "profileType": "praticien",
+  "spaces": ["le-cocon"],
+  "specialty": "Massages - drainage lymphatique",
+  "bio": "Massages detente et drainage, dans le respect du rythme de chacun.",
+  "imageClass": "clay",
+  "imageLabel": "[ portrait - praticienne ]",
+  "primaryLinkLabel": "Prendre rendez-vous",
+  "primaryLinkUrl": "/contact/",
+  "secondaryLinkLabel": "Instagram",
+  "secondaryLinkUrl": "#"
+}

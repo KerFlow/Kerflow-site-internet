@@ -1,0 +1,15 @@
+{
+  "order": 2,
+  "name": "Carnet - 10 cours",
+  "amount": "150",
+  "unit": "soit 15 € le cours - valable 4 mois",
+  "featured": true,
+  "features": [
+    "10 cours au choix dans la semaine",
+    "Le plus souple - pas de date imposee",
+    "Transmissible a un proche"
+  ],
+  "ctaLabel": "Prendre un carnet",
+  "ctaUrl": "/contact/",
+  "visible": true
+}

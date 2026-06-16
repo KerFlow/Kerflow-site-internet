@@ -2,6 +2,9 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
+import { courseTypes, peopleForSpace, pricingPlans } from "../data/cmsContent.js";
+
+const teachers = peopleForSpace("cours");
 ---
 
 <BaseLayout
@@ -48,31 +51,13 @@ import SiteFooter from "../components/SiteFooter.astro";
           <p>Toutes adaptables, toutes encadrees de pres. On commence ou l'on en est, on avance a son rythme.</p>
         </div>
         <div class="cours-bordered cols-3">
-          <div>
-            <span>i - Yoga</span>
-            <h3>Hatha, Yin, Vinyasa</h3>
-            <p>Du plus pose au plus dynamique. Respiration, postures, ancrage - pour relacher et se recentrer.</p>
-          </div>
-          <div>
-            <span>ii - Pilates</span>
-            <h3>Pilates postural</h3>
-            <p>Le centre du corps, en finesse. Gainage doux, alignement, conscience du geste.</p>
-          </div>
-          <div>
-            <span>iii - Mobilite</span>
-            <h3>Mobilite & articulations</h3>
-            <p>Retrouver de l'amplitude, denouer les raideurs. Ideal pour les reprises et les douleurs.</p>
-          </div>
-          <div>
-            <span>iv - Force</span>
-            <h3>Renforcement doux</h3>
-            <p>Construire de la solidite sans brusquer. Elastiques, poids legers, poids du corps.</p>
-          </div>
-          <div>
-            <span>v - Souffle</span>
-            <h3>Respiration & relaxation</h3>
-            <p>Apprendre a se relacher, vraiment. Coherence cardiaque, relaxation guidee, sommeil.</p>
-          </div>
+          {courseTypes.map((course) => (
+            <div>
+              <span>{course.label}</span>
+              <h3>{course.title}</h3>
+              <p>{course.description}</p>
+            </div>
+          ))}
           <div class="highlight">
             <span>→</span>
             <h3>Un doute sur le cours ?</h3>
@@ -185,39 +170,17 @@ import SiteFooter from "../components/SiteFooter.astro";
           <p>Le 1er cours est à 10 € sur inscription. Ensuite, a vous de voir - a l'unite, en carnet, ou en abonnement.</p>
         </div>
         <div class="cours-pricing">
-          <div>
-            <span>A l'unite</span>
-            <strong>18<sup>€</sup></strong>
-            <p>le cours - sans abonnement</p>
-            <ul>
-              <li>Tous les cours collectifs</li>
-              <li>Tapis & materiel fournis</li>
-              <li>Annulation jusqu'a 4h avant</li>
-            </ul>
-            <a href="/contact/" class="btn-line">Reserver un cours →</a>
-          </div>
-          <div class="feature">
-            <span>Carnet - 10 cours</span>
-            <strong>150<sup>€</sup></strong>
-            <p>soit 15 € le cours - valable 4 mois</p>
-            <ul>
-              <li>10 cours au choix dans la semaine</li>
-              <li>Le plus souple - pas de date imposee</li>
-              <li>Transmissible a un proche</li>
-            </ul>
-            <a href="/contact/" class="btn btn-primary">Prendre un carnet</a>
-          </div>
-          <div>
-            <span>Abonnement</span>
-            <strong>79<sup>€</sup></strong>
-            <p>par mois - cours illimites</p>
-            <ul>
-              <li>Acces illimite aux cours collectifs</li>
-              <li>Tarif reduit sur les ateliers</li>
-              <li>Sans engagement de duree</li>
-            </ul>
-            <a href="/contact/" class="btn-line">S'abonner →</a>
-          </div>
+          {pricingPlans.map((plan) => (
+            <div class={plan.featured ? "feature" : undefined}>
+              <span>{plan.name}</span>
+              <strong>{plan.amount}<sup>€</sup></strong>
+              <p>{plan.unit}</p>
+              <ul>
+                {plan.features.map((feature) => <li>{feature}</li>)}
+              </ul>
+              <a href={plan.ctaUrl} class={plan.featured ? "btn btn-primary" : "btn-line"}>{plan.ctaLabel} →</a>
+            </div>
+          ))}
         </div>
         <p class="cours-note">Creneaux a tarif reduit - cours adaptes seniors & post-therapie - le mieux-etre ne doit pas etre un privilege</p>
       </div>
@@ -230,18 +193,17 @@ import SiteFooter from "../components/SiteFooter.astro";
           <h2>Des professeures<br /><em>attentives.</em></h2>
         </div>
         <div class="cours-team">
-          <article>
-            <div class="cours-portrait fern"><span>[ portrait - Solene ]</span></div>
-            <div><h3>Solene Mercier</h3><span>Yoga - Yin - restoratif</span><p>Une pedagogie lente et precise, attentive au souffle. Specialiste du Yin et des pratiques de recuperation.</p><a href="#">Instagram</a></div>
-          </article>
-          <article>
-            <div class="cours-portrait storm"><span>[ portrait - Lea ]</span></div>
-            <div><h3>Lea Vasseur</h3><span>Pilates - Vinyasa</span><p>Le centre du corps et l'alignement, sans rigidite. Vinyasa dynamique le matin, Pilates postural le midi.</p><a href="#">Instagram</a></div>
-          </article>
-          <article>
-            <div class="cours-portrait foam"><span>[ portrait - Anais ]</span></div>
-            <div><h3>Anais Pichard</h3><span>Mobilite - renforcement</span><p>Le mouvement fonctionnel et la mobilite articulaire. Ideale pour les reprises et le travail des douleurs.</p><a href="#">Instagram</a></div>
-          </article>
+          {teachers.map((person) => (
+            <article>
+              <div class={`cours-portrait ${person.imageClass}`}><span>{person.imageLabel}</span></div>
+              <div>
+                <h3>{person.name}</h3>
+                <span>{person.specialty}</span>
+                <p>{person.bio}</p>
+                <a href={person.secondaryLinkUrl}>{person.secondaryLinkLabel}</a>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>

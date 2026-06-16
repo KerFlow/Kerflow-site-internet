@@ -1,0 +1,15 @@
+{
+  "order": 21,
+  "name": "Thomas Riou",
+  "visible": true,
+  "profileType": "praticien",
+  "spaces": ["le-cocon"],
+  "specialty": "Reflexologie - acupuncture",
+  "bio": "Par les points et les zones : sommeil, digestion, stress et recuperation.",
+  "imageClass": "sand",
+  "imageLabel": "[ portrait - praticien ]",
+  "primaryLinkLabel": "Prendre rendez-vous",
+  "primaryLinkUrl": "/contact/",
+  "secondaryLinkLabel": "Site",
+  "secondaryLinkUrl": "#"
+}

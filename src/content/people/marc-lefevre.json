@@ -1,0 +1,15 @@
+{
+  "order": 11,
+  "name": "Marc Lefevre",
+  "visible": true,
+  "profileType": "praticien",
+  "spaces": ["la-bulle"],
+  "specialty": "Sommeil - gestion du stress",
+  "bio": "Coherence cardiaque, hygiene du sommeil, charge mentale. Des outils concrets.",
+  "imageClass": "storm",
+  "imageLabel": "[ portrait - praticien ]",
+  "primaryLinkLabel": "Prendre rendez-vous",
+  "primaryLinkUrl": "/contact/",
+  "secondaryLinkLabel": "Site",
+  "secondaryLinkUrl": "#"
+}
