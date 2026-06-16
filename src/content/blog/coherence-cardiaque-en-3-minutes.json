@@ -1,0 +1,27 @@
+{
+  "order": 4,
+  "title": "La cohérence cardiaque en 3 minutes",
+  "tag": "Stress",
+  "date": "Mai 2026",
+  "readingTime": "3 min",
+  "excerpt": "Un rituel respiratoire court pour redescendre sans s'isoler.",
+  "imageClass": "t-clay",
+  "imageLabel": "[ photo · respiration, carnet ]",
+  "intro": "La cohérence cardiaque est un outil de respiration simple. En quelques minutes, elle peut aider à ralentir le rythme interne et à retrouver un peu de disponibilité.",
+  "sections": [
+    {
+      "heading": "Trouver un rythme confortable",
+      "paragraphs": [
+        "Installez-vous assis, les pieds au sol. Inspirez lentement, puis expirez sans forcer. Le rythme classique est proche de cinq secondes d'inspiration et cinq secondes d'expiration.",
+        "Si ce tempo paraît trop long, réduisez-le. L'effet recherché vient de la régularité et de l'expiration posée, pas d'une performance respiratoire."
+      ]
+    },
+    {
+      "heading": "Garder les épaules disponibles",
+      "paragraphs": [
+        "La respiration peut rester basse et souple. Relâchez les mâchoires, laissez les épaules descendre, puis sentez le mouvement du souffle dans les côtes et le ventre.",
+        "Trois minutes suffisent pour créer une pause. Avant une réunion, après une contrariété ou en fin de journée, ce format court s'intègre facilement."
+      ]
+    }
+  ]
+}

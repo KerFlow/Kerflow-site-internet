@@ -1,10 +1,10 @@
 import { defineConfig } from "astro/config";
 import react from "@astrojs/react";
 import keystatic from "@keystatic/astro";
-
-const isBuild = process.env.npm_lifecycle_event === "build";
+import vercel from "@astrojs/vercel";
 
 export default defineConfig({
-  integrations: isBuild ? [] : [react(), keystatic()],
+  adapter: vercel(),
+  integrations: [react(), keystatic()],
   output: "static"
 });

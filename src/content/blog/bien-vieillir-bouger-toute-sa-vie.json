@@ -1,0 +1,27 @@
+{
+  "order": 5,
+  "title": "Bien vieillir : bouger toute sa vie",
+  "tag": "Accompagnements",
+  "date": "Avr. 2026",
+  "readingTime": "5 min",
+  "excerpt": "Pourquoi la régularité compte plus que l'intensité.",
+  "imageClass": "t-foam",
+  "imageLabel": "[ photo · mouvement, tapis ]",
+  "intro": "Bouger tout au long de la vie soutient l'équilibre, la force, la mobilité et la confiance. L'accompagnement commence souvent par des gestes modestes répétés longtemps.",
+  "sections": [
+    {
+      "heading": "Entretenir les gestes du quotidien",
+      "paragraphs": [
+        "Se lever du sol, monter des marches, porter un sac, tourner la tête, garder l'équilibre: ces capacités se travaillent à tout âge avec des exercices simples et progressifs.",
+        "Le mouvement utile n'est pas toujours spectaculaire. Il prépare le corps à rester autonome dans les situations réelles."
+      ]
+    },
+    {
+      "heading": "Varier sans se disperser",
+      "paragraphs": [
+        "Un bon programme combine mobilité, force douce, équilibre et respiration. Cette variété protège mieux qu'une seule activité répétée exactement de la même manière.",
+        "Quelques séances accompagnées peuvent aider à choisir les bons repères, surtout en cas de douleur, d'appréhension ou de reprise après une période sédentaire."
+      ]
+    }
+  ]
+}

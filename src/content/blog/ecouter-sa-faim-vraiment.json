@@ -1,0 +1,34 @@
+{
+  "order": 3,
+  "title": "Écouter sa faim, vraiment",
+  "tag": "Alimentation",
+  "date": "Juin 2026",
+  "readingTime": "5 min",
+  "excerpt": "Le rapport à l'assiette, sans régime ni culpabilité.",
+  "imageClass": "t-sand",
+  "imageLabel": "[ photo · table, légumes de saison ]",
+  "intro": "Écouter sa faim ne signifie pas manger parfaitement. C'est apprendre à distinguer les signaux du corps, les habitudes, les émotions et les règles alimentaires que l'on a parfois trop intégrées.",
+  "sections": [
+    {
+      "heading": "Revenir aux sensations",
+      "paragraphs": [
+        "Avant de manger, prenez quelques secondes pour situer votre faim: légère, nette, urgente, absente. Cette observation simple remet le corps dans la décision.",
+        "Pendant le repas, ralentir les premières bouchées aide à percevoir le goût, la satiété et le plaisir. Il n'y a rien à réussir, seulement des informations à récupérer."
+      ]
+    },
+    {
+      "heading": "Sortir du tout ou rien",
+      "paragraphs": [
+        "Les règles strictes créent souvent de la tension autour de l'assiette. Une alimentation durable laisse de la place aux besoins nutritionnels, aux envies et au contexte social.",
+        "La question utile n'est pas toujours 'est-ce autorisé ?', mais plutôt 'de quoi ai-je besoin maintenant, et comment vais-je me sentir après ?'."
+      ]
+    },
+    {
+      "heading": "Observer sans se juger",
+      "paragraphs": [
+        "Certaines prises alimentaires répondent au stress, à la fatigue ou à l'ennui. Les remarquer sans culpabilité permet de comprendre ce qui manque: repos, pause, soutien, mouvement ou vraie collation.",
+        "Ce regard plus calme ouvre des ajustements concrets, loin des régimes rapides et des promesses intenables."
+      ]
+    }
+  ]
+}

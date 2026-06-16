@@ -1,0 +1,34 @@
+{
+  "order": 1,
+  "title": "Cinq gestes du soir pour mieux dormir",
+  "tag": "Sommeil",
+  "date": "Juin 2026",
+  "readingTime": "4 min",
+  "excerpt": "Ralentir avant le coucher, sans application ni gadget.",
+  "imageClass": "t-storm",
+  "imageLabel": "[ photo · lumière du soir, chambre ]",
+  "intro": "Le sommeil se prépare souvent avant d'entrer dans le lit. Ces gestes simples aident le corps à reconnaître que la journée ralentit, sans transformer la soirée en protocole compliqué.",
+  "sections": [
+    {
+      "heading": "Baisser le niveau de stimulation",
+      "paragraphs": [
+        "Une heure avant le coucher, réduisez les sollicitations qui demandent une attention forte: notifications, discussions tendues, travail à finir dans l'urgence. Le but n'est pas de tout contrôler, mais de créer une transition lisible.",
+        "Une lumière plus douce, un téléphone éloigné du lit et une activité répétitive suffisent souvent à signaler au système nerveux qu'il peut descendre d'un cran."
+      ]
+    },
+    {
+      "heading": "Choisir un rituel très court",
+      "paragraphs": [
+        "Un rituel efficace doit rester réaliste. Trois minutes de respiration lente, quelques étirements au sol ou deux pages de lecture peuvent devenir un repère stable si le geste est facile à répéter.",
+        "La régularité compte davantage que la durée. Mieux vaut un petit rituel tenu quatre soirs par semaine qu'une routine parfaite abandonnée après deux jours."
+      ]
+    },
+    {
+      "heading": "Préparer le lendemain",
+      "paragraphs": [
+        "Noter les trois choses importantes du lendemain permet de sortir une partie de la charge mentale de la tête. Une liste courte, sans chercher à tout résoudre, aide à fermer la journée.",
+        "Si une pensée revient en boucle, écrivez-la telle quelle puis ajoutez la prochaine action concrète. Le cerveau a souvent besoin d'un point d'appui, pas d'une solution complète à 23h."
+      ]
+    }
+  ]
+}
