@@ -1,9 +1,12 @@
 {
-  "order": 2,
   "name": "Lea Vasseur",
+  "order": 2,
   "visible": true,
   "profileType": "professeur",
-  "spaces": ["cours"],
+  "spaces": [
+    "cours",
+    "la-bulle"
+  ],
   "specialty": "Pilates - Vinyasa",
   "bio": "Le centre du corps et l'alignement, sans rigidite. Vinyasa dynamique le matin, Pilates postural le midi.",
   "imageClass": "storm",
