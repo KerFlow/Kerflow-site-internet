@@ -1,0 +1,249 @@
+{
+  "homeGallery": [
+    {
+      "label": "Home - galerie 1 - grande salle",
+      "visualMode": "color",
+      "image": null,
+      "imageClass": "t-petrol",
+      "description": "Grande salle KerFlow avec parquet clair et lumiere oblique",
+      "wide": true
+    },
+    {
+      "label": "Home - galerie 2 - fougere",
+      "visualMode": "color",
+      "image": null,
+      "imageClass": "t-fern",
+      "description": "Fougere humide en contre-jour",
+      "wide": false
+    },
+    {
+      "label": "Home - galerie 3 - matiere",
+      "visualMode": "color",
+      "image": null,
+      "imageClass": "t-storm",
+      "description": "Vague sur galet en lumiere basse",
+      "wide": false
+    },
+    {
+      "label": "Home - galerie 4 - lin",
+      "visualMode": "color",
+      "image": null,
+      "imageClass": "t-sand",
+      "description": "Tissu de lin froisse",
+      "wide": false
+    },
+    {
+      "label": "Home - galerie 5 - cabinet",
+      "visualMode": "color",
+      "image": null,
+      "imageClass": "t-foam",
+      "description": "Cabinet avec fauteuil et lumiere douce",
+      "wide": true
+    },
+    {
+      "label": "Home - galerie 6 - table de soin",
+      "visualMode": "color",
+      "image": null,
+      "imageClass": "t-clay",
+      "description": "Table de soin avec drap de lin",
+      "wide": false
+    },
+    {
+      "label": "Home - galerie 7 - pierre",
+      "visualMode": "color",
+      "image": null,
+      "imageClass": "t-stone",
+      "description": "Pierre claire et detail mineral",
+      "wide": false
+    }
+  ],
+  "homeSpaces": {
+    "studio": {
+      "label": "Home - espace La Salle",
+      "visualMode": "color",
+      "image": null,
+      "imageClass": "photo-petrol",
+      "description": "Salle de pratique KerFlow avec parquet clair"
+    },
+    "bulle": {
+      "label": "Home - espace La Bulle",
+      "visualMode": "color",
+      "image": null,
+      "imageClass": "photo-foam",
+      "description": "Cabinet La Bulle avec fauteuil et lumiere douce"
+    },
+    "cocon": {
+      "label": "Home - espace Le Cocon",
+      "visualMode": "color",
+      "image": null,
+      "imageClass": "photo-clay",
+      "description": "Table de soin du Cocon avec bougie et drap de lin"
+    }
+  },
+  "homeOffers": {
+    "bulle": {
+      "label": "Home - accompagnements La Bulle",
+      "visualMode": "color",
+      "image": null,
+      "imageClass": "photo-foam",
+      "description": "Cabinet de La Bulle en lumiere naturelle"
+    },
+    "cocon": {
+      "label": "Home - soins Le Cocon",
+      "visualMode": "color",
+      "image": null,
+      "imageClass": "photo-clay",
+      "description": "Table de soin du Cocon avec drap de lin et bougie"
+    }
+  },
+  "leLieu": {
+    "hero": {
+      "label": "Le lieu - hero maison",
+      "visualMode": "color",
+      "image": null,
+      "imageClass": "t-petrol",
+      "description": "Grande salle de pratique avec parquet clair, miroir toute hauteur et lumiere oblique",
+      "wide": true
+    },
+    "spaces": {
+      "studio": {
+        "label": "Le lieu - La Salle",
+        "visualMode": "color",
+        "image": null,
+        "imageClass": "t-petrol",
+        "description": "Grande salle de pratique de 40 metres carres avec parquet clair et miroir"
+      },
+      "bulle": {
+        "label": "Le lieu - La Bulle",
+        "visualMode": "color",
+        "image": null,
+        "imageClass": "t-foam",
+        "description": "Cabinet La Bulle avec grande fenetre sur cour arborée"
+      },
+      "cocon": {
+        "label": "Le lieu - Le Cocon",
+        "visualMode": "color",
+        "image": null,
+        "imageClass": "t-clay",
+        "description": "Box de soin Le Cocon avec table de massage et lumiere tamisee"
+      }
+    },
+    "founders": {
+      "gaelle": {
+        "label": "Le lieu - portrait Gaelle",
+        "visualMode": "color",
+        "image": null,
+        "imageClass": "t-fern",
+        "description": "Portrait de Gaelle en lumiere naturelle"
+      },
+      "zelie": {
+        "label": "Le lieu - portrait Zelie",
+        "visualMode": "color",
+        "image": null,
+        "imageClass": "t-storm",
+        "description": "Portrait de Zelie en lumiere naturelle"
+      }
+    }
+  },
+  "care": {
+    "overviewBulle": {
+      "label": "Prevention Sante - presentation La Bulle",
+      "visualMode": "color",
+      "image": null,
+      "imageClass": "pv-foam",
+      "description": "La Bulle, cabinet de 11 metres carres avec fauteuil et fenetre sur cour"
+    },
+    "overviewCocon": {
+      "label": "Prevention Sante - presentation Le Cocon",
+      "visualMode": "color",
+      "image": null,
+      "imageClass": "pv-clay",
+      "description": "Le Cocon, box de soin avec table de massage et lumiere tamisee"
+    },
+    "bulleHero": {
+      "label": "La Bulle - visuel de presentation",
+      "visualMode": "color",
+      "image": null,
+      "imageClass": "bulle-foam",
+      "description": "La Bulle, cabinet lumineux avec fauteuil et grande fenetre sur cour"
+    },
+    "coconHero": {
+      "label": "Le Cocon - visuel de presentation",
+      "visualMode": "color",
+      "image": null,
+      "imageClass": "cocon-foam",
+      "description": "Le Cocon, table de soin avec lumiere douce et ambiance calme"
+    }
+  },
+  "rental": {
+    "studio": [
+      {
+        "label": "Location - La Salle 1",
+        "visualMode": "color",
+        "image": null,
+        "imageClass": "t-petrol",
+        "description": "La Salle de pratique de 40 metres carres avec miroir toute hauteur et lumiere naturelle"
+      },
+      {
+        "label": "Location - La Salle 2",
+        "visualMode": "color",
+        "image": null,
+        "imageClass": "t-petrol t-petrol-2",
+        "description": "La Salle en configuration atelier avec tapis et materiel"
+      },
+      {
+        "label": "Location - La Salle 3",
+        "visualMode": "color",
+        "image": null,
+        "imageClass": "t-petrol t-petrol-3",
+        "description": "La Salle en configuration formation avec tables et chaises"
+      }
+    ],
+    "bulle": [
+      {
+        "label": "Location - La Bulle 1",
+        "visualMode": "color",
+        "image": null,
+        "imageClass": "t-foam",
+        "description": "La Bulle, cabinet de 11 metres carres avec grande fenetre sur cour arborée"
+      },
+      {
+        "label": "Location - La Bulle 2",
+        "visualMode": "color",
+        "image": null,
+        "imageClass": "t-foam t-foam-2",
+        "description": "La Bulle, bureau de consultation lumineux"
+      },
+      {
+        "label": "Location - La Bulle 3",
+        "visualMode": "color",
+        "image": null,
+        "imageClass": "t-foam t-foam-3",
+        "description": "La Bulle, ambiance calme et naturelle"
+      }
+    ],
+    "cocon": [
+      {
+        "label": "Location - Le Cocon 1",
+        "visualMode": "color",
+        "image": null,
+        "imageClass": "t-clay",
+        "description": "Le Cocon, box de soin au sous-sol avec table de massage"
+      },
+      {
+        "label": "Location - Le Cocon 2",
+        "visualMode": "color",
+        "image": null,
+        "imageClass": "t-clay t-clay-2",
+        "description": "Le Cocon, table de soin et lumiere douce"
+      },
+      {
+        "label": "Location - Le Cocon 3",
+        "visualMode": "color",
+        "image": null,
+        "imageClass": "t-clay t-clay-3",
+        "description": "Le Cocon, detail lavabo et ambiance intimiste"
+      }
+    ]
+  }
+}

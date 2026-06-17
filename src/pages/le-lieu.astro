@@ -2,6 +2,8 @@
 // Page rebuilt from /Users/evadegardin/Downloads/Le lieu - KerFlow (standalone).html
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
+import SiteVisual from "../components/SiteVisual.astro";
+import { siteVisuals } from "../data/siteVisuals.js";
 ---
 
 <!doctype html>
@@ -197,6 +199,11 @@ import SiteFooter from "../components/SiteFooter.astro";
       .ph::after{ /* dégradé bas */
         content:""; position:absolute; inset:0;
         background:linear-gradient(180deg, transparent 52%, rgba(14,42,44,0.45) 100%);
+      }
+      .site-visual.has-upload::before,
+      .site-visual.has-upload::after{ display:none; }
+      .site-visual.has-upload img{
+        position:absolute; inset:0; z-index:0; width:100%; height:100%; object-fit:cover;
       }
       .ph .cap{
         display:none;
@@ -936,7 +943,7 @@ import SiteFooter from "../components/SiteFooter.astro";
     </section>
 
     <section class="hero-band wrap" aria-label="La maison en image">
-      <div class="ph wide t-petrol"><span class="cap">[ photo · la grande salle de pratique, parquet clair, miroir toute hauteur, lumière oblique ]</span></div>
+      <SiteVisual visual={siteVisuals.leLieu.hero} />
     </section>
     
     <!-- ===================== POURQUOI KERFLOW ===================== -->
@@ -1031,7 +1038,7 @@ import SiteFooter from "../components/SiteFooter.astro";
         <!-- La Salle -->
         <div class="feature" data-screen-label="Espace · La Salle">
           <div class="feature-media framed" style="--frame:var(--studio)">
-            <div class="ph t-petrol"><span class="cap">[ photo · grande salle 40 m², parquet clair, miroir toute hauteur, deux fenêtres ]</span></div>
+            <SiteVisual visual={siteVisuals.leLieu.spaces.studio} />
           </div>
           <div class="feature-body">
             <span class="tag" style="color:var(--studio-ink)">01 · La Salle de pratique</span>
@@ -1048,7 +1055,7 @@ import SiteFooter from "../components/SiteFooter.astro";
         <!-- La Bulle -->
         <div class="feature flip" data-screen-label="Espace · La Bulle">
           <div class="feature-media framed" style="--frame:var(--consult)">
-            <div class="ph t-foam"><span class="cap">[ photo · cabinet 11 m², grande fenêtre sur cour arborée, fauteuil, lumière douce ]</span></div>
+            <SiteVisual visual={siteVisuals.leLieu.spaces.bulle} />
           </div>
           <div class="feature-body">
             <span class="tag" style="color:var(--consult-ink)">02 · La Bulle</span>
@@ -1065,7 +1072,7 @@ import SiteFooter from "../components/SiteFooter.astro";
         <!-- Le Cocon -->
         <div class="feature" data-screen-label="Espace · Le Cocon">
           <div class="feature-media framed" style="--frame:var(--rituel)">
-            <div class="ph t-clay"><span class="cap">[ photo · box de soin 7 m², table de massage, drap de lin, lumière tamisée ]</span></div>
+            <SiteVisual visual={siteVisuals.leLieu.spaces.cocon} />
           </div>
           <div class="feature-body">
             <span class="tag" style="color:var(--rituel-ink)">03 · Le Cocon</span>
@@ -1095,7 +1102,7 @@ import SiteFooter from "../components/SiteFooter.astro";
         </div>
         <div class="team founders-team">
           <article class="person">
-            <div class="ph t-fern"><span class="cap">[ portrait · Gaëlle, lumière naturelle ]</span></div>
+            <SiteVisual visual={siteVisuals.leLieu.founders.gaelle} />
             <div class="p-body">
               <h3 class="p-name serif">Gaëlle</h3>
               <span class="p-role">Mouvement &amp; accompagnements & soins</span>
@@ -1105,7 +1112,7 @@ import SiteFooter from "../components/SiteFooter.astro";
             </div>
           </article>
           <article class="person">
-            <div class="ph t-storm"><span class="cap">[ portrait · co-fondatrice, lumière naturelle ]</span></div>
+            <SiteVisual visual={siteVisuals.leLieu.founders.zelie} />
             <div class="p-body">
               <h3 class="p-name serif">Zélie</h3>
               <span class="p-role">Soin &amp; accompagnement</span>

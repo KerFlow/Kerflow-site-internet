@@ -1,0 +1,33 @@
+---
+const {
+  visual,
+  class: baseClass = "ph",
+  extraClass = "",
+  ariaHidden = false,
+} = Astro.props;
+
+const mode = visual?.visualMode ?? "color";
+const image = visual?.image;
+const description = visual?.description ?? "";
+const imageClass = visual?.imageClass ?? "";
+const wideClass = visual?.wide ? "wide" : "";
+const hasUpload = mode === "image" && image;
+const className = [
+  "site-visual",
+  baseClass,
+  imageClass,
+  wideClass,
+  extraClass,
+  hasUpload ? "has-upload" : "",
+]
+  .filter(Boolean)
+  .join(" ");
+---
+
+<div class={className} aria-hidden={ariaHidden ? "true" : undefined}>
+  {hasUpload ? (
+    <img src={image} alt={ariaHidden ? "" : description} loading="lazy" decoding="async" />
+  ) : (
+    <span class="cap">{description}</span>
+  )}
+</div>

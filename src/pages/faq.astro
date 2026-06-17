@@ -186,20 +186,20 @@ import SiteFooter from "../components/SiteFooter.astro";
           </div>
         </div>
 
-        <form class="contact-form-card" onsubmit="return false;" aria-label="Formulaire de contact">
+        <form class="contact-form-card" action="https://formspree.io/f/mykavqkp" method="POST" aria-label="Formulaire de contact">
           <div class="form-grid">
-            <div class="field"><label for="nom">Prénom & nom</label><input id="nom" type="text" placeholder="Votre nom" /></div>
-            <div class="field"><label for="mail">E-mail</label><input id="mail" type="email" placeholder="vous@exemple.fr" /></div>
+            <div class="field"><label for="nom">Prénom & nom</label><input id="nom" name="nom" type="text" placeholder="Votre nom" required /></div>
+            <div class="field"><label for="mail">E-mail</label><input id="mail" name="email" type="email" placeholder="vous@exemple.fr" required /></div>
             <div class="field full"><label>Votre demande concerne</label>
               <div class="radio-row">
-                <label class="radio-chip"><input type="radio" name="sujet" checked /><span>Question générale</span></label>
-                <label class="radio-chip"><input type="radio" name="sujet" /><span>Première visite</span></label>
-                <label class="radio-chip"><input type="radio" name="sujet" /><span>Accompagnements & Soins</span></label>
-                <label class="radio-chip"><input type="radio" name="sujet" /><span>Demande pro</span></label>
-                <label class="radio-chip"><input type="radio" name="sujet" /><span>Suggestion</span></label>
+                <label class="radio-chip"><input type="radio" name="sujet" value="Question générale" checked /><span>Question générale</span></label>
+                <label class="radio-chip"><input type="radio" name="sujet" value="Première visite" /><span>Première visite</span></label>
+                <label class="radio-chip"><input type="radio" name="sujet" value="Accompagnements & Soins" /><span>Accompagnements & Soins</span></label>
+                <label class="radio-chip"><input type="radio" name="sujet" value="Demande pro" /><span>Demande pro</span></label>
+                <label class="radio-chip"><input type="radio" name="sujet" value="Suggestion" /><span>Suggestion</span></label>
               </div>
             </div>
-            <div class="field full"><label for="message">Votre message</label><textarea id="message" placeholder="Dites-nous comment on peut vous aider..."></textarea></div>
+            <div class="field full"><label for="message">Votre message</label><textarea id="message" name="message" placeholder="Dites-nous comment on peut vous aider..." required></textarea></div>
           </div>
           <div class="form-foot">
             <p class="fine">En envoyant ce formulaire, vous acceptez d'être recontacté·e. Vos données ne sont jamais partagées ni revendues.</p>

@@ -2,6 +2,8 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
+import SiteVisual from "../components/SiteVisual.astro";
+import { siteVisuals } from "../data/siteVisuals.js";
 ---
 
 <BaseLayout
@@ -79,9 +81,9 @@ import SiteFooter from "../components/SiteFooter.astro";
           <div class="rent-media framed">
             <div class="space-carousel" data-carousel aria-label="Photos de La Salle de pratique">
               <div class="carousel-track">
-                <div class="ph t-petrol slide active"><span class="cap">[ photo · La Salle de pratique, 40 m², miroir toute hauteur, lumière naturelle ]</span></div>
-                <div class="ph t-petrol t-petrol-2 slide"><span class="cap">[ photo · La Salle en configuration atelier, tapis et matériel ]</span></div>
-                <div class="ph t-petrol t-petrol-3 slide"><span class="cap">[ photo · La Salle, tables et chaises pour formation ]</span></div>
+                {siteVisuals.rental.studio.map((visual, index) => (
+                  <SiteVisual visual={visual} extraClass={`slide ${index === 0 ? "active" : ""}`} />
+                ))}
               </div>
               <button class="carousel-arrow prev" type="button" data-carousel-prev aria-label="Photo précédente">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7"></path></svg>
@@ -89,7 +91,9 @@ import SiteFooter from "../components/SiteFooter.astro";
               <button class="carousel-arrow next" type="button" data-carousel-next aria-label="Photo suivante">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"></path></svg>
               </button>
-              <div class="carousel-dots" aria-hidden="true"><span class="active"></span><span></span><span></span></div>
+              <div class="carousel-dots" aria-hidden="true">
+                {siteVisuals.rental.studio.map((_, index) => <span class={index === 0 ? "active" : ""}></span>)}
+              </div>
             </div>
           </div>
           <div class="rent-body">
@@ -125,9 +129,9 @@ import SiteFooter from "../components/SiteFooter.astro";
           <div class="rent-media framed">
             <div class="space-carousel" data-carousel aria-label="Photos de La Bulle">
               <div class="carousel-track">
-                <div class="ph t-foam slide active"><span class="cap">[ photo · La Bulle, 11 m², grande fenêtre sur cour arborée, fauteuil ]</span></div>
-                <div class="ph t-foam t-foam-2 slide"><span class="cap">[ photo · La Bulle, bureau de consultation lumineux ]</span></div>
-                <div class="ph t-foam t-foam-3 slide"><span class="cap">[ photo · La Bulle, ambiance calme et naturelle ]</span></div>
+                {siteVisuals.rental.bulle.map((visual, index) => (
+                  <SiteVisual visual={visual} extraClass={`slide ${index === 0 ? "active" : ""}`} />
+                ))}
               </div>
               <button class="carousel-arrow prev" type="button" data-carousel-prev aria-label="Photo précédente">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7"></path></svg>
@@ -135,7 +139,9 @@ import SiteFooter from "../components/SiteFooter.astro";
               <button class="carousel-arrow next" type="button" data-carousel-next aria-label="Photo suivante">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"></path></svg>
               </button>
-              <div class="carousel-dots" aria-hidden="true"><span class="active"></span><span></span><span></span></div>
+              <div class="carousel-dots" aria-hidden="true">
+                {siteVisuals.rental.bulle.map((_, index) => <span class={index === 0 ? "active" : ""}></span>)}
+              </div>
             </div>
           </div>
           <div class="rent-body">
@@ -171,9 +177,9 @@ import SiteFooter from "../components/SiteFooter.astro";
           <div class="rent-media framed">
             <div class="space-carousel" data-carousel aria-label="Photos du Cocon">
               <div class="carousel-track">
-                <div class="ph t-clay slide active"><span class="cap">[ photo · Le Cocon, 7 m², box de soin au sous-sol, table de massage ]</span></div>
-                <div class="ph t-clay t-clay-2 slide"><span class="cap">[ photo · Le Cocon, table de soin et lumière douce ]</span></div>
-                <div class="ph t-clay t-clay-3 slide"><span class="cap">[ photo · Le Cocon, détail lavabo et ambiance intimiste ]</span></div>
+                {siteVisuals.rental.cocon.map((visual, index) => (
+                  <SiteVisual visual={visual} extraClass={`slide ${index === 0 ? "active" : ""}`} />
+                ))}
               </div>
               <button class="carousel-arrow prev" type="button" data-carousel-prev aria-label="Photo précédente">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7"></path></svg>
@@ -181,7 +187,9 @@ import SiteFooter from "../components/SiteFooter.astro";
               <button class="carousel-arrow next" type="button" data-carousel-next aria-label="Photo suivante">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"></path></svg>
               </button>
-              <div class="carousel-dots" aria-hidden="true"><span class="active"></span><span></span><span></span></div>
+              <div class="carousel-dots" aria-hidden="true">
+                {siteVisuals.rental.cocon.map((_, index) => <span class={index === 0 ? "active" : ""}></span>)}
+              </div>
             </div>
           </div>
           <div class="rent-body">
@@ -247,30 +255,30 @@ import SiteFooter from "../components/SiteFooter.astro";
               <div class="coord-row"><span class="lab">Visite</span><span class="val">Sur rendez-vous, du mardi au samedi</span></div>
             </div>
           </div>
-          <form class="form-card" onsubmit="return false;" aria-label="Demande de location">
+          <form class="form-card" action="https://formspree.io/f/mvznyjzn" method="POST" aria-label="Demande de location">
             <div class="form-grid">
-              <div class="field"><label for="ln">Prénom & nom</label><input id="ln" type="text" placeholder="Votre nom" /></div>
-              <div class="field"><label for="ac">Activité</label><input id="ac" type="text" placeholder="Ex. réflexologue, prof de yoga..." /></div>
-              <div class="field"><label for="em">E-mail</label><input id="em" type="email" placeholder="vous@exemple.fr" /></div>
-              <div class="field"><label for="phone">Téléphone</label><input id="phone" type="tel" placeholder="06 00 00 00 00" /></div>
+              <div class="field"><label for="ln">Prénom & nom</label><input id="ln" name="nom" type="text" placeholder="Votre nom" required /></div>
+              <div class="field"><label for="ac">Activité</label><input id="ac" name="activite" type="text" placeholder="Ex. réflexologue, prof de yoga..." /></div>
+              <div class="field"><label for="em">E-mail</label><input id="em" name="email" type="email" placeholder="vous@exemple.fr" required /></div>
+              <div class="field"><label for="phone">Téléphone</label><input id="phone" name="telephone" type="tel" placeholder="06 00 00 00 00" /></div>
               <div class="field full">
                 <label>Espace souhaité</label>
                 <div class="radio-row">
-                  <label class="radio-chip"><input type="radio" name="space" checked /><span>La Salle · 40 m²</span></label>
-                  <label class="radio-chip"><input type="radio" name="space" /><span>La Bulle · 11 m²</span></label>
-                  <label class="radio-chip"><input type="radio" name="space" /><span>Le Cocon · 7 m²</span></label>
+                  <label class="radio-chip"><input type="radio" name="espace" value="La Salle - 40 m²" checked /><span>La Salle · 40 m²</span></label>
+                  <label class="radio-chip"><input type="radio" name="espace" value="La Bulle - 11 m²" /><span>La Bulle · 11 m²</span></label>
+                  <label class="radio-chip"><input type="radio" name="espace" value="Le Cocon - 7 m²" /><span>Le Cocon · 7 m²</span></label>
                 </div>
               </div>
               <div class="field full">
                 <label>Rythme</label>
                 <div class="radio-row">
-                  <label class="radio-chip"><input type="radio" name="freq" checked /><span>Heure</span></label>
-                  <label class="radio-chip"><input type="radio" name="freq" /><span>Demi-journée</span></label>
-                  <label class="radio-chip"><input type="radio" name="freq" /><span>Journée</span></label>
-                  <label class="radio-chip"><input type="radio" name="freq" /><span>Cycle régulier</span></label>
+                  <label class="radio-chip"><input type="radio" name="rythme" value="Heure" checked /><span>Heure</span></label>
+                  <label class="radio-chip"><input type="radio" name="rythme" value="Demi-journée" /><span>Demi-journée</span></label>
+                  <label class="radio-chip"><input type="radio" name="rythme" value="Journée" /><span>Journée</span></label>
+                  <label class="radio-chip"><input type="radio" name="rythme" value="Cycle régulier" /><span>Cycle régulier</span></label>
                 </div>
               </div>
-              <div class="field full"><label for="msg">Votre projet</label><textarea id="msg" placeholder="Décrivez votre activité, vos créneaux idéaux, vos questions..."></textarea></div>
+              <div class="field full"><label for="msg">Votre projet</label><textarea id="msg" name="message" placeholder="Décrivez votre activité, vos créneaux idéaux, vos questions..." required></textarea></div>
             </div>
             <div class="form-foot">
               <p class="fine">En envoyant ce formulaire, vous acceptez d'être recontacté·e au sujet de votre demande. Aucune donnée n'est partagée.</p>
@@ -709,18 +717,18 @@ import SiteFooter from "../components/SiteFooter.astro";
   }
 
   .carousel-track,
-  .space-carousel .slide {
+  :global(.space-carousel .slide) {
     position: absolute;
     inset: 0;
   }
 
-  .space-carousel .slide {
+  :global(.space-carousel .slide) {
     opacity: 0;
     transform: scale(1.018);
     transition: opacity 360ms ease, transform 520ms var(--ease-out, cubic-bezier(0.22, 1, 0.36, 1));
   }
 
-  .space-carousel .slide.active {
+  :global(.space-carousel .slide.active) {
     opacity: 1;
     transform: scale(1);
     z-index: 1;

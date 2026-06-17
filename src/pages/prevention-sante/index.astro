@@ -2,7 +2,9 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
+import SiteVisual from "../../components/SiteVisual.astro";
 import { peopleForSpace } from "../../data/cmsContent.js";
+import { siteVisuals } from "../../data/siteVisuals.js";
 
 const bullePeople = peopleForSpace("la-bulle");
 const coconPeople = peopleForSpace("le-cocon");
@@ -81,9 +83,7 @@ const coconPeople = peopleForSpace("le-cocon");
             On vient y poser une question de santé, comprendre, et repartir avec des pistes
             concrètes, sans jugement, sans injonction.
           </p>
-          <div class="pv-placeholder pv-foam">
-            <span>[ photo · La Bulle, 11 m², fauteuil, grande fenêtre sur cour ]</span>
-          </div>
+          <SiteVisual visual={siteVisuals.care.overviewBulle} class="pv-placeholder" />
         </div>
         <aside>
           <p class="pv-label">Ce qu'on y trouve</p>
@@ -137,9 +137,7 @@ const coconPeople = peopleForSpace("le-cocon");
             Au sous-sol, un espace intimiste sans fenêtre : l'intimité totale, l'atmosphère
             qui enveloppe et invite au lâcher-prise. On s'allonge, on respire, le temps ralentit.
           </p>
-          <div class="pv-placeholder pv-clay">
-            <span>[ photo · Le Cocon, 7 m², table de soin, drap de lin, lumière tamisée ]</span>
-          </div>
+          <SiteVisual visual={siteVisuals.care.overviewCocon} class="pv-placeholder" />
         </div>
         <aside>
           <p class="pv-label pv-label-rituel">Ce qu'on y reçoit</p>

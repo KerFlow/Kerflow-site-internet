@@ -2,7 +2,9 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
+import SiteVisual from "../../components/SiteVisual.astro";
 import { peopleForSpace } from "../../data/cmsContent.js";
+import { siteVisuals } from "../../data/siteVisuals.js";
 
 const practitioners = peopleForSpace("la-bulle");
 ---
@@ -53,9 +55,7 @@ const practitioners = peopleForSpace("la-bulle");
             On vient y poser une question de sante, comprendre, et repartir avec des pistes
             concretes, sans jugement, sans injonction.
           </p>
-          <div class="bulle-placeholder bulle-foam">
-            <span>[ photo - La Bulle, 11 m², fauteuil, grande fenetre sur cour ]</span>
-          </div>
+          <SiteVisual visual={siteVisuals.care.bulleHero} class="bulle-placeholder" />
         </div>
         <aside>
           <p class="bulle-label">Ce qu'on y trouve</p>

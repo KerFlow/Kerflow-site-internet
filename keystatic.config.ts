@@ -1,5 +1,66 @@
 import { collection, config, fields } from "@keystatic/core";
 
+const siteVisualField = (label: string) =>
+  fields.object(
+    {
+      label: fields.text({
+        label: "Nom interne",
+        defaultValue: label,
+        validation: { isRequired: true },
+      }),
+      visualMode: fields.select({
+        label: "Type de visuel",
+        defaultValue: "color",
+        options: [
+          { label: "Aplat couleur", value: "color" },
+          { label: "Photo importée", value: "image" },
+        ],
+      }),
+      image: fields.image({
+        label: "Photo importée",
+        directory: "public/uploads/site",
+        publicPath: "/uploads/site/",
+        description: "Utilisée si le type de visuel est « Photo importée ».",
+      }),
+      imageClass: fields.select({
+        label: "Couleur de l'aplat",
+        defaultValue: "t-petrol",
+        options: [
+          { label: "Pétrole", value: "t-petrol" },
+          { label: "Pétrole 2", value: "t-petrol t-petrol-2" },
+          { label: "Pétrole 3", value: "t-petrol t-petrol-3" },
+          { label: "Fougère", value: "t-fern" },
+          { label: "Orage", value: "t-storm" },
+          { label: "Sable", value: "t-sand" },
+          { label: "Écume", value: "t-foam" },
+          { label: "Écume 2", value: "t-foam t-foam-2" },
+          { label: "Écume 3", value: "t-foam t-foam-3" },
+          { label: "Argile", value: "t-clay" },
+          { label: "Argile 2", value: "t-clay t-clay-2" },
+          { label: "Argile 3", value: "t-clay t-clay-3" },
+          { label: "Pierre", value: "t-stone" },
+          { label: "Photo pétrole", value: "photo-petrol" },
+          { label: "Photo écume", value: "photo-foam" },
+          { label: "Photo argile", value: "photo-clay" },
+          { label: "Prévention écume", value: "pv-foam" },
+          { label: "Prévention argile", value: "pv-clay" },
+          { label: "Bulle écume", value: "bulle-foam" },
+          { label: "Cocon écume", value: "cocon-foam" },
+        ],
+      }),
+      description: fields.text({
+        label: "Description de l'image",
+        multiline: true,
+        validation: { isRequired: true },
+      }),
+      wide: fields.checkbox({
+        label: "Format large",
+        defaultValue: false,
+      }),
+    },
+    { label }
+  );
+
 export default config({
   storage: {
     kind: "cloud",
@@ -112,7 +173,7 @@ export default config({
       path: "src/content/people/*",
       slugField: "name",
       format: "json",
-      columns: ["name", "profileType", "visible"],
+      columns: ["name", "spaces", "visible"],
       schema: {
         name: fields.slug({
           name: {
@@ -128,15 +189,6 @@ export default config({
         visible: fields.checkbox({
           label: "Visible sur le site",
           defaultValue: true,
-        }),
-        profileType: fields.select({
-          label: "Type de profil",
-          defaultValue: "praticien",
-          options: [
-            { label: "Professeur·e", value: "professeur" },
-            { label: "Praticien·ne", value: "praticien" },
-            { label: "Intervenant·e atelier", value: "atelier" },
-          ],
         }),
         spaces: fields.multiselect({
           label: "Espace associé",
@@ -307,6 +359,83 @@ export default config({
           description: "Exemple : reprise-activite-apres-50-ans",
           validation: { isRequired: true },
         }),
+      },
+    },
+    siteVisuals: {
+      label: "Visuels du site",
+      path: "src/data/siteVisuals",
+      format: "json",
+      schema: {
+        homeGallery: fields.array(siteVisualField("Image de galerie"), {
+          label: "Accueil - galerie défilante",
+          itemLabel: (props) => props.fields.label.value,
+          validation: { length: { min: 7, max: 7 } },
+        }),
+        homeSpaces: fields.object(
+          {
+            studio: siteVisualField("Accueil - La Salle"),
+            bulle: siteVisualField("Accueil - La Bulle"),
+            cocon: siteVisualField("Accueil - Le Cocon"),
+          },
+          { label: "Accueil - Trois espaces" }
+        ),
+        homeOffers: fields.object(
+          {
+            bulle: siteVisualField("Accueil - Accompagnements La Bulle"),
+            cocon: siteVisualField("Accueil - Soins Le Cocon"),
+          },
+          { label: "Accueil - Accompagnements & soins" }
+        ),
+        leLieu: fields.object(
+          {
+            hero: siteVisualField("Le lieu - hero"),
+            spaces: fields.object(
+              {
+                studio: siteVisualField("Le lieu - La Salle"),
+                bulle: siteVisualField("Le lieu - La Bulle"),
+                cocon: siteVisualField("Le lieu - Le Cocon"),
+              },
+              { label: "Le lieu - espaces" }
+            ),
+            founders: fields.object(
+              {
+                gaelle: siteVisualField("Le lieu - Gaëlle"),
+                zelie: siteVisualField("Le lieu - Zélie"),
+              },
+              { label: "Le lieu - fondatrices" }
+            ),
+          },
+          { label: "Page Le lieu" }
+        ),
+        care: fields.object(
+          {
+            overviewBulle: siteVisualField("Prévention santé - La Bulle"),
+            overviewCocon: siteVisualField("Prévention santé - Le Cocon"),
+            bulleHero: siteVisualField("La Bulle - visuel cabinet"),
+            coconHero: siteVisualField("Le Cocon - visuel cabinet"),
+          },
+          { label: "Accompagnements & soins" }
+        ),
+        rental: fields.object(
+          {
+            studio: fields.array(siteVisualField("Location - La Salle"), {
+              label: "Location - galerie La Salle",
+              itemLabel: (props) => props.fields.label.value,
+              validation: { length: { min: 1 } },
+            }),
+            bulle: fields.array(siteVisualField("Location - La Bulle"), {
+              label: "Location - galerie La Bulle",
+              itemLabel: (props) => props.fields.label.value,
+              validation: { length: { min: 1 } },
+            }),
+            cocon: fields.array(siteVisualField("Location - Le Cocon"), {
+              label: "Location - galerie Le Cocon",
+              itemLabel: (props) => props.fields.label.value,
+              validation: { length: { min: 1 } },
+            }),
+          },
+          { label: "Location d'espace - galeries" }
+        ),
       },
     },
   },

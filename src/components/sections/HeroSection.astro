@@ -1,3 +1,8 @@
+---
+import SiteVisual from "../SiteVisual.astro";
+import { siteVisuals } from "../../data/siteVisuals.js";
+---
+
 <section class="hero section-pad">
         <div class="hero-meta mono">
           <span>Clamart - 92140 - Île-de-France</span>
@@ -33,20 +38,8 @@
           </div>
           <div class="gallery-track-mask">
             <div class="gallery-track">
-              <div class="ph wide t-petrol"><span class="cap">[ photo · grande salle, parquet, lumière oblique ]</span></div>
-              <div class="ph t-fern"><span class="cap">[ photo · fougère humide, contre-jour ]</span></div>
-              <div class="ph t-storm"><span class="cap">[ photo · vague sur galet, lumière basse ]</span></div>
-              <div class="ph t-sand"><span class="cap">[ photo · tissu de lin froissé ]</span></div>
-              <div class="ph wide t-foam"><span class="cap">[ photo · cabinet, fauteuil, lumière douce ]</span></div>
-              <div class="ph t-clay"><span class="cap">[ photo · table de soin, drap de lin ]</span></div>
-              <div class="ph t-stone"><span class="cap">[ photo · pierre claire, détail minéral ]</span></div>
-              <div class="ph wide t-petrol" aria-hidden="true"><span class="cap">[ photo · grande salle, parquet, lumière oblique ]</span></div>
-              <div class="ph t-fern" aria-hidden="true"><span class="cap">[ photo · fougère humide, contre-jour ]</span></div>
-              <div class="ph t-storm" aria-hidden="true"><span class="cap">[ photo · vague sur galet, lumière basse ]</span></div>
-              <div class="ph t-sand" aria-hidden="true"><span class="cap">[ photo · tissu de lin froissé ]</span></div>
-              <div class="ph wide t-foam" aria-hidden="true"><span class="cap">[ photo · cabinet, fauteuil, lumière douce ]</span></div>
-              <div class="ph t-clay" aria-hidden="true"><span class="cap">[ photo · table de soin, drap de lin ]</span></div>
-              <div class="ph t-stone" aria-hidden="true"><span class="cap">[ photo · pierre claire, détail minéral ]</span></div>
+              {siteVisuals.homeGallery.map((visual) => <SiteVisual visual={visual} />)}
+              {siteVisuals.homeGallery.map((visual) => <SiteVisual visual={visual} ariaHidden />)}
             </div>
           </div>
         </div>

@@ -29,7 +29,6 @@ const people = defineCollection({
     order: z.number(),
     name: z.string(),
     visible: z.boolean(),
-    profileType: z.string(),
     spaces: z.array(z.string()),
     specialty: z.string(),
     bio: z.string(),

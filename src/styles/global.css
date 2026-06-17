@@ -1378,6 +1378,20 @@ h3 {
   background: linear-gradient(180deg, transparent 55%, rgba(14, 42, 44, 0.45));
 }
 
+.site-visual.has-upload::before,
+.site-visual.has-upload::after {
+  display: none;
+}
+
+.site-visual.has-upload img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .photo span {
   display: none;
   position: absolute;

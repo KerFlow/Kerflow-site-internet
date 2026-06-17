@@ -2,7 +2,9 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
+import SiteVisual from "../../components/SiteVisual.astro";
 import { peopleForSpace } from "../../data/cmsContent.js";
+import { siteVisuals } from "../../data/siteVisuals.js";
 
 const practitioners = peopleForSpace("le-cocon");
 ---
@@ -52,9 +54,7 @@ const practitioners = peopleForSpace("le-cocon");
             Un espace calme, intimiste, pense pour les rendez-vous individuels qui demandent
             de la confidentialite, une ambiance feutree et le temps de relacher.
           </p>
-          <div class="cocon-placeholder cocon-foam">
-            <span>[ photo - Le Cocon, table de soin, lumiere douce, ambiance calme ]</span>
-          </div>
+          <SiteVisual visual={siteVisuals.care.coconHero} class="cocon-placeholder" />
         </div>
         <aside>
           <p class="cocon-label">Ce qu'on y reçoit</p>

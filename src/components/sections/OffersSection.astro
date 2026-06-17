@@ -1,3 +1,8 @@
+---
+import SiteVisual from "../SiteVisual.astro";
+import { siteVisuals } from "../../data/siteVisuals.js";
+---
+
 <section id="soins" class="offers section-pad alt">
         <div class="section-head narrow">
           <p class="eyebrow">06 - Au-delà des cours</p>
@@ -11,7 +16,7 @@
               <p>Consultations individuelles autour de l'alimentation, du sommeil, du stress, de l'activité physique et du bien-être mental. NAPSOthérapie et approche intégrative.</p>
               <a class="btn-line" href="#contact">Prendre rendez-vous</a>
             </div>
-            <div class="photo photo-foam"><span>[ photo - cabinet de la Bulle, lumière naturelle ]</span></div>
+            <SiteVisual visual={siteVisuals.homeOffers.bulle} class="photo" />
           </article>
           <article>
             <div class="offer-copy">
@@ -20,7 +25,7 @@
               <p>Massages, drainage lymphatique, acupuncture, réflexologie, soins corporels. Une heure pour ralentir le rythme et déposer la semaine, pratique par des thérapeutes diplômés.</p>
               <a class="btn-line" href="#contact">Choisir un soin</a>
             </div>
-            <div class="photo photo-clay"><span>[ photo - table de soin, drap de lin, bougie ]</span></div>
+            <SiteVisual visual={siteVisuals.homeOffers.cocon} class="photo" />
           </article>
         </div>
       </section>
