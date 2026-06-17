@@ -2,7 +2,7 @@
   "name": "Carnet - 10 cours",
   "order": 2,
   "visible": true,
-  "featured": false,
+  "featured": true,
   "amount": "150",
   "unit": "soit 15 € le cours - valable 4 mois",
   "features": [
