@@ -2,7 +2,7 @@
   "name": "A l'unite",
   "order": 1,
   "visible": true,
-  "featured": true,
+  "featured": false,
   "amount": "18",
   "unit": "le cours - sans abonnement",
   "features": [
