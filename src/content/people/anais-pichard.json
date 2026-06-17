@@ -3,7 +3,9 @@
   "name": "Anais Pichard",
   "visible": true,
   "profileType": "professeur",
-  "spaces": ["cours"],
+  "spaces": [
+    "cours"
+  ],
   "specialty": "Mobilite - renforcement",
   "bio": "Le mouvement fonctionnel et la mobilite articulaire. Ideale pour les reprises et le travail des douleurs.",
   "imageClass": "foam",
@@ -11,5 +13,6 @@
   "primaryLinkLabel": "Prendre rendez-vous",
   "primaryLinkUrl": "/contact/",
   "secondaryLinkLabel": "Instagram",
-  "secondaryLinkUrl": "#"
+  "secondaryLinkUrl": "#",
+  "visualMode": "color"
 }

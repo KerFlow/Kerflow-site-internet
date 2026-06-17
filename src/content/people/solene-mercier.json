@@ -3,7 +3,9 @@
   "name": "Solene Mercier",
   "visible": true,
   "profileType": "professeur",
-  "spaces": ["cours"],
+  "spaces": [
+    "cours"
+  ],
   "specialty": "Yoga - Yin - restoratif",
   "bio": "Une pedagogie lente et precise, attentive au souffle. Specialiste du Yin et des pratiques de recuperation.",
   "imageClass": "fern",
@@ -11,5 +13,6 @@
   "primaryLinkLabel": "Prendre rendez-vous",
   "primaryLinkUrl": "/contact/",
   "secondaryLinkLabel": "Instagram",
-  "secondaryLinkUrl": "#"
+  "secondaryLinkUrl": "#",
+  "visualMode": "color"
 }

@@ -77,7 +77,20 @@ import SiteFooter from "../components/SiteFooter.astro";
 
         <div class="rent space-studio" data-screen-label="Louer · La Salle">
           <div class="rent-media framed">
-            <div class="ph t-petrol"><span class="cap">[ photo · La Salle de pratique, 40 m², miroir toute hauteur, lumière naturelle ]</span></div>
+            <div class="space-carousel" data-carousel aria-label="Photos de La Salle de pratique">
+              <div class="carousel-track">
+                <div class="ph t-petrol slide active"><span class="cap">[ photo · La Salle de pratique, 40 m², miroir toute hauteur, lumière naturelle ]</span></div>
+                <div class="ph t-petrol t-petrol-2 slide"><span class="cap">[ photo · La Salle en configuration atelier, tapis et matériel ]</span></div>
+                <div class="ph t-petrol t-petrol-3 slide"><span class="cap">[ photo · La Salle, tables et chaises pour formation ]</span></div>
+              </div>
+              <button class="carousel-arrow prev" type="button" data-carousel-prev aria-label="Photo précédente">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7"></path></svg>
+              </button>
+              <button class="carousel-arrow next" type="button" data-carousel-next aria-label="Photo suivante">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"></path></svg>
+              </button>
+              <div class="carousel-dots" aria-hidden="true"><span class="active"></span><span></span><span></span></div>
+            </div>
           </div>
           <div class="rent-body">
             <span class="r-tag">01 · La Salle de pratique</span>
@@ -110,7 +123,20 @@ import SiteFooter from "../components/SiteFooter.astro";
 
         <div class="rent flip space-consult" data-screen-label="Louer · La Bulle">
           <div class="rent-media framed">
-            <div class="ph t-foam"><span class="cap">[ photo · La Bulle, 11 m², grande fenêtre sur cour arborée, fauteuil ]</span></div>
+            <div class="space-carousel" data-carousel aria-label="Photos de La Bulle">
+              <div class="carousel-track">
+                <div class="ph t-foam slide active"><span class="cap">[ photo · La Bulle, 11 m², grande fenêtre sur cour arborée, fauteuil ]</span></div>
+                <div class="ph t-foam t-foam-2 slide"><span class="cap">[ photo · La Bulle, bureau de consultation lumineux ]</span></div>
+                <div class="ph t-foam t-foam-3 slide"><span class="cap">[ photo · La Bulle, ambiance calme et naturelle ]</span></div>
+              </div>
+              <button class="carousel-arrow prev" type="button" data-carousel-prev aria-label="Photo précédente">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7"></path></svg>
+              </button>
+              <button class="carousel-arrow next" type="button" data-carousel-next aria-label="Photo suivante">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"></path></svg>
+              </button>
+              <div class="carousel-dots" aria-hidden="true"><span class="active"></span><span></span><span></span></div>
+            </div>
           </div>
           <div class="rent-body">
             <span class="r-tag">02 · La Bulle - bureau de consultation</span>
@@ -143,7 +169,20 @@ import SiteFooter from "../components/SiteFooter.astro";
 
         <div class="rent space-rituel" data-screen-label="Louer · Le Cocon">
           <div class="rent-media framed">
-            <div class="ph t-clay"><span class="cap">[ photo · Le Cocon, 7 m², box de soin au sous-sol, table de massage ]</span></div>
+            <div class="space-carousel" data-carousel aria-label="Photos du Cocon">
+              <div class="carousel-track">
+                <div class="ph t-clay slide active"><span class="cap">[ photo · Le Cocon, 7 m², box de soin au sous-sol, table de massage ]</span></div>
+                <div class="ph t-clay t-clay-2 slide"><span class="cap">[ photo · Le Cocon, table de soin et lumière douce ]</span></div>
+                <div class="ph t-clay t-clay-3 slide"><span class="cap">[ photo · Le Cocon, détail lavabo et ambiance intimiste ]</span></div>
+              </div>
+              <button class="carousel-arrow prev" type="button" data-carousel-prev aria-label="Photo précédente">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7"></path></svg>
+              </button>
+              <button class="carousel-arrow next" type="button" data-carousel-next aria-label="Photo suivante">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"></path></svg>
+              </button>
+              <div class="carousel-dots" aria-hidden="true"><span class="active"></span><span></span><span></span></div>
+            </div>
           </div>
           <div class="rent-body">
             <span class="r-tag">03 · Le Cocon - box de soin</span>
@@ -247,6 +286,29 @@ import SiteFooter from "../components/SiteFooter.astro";
   </main>
   <SiteFooter />
 </BaseLayout>
+
+<script>
+  document.querySelectorAll("[data-carousel]").forEach((carousel) => {
+    const slides = Array.from(carousel.querySelectorAll(".slide"));
+    const dots = Array.from(carousel.querySelectorAll(".carousel-dots span"));
+    const prev = carousel.querySelector("[data-carousel-prev]");
+    const next = carousel.querySelector("[data-carousel-next]");
+    let current = 0;
+
+    const showSlide = (index) => {
+      current = (index + slides.length) % slides.length;
+      slides.forEach((slide, slideIndex) => {
+        slide.classList.toggle("active", slideIndex === current);
+      });
+      dots.forEach((dot, dotIndex) => {
+        dot.classList.toggle("active", dotIndex === current);
+      });
+    };
+
+    prev?.addEventListener("click", () => showSlide(current - 1));
+    next?.addEventListener("click", () => showSlide(current + 1));
+  });
+</script>
 
 <style>
   .rent-page {
@@ -594,9 +656,29 @@ import SiteFooter from "../components/SiteFooter.astro";
     --ph-b: #0e2a2c;
   }
 
+  .t-petrol-2 {
+    --ph-a: #6c8d89;
+    --ph-b: #1f4b4d;
+  }
+
+  .t-petrol-3 {
+    --ph-a: #b7aa89;
+    --ph-b: #2d5657;
+  }
+
   .t-foam {
     --ph-a: #9bbab8;
     --ph-b: #3f6e6f;
+  }
+
+  .t-foam-2 {
+    --ph-a: #d2d8c7;
+    --ph-b: #527d77;
+  }
+
+  .t-foam-3 {
+    --ph-a: #86aaa5;
+    --ph-b: #234f50;
   }
 
   .t-clay {
@@ -604,9 +686,110 @@ import SiteFooter from "../components/SiteFooter.astro";
     --ph-b: #6b3d29;
   }
 
+  .t-clay-2 {
+    --ph-a: #d69a73;
+    --ph-b: #74442f;
+  }
+
+  .t-clay-3 {
+    --ph-a: #9f6045;
+    --ph-b: #41271e;
+  }
+
   .framed {
     padding: 12px;
     background: var(--frame, var(--stone));
+  }
+
+  .space-carousel {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    background: var(--paper);
+  }
+
+  .carousel-track,
+  .space-carousel .slide {
+    position: absolute;
+    inset: 0;
+  }
+
+  .space-carousel .slide {
+    opacity: 0;
+    transform: scale(1.018);
+    transition: opacity 360ms ease, transform 520ms var(--ease-out, cubic-bezier(0.22, 1, 0.36, 1));
+  }
+
+  .space-carousel .slide.active {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 1;
+  }
+
+  .carousel-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 3;
+    display: inline-grid;
+    width: clamp(42px, 4vw, 58px);
+    height: clamp(42px, 4vw, 58px);
+    place-items: center;
+    border: 0;
+    background: transparent;
+    color: rgba(241, 235, 225, 0.9);
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: color 220ms ease, transform 260ms var(--ease-out, cubic-bezier(0.22, 1, 0.36, 1));
+  }
+
+  .carousel-arrow.prev {
+    left: clamp(10px, 1.6vw, 20px);
+  }
+
+  .carousel-arrow.next {
+    right: clamp(10px, 1.6vw, 20px);
+  }
+
+  .carousel-arrow svg {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.35;
+  }
+
+  .carousel-arrow:hover,
+  .carousel-arrow:focus-visible {
+    color: var(--linen);
+    transform: translateY(-50%) scale(1.06);
+  }
+
+  .carousel-arrow:focus-visible {
+    outline: 1px solid currentColor;
+    outline-offset: 4px;
+  }
+
+  .carousel-dots {
+    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    z-index: 3;
+    display: flex;
+    gap: 7px;
+    transform: translateX(-50%);
+  }
+
+  .carousel-dots span {
+    width: 6px;
+    height: 6px;
+    border: 1px solid rgba(241, 235, 225, 0.72);
+    border-radius: 999px;
+  }
+
+  .carousel-dots span.active {
+    background: var(--linen);
   }
 
   .rent {
@@ -639,10 +822,6 @@ import SiteFooter from "../components/SiteFooter.astro";
 
   .rent.flip .rent-media {
     order: 2;
-  }
-
-  .rent-media .ph {
-    aspect-ratio: 4 / 3;
   }
 
   .rent-body .r-tag {

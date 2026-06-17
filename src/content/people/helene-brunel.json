@@ -3,7 +3,9 @@
   "name": "Helene Brunel",
   "visible": true,
   "profileType": "praticien",
-  "spaces": ["la-bulle"],
+  "spaces": [
+    "la-bulle"
+  ],
   "specialty": "NAPSOtherapie - accompagnements & soins",
   "bio": "Approche globale du mode de vie : alimentation, activite, sommeil, stress.",
   "imageClass": "foam",
@@ -11,5 +13,6 @@
   "primaryLinkLabel": "Prendre rendez-vous",
   "primaryLinkUrl": "/contact/",
   "secondaryLinkLabel": "Instagram",
-  "secondaryLinkUrl": "#"
+  "secondaryLinkUrl": "#",
+  "visualMode": "color"
 }

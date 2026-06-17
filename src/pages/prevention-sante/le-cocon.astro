@@ -104,7 +104,13 @@ const practitioners = peopleForSpace("le-cocon");
         <div class="cocon-team">
           {practitioners.map((person) => (
             <article>
-              <div class={`cocon-person-media cocon-${person.imageClass}`}><span>{person.imageLabel}</span></div>
+              <div class={`cocon-person-media cocon-${person.imageClass} ${person.visualMode === "image" && person.image ? "has-upload" : ""}`}>
+                {person.visualMode === "image" && person.image ? (
+                  <img src={person.image} alt={person.imageLabel} loading="lazy" decoding="async" />
+                ) : (
+                  <span>{person.imageLabel}</span>
+                )}
+              </div>
               <div>
                 <h3>{person.name}</h3>
                 <p class="cocon-role">{person.specialty}</p>
@@ -297,6 +303,19 @@ const practitioners = peopleForSpace("le-cocon");
   .cocon-placeholder span,
   .cocon-person-media span {
     display: none;
+  }
+
+  .cocon-person-media {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cocon-person-media img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .cocon-foam {

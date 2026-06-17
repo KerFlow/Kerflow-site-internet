@@ -480,6 +480,19 @@
   background: linear-gradient(180deg, transparent 52%, rgba(14, 42, 44, 0.45) 100%);
 }
 
+.cours-portrait.has-upload::before,
+.cours-portrait.has-upload::after {
+  display: none;
+}
+
+.cours-portrait img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .cours-portrait.fern {
   --portrait-a: #7d9468;
   --portrait-b: #2a3d22;
@@ -493,6 +506,16 @@
 .cours-portrait.foam {
   --portrait-a: #9bbab8;
   --portrait-b: #3f6e6f;
+}
+
+.cours-portrait.clay {
+  --portrait-a: #d99a78;
+  --portrait-b: #6b3d29;
+}
+
+.cours-portrait.sand {
+  --portrait-a: #f1ebe1;
+  --portrait-b: #8f8f83;
 }
 
 .cours-portrait span {

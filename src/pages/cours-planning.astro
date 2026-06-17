@@ -195,7 +195,13 @@ const teachers = peopleForSpace("cours");
         <div class="cours-team">
           {teachers.map((person) => (
             <article>
-              <div class={`cours-portrait ${person.imageClass}`}><span>{person.imageLabel}</span></div>
+              <div class={`cours-portrait ${person.imageClass} ${person.visualMode === "image" && person.image ? "has-upload" : ""}`}>
+                {person.visualMode === "image" && person.image ? (
+                  <img src={person.image} alt={person.imageLabel} loading="lazy" decoding="async" />
+                ) : (
+                  <span>{person.imageLabel}</span>
+                )}
+              </div>
               <div>
                 <h3>{person.name}</h3>
                 <span>{person.specialty}</span>

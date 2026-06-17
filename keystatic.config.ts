@@ -45,8 +45,22 @@ export default config({
           multiline: true,
           validation: { isRequired: true },
         }),
+        visualMode: fields.select({
+          label: "Type de visuel",
+          defaultValue: "color",
+          options: [
+            { label: "Aplat couleur", value: "color" },
+            { label: "Photo importée", value: "image" },
+          ],
+        }),
+        image: fields.image({
+          label: "Photo importée",
+          directory: "public/uploads/blog",
+          publicPath: "/uploads/blog/",
+          description: "Utilisée si le type de visuel est « Photo importée ».",
+        }),
         imageClass: fields.select({
-          label: "Couleur de l'image",
+          label: "Couleur de l'aplat",
           defaultValue: "t-sand",
           options: [
             { label: "Sable", value: "t-sand" },
@@ -58,7 +72,7 @@ export default config({
           ],
         }),
         imageLabel: fields.text({
-          label: "Texte de l'image",
+          label: "Texte alternatif / repère visuel",
           validation: { isRequired: true },
         }),
         intro: fields.text({
@@ -142,6 +156,20 @@ export default config({
           label: "Courte présentation",
           multiline: true,
           validation: { isRequired: true },
+        }),
+        visualMode: fields.select({
+          label: "Type de visuel",
+          defaultValue: "color",
+          options: [
+            { label: "Aplat couleur", value: "color" },
+            { label: "Photo importée", value: "image" },
+          ],
+        }),
+        image: fields.image({
+          label: "Photo importée",
+          directory: "public/uploads/people",
+          publicPath: "/uploads/people/",
+          description: "Utilisée si le type de visuel est « Photo importée ».",
         }),
         imageClass: fields.select({
           label: "Aplat / visuel",

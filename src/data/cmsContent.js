@@ -6,6 +6,7 @@ const settingsModules = import.meta.glob("../content/settings/*.json", { eager: 
 const fromModules = (modules) =>
   Object.entries(modules)
     .map(([path, module]) => ({
+      visualMode: "color",
       slug: path.split("/").pop().replace(".json", ""),
       ...module.default,
     }))

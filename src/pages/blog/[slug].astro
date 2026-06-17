@@ -47,8 +47,12 @@ const articleSections = article.sections.map((section) => ({
               <h1 class="serif">{article.title}</h1>
               <p class="lede">{article.intro}</p>
             </div>
-            <div class={`ph article-photo ${article.imageClass}`} aria-hidden="true">
-              <span class="cap">{article.imageLabel}</span>
+            <div class={`ph article-photo ${article.imageClass} ${article.visualMode === "image" && article.image ? "has-upload" : ""}`}>
+              {article.visualMode === "image" && article.image ? (
+                <img src={article.image} alt={article.imageLabel} loading="eager" decoding="async" />
+              ) : (
+                <span class="cap">{article.imageLabel}</span>
+              )}
             </div>
           </div>
         </div>
@@ -82,7 +86,13 @@ const articleSections = article.sections.map((section) => ({
         <div class="related-grid">
           {relatedArticles.map((item) => (
             <a href={`/blog/${item.slug}/`} class="art">
-              <div class={`ph ${item.imageClass}`}><span class="cap">{item.imageLabel}</span></div>
+              <div class={`ph ${item.imageClass} ${item.visualMode === "image" && item.image ? "has-upload" : ""}`}>
+                {item.visualMode === "image" && item.image ? (
+                  <img src={item.image} alt={item.imageLabel} loading="lazy" decoding="async" />
+                ) : (
+                  <span class="cap">{item.imageLabel}</span>
+                )}
+              </div>
               <div class="a-body">
                 <span class="a-tag">{item.tag}</span>
                 <h3 class="serif">{item.title}</h3>
@@ -272,6 +282,19 @@ const articleSections = article.sections.map((section) => ({
     inset: 0;
     background: linear-gradient(180deg, transparent 52%, rgba(14, 42, 44, 0.45) 100%);
     content: "";
+  }
+
+  .ph.has-upload::before,
+  .ph.has-upload::after {
+    display: none;
+  }
+
+  .ph img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .article-photo {
