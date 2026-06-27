@@ -50,6 +50,7 @@ const courses = defineCollection({
     label: z.string(),
     title: z.string(),
     description: z.string(),
+    longDescription: z.string(),
     visible: z.boolean(),
   }),
 });

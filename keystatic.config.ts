@@ -284,7 +284,12 @@ export default config({
           validation: { isRequired: true },
         }),
         description: fields.text({
-          label: "Description",
+          label: "Description courte",
+          multiline: true,
+          validation: { isRequired: true },
+        }),
+        longDescription: fields.text({
+          label: "Description longue - fenêtre au clic",
           multiline: true,
           validation: { isRequired: true },
         }),

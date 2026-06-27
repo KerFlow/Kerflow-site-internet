@@ -20,9 +20,8 @@ const teachers = peopleForSpace("cours");
             <p class="cours-kicker">KerFlow Studio - cours collectifs</p>
             <h1>
               Petits groupes,<br />
-              <em>grand soin.</em><br />
-              Bouger sans<br />
-              pression.
+              <em>pratique attentive.</em><br />
+              Bouger sans pression.
             </h1>
             <div class="cours-actions">
               <a href="/contact/" class="btn btn-primary">Reserver un cours <span aria-hidden="true">→</span></a>
@@ -32,11 +31,11 @@ const teachers = peopleForSpace("cours");
           <aside class="cours-hero-aside">
             <img class="cours-hero-logo" src="/assets/logos/kerflow-studio-web.png" alt="KerFlow Studio" loading="eager" decoding="async" />
             <p>
-              Yoga, Pilates, mobilite, respiration - en <em>petits groupes de 8 a 12</em>,
-              tous les jours, dans la grande salle. Progresser, se renforcer, se poser.
+              Une diversité de pratique pour que chacun trouve le mouvement qui lui convient. en <em>petits groupes de 8 à 12 élèves</em>,
+              tous les jours, dans Le Salon. Progresser, se renforcer, s'alléger.
             </p>
             <div class="cours-tags">
-              <span>Yoga</span><span>Pilates</span><span>Mobilite</span><span>Renforcement doux</span><span>Respiration</span>
+              <span>yoga</span><span>Pilates</span><span>Renforcement doux</span><span>Mobilité</span><span>Respiration</span>
             </div>
           </aside>
         </div>
@@ -47,16 +46,16 @@ const teachers = peopleForSpace("cours");
       <div class="cours-wrap">
         <div class="cours-head">
           <span class="cours-num">01 - Les pratiques</span>
-          <h2>Cinq facons de bouger<br /><em>en douceur.</em></h2>
-          <p>Toutes adaptables, toutes encadrees de pres. On commence ou l'on en est, on avance a son rythme.</p>
+          <h2>A chacun sa façon<br /><em>de bouger</em></h2>
+          <p>Cours adaptés, encadrés de près. On commence où l’on est, on avance à son rythme.</p>
         </div>
         <div class="cours-bordered cols-3">
           {courseTypes.map((course) => (
-            <div>
+            <button type="button" class="cours-practice-card" data-course-dialog={`course-${course.slug}`}>
               <span>{course.label}</span>
               <h3>{course.title}</h3>
               <p>{course.description}</p>
-            </div>
+            </button>
           ))}
           <div class="highlight">
             <span>→</span>
@@ -64,6 +63,14 @@ const teachers = peopleForSpace("cours");
             <p>On vous oriente avant la premiere seance. Ecrivez-nous, on choisit ensemble.</p>
           </div>
         </div>
+        {courseTypes.map((course) => (
+          <dialog class="course-dialog" id={`course-${course.slug}`} aria-labelledby={`course-${course.slug}-title`}>
+            <button type="button" class="course-dialog-close" data-course-dialog-close aria-label="Fermer">×</button>
+            <span>{course.label}</span>
+            <h3 id={`course-${course.slug}-title`}>{course.title}</h3>
+            <p>{course.longDescription}</p>
+          </dialog>
+        ))}
       </div>
     </section>
 
@@ -244,5 +251,32 @@ const teachers = peopleForSpace("cours");
       </div>
     </section>
   </main>
+  <script>
+    document.querySelectorAll("[data-course-dialog]").forEach((trigger) => {
+      trigger.addEventListener("click", () => {
+        const dialog = document.getElementById(trigger.dataset.courseDialog);
+        if (dialog instanceof HTMLDialogElement) {
+          dialog.showModal();
+        }
+      });
+    });
+
+    document.querySelectorAll("[data-course-dialog-close]").forEach((trigger) => {
+      trigger.addEventListener("click", () => {
+        const dialog = trigger.closest("dialog");
+        if (dialog instanceof HTMLDialogElement) {
+          dialog.close();
+        }
+      });
+    });
+
+    document.querySelectorAll(".course-dialog").forEach((dialog) => {
+      dialog.addEventListener("click", (event) => {
+        if (event.target === dialog && dialog instanceof HTMLDialogElement) {
+          dialog.close();
+        }
+      });
+    });
+  </script>
   <SiteFooter />
 </BaseLayout>
