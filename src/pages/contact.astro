@@ -2,9 +2,11 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
+import KerflowMapCard from "../components/KerflowMapCard.astro";
+import { siteSettings } from "../data/cmsContent.js";
 
-const googleMapsApiKey = import.meta.env.PUBLIC_GOOGLE_MAPS_API_KEY;
-const mapsDirectionsUrl = "https://www.google.com/maps/dir/?api=1&destination=12%20rue%20de%20la%20Roche%2C%2092140%20Clamart";
+const showPhone = Boolean(siteSettings.phoneVisible && siteSettings.phoneDisplay);
+const phoneHref = siteSettings.phoneHref ? `tel:${siteSettings.phoneHref}` : null;
 ---
 
 <BaseLayout
@@ -24,8 +26,8 @@ const mapsDirectionsUrl = "https://www.google.com/maps/dir/?api=1&destination=12
         </div>
         <aside class="contact-hero-aside">
           <p>
-            Une maison à deux pas de la gare de Clamart. Poussez la porte, écrivez-nous, ou
-            appelez : <em>on prend le temps de répondre</em>.
+            Une maison à deux pas de la gare de Clamart. Poussez la porte, écrivez-nous :
+            <em>on prend le temps de répondre</em>.
           </p>
         </aside>
       </div>
@@ -35,65 +37,47 @@ const mapsDirectionsUrl = "https://www.google.com/maps/dir/?api=1&destination=12
       <div class="contact-grid">
         <div>
           <span class="sec-num">01 · Coordonnées & accès</span>
-          <h2 class="contact-title">À deux pas de la<br /><em>gare.</em></h2>
+          <h2 class="contact-title">Au coeur du quartier<br /><em>Gare de Clamart.</em></h2>
           <div class="coord-list">
-            <div class="coord-row"><span class="lab">Adresse</span><span class="val">12 rue de la Roche<br />92140 Clamart</span></div>
-            <div class="coord-row"><span class="lab">Téléphone</span><span class="val"><a href="tel:+33146381234">01 46 38 12 34</a></span></div>
-            <div class="coord-row"><span class="lab">E-mail</span><span class="val"><a href="mailto:bonjour@kerflow.fr">bonjour@kerflow.fr</a></span></div>
-            <div class="coord-row"><span class="lab">Train</span><span class="val">Transilien N · gare de Clamart · 5 min à pied</span></div>
-            <div class="coord-row"><span class="lab">Tram</span><span class="val">T6 · Mairie de Clamart</span></div>
-            <div class="coord-row"><span class="lab">Parking</span><span class="val">Stationnement de surface rue de la Roche · parking public à 3 min</span></div>
-            <div class="coord-row"><span class="lab">Repères</span><span class="val">Face au square · à côté de la pharmacie de la gare</span></div>
+            <div class="coord-row"><span class="lab">Adresse</span><span class="val">169 avenue Jean Jaures<br />92140 Clamart</span></div>
+            <div class="coord-row"><span class="lab">E-mail</span><span class="val"><a href="mailto:kerflow.clamart@gmail.com">kerflow.clamart@gmail.com</a></span></div>
+            {showPhone && (
+              <div class="coord-row">
+                <span class="lab">Téléphone</span>
+                <span class="val">{phoneHref ? <a href={phoneHref}>{siteSettings.phoneDisplay}</a> : siteSettings.phoneDisplay}</span>
+              </div>
+            )}
+            <div class="coord-row"><span class="lab">Transport</span><span class="val">Bus 189 - Arrêt Lazare Carnot<br />Transilien N - Clamart (7 min à pied)</span></div>
+            <div class="coord-row"><span class="lab">Stationnement</span><span class="val">Zone de stationnement réglementé</span></div>
+            <div class="coord-row"><span class="lab">Repères</span><span class="val">Devant l'arrêt de bus Lazare Carnot, en face du Franprix et de l'école Jules Ferry</span></div>
           </div>
         </div>
 
-        <div class="contact-map-frame">
-          <div
-            class="contact-map-card contact-google-map-card"
-            data-google-map
-            data-api-key={googleMapsApiKey}
-            aria-label="Carte Google Maps de KerFlow"
-          >
-            <div class="contact-google-map" data-google-map-canvas></div>
-            <a class="contact-map-fallback" href={mapsDirectionsUrl} target="_blank" rel="noreferrer">
-              Ouvrir l'itinéraire dans Google Maps
-            </a>
-          </div>
-          <footer>
-            <span>Voir l'itinéraire</span>
-            <a class="btn-line" href={mapsDirectionsUrl} target="_blank" rel="noreferrer">Ouvrir Google Maps</a>
-          </footer>
-        </div>
+        <KerflowMapCard />
       </div>
     </section>
 
     <section class="contact-section contact-section-hours section-pad" data-screen-label="Horaires">
       <div class="sec-head">
         <span class="sec-num">02 · Horaires</span>
-        <h2 class="contact-title">Ouvert du mardi<br />au <em>samedi.</em></h2>
+        <h2 class="contact-title">Quand<br /><em>venir ?</em></h2>
       </div>
       <div class="contact-steps">
-        <div class="contact-step"><span class="st-num">i</span><h3>Accueil & visites</h3><p>Mardi au samedi · 9h00 - 20h00. Poussez la porte : on vous fait le tour avec plaisir.</p></div>
-        <div class="contact-step"><span class="st-num">ii</span><h3>Cours collectifs</h3><p>Premiers cours dès 7h15, derniers en soirée jusqu'à 21h15. Voir le planning détaillé.</p></div>
-        <div class="contact-step"><span class="st-num">iii</span><h3>Rendez-vous & soins</h3><p>Sur rendez-vous à La Bulle et au Cocon, selon les disponibilités des intervenant·es.</p></div>
+        <div class="contact-step"><h3>Cours collectifs</h3><p>Les cours ont lieu du lundi au samedi selon le planning. Retrouvez les horaires et les disponibilités en ligne. Durant les cours, la porte reste fermée.</p></div>
+        <div class="contact-step"><h3>Accompagnements & soins</h3><p>Les accompagnements et les soins sont proposés sur rendez-vous, selon les disponibilités de chaque praticien.</p></div>
+        <div class="contact-step"><h3>Découvrir le lieu</h3><p>Vous souhaitez visiter KerFlow, échanger sur un accompagnement ou louer un espace ? Contactez-nous pour convenir d'un rendez-vous.</p></div>
       </div>
-      <p class="contact-note">Fermé le lundi & le dimanche · horaires aménagés pendant les vacances scolaires</p>
     </section>
 
     <section class="contact-section contact-section-form section-pad" data-screen-label="Formulaire">
       <div class="contact-grid contact-form-grid">
         <div>
           <span class="sec-num">03 · Nous écrire</span>
-          <h2 class="contact-title">Une question ?<br /><em>On répond vite.</em></h2>
+          <h2 class="contact-title">Une question ?<br /><em>On vous répond.</em></h2>
           <p class="contact-copy">
-            Première visite, cours, soin, ou demande professionnelle : dites-nous l'essentiel,
-            on revient vers vous dès que possible.
+            Première visite, cours, Accompagnements & soins ou bien demande professionnelle : dites-nous l'essentiel,
+            nous reviendrons vers vous dès que possible.
           </p>
-          <div class="mood-words">
-            <span class="fill"><em>À l'écoute</em></span>
-            <span>Sans pression</span>
-            <span>Humain</span>
-          </div>
         </div>
 
         <form class="contact-form-card" action="https://formspree.io/f/mykavqkp" method="POST" aria-label="Formulaire de contact" data-formspree-inline data-success-message="Merci, votre message a bien été envoyé. Nous revenons vers vous rapidement.">
@@ -119,22 +103,21 @@ const mapsDirectionsUrl = "https://www.google.com/maps/dir/?api=1&destination=12
       </div>
     </section>
 
-    <section class="contact-cta" data-screen-label="CTA">
+    <section id="newsletter" class="contact-cta" data-screen-label="CTA">
       <div class="contact-cta-inner">
         <div>
           <h2>Suivez la vie<br />de la <em>maison.</em></h2>
           <p>
-            Les coulisses, les rendez-vous, un conseil de temps en temps. On partage doucement,
-            sans inonder votre fil.
+            Les coulisses, les rendez-vous, un conseil de temps en temps. La Gazette passe par Brevo dès que le formulaire final est confirmé.
           </p>
         </div>
-        <form class="contact-newsletter-form" onsubmit="return false;" aria-label="Inscription au journal KerFlow">
+        <form class="contact-newsletter-form" onsubmit="return false;" aria-label="Inscription à la gazette KerFlow">
           <label for="contact-newsletter-email">
             <span class="sr-only">Adresse e-mail</span>
             <input id="contact-newsletter-email" type="email" placeholder="Votre adresse e-mail" />
           </label>
           <div class="cta-actions">
-            <button class="contact-newsletter-submit" type="submit">Recevoir le journal <span aria-hidden="true">→</span></button>
+            <button class="contact-newsletter-submit" type="submit">Recevoir la gazette <span aria-hidden="true">→</span></button>
           </div>
         </form>
       </div>
@@ -142,59 +125,3 @@ const mapsDirectionsUrl = "https://www.google.com/maps/dir/?api=1&destination=12
   </main>
   <SiteFooter />
 </BaseLayout>
-
-<script>
-  const mapShell = document.querySelector("[data-google-map]");
-  const mapCanvas = document.querySelector("[data-google-map-canvas]");
-  const apiKey = mapShell?.dataset.apiKey;
-  const kerflowPosition = { lat: 48.802, lng: 2.252 };
-
-  function showMapFallback() {
-    mapShell?.classList.add("is-fallback");
-  }
-
-  function initKerflowMap() {
-    if (!mapCanvas || !window.google?.maps) {
-      showMapFallback();
-      return;
-    }
-
-    const map = new window.google.maps.Map(mapCanvas, {
-      center: kerflowPosition,
-      zoom: 16,
-      disableDefaultUI: true,
-      zoomControl: true,
-      mapTypeControl: false,
-      fullscreenControl: true,
-      streetViewControl: false,
-      styles: [
-        { elementType: "geometry", stylers: [{ color: "#f1ebe1" }] },
-        { elementType: "labels.text.fill", stylers: [{ color: "#40595a" }] },
-        { elementType: "labels.text.stroke", stylers: [{ color: "#f8f4ed" }] },
-        { featureType: "poi", stylers: [{ visibility: "off" }] },
-        { featureType: "road", elementType: "geometry", stylers: [{ color: "#ffffff" }] },
-        { featureType: "road.arterial", elementType: "geometry", stylers: [{ color: "#ecd7c8" }] },
-        { featureType: "transit", elementType: "geometry", stylers: [{ color: "#d99a78" }] },
-        { featureType: "water", elementType: "geometry", stylers: [{ color: "#c7d7d5" }] }
-      ]
-    });
-
-    new window.google.maps.Marker({
-      position: kerflowPosition,
-      map,
-      title: "KerFlow · 12 rue de la Roche, Clamart"
-    });
-  }
-
-  if (apiKey) {
-    window.initKerflowMap = initKerflowMap;
-    const script = document.createElement("script");
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(apiKey)}&callback=initKerflowMap`;
-    script.async = true;
-    script.defer = true;
-    script.onerror = showMapFallback;
-    document.head.append(script);
-  } else {
-    showMapFallback();
-  }
-</script>

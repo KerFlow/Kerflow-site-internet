@@ -21,7 +21,7 @@ const articleDuMoment =
       <div class="blog-wrap">
         <div class="blog-hero-grid">
           <div>
-            <p class="kicker">Le journal KerFlow</p>
+            <p class="kicker">Les articles KerFlow</p>
             <h1 class="serif">
               Des conseils,<br />
               <i class="h-accent">au calme.</i>
@@ -49,16 +49,17 @@ const articleDuMoment =
         </div>
 
         <article class="blog-editorial-feature" aria-label="Article du moment">
-          <div class="photo photo-sand blog-feature-photo">
-            <span>[ photo - carnet ouvert, stylo, lumière du matin ]</span>
+          <div class={`photo blog-feature-photo ${articleDuMoment.imageClass} ${articleDuMoment.visualMode === "image" && articleDuMoment.image ? "has-upload" : ""}`}>
+            {articleDuMoment.visualMode === "image" && articleDuMoment.image ? (
+              <img src={articleDuMoment.image} alt={articleDuMoment.imageLabel} loading="lazy" decoding="async" />
+            ) : (
+              <span>{articleDuMoment.imageLabel}</span>
+            )}
           </div>
           <div class="blog-feature-copy">
             <p class="kicker">Article du moment</p>
-            <h2 class="serif">Reprendre le sport après 50 ans, sans repartir de zéro.</h2>
-            <p>
-              Un contenu éditorial pour comprendre comment relancer le mouvement progressivement: mobilité,
-              récupération, souffle et signaux à écouter.
-            </p>
+            <h2 class="serif">{articleDuMoment.title}</h2>
+            <p>{articleDuMoment.excerpt}</p>
             <a class="feature-link" href={`/blog/${articleDuMoment.slug}/`}>Lire l'article</a>
           </div>
         </article>
@@ -105,7 +106,7 @@ const articleDuMoment =
       <div class="blog-wrap section-pad">
         <div class="blog-newsletter-grid">
           <div>
-            <span class="sec-num">02 - Le journal, dans votre boîte</span>
+            <span class="sec-num">02 - La gazette, dans votre boîte</span>
             <h2 class="title">Recevez les <i class="h c-accent">repères</i> KerFlow.</h2>
             <p class="lede">
               Une fois par mois - un conseil accompagnements & soins, une idée de mouvement doux et les nouvelles de la maison.

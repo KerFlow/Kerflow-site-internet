@@ -1,9 +1,10 @@
 ---
 import "../styles/global.css";
+import CookieConsent from "../components/CookieConsent.astro";
 
 const {
   title = "KerFlow Studio - Maison d'accompagnements & soins à Clamart",
-  description = "KerFlow Studio, maison d'accompagnements & soins et de mieux-être à Clamart. Yoga, Pilates, mobilité, respiration, soins et consultations."
+  description = "KerFlow Studio, maison d'accompagnements & soins et de mieux-être à Clamart. Yoga, Pilates, mobilité, respiration, soins et accompagnements."
 } = Astro.props;
 ---
 
@@ -20,7 +21,39 @@ const {
   </head>
   <body>
     <slot />
+    <CookieConsent />
     <script>
+      const cookieConsentKey = "kerflow_cookie_consent";
+      const cookieBanner = document.querySelector("[data-cookie-consent]");
+      const cookiePreferenceButtons = document.querySelectorAll("[data-cookie-choice]");
+      const cookiePreferenceOpeners = document.querySelectorAll("[data-cookie-open]");
+
+      const showCookieBanner = () => {
+        cookieBanner?.removeAttribute("hidden");
+      };
+
+      const hideCookieBanner = () => {
+        cookieBanner?.setAttribute("hidden", "");
+      };
+
+      if (cookieBanner && !localStorage.getItem(cookieConsentKey)) {
+        showCookieBanner();
+      }
+
+      cookiePreferenceButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          localStorage.setItem(cookieConsentKey, button.dataset.cookieChoice || "refused");
+          hideCookieBanner();
+        });
+      });
+
+      cookiePreferenceOpeners.forEach((button) => {
+        button.addEventListener("click", () => {
+          localStorage.removeItem(cookieConsentKey);
+          showCookieBanner();
+        });
+      });
+
       document.querySelectorAll("form[data-formspree-inline]").forEach((form) => {
         const submitButton = form.querySelector('button[type="submit"]');
         const defaultButtonContent = submitButton?.innerHTML || "";
@@ -58,7 +91,7 @@ const {
             status.textContent = form.dataset.successMessage || "Merci, votre message a bien été envoyé. Nous revenons vers vous rapidement.";
           } catch {
             status.className = "form-status is-error";
-            status.textContent = "L'envoi n'a pas abouti. Vous pouvez réessayer ou écrire directement à bonjour@kerflow.fr.";
+            status.textContent = "L'envoi n'a pas abouti. Vous pouvez réessayer ou écrire directement à kerflow.clamart@gmail.com.";
           } finally {
             if (submitButton) {
               submitButton.disabled = false;

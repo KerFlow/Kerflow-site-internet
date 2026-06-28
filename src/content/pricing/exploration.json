@@ -1,0 +1,14 @@
+{
+  "order": 2,
+  "name": "Exploration",
+  "intro": "Pour pratiquer régulièrement, sans abonnement.",
+  "featured": true,
+  "features": [
+    "Carnet de 5 cours",
+    "Carnet de 10 cours",
+    "Carnet de 20 cours"
+  ],
+  "ctaLabel": "Je réserve",
+  "ctaUrl": "/contact/",
+  "visible": true
+}

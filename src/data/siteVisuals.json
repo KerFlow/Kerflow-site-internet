@@ -59,11 +59,11 @@
   ],
   "homeSpaces": {
     "studio": {
-      "label": "Home - espace La Salle",
+      "label": "Home - espace Le Salon",
       "visualMode": "color",
       "image": null,
       "imageClass": "photo-petrol",
-      "description": "Salle de pratique KerFlow avec parquet clair"
+      "description": "Le Salon KerFlow avec parquet clair"
     },
     "bulle": {
       "label": "Home - espace La Bulle",
@@ -107,11 +107,11 @@
     },
     "spaces": {
       "studio": {
-        "label": "Le lieu - La Salle",
+        "label": "Le lieu - Le Salon",
         "visualMode": "color",
         "image": null,
         "imageClass": "t-petrol",
-        "description": "Grande salle de pratique de 40 metres carres avec parquet clair et miroir"
+        "description": "Le Salon de 40 metres carres avec parquet clair et miroir"
       },
       "bulle": {
         "label": "Le lieu - La Bulle",
@@ -158,7 +158,7 @@
       "visualMode": "color",
       "image": null,
       "imageClass": "pv-clay",
-      "description": "Le Cocon, box de soin avec table de massage et lumiere tamisee"
+      "description": "Le Cocon, espace de soin avec table de massage et lumiere tamisee"
     },
     "bulleHero": {
       "label": "La Bulle - visuel de presentation",
@@ -178,25 +178,25 @@
   "rental": {
     "studio": [
       {
-        "label": "Location - La Salle 1",
+        "label": "Location - Le Salon 1",
         "visualMode": "color",
         "image": null,
         "imageClass": "t-petrol",
-        "description": "La Salle de pratique de 40 metres carres avec miroir toute hauteur et lumiere naturelle"
+        "description": "Le Salon de 40 metres carres avec miroir toute hauteur et lumiere naturelle"
       },
       {
-        "label": "Location - La Salle 2",
+        "label": "Location - Le Salon 2",
         "visualMode": "color",
         "image": null,
         "imageClass": "t-petrol t-petrol-2",
-        "description": "La Salle en configuration atelier avec tapis et materiel"
+        "description": "Le Salon en configuration atelier avec tapis et materiel"
       },
       {
-        "label": "Location - La Salle 3",
+        "label": "Location - Le Salon 3",
         "visualMode": "color",
         "image": null,
         "imageClass": "t-petrol t-petrol-3",
-        "description": "La Salle en configuration formation avec tables et chaises"
+        "description": "Le Salon en configuration formation avec tables et chaises"
       }
     ],
     "bulle": [
@@ -228,7 +228,7 @@
         "visualMode": "color",
         "image": null,
         "imageClass": "t-clay",
-        "description": "Le Cocon, box de soin au sous-sol avec table de massage"
+        "description": "Le Cocon, espace de soin au sous-sol avec table de massage"
       },
       {
         "label": "Location - Le Cocon 2",

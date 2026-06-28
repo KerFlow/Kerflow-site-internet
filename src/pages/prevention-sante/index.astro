@@ -12,7 +12,7 @@ const coconPeople = peopleForSpace("le-cocon");
 
 <BaseLayout
   title="Accompagnements & Soins - KerFlow"
-  description="Accompagnements & soins du corps à Clamart : La Bulle pour les consultations, Le Cocon pour les soins corporels."
+  description="Accompagnements & soins du corps à Clamart : La Bulle pour les accompagnements individuels, Le Cocon pour les soins corporels."
 >
   <SiteHeader />
   <main class="prevention-page">
@@ -43,30 +43,21 @@ const coconPeople = peopleForSpace("le-cocon");
     <section class="pv-section pv-paper">
       <div class="pv-wrap">
         <div class="pv-head">
-          <span>01 - Deux façons d'être accompagné·e</span>
+          <span>01 - Deux manières de prendre du temps pour soi</span>
           <h2>L'accompagnement,<br />et le <em>soin du corps.</em></h2>
-          <p>
-            Tout part de deux gestes simples : comprendre, et relâcher. Chacun a son
-            espace, son intervenant·e, son rythme.
-          </p>
+          <p>Des professionnels aux approches variées vous accueillent sur rendez-vous.</p>
         </div>
         <div class="pv-choice-grid">
           <a href="/prevention-sante/la-bulle/" class="pv-choice pv-consult">
             <span>01 · La Bulle</span>
             <h3>Accompagnement</h3>
-            <p>
-              Consultations d'accompagnements & soins : alimentation, sommeil, activité physique,
-              bien-être mental. NAPSOthérapie, nutrition, gestion du stress.
-            </p>
+            <p>Des consultations individuelles pour être accompagné sur des sujets liés à la prévention santé et au mieux-être : alimentation, sommeil, gestion du stress, équilibre de vie ou santé de la femme.</p>
             <strong>Découvrir →</strong>
           </a>
           <a href="/prevention-sante/le-cocon/" class="pv-choice pv-rituel-card">
             <span>02 · Le Cocon</span>
             <h3>Soin du corps</h3>
-            <p>
-              Massages, drainage lymphatique, réflexologie, acupuncture, soins corporels.
-              Le temps d'un soin, pour ralentir et récupérer.
-            </p>
+            <p>Des soins manuels pour prendre soin de son corps : massages bien-être, massage prénatal, drainage lymphatique manuel, fasciathérapie et autres pratiques proposées par nos praticiens.</p>
             <strong>Découvrir →</strong>
           </a>
         </div>
@@ -76,53 +67,41 @@ const coconPeople = peopleForSpace("le-cocon");
     <section class="pv-section pv-consult-band" id="bulle">
       <div class="pv-wrap pv-space-grid">
         <div class="pv-space-main">
-          <span class="pv-lock">KerFlow <small>Consult</small></span>
+          <img class="pv-space-logo" src="/assets/logos/kerflow-consult-web.png" alt="KerFlow Consult" loading="lazy" decoding="async" />
           <h2>La Bulle,<br />le cabinet<br /><em>qui écoute.</em></h2>
           <p class="pv-copy">
-            Un bureau lumineux au rez-de-chaussée, sa fenêtre ouverte sur la cour arborée.
-            On vient y poser une question de santé, comprendre, et repartir avec des pistes
-            concrètes, sans jugement, sans injonction.
+            Un bureau de consultation au rez-de-chaussée, baigné de lumière naturelle, une grande fenêtre ouverte sur une cour calme et arborée.
+            Un cadre apaisant pour des accompagnements individuels.
           </p>
           <SiteVisual visual={siteVisuals.care.overviewBulle} class="pv-placeholder" />
         </div>
         <aside>
-          <p class="pv-label">Ce qu'on y trouve</p>
+          <p class="pv-label">Pour quels besoins ?</p>
           <div class="pv-list">
             <article>
               <span>01</span>
               <div>
-                <h3>Consultations &amp; NAPSOthérapie</h3>
-                <p>
-                  Un bilan global qui croise alimentation, sommeil, activité physique et
-                  stress, pour un plan d'action réaliste et tenu dans le temps.
-                </p>
+                <h3>Alimentation &amp; hygiène de vie</h3>
+                <p>Mieux comprendre ses habitudes, retrouver de l'énergie et construire des changements durables.</p>
+                <div class="pv-tags pv-inline-tags"><span>Napsothérapie</span><span>Diététique</span><span>Naturopathie</span></div>
               </div>
             </article>
             <article>
               <span>02</span>
               <div>
-                <h3>Sommeil &amp; gestion du stress</h3>
-                <p>
-                  Comprendre ce qui empêche de dormir ou de se poser, et reprendre la main :
-                  respiration, hygiène du sommeil, charge mentale.
-                </p>
+                <h3>Sommeil, stress &amp; équilibre émotionnel</h3>
+                <p>Retrouver un meilleur équilibre au quotidien et mieux comprendre les mécanismes qui influencent notre bien-être.</p>
+                <div class="pv-tags pv-inline-tags"><span>Psychologie</span><span>Sophrologie</span><span>Hypnose</span></div>
               </div>
             </article>
             <article>
               <span>03</span>
               <div>
-                <h3>Alimentation &amp; comportement</h3>
-                <p>
-                  Sans régime ni culpabilité. Écouter sa faim, ajuster, apaiser son rapport
-                  à l'assiette, durablement.
-                </p>
+                <h3>Parcours de vie &amp; transitions</h3>
+                <p>Être accompagné lors d'une étape de vie, d'un changement ou d'un questionnement personnel.</p>
+                <div class="pv-tags pv-inline-tags"><span>Sexologie</span><span>Coaching de vie</span><span>Accompagnement périnatal</span></div>
               </div>
             </article>
-          </div>
-          <div class="pv-tags">
-            <span>Sur rendez-vous</span>
-            <span>Individuel</span>
-            <span>Accès PMR</span>
           </div>
         </aside>
       </div>
@@ -131,52 +110,41 @@ const coconPeople = peopleForSpace("le-cocon");
     <section class="pv-section pv-rituel-band" id="cocon">
       <div class="pv-wrap pv-space-grid">
         <div class="pv-space-main">
-          <span class="pv-lock pv-lock-rituel">KerFlow <small>Rituel</small></span>
-          <h2>Le Cocon,<br />le box<br /><em>qui enveloppe.</em></h2>
+          <img class="pv-space-logo" src="/assets/logos/kerflow-rituel-web.png" alt="KerFlow Rituel" loading="lazy" decoding="async" />
+          <h2>Le Cocon,<br />le lieu<br /><em>qui enveloppe.</em></h2>
           <p class="pv-copy">
-            Au sous-sol, un espace intimiste sans fenêtre : l'intimité totale, l'atmosphère
-            qui enveloppe et invite au lâcher-prise. On s'allonge, on respire, le temps ralentit.
+            Au sous-sol, un espace intimiste. Une atmosphère qui invite au lâcher-prise.
+            Massages, réflexologie, soins du corps : le temps ralentit, on récupère.
           </p>
           <SiteVisual visual={siteVisuals.care.overviewCocon} class="pv-placeholder" />
         </div>
         <aside>
-          <p class="pv-label pv-label-rituel">Ce qu'on y reçoit</p>
+          <p class="pv-label pv-label-rituel">Pour quels besoins ?</p>
           <div class="pv-list pv-list-rituel">
             <article>
               <span>01</span>
               <div>
-                <h3>Massages &amp; soins corporels</h3>
-                <p>
-                  Massage détente, drainage lymphatique, soins du corps, pour relâcher les
-                  tensions et retrouver de la légèreté.
-                </p>
+                <h3>Détente &amp; récupération</h3>
+                <p>S'accorder un temps pour soi, relâcher les tensions et favoriser la récupération physique et mentale.</p>
+                <div class="pv-tags pv-tags-rituel pv-inline-tags"><span>Massage bien-être</span><span>Réflexologie</span><span>Relaxation</span></div>
               </div>
             </article>
             <article>
               <span>02</span>
               <div>
-                <h3>Réflexologie &amp; acupuncture</h3>
-                <p>
-                  Des approches précises, par les points et les zones, pour le sommeil,
-                  la digestion, le stress, la récupération.
-                </p>
+                <h3>Confort corporel &amp; mobilité</h3>
+                <p>Prendre soin de son corps, améliorer sa mobilité et retrouver plus de confort au quotidien.</p>
+                <div class="pv-tags pv-tags-rituel pv-inline-tags"><span>Fasciathérapie</span><span>Shiatsu</span><span>Drainage lymphatique</span></div>
               </div>
             </article>
             <article>
               <span>03</span>
               <div>
-                <h3>Relaxation &amp; récupération</h3>
-                <p>
-                  Un temps pour soi, sans rien à faire. Respiration guidée, détente profonde,
-                  retour au calme.
-                </p>
+                <h3>Périnatalité &amp; moments de transition</h3>
+                <p>Des soins adaptés aux différentes étapes de la vie et aux besoins spécifiques de chacun.</p>
+                <div class="pv-tags pv-tags-rituel pv-inline-tags"><span>Massage prénatal</span><span>Réflexologie</span><span>Fasciathérapie</span></div>
               </div>
             </article>
-          </div>
-          <div class="pv-tags pv-tags-rituel">
-            <span>Sur rendez-vous</span>
-            <span>Sous-sol feutré</span>
-            <span>Calme absolu</span>
           </div>
         </aside>
       </div>
@@ -188,13 +156,13 @@ const coconPeople = peopleForSpace("le-cocon");
           <span>02 - Les intervenants</span>
           <h2>Des praticien·nes<br /><em>choisi·es avec soin.</em></h2>
           <p>
-            Chacun·e exerce dans son espace. On les a réuni·es pour leur sérieux et leur
-            douceur, la même façon d'accueillir.
+            Chaque praticien·ne possède sa propre spécialité et sa propre approche.
+            Nous les avons choisi·es pour leur professionnalisme, leur expérience et leur sens de l'écoute.
           </p>
         </div>
 
         <div class="pv-team-head">
-          <span class="pv-lock">KerFlow <small>Consult</small></span>
+          <img class="pv-team-logo" src="/assets/logos/kerflow-consult-web.png" alt="KerFlow Consult" loading="lazy" decoding="async" />
           <p>À La Bulle · accompagnement</p>
         </div>
         <div class="pv-team">
@@ -221,7 +189,7 @@ const coconPeople = peopleForSpace("le-cocon");
         </div>
 
         <div class="pv-team-head pv-team-head-spaced">
-          <span class="pv-lock pv-lock-rituel">KerFlow <small>Rituel</small></span>
+          <img class="pv-team-logo" src="/assets/logos/kerflow-rituel-web.png" alt="KerFlow Rituel" loading="lazy" decoding="async" />
           <p>Au Cocon · soin du corps</p>
         </div>
         <div class="pv-team">
@@ -257,19 +225,19 @@ const coconPeople = peopleForSpace("le-cocon");
         </div>
         <div class="pv-steps">
           <article>
-            <span>i</span>
-            <h3>On choisit ensemble</h3>
-            <p>Un doute sur l'espace ou l'intervenant·e ? Écrivez-nous : on vous oriente.</p>
+            <span>01</span>
+            <h3>Vous choisissez</h3>
+            <p>Découvrez les différents accompagnements et soins, puis choisissez le professionnel qui correspond le mieux à vos besoins.</p>
           </article>
           <article>
-            <span>ii</span>
-            <h3>On prend rendez-vous</h3>
-            <p>Directement avec le praticien ou la praticienne, par le formulaire de contact.</p>
+            <span>02</span>
+            <h3>Vous prenez rendez-vous</h3>
+            <p>Prenez directement contact avec le professionnel de votre choix pour convenir d’un rendez-vous.</p>
           </article>
           <article>
-            <span>iii</span>
+            <span>03</span>
             <h3>On vous accueille</h3>
-            <p>Un thé chaud, le calme du lieu, et le temps qu'il faut. Sans engagement.</p>
+            <p>Présentez-vous quelques minutes avant votre rendez-vous. Installez-vous confortablement à la tisanerie : on viendra vous chercher dès que possible.</p>
           </article>
         </div>
       </div>
@@ -277,14 +245,14 @@ const coconPeople = peopleForSpace("le-cocon");
 
     <section class="pv-cta">
       <div class="pv-wrap">
-        <h2>Choisir un<br /><em>accompagnement.</em></h2>
+        <h2>Choisir un<br /><em>accompagnement ou un soin.</em></h2>
         <div>
           <p>
             On en parle avant de commencer, pour trouver le bon espace, le bon rythme,
             la bonne personne. Sans engagement.
           </p>
           <div class="pv-actions">
-            <a href="/contact/" class="btn btn-primary">Prendre rendez-vous</a>
+            <a href="/le-lieu/#espaces" class="btn btn-primary">Découvrir nos espaces</a>
             <a href="#intervenants" class="btn-line">Voir les intervenants</a>
           </div>
         </div>
@@ -527,6 +495,19 @@ const coconPeople = peopleForSpace("le-cocon");
     text-transform: uppercase;
   }
 
+  .pv-space-logo,
+  .pv-team-logo {
+    display: block;
+    width: min(260px, 72vw);
+    height: auto;
+    margin-bottom: 22px;
+  }
+
+  .pv-team-logo {
+    width: min(210px, 62vw);
+    margin-bottom: 0;
+  }
+
   .pv-consult-band .pv-lock small {
     color: var(--consult-ink);
   }
@@ -625,6 +606,10 @@ const coconPeople = peopleForSpace("le-cocon");
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 24px;
+  }
+
+  .pv-inline-tags {
+    margin-top: 14px;
   }
 
   .pv-tags span {

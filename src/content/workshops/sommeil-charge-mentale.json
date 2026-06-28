@@ -1,0 +1,15 @@
+{
+  "order": 1,
+  "visible": true,
+  "featured": true,
+  "date": "Samedi 6 juin",
+  "time": "10h00",
+  "title": "Sommeil & charge mentale",
+  "description": "Une matinée pour comprendre les rythmes, tester des outils simples et repartir avec une routine réaliste.",
+  "duration": "3h",
+  "price": "55€",
+  "ctaLabel": "Réserver",
+  "ctaUrl": "/contact/",
+  "imageClass": "photo-petrol",
+  "imageLabel": "[ photo - atelier sommeil, cercle calme ]"
+}

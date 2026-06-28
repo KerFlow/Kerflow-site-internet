@@ -4,6 +4,10 @@ import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import SiteVisual from "../components/SiteVisual.astro";
 import { siteVisuals } from "../data/siteVisuals.js";
+import { siteSettings } from "../data/cmsContent.js";
+
+const showPhone = Boolean(siteSettings.phoneVisible && siteSettings.phoneDisplay);
+const phoneHref = siteSettings.phoneHref ? `tel:${siteSettings.phoneHref}` : null;
 ---
 
 <BaseLayout
@@ -19,8 +23,7 @@ import { siteVisuals } from "../data/siteVisuals.js";
             <p class="kicker">Pour les professionnel·les</p>
             <h1 class="serif">
               Louer un espace<br />
-              au sein de la<br />
-              <i class="h-accent">maison <span class="brand-word-accent">KerFlow</span>.</i>
+              <i class="h-accent">chez <span class="brand-word-accent">KerFlow</span>.</i>
             </h1>
             <div class="hero-cta">
               <a href="#demande" class="btn btn-primary">
@@ -32,15 +35,16 @@ import { siteVisuals } from "../data/siteVisuals.js";
           </div>
           <aside class="page-hero-aside">
             <p class="lede">
-              Trois espaces rénovés - une grande salle, un cabinet, un box de soin - à louer à
-              l'heure, à la demi-journée ou à la journée, dans un <i class="h">écosystème bien-être déjà vivant</i>.
+              Une grande salle de pratique, un cabinet de consultation et un espace de soin, réunis sous un même toit.
+              Des espaces à louer ponctuellement ou régulièrement, dans un écosystème de professionnels qui partagent
+              une même attention au bien-être et à l'accompagnement.
             </p>
             <div class="hero-tags">
-              <span>Salle 40 m²</span>
-              <span>Cabinet 11 m²</span>
-              <span>Box 7 m²</span>
+              <span>Prêt à recevoir</span>
+              <span>Accès PMR</span>
               <span>Tisanerie</span>
-              <span>Clientèle locale</span>
+              <span>Sanitaires</span>
+              <span>Wi-Fi</span>
             </div>
           </aside>
         </div>
@@ -51,18 +55,18 @@ import { siteVisuals } from "../data/siteVisuals.js";
       <div class="wrap">
         <div class="sec-head">
           <span class="sec-num">01 - Pour qui ?</span>
-          <h2 class="title">Des professionnel·les<br /><i class="h c-petrol">aligné·es</i> avec le lieu.</h2>
+          <h2 class="title">Trois manières<br /><i class="h c-petrol">de rejoindre</i> KerFlow.</h2>
           <p class="sec-intro">
-            Une clientèle déjà sensible aux démarches de bien-être et d'accompagnements & soins, un cadre qualitatif, un univers cohérent. Si c'est le vôtre, on devrait s'entendre.
+            KerFlow accueille des professionnels du mouvement, du soin, de l'accompagnement et de la prévention santé.
+            Chaque projet fait l'objet d'un échange préalable afin de s'assurer de l'adéquation entre votre activité,
+            vos besoins et l'esprit du lieu. Pour répondre à différents besoins, nous proposons trois statuts :
+            Invité, Partenaire et Résident. Plus l'engagement est régulier, plus les avantages sont importants.
           </p>
         </div>
         <div class="grid-bordered cols-3">
-          <div class="gb-cell"><span class="gb-num">↘</span><h3 class="serif">Professeur·es</h3><p>Yoga, Pilates, mobilité, pratiques douces - cours réguliers ou cycles.</p></div>
-          <div class="gb-cell"><span class="gb-num">↘</span><h3 class="serif">Thérapeutes & masseur·ses</h3><p>Massage, réflexologie, acupuncture, soins énergétiques, soins du corps.</p></div>
-          <div class="gb-cell"><span class="gb-num">↘</span><h3 class="serif">Accompagnements & Soins</h3><p>Nutrition, sommeil, accompagnement, coaching - consultations individuelles.</p></div>
-          <div class="gb-cell"><span class="gb-num">↘</span><h3 class="serif">Ateliers & conférences</h3><p>Cercles, formations, workshops, stages week-end ouverts au public.</p></div>
-          <div class="gb-cell"><span class="gb-num">↘</span><h3 class="serif">Intervenant·es réguliers</h3><p>On privilégie les partenariats durables, inscrits dans la vie du lieu.</p></div>
-          <div class="gb-cell highlight"><span class="gb-num">→</span><h3 class="serif">Un projet particulier ?</h3><p>Parlez-nous-en. On étudie chaque demande au cas par cas.</p></div>
+          <div class="gb-cell"><span class="gb-num">↘</span><h3 class="serif">Invité</h3><p><b>Pour commencer simplement.</b> Vous intervenez ponctuellement pour un atelier, un remplacement, une conférence ou quelques créneaux dans l'année. Une formule souple pour découvrir le lieu et sa communauté.</p></div>
+          <div class="gb-cell"><span class="gb-num">↘</span><h3 class="serif">Partenaire</h3><p><b>Pour développer son activité.</b> Vous intervenez régulièrement chez KerFlow et participez à la vie du lieu. Vous bénéficiez de conditions préférentielles, d'une meilleure visibilité et d'un accès facilité aux créneaux récurrents.</p></div>
+          <div class="gb-cell highlight"><span class="gb-num">→</span><h3 class="serif">Résident</h3><p><b>Pour s'inscrire dans la durée.</b> Vous faites partie intégrante de l'écosystème KerFlow. Vous bénéficiez des meilleures conditions d'accès aux espaces, d'une visibilité renforcée et d'un accompagnement privilégié dans le développement de votre activité.</p></div>
         </div>
       </div>
     </section>
@@ -73,13 +77,13 @@ import { siteVisuals } from "../data/siteVisuals.js";
           <span class="sec-num">02 - Les espaces disponibles</span>
           <h2 class="title">Trois espaces,<br />trois <i class="h c-petrol">usages.</i></h2>
           <p class="sec-intro">
-            Tous entièrement rénovés - double vitrage, peintures et sols neufs. Tisanerie, vestiaires et toilettes accessibles PMR partagés.
+            Chaque espace a sa personnalité, son équipement et son intention. Découvrez lequel correspond le mieux à votre activité.
           </p>
         </div>
 
-        <div class="rent space-studio" data-screen-label="Louer · La Salle">
+        <div class="rent space-studio" data-screen-label="Louer · Le Salon">
           <div class="rent-media framed">
-            <div class="space-carousel" data-carousel aria-label="Photos de La Salle de pratique">
+            <div class="space-carousel" data-carousel aria-label="Photos du Salon">
               <div class="carousel-track">
                 {siteVisuals.rental.studio.map((visual, index) => (
                   <SiteVisual visual={visual} extraClass={`slide ${index === 0 ? "active" : ""}`} />
@@ -97,25 +101,22 @@ import { siteVisuals } from "../data/siteVisuals.js";
             </div>
           </div>
           <div class="rent-body">
-            <span class="r-tag">01 · La Salle de pratique</span>
-            <h3 class="serif">Salle polyvalente · 40 m²</h3>
+            <span class="r-tag">01 · Le Salon</span>
+            <h3 class="serif">Espace de pratique collective · 40 m²</h3>
             <p class="r-desc">
-              Lumineuse et chaleureuse, prête à accueillir jusqu'à 10-12 participants pour une pratique corporelle. Idéale pour les cours collectifs, ateliers, formations, cercles, conférences - mais aussi stages week-end et workshops.
+              Lumineux et chaleureux, Le Salon accueille jusqu'à 20 participants selon les activités proposées.
+              Il se prête aussi bien aux cours collectifs qu'aux ateliers, formations, groupes de parole ou mini-conférences.
+              À louer la semaine ou le week-end.
             </p>
             <ul class="r-equip">
-              <li>Tapis, bolsters, briques & sangles</li>
-              <li>Couvertures & élastiques Pilates</li>
-              <li>Balles & gros ballons</li>
+              <li>Matériel de yoga</li>
+              <li>Matériel Pilates</li>
+              <li>Fit'balls</li>
+              <li>Petit matériel de musculation</li>
               <li>6 tables & 20 chaises pliantes</li>
-              <li>Miroir toute hauteur</li>
-              <li>Enceinte Bluetooth</li>
+              <li>Sonorisation Bluetooth</li>
             </ul>
-            <div class="r-tarifs">
-              <div class="r-tarif"><span class="rt-amt">15<sup>€</sup></span><span class="rt-unit">de l'heure</span></div>
-              <div class="r-tarif"><span class="rt-amt">50<sup>€</sup></span><span class="rt-unit">demi-journée · 5h</span></div>
-              <div class="r-tarif"><span class="rt-amt">100<sup>€</sup></span><span class="rt-unit">journée · 10h</span></div>
-            </div>
-            <p class="r-cond">Capacité 12 · à l'heure, demi-journée ou journée · tarifs indicatifs</p>
+            <p class="r-cond"><a href="#demande">Télécharger ici la description complète de l'espace et l'ensemble de nos tarifs.</a></p>
             <div class="space-action">
               <a href="#demande" class="btn space-btn">
                 Demander cet espace
@@ -145,25 +146,20 @@ import { siteVisuals } from "../data/siteVisuals.js";
             </div>
           </div>
           <div class="rent-body">
-            <span class="r-tag">02 · La Bulle - bureau de consultation</span>
+            <span class="r-tag">02 · La Bulle</span>
             <h3 class="serif">Cabinet lumineux · 11 m²</h3>
             <p class="r-desc">
-              Au rez-de-chaussée, une grande fenêtre ouvrant sur une cour calme et arborée. Un climat de confiance et de sérénité dès l'entrée - idéal pour l'accompagnement thérapeutique, les accompagnements & soins ou le coaching.
+              Un lieu confortable et confidentiel pour recevoir ses clients, travailler ou mener des entretiens dans de bonnes conditions.
             </p>
             <ul class="r-equip">
-              <li>Rez-de-chaussée · accès PMR</li>
-              <li>Grande fenêtre sur cour</li>
-              <li>Double vitrage · sol neuf</li>
-              <li>Tisanerie partagée</li>
-              <li>Toilettes accessibles PMR</li>
-              <li>Ambiance naturelle & chaleureuse</li>
+              <li>Bureau & 2 chaises</li>
+              <li>Coin salon avec 2 fauteuils</li>
+              <li>Table basse</li>
+              <li>Décoration soignée</li>
+              <li>Wi-Fi</li>
+              <li>Lumière naturelle</li>
             </ul>
-            <div class="r-tarifs">
-              <div class="r-tarif"><span class="rt-amt">12<sup>€</sup></span><span class="rt-unit">de l'heure</span></div>
-              <div class="r-tarif"><span class="rt-amt">45<sup>€</sup></span><span class="rt-unit">demi-journée · 5h</span></div>
-              <div class="r-tarif"><span class="rt-amt">90<sup>€</sup></span><span class="rt-unit">journée · 10h</span></div>
-            </div>
-            <p class="r-cond">Consultation & accompagnement · à l'heure, demi-journée ou journée</p>
+            <p class="r-cond"><a href="#demande">Télécharger ici la description complète de l'espace et l'ensemble de nos tarifs.</a></p>
             <div class="space-action">
               <a href="#demande" class="btn space-btn">
                 Demander cet espace
@@ -193,25 +189,20 @@ import { siteVisuals } from "../data/siteVisuals.js";
             </div>
           </div>
           <div class="rent-body">
-            <span class="r-tag">03 · Le Cocon - box de soin</span>
-            <h3 class="serif">Box intimiste · 7 m²</h3>
+            <span class="r-tag">03 · Le Cocon</span>
+            <h3 class="serif">Espace de soin · 7 m²</h3>
             <p class="r-desc">
-              Au sous-sol, à proximité des vestiaires. Sans fenêtre, il offre une intimité totale et une atmosphère enveloppante, propice au lâcher-prise - pour le massage, l'acupuncture ou les soins énergétiques.
+              Intimiste et confortable, Le Cocon a été conçu pour les professionnels du soin, du massage et du bien-être souhaitant recevoir leurs clients dans les meilleures conditions.
             </p>
             <ul class="r-equip">
-              <li>Table de massage portative</li>
-              <li>Petit lavabo · radiateur</li>
-              <li>Enceinte Bluetooth</li>
-              <li>VMC · renouvellement d'air</li>
-              <li>Intimité & confidentialité</li>
+              <li>Table de massage adaptée à tous, y compris aux femmes enceintes</li>
+              <li>Point d'eau privatif</li>
+              <li>Éclairage tamisé & ambiance feutrée</li>
+              <li>Air renouvelé en continu - VMC</li>
+              <li>Huile de massage à disposition</li>
               <li>Non PMR · transfert possible à l'étage</li>
             </ul>
-            <div class="r-tarifs">
-              <div class="r-tarif"><span class="rt-amt">10<sup>€</sup></span><span class="rt-unit">de l'heure</span></div>
-              <div class="r-tarif"><span class="rt-amt">40<sup>€</sup></span><span class="rt-unit">demi-journée · 5h</span></div>
-              <div class="r-tarif"><span class="rt-amt">70<sup>€</sup></span><span class="rt-unit">journée · 10h</span></div>
-            </div>
-            <p class="r-cond">Soin individuel · à l'heure, demi-journée ou journée · tarifs indicatifs</p>
+            <p class="r-cond"><a href="#demande">Télécharger ici la description complète de l'espace et l'ensemble de nos tarifs.</a></p>
             <div class="space-action">
               <a href="#demande" class="btn space-btn">
                 Demander cet espace
@@ -227,15 +218,15 @@ import { siteVisuals } from "../data/siteVisuals.js";
       <div class="wrap">
         <div class="sec-head">
           <span class="sec-num">03 - Pourquoi rejoindre KerFlow</span>
-          <h2 class="title">Un lieu où votre<br />activité <i class="h c-petrol">se prolonge.</i></h2>
+          <h2 class="title">Développez votre activité<br />dans un lieu <i class="h c-petrol">qui a du sens.</i></h2>
         </div>
         <ul class="check-list">
-          <li><span class="mk">↘</span><span class="tx"><b>Un lieu qualitatif</b> - entièrement rénové, matériaux soignés, ambiance apaisée.</span></li>
-          <li><span class="mk">↘</span><span class="tx"><b>Une clientèle locale</b> déjà engagée dans une démarche de bien-être.</span></li>
-          <li><span class="mk">↘</span><span class="tx"><b>Un univers cohérent</b> - accompagnements & soins clairs, positionnement assumé.</span></li>
-          <li><span class="mk">↘</span><span class="tx"><b>Un cadre chaleureux</b> - tisanerie conviviale, vestiaires, accueil soigné.</span></li>
-          <li><span class="mk">↘</span><span class="tx"><b>Une optimisation du planning</b> - créneaux fixes, cycles réguliers, stages rentables.</span></li>
-          <li><span class="mk">↘</span><span class="tx"><b>Une ambiance professionnelle</b> mais humaine, à taille d'une maison.</span></li>
+          <li><span class="mk">↘</span><span class="tx"><b>Un écosystème cohérent</b> - des professionnels du mouvement, du soin et de l'accompagnement réunis sous un même toit. Un lieu où les recommandations et les collaborations se créent naturellement.</span></li>
+          <li><span class="mk">↘</span><span class="tx"><b>Une visibilité partagée</b> - site internet, réseaux sociaux, événements, clientèle locale : bénéficiez de la visibilité du lieu et des différents parcours d'entrée des visiteurs chez KerFlow.</span></li>
+          <li><span class="mk">↘</span><span class="tx"><b>Un lieu clé en main</b> - des espaces entièrement rénovés, aménagés et équipés avec soin. Installez-vous et concentrez-vous sur votre activité.</span></li>
+          <li><span class="mk">↘</span><span class="tx"><b>Un projet qui a du sens</b> - rejoignez une maison dédiée à la prévention santé, au mouvement et au mieux-être, portée par une vision cohérente et une identité forte.</span></li>
+          <li><span class="mk">↘</span><span class="tx"><b>Une ambiance à taille humaine</b> - un lieu chaleureux où les professionnels se connaissent, échangent et développent leur activité dans un cadre professionnel et bienveillant.</span></li>
+          <li><span class="mk">↘</span><span class="tx"><b>Des formules pensées pour durer</b> - créneaux réguliers, cycles, ateliers ou stages : des conditions avantageuses pour les professionnels qui s'inscrivent dans la durée.</span></li>
         </ul>
       </div>
     </section>
@@ -250,9 +241,14 @@ import { siteVisuals } from "../data/siteVisuals.js";
               Dites-nous qui vous êtes, l'espace qui vous intéresse et le rythme souhaité. On revient vers vous pour fixer une visite et vérifier les disponibilités.
             </p>
             <div class="coord-list">
-              <div class="coord-row"><span class="lab">Contact direct</span><span class="val"><a href="mailto:bonjour@kerflow.fr">bonjour@kerflow.fr</a></span></div>
-              <div class="coord-row"><span class="lab">Téléphone</span><span class="val"><a href="tel:+33146381234">01 46 38 12 34</a></span></div>
-              <div class="coord-row"><span class="lab">Visite</span><span class="val">Sur rendez-vous, du mardi au samedi</span></div>
+              <div class="coord-row"><span class="lab">Contact</span><span class="val"><a href="mailto:kerflow.clamart@gmail.com">kerflow.clamart@gmail.com</a></span></div>
+              {showPhone && (
+                <div class="coord-row">
+                  <span class="lab">Téléphone</span>
+                  <span class="val">{phoneHref ? <a href={phoneHref}>{siteSettings.phoneDisplay}</a> : siteSettings.phoneDisplay}</span>
+                </div>
+              )}
+              <div class="coord-row"><span class="lab">Visite</span><span class="val">Sur rendez-vous</span></div>
             </div>
           </div>
           <form class="form-card" action="https://formspree.io/f/mvznyjzn" method="POST" aria-label="Demande de location" data-formspree-inline data-success-message="Merci, votre demande de location a bien été envoyée. Nous revenons vers vous rapidement.">
@@ -264,7 +260,7 @@ import { siteVisuals } from "../data/siteVisuals.js";
               <div class="field full">
                 <label>Espace souhaité</label>
                 <div class="radio-row">
-                  <label class="radio-chip"><input type="radio" name="espace" value="La Salle - 40 m²" checked /><span>La Salle · 40 m²</span></label>
+                  <label class="radio-chip"><input type="radio" name="espace" value="Le Salon - 40 m²" checked /><span>Le Salon · 40 m²</span></label>
                   <label class="radio-chip"><input type="radio" name="espace" value="La Bulle - 11 m²" /><span>La Bulle · 11 m²</span></label>
                   <label class="radio-chip"><input type="radio" name="espace" value="Le Cocon - 7 m²" /><span>Le Cocon · 7 m²</span></label>
                 </div>
@@ -272,10 +268,9 @@ import { siteVisuals } from "../data/siteVisuals.js";
               <div class="field full">
                 <label>Rythme</label>
                 <div class="radio-row">
-                  <label class="radio-chip"><input type="radio" name="rythme" value="Heure" checked /><span>Heure</span></label>
-                  <label class="radio-chip"><input type="radio" name="rythme" value="Demi-journée" /><span>Demi-journée</span></label>
-                  <label class="radio-chip"><input type="radio" name="rythme" value="Journée" /><span>Journée</span></label>
-                  <label class="radio-chip"><input type="radio" name="rythme" value="Cycle régulier" /><span>Cycle régulier</span></label>
+                  <label class="radio-chip"><input type="radio" name="rythme" value="Location ponctuelle" checked /><span>Location ponctuelle</span></label>
+                  <label class="radio-chip"><input type="radio" name="rythme" value="Location régulière" /><span>Location régulière</span></label>
+                  <label class="radio-chip"><input type="radio" name="rythme" value="Location hebdomadaire" /><span>Location hebdomadaire</span></label>
                 </div>
               </div>
               <div class="field full"><label for="msg">Votre projet</label><textarea id="msg" name="message" placeholder="Décrivez votre activité, vos créneaux idéaux, vos questions..." required></textarea></div>

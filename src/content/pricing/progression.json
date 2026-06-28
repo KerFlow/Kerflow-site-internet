@@ -1,0 +1,14 @@
+{
+  "order": 3,
+  "name": "Progression",
+  "intro": "Pour installer une pratique dans la durée.",
+  "featured": false,
+  "features": [
+    "1 cours par semaine toute l'année",
+    "2 cours par semaine toute l'année",
+    "Cycle à thème"
+  ],
+  "ctaLabel": "Je réserve",
+  "ctaUrl": "/contact/",
+  "visible": true
+}

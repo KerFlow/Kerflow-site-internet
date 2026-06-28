@@ -1,0 +1,14 @@
+{
+  "order": 1,
+  "name": "Découverte",
+  "intro": "Pour pousser la porte, tester et choisir ce qui vous convient.",
+  "featured": false,
+  "features": [
+    "Cours d'essai à 10 euros",
+    "Offre découverte 3 cours",
+    "Cours à l'unité"
+  ],
+  "ctaLabel": "Je réserve",
+  "ctaUrl": "/contact/",
+  "visible": true
+}

@@ -1,0 +1,15 @@
+{
+  "order": 3,
+  "visible": true,
+  "featured": false,
+  "date": "Jeudi 18 juin",
+  "time": "19h00",
+  "title": "Nutrition douce du quotidien",
+  "description": "Des repères concrets pour mieux manger sans régime, avec une approche NAPSO et comportementale.",
+  "duration": "1h30",
+  "price": "35€",
+  "ctaLabel": "Réserver",
+  "ctaUrl": "/contact/",
+  "imageClass": "photo-clay",
+  "imageLabel": "[ photo - carnet, tisane et table ronde ]"
+}

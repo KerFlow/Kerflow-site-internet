@@ -2,11 +2,31 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
+import { workshops } from "../data/cmsContent.js";
+import { archivedBlogArticles, featuredBlogArticles } from "../data/blogArticles.js";
+
+const featuredWorkshop = workshops.find((workshop) => workshop.featured) ?? workshops[0];
+const secondaryWorkshops = workshops.filter((workshop) => workshop !== featuredWorkshop).slice(0, 2);
+const miniWorkshops = workshops.filter((workshop) => workshop !== featuredWorkshop).slice(2, 4);
+const journalArticles = featuredBlogArticles.slice(0, 3);
+const archivedArticles = archivedBlogArticles.slice(0, 4);
+const archivedEvents = [
+  {
+    date: "Mai 2026",
+    title: "Atelier douleurs de dos · matinée mobilité",
+    tag: "Mobilité · Événement",
+  },
+  {
+    date: "Avr. 2026",
+    title: "Soirée respiration & lâcher-prise",
+    tag: "Stress · Événement",
+  },
+];
 ---
 
 <BaseLayout
   title="Ateliers & ressources - KerFlow Clamart"
-  description="Ateliers, conférences, soirées, week-ends thématiques et journal KerFlow autour du sommeil, du stress, de l'alimentation, de la mobilité et des accompagnements & soins."
+  description="Ateliers, conférences, soirées, week-ends thématiques, articles et gazette KerFlow autour du sommeil, du stress, de l'alimentation, de la mobilité et des accompagnements & soins."
 >
   <SiteHeader />
   <main class="workshops-page page svc-ateliers wrapped-sections">
@@ -25,14 +45,15 @@ import SiteFooter from "../components/SiteFooter.astro";
                 Voir l'agenda
                 <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"></path></svg>
               </a>
-              <a href="#newsletter" class="btn-line">Recevoir le journal</a>
+              <a href="#newsletter" class="btn-line">Recevoir la Gazette</a>
             </div>
           </div>
           <aside class="page-hero-aside">
             <img class="workshops-hero-logo" src="/assets/logos/kerflow-atelier-web.png" width="1200" height="831" alt="KerFlow Atelier" loading="eager" decoding="async" />
             <p class="lede">
-              Ateliers, conférences, soirées et week-ends thématiques - et un <i class="h">journal</i>
-              de conseils Accompagnements & Soins pour prolonger la maison chez soi.
+              Ateliers, conférences, rencontres et ressources : des formats complémentaires aux cours et aux accompagnements
+              pour explorer un sujet, découvrir une pratique, approfondir ses connaissances ou simplement prendre le temps d'échanger.
+              Tout au long de l'année, KerFlow accueille des intervenants, propose des événements ponctuels et partage sa Gazette pour prolonger la réflexion bien au-delà des murs de la maison.
             </p>
           </aside>
         </div>
@@ -44,65 +65,55 @@ import SiteFooter from "../components/SiteFooter.astro";
         <div class="planning-cards-head">
           <div>
             <p class="eyebrow">01 - Événements à venir</p>
-            <h2>Ce qui se passe<br /><em>à la maison.</em></h2>
+            <h2>Au-delà<br /><em>des cours.</em></h2>
           </div>
           <div>
             <p>
-              Petits groupes, places limitées. La réservation se fait en ligne - ouverte aux abonné·es comme aux visiteur·ses.
+              Ateliers pratiques, rencontres, conférences ou expériences ponctuelles : chaque événement possède son propre format
+              et ses modalités d'inscription. Les réservations se font soit sur HelloResa, soit directement auprès de l'intervenant.
+              Les places étant souvent limitées, nous vous conseillons de réserver à l'avance.
             </p>
-            <a class="btn-line light" href="/contact/">Réserver sa place →</a>
           </div>
         </div>
 
         <div class="course-feature-grid">
-          <article class="course-card course-card-feature" data-event-topic="Sommeil">
-            <div class="course-card-copy">
-              <p class="course-kicker">↘ À la une ce mois-ci</p>
-              <h3>Mieux dormir : atelier sommeil & respiration<br /><em>14 juin</em></h3>
-              <p>Soirée · 19h00 - 21h00 · comprendre son sommeil, repartir avec des outils concrets.</p>
-              <footer>
-                <a href="/contact/">Réserver →</a>
-              </footer>
-            </div>
-            <div class="photo photo-clay"><span>[ photo - atelier sommeil, lumière chaude ]</span></div>
-          </article>
+          {featuredWorkshop && (
+            <article class="course-card course-card-feature" data-event-topic={featuredWorkshop.title}>
+              <div class="course-card-copy">
+                <p class="course-kicker">↘ À la une ce mois-ci</p>
+                <h3>{featuredWorkshop.title}<br /><em>{featuredWorkshop.date}</em></h3>
+                <p>{featuredWorkshop.time} · {featuredWorkshop.duration} · {featuredWorkshop.description}</p>
+                <footer>
+                  <a href={featuredWorkshop.ctaUrl}>{featuredWorkshop.ctaLabel} →</a>
+                </footer>
+              </div>
+              <div class={`photo ${featuredWorkshop.imageClass}`}><span>{featuredWorkshop.imageLabel}</span></div>
+            </article>
+          )}
 
-          <article class="course-card course-card-photo" data-event-topic="Mobilité Douleurs">
-            <div class="photo photo-petrol"><span>[ photo - mobilité douce ]</span></div>
-            <div class="course-card-copy">
-              <p class="course-kicker">21 juin · 10h00</p>
-              <h4>Mobilité & douleurs</h4>
-              <p>Samedi · 10h00 - 12h30 · dénouer le dos, les épaules, les hanches en douceur.</p>
-              <footer>
-                <a href="/contact/">Réserver →</a>
-              </footer>
-            </div>
-          </article>
-
-          <article class="course-card course-card-photo" data-event-topic="Ménopause">
-            <div class="photo photo-foam"><span>[ photo - mouvement & mieux-être ]</span></div>
-            <div class="course-card-copy">
-              <p class="course-kicker">28 juin · 14h00</p>
-              <h4>Ménopause : mouvement & mieux-être</h4>
-              <p>Samedi · 14h00 - 17h00 · cycle, énergie, sommeil - un temps pour comprendre et bouger.</p>
-              <footer>
-                <a href="/contact/">Réserver →</a>
-              </footer>
-            </div>
-          </article>
+          {secondaryWorkshops.map((workshop) => (
+            <article class="course-card course-card-photo" data-event-topic={workshop.title}>
+              <div class={`photo ${workshop.imageClass}`}><span>{workshop.imageLabel}</span></div>
+              <div class="course-card-copy">
+                <p class="course-kicker">{workshop.date} · {workshop.time}</p>
+                <h4>{workshop.title}</h4>
+                <p>{workshop.duration} · {workshop.price} · {workshop.description}</p>
+                <footer>
+                  <a href={workshop.ctaUrl}>{workshop.ctaLabel} →</a>
+                </footer>
+              </div>
+            </article>
+          ))}
         </div>
 
         <div class="course-mini-grid events-mini-grid" aria-label="Autres événements à venir">
-          <article data-event-topic="Alimentation">
-            <p>05 juil. · 19h00</p>
-            <h4>Conférence : manger sans s'interdire</h4>
-            <a href="/contact/">Réserver →</a>
-          </article>
-          <article data-event-topic="Post-partum">
-            <p>12 juil.</p>
-            <h4>Week-end post-partum : retrouver son corps</h4>
-            <a href="/contact/">Réserver →</a>
-          </article>
+          {miniWorkshops.map((workshop) => (
+            <article data-event-topic={workshop.title}>
+              <p>{workshop.date} · {workshop.time}</p>
+              <h4>{workshop.title}</h4>
+              <a href={workshop.ctaUrl}>{workshop.ctaLabel} →</a>
+            </article>
+          ))}
         </div>
 
       </div>
@@ -112,42 +123,32 @@ import SiteFooter from "../components/SiteFooter.astro";
       <div class="workshops-wrap">
         <div class="journal-head">
           <div class="sec-head compact">
-            <span class="sec-num">02 - Le journal KerFlow</span>
-            <h2 class="title">Des conseils, <i class="h c-petrol">au calme.</i></h2>
+            <span class="sec-num">02 - Les articles KerFlow</span>
+            <h2 class="title">À lire et <i class="h c-petrol">à découvrir.</i></h2>
           </div>
           <p>
-            Des articles courts et sérieux, écrits par la maison et ses intervenant·es - pour prendre soin de soi entre deux visites.
+            Des articles pour partager des idées, des découvertes, des retours d'expérience et des sujets qui nous tiennent à cœur. À lire selon ses envies et sa curiosité du moment.
           </p>
         </div>
 
         <div class="articles">
-          <a href="/blog/cinq-gestes-du-soir-pour-mieux-dormir/" class="art">
-            <div class="ph t-storm"><span class="cap">[ photo · lumière du soir, chambre ]</span></div>
-            <div class="a-body">
-              <span class="a-tag">Sommeil</span>
-              <h3 class="serif">Cinq gestes du soir pour mieux dormir</h3>
-              <p>Ralentir avant le coucher, sans application ni gadget.</p>
-              <span class="a-foot">Lecture · 4 min</span>
-            </div>
-          </a>
-          <a href="/blog/reprendre-le-sport-apres-une-longue-pause/" class="art">
-            <div class="ph t-fern"><span class="cap">[ photo · marche, mouvement doux ]</span></div>
-            <div class="a-body">
-              <span class="a-tag">Mouvement</span>
-              <h3 class="serif">Reprendre le sport après une longue pause</h3>
-              <p>Par où commencer, et comment tenir dans le temps.</p>
-              <span class="a-foot">Lecture · 6 min</span>
-            </div>
-          </a>
-          <a href="/blog/ecouter-sa-faim-vraiment/" class="art">
-            <div class="ph t-sand"><span class="cap">[ photo · table, légumes de saison ]</span></div>
-            <div class="a-body">
-              <span class="a-tag">Alimentation</span>
-              <h3 class="serif">Écouter sa faim, vraiment</h3>
-              <p>Le rapport à l'assiette, sans régime ni culpabilité.</p>
-              <span class="a-foot">Lecture · 5 min</span>
-            </div>
-          </a>
+          {journalArticles.map((article) => (
+            <a href={`/blog/${article.slug}/`} class="art">
+              <div class={`ph ${article.imageClass} ${article.visualMode === "image" && article.image ? "has-upload" : ""}`}>
+                {article.visualMode === "image" && article.image ? (
+                  <img src={article.image} alt={article.imageLabel} loading="lazy" decoding="async" />
+                ) : (
+                  <span class="cap">{article.imageLabel}</span>
+                )}
+              </div>
+              <div class="a-body">
+                <span class="a-tag">{article.tag}</span>
+                <h3 class="serif">{article.title}</h3>
+                <p>{article.excerpt}</p>
+                <span class="a-foot">Lecture · {article.readingTime}</span>
+              </div>
+            </a>
+          ))}
         </div>
 
         <div class="archive-link">
@@ -161,13 +162,43 @@ import SiteFooter from "../components/SiteFooter.astro";
 
     <section class="section-pad rule-top band-paper" id="archives" data-screen-label="Archives">
       <div class="workshops-wrap">
-        <div class="sec-head">
-          <span class="sec-num">03 - Archives</span>
-          <h2 class="title">Événements<br /><i class="h c-petrol">passés.</i></h2>
+        <div class="journal-head">
+          <div class="sec-head compact">
+            <span class="sec-num">03 - Archives</span>
+            <h2 class="title">À retrouver<br /><i class="h c-petrol">plus tard.</i></h2>
+          </div>
+          <p>
+            Une archive simple pour garder une trace des articles et des rendez-vous passés,
+            sans créer de pages détail ni de classement complexe.
+          </p>
         </div>
-        <div class="list-rows">
-          <a href="/contact/" class="list-row"><span class="lr-date">Mai 2026</span><span class="lr-title serif">Atelier douleurs de dos · matinée mobilité</span><span class="lr-tag">Mobilité · Événement</span></a>
-          <a href="/contact/" class="list-row"><span class="lr-date">Avr. 2026</span><span class="lr-title serif">Soirée respiration & lâcher-prise</span><span class="lr-tag">Stress · Événement</span></a>
+
+        <div class="archive-grid">
+          <section class="archive-panel" aria-labelledby="archive-articles-title">
+            <h3 id="archive-articles-title" class="serif">Articles passés</h3>
+            <div class="list-rows">
+              {archivedArticles.map((article) => (
+                <a href={`/blog/${article.slug}/`} class="list-row">
+                  <span class="lr-date">{article.date}</span>
+                  <span class="lr-title serif">{article.title}</span>
+                  <span class="lr-tag">{article.tag}</span>
+                </a>
+              ))}
+            </div>
+          </section>
+
+          <section class="archive-panel" aria-labelledby="archive-events-title">
+            <h3 id="archive-events-title" class="serif">Événements passés</h3>
+            <div class="list-rows">
+              {archivedEvents.map((event) => (
+                <div class="list-row">
+                  <span class="lr-date">{event.date}</span>
+                  <span class="lr-title serif">{event.title}</span>
+                  <span class="lr-tag">{event.tag}</span>
+                </div>
+              ))}
+            </div>
+          </section>
         </div>
       </div>
     </section>
@@ -176,10 +207,10 @@ import SiteFooter from "../components/SiteFooter.astro";
       <div class="workshops-wrap section-pad">
         <div class="news-grid">
           <div>
-            <span class="sec-num">04 - Le journal, dans votre boîte</span>
+            <span class="sec-num">04 - La gazette, dans votre boîte</span>
             <h2 class="title">Recevez les <i class="h">rendez-vous</i> & les conseils.</h2>
             <p class="lede">
-              Une fois par mois - l'agenda des ateliers, un conseil accompagnements & soins, les nouvelles de la maison. Jamais plus, jamais de spam.
+              Quelques nouvelles du lieu, des rendez-vous à ne pas manquer, des retours d'expérience, des découvertes et des ressources sélectionnées avec soin.
             </p>
           </div>
           <div>
@@ -382,13 +413,13 @@ import SiteFooter from "../components/SiteFooter.astro";
     width: clamp(190px, 19vw, 280px);
     height: auto;
     margin-bottom: clamp(4px, 1vw, 10px);
-    padding: clamp(12px, 1.4vw, 18px) clamp(14px, 1.7vw, 22px);
-    border: 1px solid rgba(250, 246, 238, 0.82);
+    padding: clamp(14px, 1.6vw, 20px) clamp(16px, 1.9vw, 24px);
+    border: 1px solid rgba(31, 38, 34, 0.12);
     border-radius: 6px;
-    background: rgba(250, 246, 238, 0.72);
+    background: rgba(250, 246, 238, 0.92);
     object-fit: contain;
-    box-shadow: 0 18px 42px rgba(31, 38, 34, 0.08);
-    filter: drop-shadow(0 8px 14px rgba(14, 42, 44, 0.08));
+    box-shadow: 0 18px 42px rgba(31, 38, 34, 0.12);
+    filter: contrast(1.04) saturate(1.02) drop-shadow(0 8px 14px rgba(14, 42, 44, 0.12));
   }
 
   .lede {
@@ -642,6 +673,23 @@ import SiteFooter from "../components/SiteFooter.astro";
     margin-top: 32px;
   }
 
+  .archive-grid {
+    display: grid;
+    gap: clamp(36px, 4vw, 56px);
+  }
+
+  .archive-panel {
+    min-width: 0;
+  }
+
+  .archive-panel h3 {
+    margin: 0;
+    color: var(--petrol-deep);
+    font-size: clamp(24px, 2.4vw, 34px);
+    font-weight: 400;
+    line-height: 1.1;
+  }
+
   .list-rows {
     margin-top: clamp(28px, 3vw, 44px);
     border-top: 1px solid var(--rule);
@@ -662,6 +710,10 @@ import SiteFooter from "../components/SiteFooter.astro";
   .list-row:hover,
   .list-row:focus-visible {
     padding-left: 8px;
+  }
+
+  div.list-row:hover {
+    padding-left: 0;
   }
 
   .lr-date {
@@ -762,6 +814,7 @@ import SiteFooter from "../components/SiteFooter.astro";
     .articles {
       grid-template-columns: 1fr 1fr;
     }
+
   }
 
   @media (max-width: 640px) {

@@ -296,11 +296,11 @@ export default config({
       },
     }),
     pricing: collection({
-      label: "Tarifs cours",
+      label: "Formules cours",
       path: "src/content/pricing/*",
       slugField: "name",
       format: "json",
-      columns: ["name", "amount", "visible"],
+      columns: ["name", "visible"],
       schema: {
         name: fields.slug({
           name: {
@@ -321,15 +321,9 @@ export default config({
           label: "Mettre en avant",
           defaultValue: false,
         }),
-        amount: fields.text({
-          label: "Montant",
-          description: "Sans symbole euro. Exemple : 150",
-          validation: { isRequired: true },
-        }),
-        unit: fields.text({
-          label: "Précision",
-          description: "Exemple : soit 15 € le cours - valable 4 mois",
-          validation: { isRequired: true },
+        intro: fields.text({
+          label: "Texte court optionnel",
+          multiline: true,
         }),
         features: fields.array(
           fields.text({
@@ -352,8 +346,104 @@ export default config({
         }),
       },
     }),
+    workshops: collection({
+      label: "Ateliers",
+      path: "src/content/workshops/*",
+      slugField: "title",
+      format: "json",
+      columns: ["title", "date", "visible"],
+      schema: {
+        title: fields.slug({
+          name: {
+            label: "Titre",
+            validation: { isRequired: true },
+          },
+        }),
+        order: fields.integer({
+          label: "Ordre d'affichage",
+          defaultValue: 1,
+          validation: { isRequired: true },
+        }),
+        visible: fields.checkbox({
+          label: "Visible sur le site",
+          defaultValue: true,
+        }),
+        featured: fields.checkbox({
+          label: "Mettre en avant",
+          defaultValue: false,
+        }),
+        date: fields.text({
+          label: "Date",
+          validation: { isRequired: true },
+        }),
+        time: fields.text({
+          label: "Heure",
+          validation: { isRequired: true },
+        }),
+        description: fields.text({
+          label: "Description",
+          multiline: true,
+          validation: { isRequired: true },
+        }),
+        duration: fields.text({
+          label: "Durée",
+          validation: { isRequired: true },
+        }),
+        price: fields.text({
+          label: "Prix",
+          validation: { isRequired: true },
+        }),
+        ctaLabel: fields.text({
+          label: "Texte du bouton",
+          defaultValue: "Réserver",
+          validation: { isRequired: true },
+        }),
+        ctaUrl: fields.text({
+          label: "Lien du bouton",
+          defaultValue: "/contact/",
+        }),
+        imageClass: fields.select({
+          label: "Couleur du visuel",
+          defaultValue: "photo-clay",
+          options: [
+            { label: "Photo pétrole", value: "photo-petrol" },
+            { label: "Photo écume", value: "photo-foam" },
+            { label: "Photo argile", value: "photo-clay" },
+            { label: "Photo pierre", value: "photo-stone" },
+          ],
+        }),
+        imageLabel: fields.text({
+          label: "Repère visuel",
+          validation: { isRequired: true },
+        }),
+      },
+    }),
   },
   singletons: {
+    siteSettings: {
+      label: "Réglages du site",
+      path: "src/content/settings/site",
+      format: "json",
+      schema: {
+        openingLabel: fields.text({
+          label: "Mention d'ouverture",
+          defaultValue: "Ouverture prochaine - automne 26",
+          validation: { isRequired: true },
+        }),
+        phoneVisible: fields.checkbox({
+          label: "Afficher le téléphone",
+          defaultValue: false,
+        }),
+        phoneDisplay: fields.text({
+          label: "Numéro affiché",
+          description: "Exemple : 06 00 00 00 00",
+        }),
+        phoneHref: fields.text({
+          label: "Numéro pour le lien mobile",
+          description: "Exemple : +33600000000",
+        }),
+      },
+    },
     blogSettings: {
       label: "Réglages du blog",
       path: "src/content/settings/blog",
@@ -364,6 +454,40 @@ export default config({
           description: "Exemple : reprise-activite-apres-50-ans",
           validation: { isRequired: true },
         }),
+      },
+    },
+    homeContent: {
+      label: "Accueil - contenus éditables",
+      path: "src/content/settings/home",
+      format: "json",
+      schema: {
+        testimonials: fields.array(
+          fields.object({
+            visible: fields.checkbox({
+              label: "Visible sur le site",
+              defaultValue: true,
+            }),
+            author: fields.text({
+              label: "Prénom / nom affiché",
+              validation: { isRequired: true },
+            }),
+            context: fields.text({
+              label: "Contexte court",
+              description: "Exemple : Yoga, Yoga Vinyasa, Pilates...",
+              validation: { isRequired: true },
+            }),
+            quote: fields.text({
+              label: "Avis",
+              multiline: true,
+              validation: { isRequired: true },
+            }),
+          }),
+          {
+            label: "Avis affichés sur la page d'accueil",
+            itemLabel: (props) => props.fields.author.value,
+            validation: { length: { min: 1 } },
+          }
+        ),
       },
     },
     siteVisuals: {
@@ -378,7 +502,7 @@ export default config({
         }),
         homeSpaces: fields.object(
           {
-            studio: siteVisualField("Accueil - La Salle"),
+            studio: siteVisualField("Accueil - Le Salon"),
             bulle: siteVisualField("Accueil - La Bulle"),
             cocon: siteVisualField("Accueil - Le Cocon"),
           },
@@ -396,7 +520,7 @@ export default config({
             hero: siteVisualField("Le lieu - hero"),
             spaces: fields.object(
               {
-                studio: siteVisualField("Le lieu - La Salle"),
+                studio: siteVisualField("Le lieu - Le Salon"),
                 bulle: siteVisualField("Le lieu - La Bulle"),
                 cocon: siteVisualField("Le lieu - Le Cocon"),
               },
@@ -423,8 +547,8 @@ export default config({
         ),
         rental: fields.object(
           {
-            studio: fields.array(siteVisualField("Location - La Salle"), {
-              label: "Location - galerie La Salle",
+            studio: fields.array(siteVisualField("Location - Le Salon"), {
+              label: "Location - galerie Le Salon",
               itemLabel: (props) => props.fields.label.value,
               validation: { length: { min: 1 } },
             }),

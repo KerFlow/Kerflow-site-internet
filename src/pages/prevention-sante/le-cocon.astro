@@ -22,23 +22,22 @@ const practitioners = peopleForSpace("le-cocon");
             <p class="cours-kicker">KerFlow Rituel - Le Cocon</p>
             <h1>
               Le Cocon,<br />
-              <em>grand soin.</em><br />
-              Relacher<br />
+              <em>relâcher</em><br />
               en douceur.
             </h1>
             <div class="cours-actions">
-              <a href="/contact/" class="btn btn-primary">Choisir un soin <span aria-hidden="true">→</span></a>
+              <a href="/le-lieu/#le-cocon" class="btn btn-primary">Découvrir nos espaces <span aria-hidden="true">→</span></a>
               <a href="#intervenants" class="btn-line">Voir les intervenants</a>
             </div>
           </div>
           <aside class="cours-hero-aside">
             <img class="cours-hero-logo" src="/assets/logos/kerflow-rituel-web.png" alt="KerFlow Rituel" loading="eager" decoding="async" />
             <p>
-              Massages, drainage lymphatique, reflexologie, acupuncture et relaxation :
-              un espace individuel pour <em>deposer les tensions</em> et retrouver du calme.
+              Des soins manuels pour prendre soin de son corps : massages bien-être, massage prénatal,
+              drainage lymphatique manuel, fasciathérapie et autres pratiques proposées par nos praticiens.
             </p>
             <div class="cours-tags">
-              <span>Massages</span><span>Drainage</span><span>Reflexologie</span><span>Acupuncture</span><span>Relaxation</span>
+              <span>Détente</span><span>Apaisement</span><span>Récupération</span><span>Bien-être</span><span>Relaxation</span>
             </div>
           </aside>
         </div>
@@ -48,43 +47,52 @@ const practitioners = peopleForSpace("le-cocon");
     <section class="cocon-section cocon-paperless" id="espace">
       <div class="cocon-wrap cocon-space-grid">
         <div>
-          <span class="cocon-lock">KerFlow <small>Rituel</small></span>
-          <h2>Le Cocon,<br />le cabinet<br /><em>qui enveloppe.</em></h2>
+          <h2>Le Cocon,<br />le lieu<br /><em>qui enveloppe.</em></h2>
           <p class="cocon-copy">
-            Un espace calme, intimiste, pense pour les rendez-vous individuels qui demandent
-            de la confidentialite, une ambiance feutree et le temps de relacher.
+            Au sous-sol, un espace intimiste. Une atmosphère qui invite au lâcher-prise.
+            Massages, réflexologie, soins du corps : le temps ralentit, on récupère.
           </p>
           <SiteVisual visual={siteVisuals.care.coconHero} class="cocon-placeholder" />
         </div>
         <aside>
-          <p class="cocon-label">Ce qu'on y reçoit</p>
+          <p class="cocon-label">Pour quels besoins ?</p>
           <div class="cocon-list">
             <article>
               <span>01</span>
               <div>
-                <h3>Massages &amp; soins corporels</h3>
-                <p>Massage detente, recuperation, relachement musculaire et temps de pause.</p>
+                <h3>Détente & récupération</h3>
+                <p>S'accorder un temps pour soi, relâcher les tensions et favoriser la récupération physique et mentale.</p>
+                <div class="cocon-list-tags">
+                  <span>Massage bien-être</span>
+                  <span>Réflexologie</span>
+                  <span>Relaxation</span>
+                </div>
               </div>
             </article>
             <article>
               <span>02</span>
               <div>
-                <h3>Drainage &amp; legerete</h3>
-                <p>Un accompagnement du corps pour retrouver de la fluidite et recuperer.</p>
+                <h3>Confort corporel & mobilité</h3>
+                <p>Prendre soin de son corps, améliorer sa mobilité et retrouver plus de confort au quotidien.</p>
+                <div class="cocon-list-tags">
+                  <span>Fasciathérapie</span>
+                  <span>Shiatsu</span>
+                  <span>Drainage lymphatique</span>
+                </div>
               </div>
             </article>
             <article>
               <span>03</span>
               <div>
-                <h3>Reflexologie &amp; relaxation</h3>
-                <p>Des approches precises pour le sommeil, le stress, la digestion et le retour au calme.</p>
+                <h3>Périnatalité & moments de transition</h3>
+                <p>Des soins adaptés aux différentes étapes de la vie et aux besoins spécifiques de chacun.</p>
+                <div class="cocon-list-tags">
+                  <span>Massage prénatal</span>
+                  <span>Réflexologie</span>
+                  <span>Fasciathérapie</span>
+                </div>
               </div>
             </article>
-          </div>
-          <div class="cocon-tags">
-            <span>Sur rendez-vous</span>
-            <span>Individuel</span>
-            <span>Calme</span>
           </div>
         </aside>
       </div>
@@ -94,11 +102,15 @@ const practitioners = peopleForSpace("le-cocon");
       <div class="cocon-wrap">
         <div class="cocon-head">
           <span>02 - Les intervenants</span>
-          <h2>Les praticien·nes<br /><em>du Cocon.</em></h2>
+          <h2>Les professionnel·les du Cocon,<br /><em>des mains expertes.</em></h2>
           <p>
-            Des approches corporelles complementaires, reunies pour leur serieux,
-            leur douceur et leur qualite d'accueil.
+            Des approches corporelles complémentaires, réunies pour leur sérieux,
+            leur douceur et la qualité de leurs soins.
           </p>
+        </div>
+        <div class="cocon-brand-row">
+          <img src="/assets/logos/kerflow-rituel-web.png" alt="KerFlow Rituel" loading="lazy" decoding="async" />
+          <span>Au Cocon · soin corporel</span>
         </div>
 
         <div class="cocon-team">
@@ -129,24 +141,24 @@ const practitioners = peopleForSpace("le-cocon");
     <section class="cocon-section cocon-paperless">
       <div class="cocon-wrap">
         <div class="cocon-head">
-          <span>03 - Comment reserver</span>
+          <span>03 - Comment réserver</span>
           <h2>Un parcours simple,<br />en <em>trois temps.</em></h2>
         </div>
         <div class="cocon-steps">
           <article>
-            <span>i</span>
-            <h3>On choisit ensemble</h3>
-            <p>Un doute sur le soin ou l'intervenant·e ? Ecrivez-nous : on vous oriente.</p>
+            <span>01</span>
+            <h3>Vous choisissez</h3>
+            <p>Découvrez les différents soins, puis choisissez le professionnel qui correspond le mieux à vos besoins.</p>
           </article>
           <article>
-            <span>ii</span>
-            <h3>On prend rendez-vous</h3>
-            <p>Directement avec le praticien ou la praticienne, par le formulaire de contact.</p>
+            <span>02</span>
+            <h3>Vous prenez rendez-vous</h3>
+            <p>Prenez directement contact avec le professionnel de votre choix pour convenir d'un rendez-vous.</p>
           </article>
           <article>
-            <span>iii</span>
+            <span>03</span>
             <h3>On vous accueille</h3>
-            <p>Un the chaud, le calme du lieu, et le temps qu'il faut. Sans engagement.</p>
+            <p>Présentez-vous quelques minutes avant votre rendez-vous. Installez-vous confortablement à la tisanerie : on viendra vous chercher dès que possible.</p>
           </article>
         </div>
       </div>
@@ -154,14 +166,14 @@ const practitioners = peopleForSpace("le-cocon");
 
     <section class="cocon-cta">
       <div class="cocon-wrap">
-        <h2>Choisir un<br /><em>accompagnement.</em></h2>
+        <h2>Choisir un<br /><em>soin.</em></h2>
         <div>
           <p>
-            On en parle avant de commencer, pour trouver le bon soin, le bon rythme,
-            la bonne personne. Sans engagement.
+            Vous choisissez votre soin ou votre praticien·ne, vous prenez rendez-vous directement,
+            et on vous accueille dans Le Cocon.
           </p>
           <div class="cours-actions">
-            <a href="/contact/" class="btn btn-light">Prendre rendez-vous</a>
+            <a href="/le-lieu/#le-cocon" class="btn btn-light">Découvrir le lieu</a>
             <a href="#intervenants" class="btn-line on-dark">Voir les intervenants</a>
           </div>
         </div>
@@ -382,14 +394,14 @@ const practitioners = peopleForSpace("le-cocon");
     line-height: 1.6;
   }
 
-  .cocon-tags {
+  .cocon-list-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    margin-top: 24px;
+    margin-top: 14px;
   }
 
-  .cocon-tags span {
+  .cocon-list-tags span {
     border: 1px solid var(--cocon-accent);
     padding: 7px 12px;
     color: var(--cocon-accent);
@@ -402,6 +414,27 @@ const practitioners = peopleForSpace("le-cocon");
   .cocon-head {
     max-width: 820px;
     margin-bottom: clamp(32px, 4vw, 52px);
+  }
+
+  .cocon-brand-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    align-items: center;
+    margin: 0 0 clamp(28px, 4vw, 48px);
+  }
+
+  .cocon-brand-row img {
+    width: min(180px, 54vw);
+    height: auto;
+  }
+
+  .cocon-brand-row span {
+    color: var(--cocon-accent);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
   }
 
   .cocon-team {

@@ -10,7 +10,7 @@ const coconPeople = peopleForSpace("le-cocon");
 
 <BaseLayout
   title="Accompagnements & Soins - KerFlow"
-  description="Consultations d'accompagnements & soins, NAPSOtherapie, sommeil, alimentation, stress, massages et soins corporels a Clamart."
+  description="Accompagnements & soins, NAPSOtherapie, sommeil, alimentation, stress, massages et soins corporels a Clamart."
 >
   <SiteHeader />
   <main>
@@ -23,9 +23,9 @@ const coconPeople = peopleForSpace("le-cocon");
         <div class="service-mark">
           <img src="/assets/logos/kerflow-consult-web.png" width="1200" height="829" alt="KerFlow Consult" loading="eager" decoding="async" />
         </div>
-        <p>Deux espaces complementaires : La Bulle pour les accompagnements & soins, Le Cocon pour les soins corporels.</p>
+        <p>Deux espaces complémentaires : La Bulle pour les accompagnements, Le Cocon pour les soins corporels.</p>
         <div class="actions">
-          <a class="btn btn-primary" href="/contact/">Prendre rendez-vous <span aria-hidden="true">→</span></a>
+          <a class="btn btn-primary" href="/le-lieu/#espaces">Découvrir nos espaces <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>
@@ -33,25 +33,27 @@ const coconPeople = peopleForSpace("le-cocon");
     <section class="section-pad soft-band">
       <div class="page-card-grid two">
         <article id="la-bulle" class="page-card accent-consult">
+          <img class="service-card-logo" src="/assets/logos/kerflow-consult-web.png" width="1200" height="829" alt="KerFlow Consult" loading="lazy" decoding="async" />
           <p class="mini">La Bulle</p>
-          <h3>Accompagnements & soins</h3>
-          <p>Consultations autour de l'alimentation, du sommeil, de l'activite physique, du stress, du bien-etre mental et des comportements de sante.</p>
+          <h3>Accompagnement</h3>
+          <p>Des consultations individuelles pour être accompagné sur des sujets liés à la prévention santé et au mieux-être : alimentation, sommeil, gestion du stress, équilibre de vie ou santé de la femme.</p>
           <ul>
-            <li>NAPSOtherapie integree aux consultations</li>
-            <li>Sommeil et recuperation</li>
-            <li>Alimentation sans culpabilite</li>
-            <li>Stress et equilibre du quotidien</li>
+            <li>Napsothérapie</li>
+            <li>Diététique</li>
+            <li>Naturopathie</li>
+            <li>Sophrologie</li>
           </ul>
         </article>
         <article id="le-cocon" class="page-card accent-rituel">
+          <img class="service-card-logo" src="/assets/logos/kerflow-rituel-web.png" width="1200" height="829" alt="KerFlow Rituel" loading="lazy" decoding="async" />
           <p class="mini">Le Cocon</p>
           <h3>Soins du corps</h3>
-          <p>Massages, drainage lymphatique, reflexologie, acupuncture et soins corporels pour ralentir, recuperer et relacher.</p>
+          <p>Des soins manuels pour prendre soin de son corps : massages bien-être, massage prénatal, drainage lymphatique manuel, fasciathérapie et autres pratiques proposées par nos praticiens.</p>
           <ul>
-            <li>Massages et relaxation</li>
+            <li>Massage bien-être</li>
+            <li>Massage prénatal</li>
             <li>Drainage lymphatique</li>
-            <li>Reflexologie</li>
-            <li>Soins corporels par praticiens qualifies</li>
+            <li>Fasciathérapie</li>
           </ul>
         </article>
       </div>
@@ -60,18 +62,19 @@ const coconPeople = peopleForSpace("le-cocon");
     <section id="intervenants" class="page-section section-pad">
       <div class="content-split">
         <div>
-          <p class="eyebrow">Intervenants</p>
-          <h2>Des fiches claires,<br /><em>a completer</em>.</h2>
+          <p class="eyebrow">02 - Les intervenants</p>
+          <h2>Des praticien·nes<br /><em>à choisir.</em></h2>
         </div>
         <div class="body-copy">
-          <p>Chaque praticien aura une fiche avec sa specialite, son approche, sa photo et ses liens utiles. L'objectif est d'aider a choisir sans mettre toutes les pratiques sur le meme plan.</p>
-          <p>La Bulle regroupe les consultations d'accompagnements & soins. Le Cocon regroupe les pratiques corporelles.</p>
+          <p>Chaque praticien·ne possède sa propre spécialité et sa propre approche. Nous les avons choisi·es pour leur professionnalisme, leur expérience et leur sens de l'écoute.</p>
+          <p>Les fiches sont gérées dans le CMS, avec une option de visibilité pour masquer un profil sans le supprimer.</p>
         </div>
       </div>
       <div class="page-card-grid two">
         {bullePeople.map((person) => (
           <article class="page-card accent-consult">
-            <p class="mini">La Bulle</p>
+            <img class="service-card-logo service-card-logo-small" src="/assets/logos/kerflow-consult-web.png" width="1200" height="829" alt="KerFlow Consult" loading="lazy" decoding="async" />
+            <p class="mini">À La Bulle · accompagnement</p>
             <h3>{person.name}</h3>
             <p><strong>{person.specialty}</strong></p>
             <p>{person.bio}</p>
@@ -80,7 +83,8 @@ const coconPeople = peopleForSpace("le-cocon");
         ))}
         {coconPeople.map((person) => (
           <article class="page-card accent-rituel">
-            <p class="mini">Le Cocon</p>
+            <img class="service-card-logo service-card-logo-small" src="/assets/logos/kerflow-rituel-web.png" width="1200" height="829" alt="KerFlow Rituel" loading="lazy" decoding="async" />
+            <p class="mini">Au Cocon · soin du corps</p>
             <h3>{person.name}</h3>
             <p><strong>{person.specialty}</strong></p>
             <p>{person.bio}</p>
@@ -93,17 +97,31 @@ const coconPeople = peopleForSpace("le-cocon");
     <section class="page-section section-pad deep">
       <div class="section-head two">
         <div>
-          <p class="eyebrow">Reservation</p>
-          <h2>Un parcours <em>simple</em>.</h2>
+          <p class="eyebrow">03 - Comment réserver</p>
+          <h2>Choisir un <em>accompagnement ou un soin</em>.</h2>
         </div>
-        <p>La page doit permettre de choisir entre accompagnement et soin, puis de contacter le bon praticien ou d'acceder au lien de reservation.</p>
+        <p>Vous choisissez, vous prenez rendez-vous, on vous accueille.</p>
       </div>
       <div class="page-card-grid">
-        <article class="page-card accent-consult"><h3>1. Choisir</h3><p>Accompagnements & soins ou soin corporel.</p></article>
-        <article class="page-card accent-location"><h3>2. Comprendre</h3><p>Lire l'approche, la duree et le type de rendez-vous.</p></article>
-        <article class="page-card accent-rituel"><h3>3. Reserver</h3><p>Passer par le lien direct ou le formulaire de contact.</p></article>
+        <article class="page-card accent-consult"><h3>Vous choisissez</h3><p>Découvrez les différents accompagnements et soins, puis choisissez le professionnel qui correspond le mieux à vos besoins.</p></article>
+        <article class="page-card accent-location"><h3>Vous prenez rendez-vous</h3><p>Prenez directement contact avec le professionnel de votre choix pour convenir d'un rendez-vous.</p></article>
+        <article class="page-card accent-rituel"><h3>On vous accueille</h3><p>Présentez-vous quelques minutes avant votre rendez-vous. Installez-vous confortablement à la tisanerie : on viendra vous chercher dès que possible.</p></article>
       </div>
     </section>
   </main>
   <SiteFooter />
 </BaseLayout>
+
+<style>
+  .service-card-logo {
+    display: block;
+    width: min(190px, 62%);
+    height: auto;
+    margin-bottom: 18px;
+  }
+
+  .service-card-logo-small {
+    width: min(150px, 54%);
+    margin-bottom: 14px;
+  }
+</style>

@@ -1,0 +1,15 @@
+{
+  "order": 4,
+  "visible": true,
+  "featured": false,
+  "date": "Samedi 27 juin",
+  "time": "11h00",
+  "title": "Mobilité après 50 ans",
+  "description": "Une séance accessible pour retrouver amplitude, stabilité et confiance dans les mouvements du quotidien.",
+  "duration": "2h",
+  "price": "40€",
+  "ctaLabel": "Réserver",
+  "ctaUrl": "/contact/",
+  "imageClass": "photo-stone",
+  "imageLabel": "[ photo - mobilité au sol, petit groupe ]"
+}

@@ -1,19 +1,22 @@
+---
+import { homeTestimonials } from "../../data/cmsContent.js";
+---
+
 <section class="reassurance section-pad">
         <div class="testimonial-grid">
-          <div>
+          <div class="testimonial-intro">
             <p class="eyebrow">08 - Avis</p>
             <h2>Les élèves<br><em>s'expriment</em></h2>
           </div>
-          <figure>
-            <div class="stars" aria-label="5 etoiles">★★★★★</div>
-            <blockquote>J'ai la chance de pratiquer le Yoga avec Gaëlle depuis plusieurs années. Les séances sont très bien pensées, accessibles à tous et pourtant intenses ! Elles permettent de progresser tout en prenant un vrai moment pour soi, des petites touches méditatives viennent souvent enrichir la session, pour repartir boostée d'énergie positive ! Je recommande à 100%.</blockquote>
-            <figcaption><span>Myriam</span><span>Yoga</span></figcaption>
-          </figure>
-          <figure>
-            <div class="stars" aria-label="5 etoiles">★★★★★</div>
-            <blockquote>J'ai démarré le Yoga avec Gaëlle. J'apprécie bcp son Cours de yoga Vinyasa, accessible, dynamique et très bien guidé, c'est un plaisir de chaque semaine ! 🧘‍♀️</blockquote>
-            <figcaption><span>Alice</span><span>Yoga Vinyasa</span></figcaption>
-          </figure>
+          <div class="testimonial-list">
+            {homeTestimonials.map((testimonial, index) => (
+              <figure class:list={["testimonial-card", index === 0 && "testimonial-card-feature"]}>
+                <div class="stars" aria-label="5 etoiles">★★★★★</div>
+                <blockquote>{testimonial.quote}</blockquote>
+                <figcaption><span>{testimonial.author}</span><span>{testimonial.context}</span></figcaption>
+              </figure>
+            ))}
+          </div>
         </div>
         <div class="partners">
           <span class="mono">Une équipe qualifiée</span>

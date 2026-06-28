@@ -1,0 +1,16 @@
+{
+  "testimonials": [
+    {
+      "visible": true,
+      "author": "Myriam",
+      "context": "Yoga",
+      "quote": "J'ai la chance de pratiquer le Yoga avec Gaëlle depuis plusieurs années. Les séances sont très bien pensées, accessibles à tous et pourtant intenses ! Elles permettent de progresser tout en prenant un vrai moment pour soi, des petites touches méditatives viennent souvent enrichir la session, pour repartir boostée d'énergie positive ! Je recommande à 100%."
+    },
+    {
+      "visible": true,
+      "author": "Alice",
+      "context": "Yoga Vinyasa",
+      "quote": "J'ai démarré le Yoga avec Gaëlle. J'apprécie bcp son Cours de yoga Vinyasa, accessible, dynamique et très bien guidé, c'est un plaisir de chaque semaine ! 🧘‍♀️"
+    }
+  ]
+}

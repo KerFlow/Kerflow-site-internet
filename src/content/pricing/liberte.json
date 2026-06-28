@@ -1,0 +1,12 @@
+{
+  "order": 4,
+  "name": "Liberté",
+  "intro": "Pour venir souvent, selon votre rythme et vos envies.",
+  "featured": false,
+  "features": [
+    "Formule illimitée sur abonnement"
+  ],
+  "ctaLabel": "Je réserve",
+  "ctaUrl": "/contact/",
+  "visible": true
+}

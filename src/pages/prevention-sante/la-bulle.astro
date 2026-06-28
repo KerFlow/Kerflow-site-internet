@@ -11,7 +11,7 @@ const practitioners = peopleForSpace("la-bulle");
 
 <BaseLayout
   title="La Bulle - KerFlow Consult"
-  description="La Bulle, espace KerFlow Consult pour les consultations d'accompagnements & soins, sommeil, alimentation, stress et comportements de sante a Clamart."
+  description="La Bulle, espace KerFlow Consult pour les accompagnements individuels, sommeil, alimentation, stress et comportements de sante a Clamart."
 >
   <SiteHeader />
   <main class="cours-page bulle-page">
@@ -22,23 +22,22 @@ const practitioners = peopleForSpace("la-bulle");
             <p class="cours-kicker">KerFlow Consult - La Bulle</p>
             <h1>
               La Bulle,<br />
-              <em>grand soin.</em><br />
-              Comprendre<br />
-              sans pression.
+              <em>mieux se</em><br />
+              comprendre.
             </h1>
             <div class="cours-actions">
-              <a href="/contact/" class="btn btn-primary">Prendre rendez-vous <span aria-hidden="true">→</span></a>
+              <a href="/le-lieu/#la-bulle" class="btn btn-primary">Découvrir nos espaces <span aria-hidden="true">→</span></a>
               <a href="#intervenants" class="btn-line">Voir les intervenants</a>
             </div>
           </div>
           <aside class="cours-hero-aside">
             <img class="cours-hero-logo" src="/assets/logos/kerflow-consult-web.png" alt="KerFlow Consult" loading="eager" decoding="async" />
             <p>
-              Consultations d'accompagnements & soins, NAPSOthérapie, sommeil, stress et alimentation :
-              un espace individuel pour <em>poser une question</em> et repartir avec des pistes concretes.
+              Des consultations individuelles pour être accompagné sur des sujets liés à la prévention santé et au mieux-être :
+              alimentation, sommeil, gestion du stress, équilibre de vie ou santé de la femme.
             </p>
             <div class="cours-tags">
-              <span>Sommeil</span><span>Stress</span><span>Alimentation</span><span>NAPSOthérapie</span><span>Mode de vie</span>
+              <span>Nutrition</span><span>Sommeil</span><span>Équilibre de vie</span><span>Vitalité</span><span>Émotions</span>
             </div>
           </aside>
         </div>
@@ -48,44 +47,43 @@ const practitioners = peopleForSpace("la-bulle");
     <section class="bulle-section bulle-paperless" id="espace">
       <div class="bulle-wrap bulle-space-grid">
         <div>
-          <span class="bulle-lock">KerFlow <small>Consult</small></span>
           <h2>La Bulle,<br />le cabinet<br /><em>qui écoute.</em></h2>
           <p class="bulle-copy">
-            Un bureau lumineux au rez-de-chaussee, sa fenetre ouverte sur la cour arboree.
-            On vient y poser une question de sante, comprendre, et repartir avec des pistes
-            concretes, sans jugement, sans injonction.
+            Un bureau de consultation au rez-de-chaussée, baigné de lumière naturelle,
+            une grande fenêtre ouverte sur une cour calme et arborée. Un cadre apaisant
+            pour des accompagnements individuels.
           </p>
           <SiteVisual visual={siteVisuals.care.bulleHero} class="bulle-placeholder" />
         </div>
         <aside>
-          <p class="bulle-label">Ce qu'on y trouve</p>
+          <p class="bulle-label">Pour quels besoins ?</p>
           <div class="bulle-list">
             <article>
               <span>01</span>
               <div>
-                <h3>Consultations &amp; NAPSOthérapie</h3>
-                <p>Un bilan global qui croise alimentation, sommeil, activite physique et stress, pour un plan d'action realiste.</p>
+                <h3>Alimentation & hygiène de vie</h3>
+                <p>Mieux comprendre ses habitudes, retrouver de l'énergie et construire des changements durables.</p>
               </div>
             </article>
             <article>
               <span>02</span>
               <div>
-                <h3>Sommeil &amp; gestion du stress</h3>
-                <p>Comprendre ce qui empeche de dormir ou de se poser : respiration, hygiene du sommeil, charge mentale.</p>
+                <h3>Sommeil, stress & équilibre émotionnel</h3>
+                <p>Retrouver un meilleur équilibre au quotidien et mieux comprendre les mécanismes qui influencent notre bien-être.</p>
               </div>
             </article>
             <article>
               <span>03</span>
               <div>
-                <h3>Alimentation &amp; comportement</h3>
-                <p>Sans regime ni culpabilite. Ecouter sa faim, ajuster, apaiser son rapport a l'assiette, durablement.</p>
+                <h3>Parcours de vie & transitions</h3>
+                <p>Être accompagné lors d'une étape de vie, d'un changement ou d'un questionnement personnel.</p>
               </div>
             </article>
           </div>
           <div class="bulle-tags">
-            <span>Sur rendez-vous</span>
-            <span>Individuel</span>
-            <span>Acces PMR</span>
+            <span>Napsothérapie · Diététique · Naturopathie</span>
+            <span>Psychologie · Sophrologie · Hypnose</span>
+            <span>Sexologie · Coaching de vie · Accompagnement périnatal</span>
           </div>
         </aside>
       </div>
@@ -95,11 +93,15 @@ const practitioners = peopleForSpace("la-bulle");
       <div class="bulle-wrap">
         <div class="bulle-head">
           <span>02 - Les intervenants</span>
-          <h2>Les praticien·nes<br /><em>de La Bulle.</em></h2>
+          <h2>Les professionnel·les de La Bulle,<br /><em>une écoute attentive.</em></h2>
           <p>
-            Chacun·e accompagne avec serieux et douceur, dans une approche globale
-            du mode de vie et des accompagnements & soins.
+            Chaque praticien·ne possède sa propre spécialité et sa propre approche.
+            Nous les avons choisi·es pour leur professionnalisme, leur expérience et leur sens de l'écoute.
           </p>
+        </div>
+        <div class="bulle-brand-row">
+          <img src="/assets/logos/kerflow-consult-web.png" alt="KerFlow Consult" loading="lazy" decoding="async" />
+          <span>À La Bulle · accompagnement</span>
         </div>
 
         <div class="bulle-team">
@@ -130,24 +132,24 @@ const practitioners = peopleForSpace("la-bulle");
     <section class="bulle-section bulle-paperless">
       <div class="bulle-wrap">
         <div class="bulle-head">
-          <span>03 - Comment reserver</span>
+          <span>03 - Comment réserver</span>
           <h2>Un parcours simple,<br />en <em>trois temps.</em></h2>
         </div>
         <div class="bulle-steps">
           <article>
-            <span>i</span>
-            <h3>On choisit ensemble</h3>
-            <p>Un doute sur l'espace ou l'intervenant·e ? Ecrivez-nous : on vous oriente.</p>
+            <span>01</span>
+            <h3>Vous choisissez</h3>
+            <p>Découvrez les différents accompagnements, puis choisissez le professionnel qui correspond le mieux à vos besoins.</p>
           </article>
           <article>
-            <span>ii</span>
-            <h3>On prend rendez-vous</h3>
-            <p>Directement avec le praticien ou la praticienne, par le formulaire de contact.</p>
+            <span>02</span>
+            <h3>Vous prenez rendez-vous</h3>
+            <p>Prenez directement contact avec le professionnel de votre choix pour convenir d'un rendez-vous.</p>
           </article>
           <article>
-            <span>iii</span>
+            <span>03</span>
             <h3>On vous accueille</h3>
-            <p>Un the chaud, le calme du lieu, et le temps qu'il faut. Sans engagement.</p>
+            <p>Présentez-vous quelques minutes avant votre rendez-vous. Installez-vous confortablement à la tisanerie : on viendra vous chercher dès que possible.</p>
           </article>
         </div>
       </div>
@@ -158,11 +160,11 @@ const practitioners = peopleForSpace("la-bulle");
         <h2>Choisir un<br /><em>accompagnement.</em></h2>
         <div>
           <p>
-            On en parle avant de commencer, pour trouver le bon espace, le bon rythme,
-            la bonne personne. Sans engagement.
+            Vous choisissez votre praticien·ne, vous prenez rendez-vous directement avec lui ou elle,
+            et on vous accueille dans La Bulle.
           </p>
           <div class="cours-actions">
-            <a href="/contact/" class="btn btn-light">Prendre rendez-vous</a>
+            <a href="/le-lieu/#la-bulle" class="btn btn-light">Découvrir le lieu</a>
             <a href="#intervenants" class="btn-line on-dark">Voir les intervenants</a>
           </div>
         </div>
@@ -403,6 +405,27 @@ const practitioners = peopleForSpace("la-bulle");
   .bulle-head {
     max-width: 820px;
     margin-bottom: clamp(32px, 4vw, 52px);
+  }
+
+  .bulle-brand-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    align-items: center;
+    margin: 0 0 clamp(28px, 4vw, 48px);
+  }
+
+  .bulle-brand-row img {
+    width: min(180px, 54vw);
+    height: auto;
+  }
+
+  .bulle-brand-row span {
+    color: var(--bulle-accent);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
   }
 
   .bulle-team {

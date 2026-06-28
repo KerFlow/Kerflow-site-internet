@@ -378,6 +378,22 @@ import { siteVisuals } from "../data/siteVisuals.js";
       .def-row .big{ font-family:var(--serif); font-style:italic; font-size:clamp(40px,5vw,68px); line-height:1; color:var(--petrol); font-variation-settings:"opsz" 144; }
       .def-row .big.clay{ color:var(--clay); }
       .def-row p{ margin:0; font-size:15.5px; line-height:1.6; color:var(--granite); }
+      .fern-logo-figure{
+        margin:clamp(24px,3vw,36px) 0 0;
+        display:flex;
+        justify-content:flex-start;
+        width:fit-content;
+        padding:clamp(16px,2vw,24px);
+        border:1px solid rgba(31,38,34,0.12);
+        background:rgba(250,246,238,0.94);
+        box-shadow:0 18px 42px rgba(31,38,34,0.1);
+      }
+      .fern-logo-figure img{
+        width:min(72%, 420px);
+        height:auto;
+        display:block;
+        filter:contrast(1.04) saturate(1.02) drop-shadow(0 8px 14px rgba(14,42,44,0.1));
+      }
       
       /* =========================================================
          SECTION 3 — Prendre soin de soi
@@ -992,90 +1008,94 @@ import { siteVisuals } from "../data/siteVisuals.js";
         <div class="def-list">
           <div class="def-row">
             <span class="big serif">Ker</span>
-            <p>La maison, le seuil, l'ancrage. Le lieu où l'on se déchausse et où l'on baisse le ton —
-              un toit à taille humaine, ouvert du mardi au samedi.</p>
+            <p>La maison en breton, l'ancrage. Le lieu où l'on se déchausse et où l'on baisse le ton —
+              un toit à taille humaine.</p>
           </div>
           <div class="def-row">
             <span class="big serif">Flow</span>
-            <p>Le souffle, le mouvement, le cours du temps. Bouger en douceur, respirer, comprendre
-              son corps — au rythme de chacun, sans performance.</p>
+            <p>Le mouvement, le souffle, la vague. Bouger en douceur, respirer, comprendre son corps —
+              au rythme de chacun.</p>
           </div>
           <div class="def-row">
-            <span class="big serif" style="color:var(--studio-ink)">Fougère</span>
-            <p>La plante-signe de la maison : résilience et humilité. Elle se déroule lentement,
-              en spirale, vers la lumière — comme on revient à soi.</p>
+            <span class="big serif" style="color:var(--studio-ink)">KerFlow</span>
+            <p>Une rencontre. Une maison en mouvement, où l'on vient pratiquer, apprendre,
+              se faire accompagner ou simplement prendre soin de soi.</p>
           </div>
         </div>
         <div class="sec-head">
           <span class="sec-num">02 — Le nom</span>
-          <h2 class="title"><i class="h c-brand-petrol">Ker, Flow,</i><br>et la fougère.</h2>
+          <h2 class="title">Nous avons toujours aimé<br><i class="h c-brand-petrol">la fougère.</i></h2>
           <p class="sec-intro">
-            Le nom porte ce qu'on veut être : un toit calme où le mouvement circule doucement.
-            Trois mots, trois ancrages — qu'on retrouve jusque dans le signe de la maison.
+            Résiliente et discrète, elle pousse presque partout, s'adapte à son environnement
+            et trouve sa place sans jamais s'imposer. Elle protège les sols et participe à la
+            richesse du vivant depuis des millions d'années. Ses frondes se déploient lentement,
+            à leur rythme. Une façon de grandir qui nous inspire.
           </p>
+          <figure class="fern-logo-figure" aria-label="Fougère KerFlow">
+            <img src="/assets/logos/kerflow-fern-blue.png" width="1474" height="970" alt="" loading="lazy" decoding="async" />
+          </figure>
         </div>
       </div>
     </section>
     
     <!-- ===================== LES ESPACES ===================== -->
-    <section class="section-pad rule-top" data-screen-label="Les espaces" style="background:var(--paper)">
+    <section id="espaces" class="section-pad rule-top" data-screen-label="Les espaces" style="background:var(--paper)">
       <div class="wrap">
         <div class="sec-head" style="margin-bottom:clamp(40px,5vw,64px)">
           <span class="sec-num">03 — Trois espaces, sous un même toit</span>
-          <h2 class="title">La maison <i class="h c-petrol">respire</i> en trois temps.</h2>
+          <h2 class="title">Entrez, on vous fait <i class="h c-petrol">visiter</i></h2>
           <p class="sec-intro">
-            Une grande salle au rez-de-chaussée, un cabinet lumineux sur la cour, un box feutré
-            au sous-sol. Chacun a sa lumière, son volume, son usage.
+            Une grande salle de plain-pied, un cabinet calme et lumineux, une pièce feutrée
+            à l'abri de l'agitation. Trois espaces, trois atmosphères, une même intention.
           </p>
         </div>
     
-        <!-- La Salle -->
-        <div class="feature" data-screen-label="Espace · La Salle">
+        <!-- Le Salon -->
+        <div class="feature" data-screen-label="Espace · Le Salon">
           <div class="feature-media framed" style="--frame:var(--studio)">
             <SiteVisual visual={siteVisuals.leLieu.spaces.studio} />
           </div>
           <div class="feature-body">
-            <span class="tag" style="color:var(--studio-ink)">01 · La Salle de pratique</span>
+            <span class="tag" style="color:var(--studio-ink)">01 · Le Salon</span>
             <h3 class="serif">La pièce où l'on bouge.</h3>
-            <p>Quarante mètres carrés de bois clair, un miroir toute hauteur, la lumière qui entre
-              par la cour. Cours collectifs en petits groupes de 8 à 12 — yoga, Pilates, mobilité,
-              respiration. Tapis et matériel fournis.</p>
+            <p>Quarante mètres carrés de parquet, un miroir toute hauteur, la lumière qui entre
+              par des hautes fenêtres. Cours collectifs en petits groupes de 8 à 12 — yoga,
+              Pilates, mobilité, respiration. Tapis et matériel fournis.</p>
             <div class="feature-meta">
-              <span>40 m²</span><span>10–12 places</span><span>Miroir toute hauteur</span><span>Matériel fourni</span>
+              <span>40 m²</span><span>8 -12 places</span><span>Matériel fourni</span><span>Convivial</span>
             </div>
           </div>
         </div>
     
         <!-- La Bulle -->
-        <div class="feature flip" data-screen-label="Espace · La Bulle">
+        <div id="la-bulle" class="feature flip" data-screen-label="Espace · La Bulle">
           <div class="feature-media framed" style="--frame:var(--consult)">
             <SiteVisual visual={siteVisuals.leLieu.spaces.bulle} />
           </div>
           <div class="feature-body">
             <span class="tag" style="color:var(--consult-ink)">02 · La Bulle</span>
             <h3 class="serif">Le cabinet qui écoute.</h3>
-            <p>Un bureau de consultation au rez-de-chaussée, baigné de lumière, sa grande fenêtre
-              ouverte sur une cour calme et arborée. Le cadre apaisant des accompagnements
-              individuels — accompagnements & soins, sommeil, nutrition, gestion du stress.</p>
+            <p>Un bureau de consultation au rez-de-chaussée, baigné de lumière naturelle,
+              une grande fenêtre ouverte sur une cour calme et arborée. Un cadre apaisant
+              pour des accompagnements individuels.</p>
             <div class="feature-meta">
-              <span>11 m²</span><span>Rez-de-chaussée</span><span>Fenêtre sur cour</span><span>Accès PMR</span>
+              <span>Rez de chaussée</span><span>fenêtre sur cour</span><span>Accès PMR</span><span>Serein</span>
             </div>
           </div>
         </div>
     
         <!-- Le Cocon -->
-        <div class="feature" data-screen-label="Espace · Le Cocon">
+        <div id="le-cocon" class="feature" data-screen-label="Espace · Le Cocon">
           <div class="feature-media framed" style="--frame:var(--rituel)">
             <SiteVisual visual={siteVisuals.leLieu.spaces.cocon} />
           </div>
           <div class="feature-body">
             <span class="tag" style="color:var(--rituel-ink)">03 · Le Cocon</span>
-            <h3 class="serif">Le box qui enveloppe.</h3>
-            <p>Au sous-sol, un espace intimiste sans fenêtre — l'intimité totale, l'atmosphère qui
-              enveloppe et invite au lâcher-prise. Massages, réflexologie, soins du corps :
-              le temps ralentit, on récupère.</p>
+            <h3 class="serif">Le lieu qui enveloppe</h3>
+            <p>Au sous-sol, un espace intimiste. Une atmosphère qui invite au lâcher-prise.
+              Massages, réflexologie, soins du corps : le temps ralentit, on récupère.</p>
             <div class="feature-meta">
-              <span>7 m²</span><span>Sous-sol feutré</span><span>Table de soin</span><span>Calme absolu</span>
+              <span>Intimité</span><span>table de massage</span><span>Rituel</span><span>Soins</span>
             </div>
           </div>
         </div>
@@ -1088,9 +1108,13 @@ import { siteVisuals } from "../data/siteVisuals.js";
         <div class="portes-head" style="margin-top:0;">
           <div class="sec-head" style="gap:14px;">
             <span class="sec-num">04 — Les fondatrices</span>
-            <h2 class="title">Deux femmes,<br><i class="h c-petrol">une même attention.</i></h2>
+            <h2 class="title">Un projet <i class="h c-petrol">mère-fille</i></h2>
             <p class="sec-intro">
-              KerFlow est porté par deux parcours qui se complètent — le mouvement et les accompagnements & soins — et une même façon d'accueillir : posée, humaine, sans esbroufe.
+              Nous avons imaginé le KerFlow comme un espace où chacun peut prendre soin de soi,
+              se ressourcer et avancer à son rythme. Un lieu chaleureux comme à la maison. Chez nous,
+              la Bretagne n'est jamais bien loin. Même si nous vivons à Clamart, nous avons eu envie
+              de glisser quelques clins d'oeil à notre terre de coeur dans ce projet. D'ailleurs,
+              le mot Ker signifie « maison » en breton !
             </p>
           </div>
         </div>
@@ -1099,9 +1123,13 @@ import { siteVisuals } from "../data/siteVisuals.js";
             <SiteVisual visual={siteVisuals.leLieu.founders.gaelle} />
             <div class="p-body">
               <h3 class="p-name serif">Gaëlle</h3>
-              <span class="p-role">Mouvement &amp; accompagnements & soins</span>
-              <p class="p-desc">Praticienne et enseignante, elle a pensé KerFlow comme un lieu de
-                reprise en douceur. Elle signe le journal de la maison et accompagne les premières venues.</p>
+              <span class="p-role">Professeur de Yoga &amp; Napsothérapeute</span>
+              <div class="p-desc">
+                <p>Dans une première vie, Gaëlle était pharmacienne biologiste. Il y a quelques années, elle a choisi d'écouter son instinct et de se lancer dans une reconversion inattendue : devenir professeure de yoga et napsothérapeute.</p>
+                <p>Pour elle, la napsothérapie est le prolongement naturel de son premier métier : une approche plus douce, plus concrète et centrée sur la prévention santé. Au fil de son parcours, elle a compris qu'il est souvent plus facile de savoir ce qui est bon pour nous que de réussir à l'appliquer dans notre quotidien.</p>
+                <p>Convaincue que chacun devrait pouvoir accéder facilement aux connaissances, aux pratiques et aux outils qui permettent de prendre soin de sa santé, elle a imaginé KerFlow : une maison chaleureuse où l'on peut bouger, comprendre et prendre soin de soi, à son rythme.</p>
+                <p>Clamartoise depuis plus de 20 ans et mère de cinq enfants, c'est elle qui apporte la vision, les idées et l'âme de cette maison.</p>
+              </div>
               <div class="p-links"><a href="/contact/">Contact</a><a href="#">Instagram</a></div>
             </div>
           </article>
@@ -1110,8 +1138,11 @@ import { siteVisuals } from "../data/siteVisuals.js";
             <div class="p-body">
               <h3 class="p-name serif">Zélie</h3>
               <span class="p-role">Soin &amp; accompagnement</span>
-              <p class="p-desc">Formée à l'accompagnement et aux soins du corps, elle veille sur
-                La Bulle et Le Cocon — la cohérence des intervenants, la qualité de l'écoute, le soin du détail.</p>
+              <div class="p-desc">
+                <p>Zélie est la deuxième de la fratrie. Sa mère pratiquait déjà le yoga alors qu'elle était encore dans son ventre. Un hasard de la retrouver aujourd'hui dans cette aventure ? Ce n'est pas si sûre.</p>
+                <p>Curieuse de nature, attirée par les projets qui ont du sens et profondément sensible aux questions environnementales, elle aime les idées qui paraissent un peu ambitieuses et les chemins dont on ne connaît pas encore exactement la destination. Là où Gaëlle imagine, Zélie transforme les idées en actions.</p>
+                <p>Quand KerFlow a commencé à prendre forme, l'occasion était trop belle pour ne pas explorer cette fibre entrepreneuriale qui sommeillait en elle depuis longtemps. Sa mère dit souvent d'elle qu'elle est un peu magicienne. Zélie préfère penser qu'il suffit parfois d'oser.</p>
+              </div>
               <div class="p-links"><a href="/contact/">Contact</a><a href="#">Instagram</a></div>
             </div>
           </article>
@@ -1124,22 +1155,21 @@ import { siteVisuals } from "../data/siteVisuals.js";
       <div class="wrap">
         <div class="sec-head">
           <span class="sec-num" style="color:var(--rituel-ink)">05 — L'ambiance</span>
-          <h2 class="title">On a choisi chaque matière<br><i class="h" style="color:var(--rituel-ink)">à la main.</i></h2>
+          <h2 class="title">On a travaillé chaque univers<br><i class="h" style="color:var(--rituel-ink)">avec soin.</i></h2>
           <p class="sec-intro">
-            Lin lavé, bois huilé, céramique mate. Rien n'a l'air neuf — tout est doux.
-            Une tisanerie conviviale, un thé chaud à l'arrivée, le silence quand il faut.
+            Matières, couleurs, lumières, mobilier.
           </p>
         </div>
         <div class="mood-words">
-          <span class="fill"><i>Maison</i></span>
-          <span>Chaleur</span>
-          <span>Nature</span>
-          <span>Calme</span>
-          <span>Lumière</span>
-          <span class="fill"><i>Propreté</i></span>
-          <span>Bois &amp; lin</span>
-          <span>Tisanerie</span>
-          <span>À taille humaine</span>
+          <span class="fill"><i>Bois</i></span>
+          <span>lin</span>
+          <span>cire</span>
+          <span>liège</span>
+          <span>plantes</span>
+          <span class="fill"><i>galets</i></span>
+          <span>osier</span>
+          <span>coton</span>
+          <span>jonc de mer</span>
         </div>
       </div>
     </section>
@@ -1151,8 +1181,7 @@ import { siteVisuals } from "../data/siteVisuals.js";
           <h2 class="serif">Le mieux, c'est<br>de <i>pousser la porte.</i></h2>
         </div>
         <div>
-          <p>1er cours à 10 € sur inscription. Et pour un accompagnement ou un soin, on en
-            parle avant de commencer — sans engagement.</p>
+          <p>Il ne manque plus que vous. Venez découvrir le lieu et trouver la pratique, l'accompagnement ou le soin qui vous convient.</p>
           <div class="cta-actions">
             <a href="/cours-planning/" class="btn btn-light">Découvrir les cours
               <svg class="ic" viewBox="0 0 24 24" style="width:15px;height:15px"><path d="M4 12h16M14 6l6 6-6 6"></path></svg>

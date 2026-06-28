@@ -60,8 +60,7 @@ const pricing = defineCollection({
   schema: z.object({
     order: z.number(),
     name: z.string(),
-    amount: z.string(),
-    unit: z.string(),
+    intro: z.string().optional(),
     featured: z.boolean(),
     features: z.array(z.string()),
     ctaLabel: z.string(),
@@ -70,11 +69,44 @@ const pricing = defineCollection({
   }),
 });
 
-const settings = defineCollection({
+const workshops = defineCollection({
   type: "data",
   schema: z.object({
-    featuredArticleSlug: z.string(),
+    order: z.number(),
+    visible: z.boolean(),
+    featured: z.boolean(),
+    date: z.string(),
+    time: z.string(),
+    title: z.string(),
+    description: z.string(),
+    duration: z.string(),
+    price: z.string(),
+    ctaLabel: z.string(),
+    ctaUrl: z.string(),
+    imageClass: z.string(),
+    imageLabel: z.string(),
   }),
 });
 
-export const collections = { blog, people, courses, pricing, settings };
+const settings = defineCollection({
+  type: "data",
+  schema: z.object({
+    featuredArticleSlug: z.string().optional(),
+    openingLabel: z.string().optional(),
+    phoneVisible: z.boolean().optional(),
+    phoneDisplay: z.string().optional(),
+    phoneHref: z.string().optional(),
+    testimonials: z
+      .array(
+        z.object({
+          visible: z.boolean(),
+          author: z.string(),
+          context: z.string(),
+          quote: z.string(),
+        })
+      )
+      .optional(),
+  }),
+});
+
+export const collections = { blog, people, courses, pricing, workshops, settings };
