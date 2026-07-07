@@ -442,6 +442,29 @@ export default config({
           label: "Numéro pour le lien mobile",
           description: "Exemple : +33600000000",
         }),
+        rentalPdfs: fields.object(
+          {
+            studio: fields.file({
+              label: "PDF location - Le Salon",
+              directory: "public/uploads/location",
+              publicPath: "/uploads/location/",
+              description: "Description complète et tarifs du Salon.",
+            }),
+            bulle: fields.file({
+              label: "PDF location - La Bulle",
+              directory: "public/uploads/location",
+              publicPath: "/uploads/location/",
+              description: "Description complète et tarifs de La Bulle.",
+            }),
+            cocon: fields.file({
+              label: "PDF location - Le Cocon",
+              directory: "public/uploads/location",
+              publicPath: "/uploads/location/",
+              description: "Description complète et tarifs du Cocon.",
+            }),
+          },
+          { label: "PDF de location" }
+        ),
       },
     },
     blogSettings: {

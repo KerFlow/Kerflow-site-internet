@@ -111,6 +111,7 @@ import { siteVisuals } from "../data/siteVisuals.js";
       .rule-top{ border-top:1px solid var(--rule); }
       
       .sec-head{ display:flex; flex-direction:column; gap:18px; max-width:920px; }
+      .sec-head.founders-head{ max-width:none; }
       .sec-num{ font-family:var(--mono); font-size:11px; letter-spacing:0.24em; text-transform:uppercase; color:var(--clay); }
       h2.title{
         font-family:var(--serif); font-weight:400; font-size:var(--t-h2);
@@ -382,14 +383,14 @@ import { siteVisuals } from "../data/siteVisuals.js";
         margin:clamp(24px,3vw,36px) 0 0;
         display:flex;
         justify-content:flex-start;
-        width:fit-content;
-        padding:clamp(16px,2vw,24px);
-        border:1px solid rgba(31,38,34,0.12);
-        background:rgba(250,246,238,0.94);
-        box-shadow:0 18px 42px rgba(31,38,34,0.1);
+        width:100%;
+        padding:0;
+        border:0;
+        background:transparent;
+        box-shadow:none;
       }
       .fern-logo-figure img{
-        width:min(72%, 420px);
+        width:min(100%, 420px);
         height:auto;
         display:block;
         filter:contrast(1.04) saturate(1.02) drop-shadow(0 8px 14px rgba(14,42,44,0.1));
@@ -890,6 +891,7 @@ import { siteVisuals } from "../data/siteVisuals.js";
       
       /* texte d'intro générique sous .sec-head */
       .sec-intro{ font-size:16.5px; line-height:1.68; color:var(--ink-soft); max-width:620px; margin:8px 0 0; }
+      .founders-head .sec-intro{ max-width:none; }
       
       /* ambiance — nuage de mots */
       .mood-words{ display:flex; flex-wrap:wrap; gap:12px; margin-top:clamp(28px,3vw,42px); }
@@ -1106,7 +1108,7 @@ import { siteVisuals } from "../data/siteVisuals.js";
     <section class="section-pad rule-top" data-screen-label="Les fondatrices">
       <div class="wrap">
         <div class="portes-head" style="margin-top:0;">
-          <div class="sec-head" style="gap:14px;">
+          <div class="sec-head founders-head" style="gap:14px;">
             <span class="sec-num">04 — Les fondatrices</span>
             <h2 class="title">Un projet <i class="h c-petrol">mère-fille</i></h2>
             <p class="sec-intro">
@@ -1137,7 +1139,7 @@ import { siteVisuals } from "../data/siteVisuals.js";
             <SiteVisual visual={siteVisuals.leLieu.founders.zelie} />
             <div class="p-body">
               <h3 class="p-name serif">Zélie</h3>
-              <span class="p-role">Soin &amp; accompagnement</span>
+              <span class="p-role">Communication &amp; Développement</span>
               <div class="p-desc">
                 <p>Zélie est la deuxième de la fratrie. Sa mère pratiquait déjà le yoga alors qu'elle était encore dans son ventre. Un hasard de la retrouver aujourd'hui dans cette aventure ? Ce n'est pas si sûre.</p>
                 <p>Curieuse de nature, attirée par les projets qui ont du sens et profondément sensible aux questions environnementales, elle aime les idées qui paraissent un peu ambitieuses et les chemins dont on ne connaît pas encore exactement la destination. Là où Gaëlle imagine, Zélie transforme les idées en actions.</p>

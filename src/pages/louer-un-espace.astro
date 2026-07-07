@@ -8,6 +8,13 @@ import { siteSettings } from "../data/cmsContent.js";
 
 const showPhone = Boolean(siteSettings.phoneVisible && siteSettings.phoneDisplay);
 const phoneHref = siteSettings.phoneHref ? `tel:${siteSettings.phoneHref}` : null;
+const rentalPdfs = siteSettings.rentalPdfs ?? {};
+const downloadLabel = "Télécharger ici la description complète de l'espace et l'ensemble de nos tarifs.";
+
+const rentalPdfLink = (spaceKey) => ({
+  href: rentalPdfs[spaceKey] || "#demande",
+  download: Boolean(rentalPdfs[spaceKey]),
+});
 ---
 
 <BaseLayout
@@ -116,7 +123,11 @@ const phoneHref = siteSettings.phoneHref ? `tel:${siteSettings.phoneHref}` : nul
               <li>6 tables & 20 chaises pliantes</li>
               <li>Sonorisation Bluetooth</li>
             </ul>
-            <p class="r-cond"><a href="#demande">Télécharger ici la description complète de l'espace et l'ensemble de nos tarifs.</a></p>
+            <p class="r-cond">
+              <a href={rentalPdfLink("studio").href} download={rentalPdfLink("studio").download ? "" : undefined}>
+                {downloadLabel}
+              </a>
+            </p>
             <div class="space-action">
               <a href="#demande" class="btn space-btn">
                 Demander cet espace
@@ -159,7 +170,11 @@ const phoneHref = siteSettings.phoneHref ? `tel:${siteSettings.phoneHref}` : nul
               <li>Wi-Fi</li>
               <li>Lumière naturelle</li>
             </ul>
-            <p class="r-cond"><a href="#demande">Télécharger ici la description complète de l'espace et l'ensemble de nos tarifs.</a></p>
+            <p class="r-cond">
+              <a href={rentalPdfLink("bulle").href} download={rentalPdfLink("bulle").download ? "" : undefined}>
+                {downloadLabel}
+              </a>
+            </p>
             <div class="space-action">
               <a href="#demande" class="btn space-btn">
                 Demander cet espace
@@ -202,7 +217,11 @@ const phoneHref = siteSettings.phoneHref ? `tel:${siteSettings.phoneHref}` : nul
               <li>Huile de massage à disposition</li>
               <li>Non PMR · transfert possible à l'étage</li>
             </ul>
-            <p class="r-cond"><a href="#demande">Télécharger ici la description complète de l'espace et l'ensemble de nos tarifs.</a></p>
+            <p class="r-cond">
+              <a href={rentalPdfLink("cocon").href} download={rentalPdfLink("cocon").download ? "" : undefined}>
+                {downloadLabel}
+              </a>
+            </p>
             <div class="space-action">
               <a href="#demande" class="btn space-btn">
                 Demander cet espace

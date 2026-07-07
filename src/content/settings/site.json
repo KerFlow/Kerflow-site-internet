@@ -2,5 +2,10 @@
   "openingLabel": "Ouverture prochaine - automne 26",
   "phoneVisible": false,
   "phoneDisplay": "",
-  "phoneHref": ""
+  "phoneHref": "",
+  "rentalPdfs": {
+    "studio": "/uploads/location/studio.pdf",
+    "bulle": "/uploads/location/bulle.pdf",
+    "cocon": "/uploads/location/cocon.pdf"
+  }
 }

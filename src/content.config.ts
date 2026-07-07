@@ -96,6 +96,13 @@ const settings = defineCollection({
     phoneVisible: z.boolean().optional(),
     phoneDisplay: z.string().optional(),
     phoneHref: z.string().optional(),
+    rentalPdfs: z
+      .object({
+        studio: z.string().nullable().optional(),
+        bulle: z.string().nullable().optional(),
+        cocon: z.string().nullable().optional(),
+      })
+      .optional(),
     testimonials: z
       .array(
         z.object({

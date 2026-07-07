@@ -214,11 +214,15 @@ const archivedEvents = [
             </p>
           </div>
           <div>
-            <form class="news-form">
+            <form class="news-form" method="POST" action="https://9b1831b8.sibforms.com/v2/serve/MUIFAATe17D4kXu_YgpAOQI05wj8w8QMUnMhvkNeXDXEVVL9LfyhGSdOptcauM42zWKPwC7ecU2cy8ZgsfAFfmnyJdQt8-3QKMzDpY79a6m-9ll1HRMvqImwgndRAvfURFXHgCVMrG97kNFkO8KimQ5BG9HuRHjD0Y-aCbfcfAR7m078MFgMQ_bi6cifQf9ID-SAz9ny6Tx8p1iQjA==" data-type="subscription" data-brevo-inline data-success-message="Merci, votre inscription à la Gazette est bien prise en compte.">
               <label for="newsletter-email">
                 <span class="sr-only">Adresse e-mail</span>
-                <input id="newsletter-email" type="email" placeholder="Votre adresse e-mail" />
+                <input id="newsletter-email" name="EMAIL" type="email" placeholder="Votre adresse e-mail" autocomplete="email" required />
               </label>
+              <input type="hidden" name="PRENOM" value="Inscription" />
+              <input type="hidden" name="NOM" value="Newsletter" />
+              <input type="text" name="email_address_check" value="" hidden />
+              <input type="hidden" name="locale" value="fr" />
               <div class="actions news-form-actions">
                 <button class="btn btn-accent" type="submit">S'inscrire <span aria-hidden="true">→</span></button>
               </div>

@@ -67,13 +67,16 @@ const coconPeople = peopleForSpace("le-cocon");
     <section class="pv-section pv-consult-band" id="bulle">
       <div class="pv-wrap pv-space-grid">
         <div class="pv-space-main">
-          <img class="pv-space-logo" src="/assets/logos/kerflow-consult-web.png" alt="KerFlow Consult" loading="lazy" decoding="async" />
+          <div class="pv-wordmark-logo" aria-label="KerFlow Consult">
+            <span class="pv-logo-word">KerFlow</span>
+            <span class="pv-logo-tag">Consult</span>
+          </div>
           <h2>La Bulle,<br />le cabinet<br /><em>qui écoute.</em></h2>
           <p class="pv-copy">
             Un bureau de consultation au rez-de-chaussée, baigné de lumière naturelle, une grande fenêtre ouverte sur une cour calme et arborée.
             Un cadre apaisant pour des accompagnements individuels.
           </p>
-          <SiteVisual visual={siteVisuals.care.overviewBulle} class="pv-placeholder" />
+          <SiteVisual visual={siteVisuals.care.bulleHero} class="pv-placeholder" />
         </div>
         <aside>
           <p class="pv-label">Pour quels besoins ?</p>
@@ -110,7 +113,10 @@ const coconPeople = peopleForSpace("le-cocon");
     <section class="pv-section pv-rituel-band" id="cocon">
       <div class="pv-wrap pv-space-grid">
         <div class="pv-space-main">
-          <img class="pv-space-logo" src="/assets/logos/kerflow-rituel-web.png" alt="KerFlow Rituel" loading="lazy" decoding="async" />
+          <div class="pv-wordmark-logo pv-wordmark-logo-rituel" aria-label="KerFlow Rituel">
+            <span class="pv-logo-word">KerFlow</span>
+            <span class="pv-logo-tag">Rituel</span>
+          </div>
           <h2>Le Cocon,<br />le lieu<br /><em>qui enveloppe.</em></h2>
           <p class="pv-copy">
             Au sous-sol, un espace intimiste. Une atmosphère qui invite au lâcher-prise.
@@ -154,9 +160,9 @@ const coconPeople = peopleForSpace("le-cocon");
       <div class="pv-wrap">
         <div class="pv-head">
           <span>02 - Les intervenants</span>
-          <h2>Des praticien·nes<br /><em>choisi·es avec soin.</em></h2>
+          <h2>Des professionel.les<br /><em>choisi·es avec soin.</em></h2>
           <p>
-            Chaque praticien·ne possède sa propre spécialité et sa propre approche.
+            Chaque intervenant.e possède sa propre spécialité et sa propre approche.
             Nous les avons choisi·es pour leur professionnalisme, leur expérience et leur sens de l'écoute.
           </p>
         </div>
@@ -442,6 +448,41 @@ const coconPeople = peopleForSpace("le-cocon");
     border-color: var(--consult-ink);
   }
 
+  .pv-consult-band .pv-space-grid {
+    align-items: start;
+  }
+
+  .pv-wordmark-logo {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    width: max-content;
+    margin-bottom: 20px;
+    color: var(--consult-ink);
+  }
+
+  .pv-logo-word {
+    font-family: var(--serif);
+    font-size: clamp(34px, 3.1vw, 44px);
+    font-weight: 400;
+    letter-spacing: -0.018em;
+    line-height: 1;
+    font-variation-settings: "opsz" 144;
+  }
+
+  .pv-logo-tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.34em;
+    line-height: 1.35;
+    text-transform: uppercase;
+  }
+
+  .pv-wordmark-logo-rituel {
+    color: var(--rituel-ink);
+  }
+
   .pv-choice h3,
   .pv-list h3,
   .pv-team h3,
@@ -519,7 +560,7 @@ const coconPeople = peopleForSpace("le-cocon");
     color: var(--rituel-ink);
   }
 
-  .pv-placeholder,
+  :global(.pv-placeholder),
   .pv-person-media {
     display: grid;
     place-items: center;
@@ -532,12 +573,26 @@ const coconPeople = peopleForSpace("le-cocon");
     text-transform: uppercase;
   }
 
-  .pv-placeholder {
+  :global(.pv-placeholder) {
+    position: relative;
+    overflow: hidden;
     max-width: 480px;
     aspect-ratio: 4 / 3;
     margin-top: 30px;
     border: 12px solid var(--paper);
     padding: 22px;
+  }
+
+  :global(.pv-placeholder img) {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  :global(.pv-placeholder span) {
+    display: none;
   }
 
   .pv-person-media {

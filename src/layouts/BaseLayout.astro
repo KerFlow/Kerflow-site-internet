@@ -101,6 +101,55 @@ const {
           }
         });
       });
+
+      document.querySelectorAll("form[data-brevo-inline]").forEach((form) => {
+        const submitButton = form.querySelector('button[type="submit"]');
+        const defaultButtonContent = submitButton?.innerHTML || "";
+        const status = document.createElement("p");
+
+        status.className = "form-status";
+        status.setAttribute("role", "status");
+        status.setAttribute("aria-live", "polite");
+        form.append(status);
+
+        form.addEventListener("submit", async (event) => {
+          event.preventDefault();
+          status.className = "form-status";
+          status.textContent = "Inscription en cours...";
+
+          if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.setAttribute("aria-busy", "true");
+            submitButton.textContent = "Inscription...";
+          }
+
+          try {
+            const response = await fetch(form.action, {
+              method: form.method,
+              body: new FormData(form),
+              headers: { Accept: "application/json" }
+            });
+            const payload = await response.json().catch(() => null);
+
+            if (!response.ok || payload?.success === false) {
+              throw new Error("Brevo subscription failed");
+            }
+
+            form.reset();
+            status.className = "form-status is-success";
+            status.textContent = form.dataset.successMessage || "Merci, votre inscription à la Gazette est bien prise en compte.";
+          } catch {
+            status.className = "form-status is-error";
+            status.textContent = "L'inscription n'a pas abouti. Vérifiez votre adresse e-mail ou réessayez dans quelques instants.";
+          } finally {
+            if (submitButton) {
+              submitButton.disabled = false;
+              submitButton.removeAttribute("aria-busy");
+              submitButton.innerHTML = defaultButtonContent;
+            }
+          }
+        });
+      });
     </script>
   </body>
 </html>

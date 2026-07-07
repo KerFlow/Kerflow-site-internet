@@ -48,10 +48,47 @@
     headers.forEach((header) => {
       const button = header.querySelector(".menu-toggle");
       const nav = header.querySelector(".mobile-nav");
+      const submenus = header.querySelectorAll(".has-submenu");
       let lastScrollY = window.scrollY;
       let ticking = false;
 
       if (!button || !nav) return;
+
+      const closeSubmenus = () => {
+        submenus.forEach((submenu) => {
+          if (submenu instanceof HTMLDetailsElement) submenu.open = false;
+          if (document.activeElement instanceof HTMLElement && submenu.contains(document.activeElement)) {
+            document.activeElement.blur();
+          }
+        });
+      };
+
+      const closeSubmenu = (submenu) => {
+        if (submenu instanceof HTMLDetailsElement) submenu.open = false;
+        if (document.activeElement instanceof HTMLElement && submenu.contains(document.activeElement)) {
+          document.activeElement.blur();
+        }
+      };
+
+      const isPointerInsideSubmenuArea = (submenu, event) => {
+        const submenuPanel = submenu.querySelector(".nav-submenu");
+        const triggerRect = submenu.getBoundingClientRect();
+        const panelRect = submenuPanel?.getBoundingClientRect();
+        const padding = 16;
+        const isInsideTrigger =
+          event.clientX >= triggerRect.left - padding &&
+          event.clientX <= triggerRect.right + padding &&
+          event.clientY >= triggerRect.top - padding &&
+          event.clientY <= triggerRect.bottom + padding;
+        const isInsidePanel =
+          panelRect &&
+          event.clientX >= panelRect.left - padding &&
+          event.clientX <= panelRect.right + padding &&
+          event.clientY >= panelRect.top - padding &&
+          event.clientY <= panelRect.bottom + padding;
+
+        return isInsideTrigger || isInsidePanel;
+      };
 
       const close = () => {
         button.setAttribute("aria-expanded", "false");
@@ -105,12 +142,46 @@
         if (event.target instanceof HTMLAnchorElement) close();
       });
 
+      submenus.forEach((submenu) => {
+        submenu.addEventListener("mouseleave", () => {
+          closeSubmenu(submenu);
+        });
+
+        submenu.addEventListener("focusout", (event) => {
+          if (event.relatedTarget instanceof Node && submenu.contains(event.relatedTarget)) return;
+          if (submenu instanceof HTMLDetailsElement) submenu.open = false;
+        });
+
+        submenu.addEventListener("click", (event) => {
+          if (event.target instanceof HTMLAnchorElement && submenu instanceof HTMLDetailsElement) {
+            submenu.open = false;
+          }
+        });
+      });
+
+      document.addEventListener("pointerdown", (event) => {
+        if (event.target instanceof Node && header.contains(event.target)) return;
+        closeSubmenus();
+      });
+
+      document.addEventListener("pointermove", (event) => {
+        submenus.forEach((submenu) => {
+          if (!(submenu instanceof HTMLDetailsElement) || !submenu.open) return;
+          if (isPointerInsideSubmenuArea(submenu, event)) return;
+          closeSubmenu(submenu);
+        });
+      });
+
       document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape") close();
+        if (event.key === "Escape") {
+          close();
+          closeSubmenus();
+        }
       });
 
       window.addEventListener("resize", () => {
         if (window.matchMedia("(min-width: 1181px)").matches) close();
+        if (window.matchMedia("(max-width: 1180px)").matches) closeSubmenus();
         requestHeaderUpdate();
       });
 
