@@ -1,10 +1,11 @@
 {
-  "order": 2,
   "title": "Reprendre le sport après une longue pause",
+  "order": 2,
   "tag": "Mouvement",
   "date": "Juin 2026",
   "readingTime": "6 min",
   "excerpt": "Par où commencer, et comment tenir dans le temps.",
+  "visualMode": "color",
   "imageClass": "t-fern",
   "imageLabel": "[ photo · marche, mouvement doux ]",
   "intro": "Après une pause, l'objectif n'est pas de retrouver immédiatement son ancien niveau. La priorité est de reconstruire de la confiance, de la régularité et des sensations corporelles fiables.",
@@ -13,7 +14,8 @@
       "heading": "Repartir plus bas que prévu",
       "paragraphs": [
         "La reprise fonctionne mieux quand la première étape paraît presque trop simple. Une marche active, une séance courte de mobilité ou vingt minutes de renforcement léger permettent d'observer le corps sans le brusquer.",
-        "Cette marge de sécurité limite les douleurs de reprise et donne envie de recommencer. C'est souvent ce second rendez-vous avec le mouvement qui fait la différence."
+        "Cette marge de sécurité limite les douleurs de reprise et donne envie de recommencer. C'est souvent ce second rendez-vous avec le mouvement qui fait la différence.",
+        "bkablaba"
       ]
     },
     {
@@ -30,6 +32,5 @@
         "Quand le cadre est clair, la motivation devient moins centrale. On suit le rendez-vous prévu, puis on ajuste la séance selon l'énergie du jour."
       ]
     }
-  ],
-  "visualMode": "color"
+  ]
 }
