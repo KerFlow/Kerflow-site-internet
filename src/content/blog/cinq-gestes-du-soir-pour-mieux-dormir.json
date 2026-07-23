@@ -1,10 +1,11 @@
 {
-  "order": 1,
   "title": "Cinq gestes du soir pour mieux dormir",
+  "order": 1,
   "tag": "Sommeil",
   "date": "Juin 2026",
   "readingTime": "4 min",
   "excerpt": "Ralentir avant le coucher, sans application ni gadget.",
+  "visualMode": "color",
   "imageClass": "t-storm",
   "imageLabel": "[ photo · lumière du soir, chambre ]",
   "intro": "Le sommeil se prépare souvent avant d'entrer dans le lit. Ces gestes simples aident le corps à reconnaître que la journée ralentit, sans transformer la soirée en protocole compliqué.",
@@ -29,7 +30,12 @@
         "Noter les trois choses importantes du lendemain permet de sortir une partie de la charge mentale de la tête. Une liste courte, sans chercher à tout résoudre, aide à fermer la journée.",
         "Si une pensée revient en boucle, écrivez-la telle quelle puis ajoutez la prochaine action concrète. Le cerveau a souvent besoin d'un point d'appui, pas d'une solution complète à 23h."
       ]
+    },
+    {
+      "heading": "pas d'écran le soir",
+      "paragraphs": [
+        "blabla"
+      ]
     }
-  ],
-  "visualMode": "color"
+  ]
 }
