@@ -1,0 +1,21 @@
+{
+  "title": "article test n7",
+  "order": 1,
+  "tag": "stress",
+  "date": "23/07/2026",
+  "readingTime": "3",
+  "excerpt": "blabla",
+  "visualMode": "color",
+  "imageClass": "t-fern",
+  "imageLabel": "c'est quoi ?",
+  "intro": "texte d'intro",
+  "sections": [
+    {
+      "heading": "1",
+      "paragraphs": [
+        "OKOK",
+        "2"
+      ]
+    }
+  ]
+}
