@@ -1,0 +1,16 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "kerflow.fr" }],
+      "destination": "https://kerflow-studio.fr/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.kerflow.fr" }],
+      "destination": "https://kerflow-studio.fr/:path*",
+      "permanent": true
+    }
+  ]
+}

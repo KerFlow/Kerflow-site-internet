@@ -3134,11 +3134,6 @@ article:hover .photo span,
   margin-top: 18px;
 }
 
-.map-card footer > span {
-  color: var(--granite-500);
-  font-size: 13px;
-}
-
 .final-cta {
   border-top: 1px solid rgba(241, 235, 225, 0.16);
   background: var(--clay);

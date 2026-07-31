@@ -149,13 +149,15 @@ export default config({
             }),
             paragraphs: fields.array(
               fields.text({
-                label: "Paragraphe",
+                label: "Texte du paragraphe",
                 multiline: true,
                 validation: { isRequired: true },
               }),
               {
-                label: "Paragraphes",
-                itemLabel: (props) => props.value,
+                label: "Texte de cette section",
+                description:
+                  "Chaque bloc correspond à un paragraphe affiché sous le titre de section.",
+                itemLabel: (props) => props.value || "Paragraphe",
                 validation: { length: { min: 1 } },
               }
             ),
@@ -465,6 +467,126 @@ export default config({
           },
           { label: "PDF de location" }
         ),
+        leLieu: fields.object(
+          {
+            founders: fields.object(
+              {
+                sectionLabel: fields.text({
+                  label: "Petit libellé",
+                  defaultValue: "04 — Les fondatrices",
+                  validation: { isRequired: true },
+                }),
+                titleStart: fields.text({
+                  label: "Titre - début",
+                  defaultValue: "Un projet",
+                  validation: { isRequired: true },
+                }),
+                titleHighlight: fields.text({
+                  label: "Titre - mot mis en valeur",
+                  defaultValue: "mère-fille",
+                  validation: { isRequired: true },
+                }),
+                intro: fields.text({
+                  label: "Introduction",
+                  multiline: true,
+                  validation: { isRequired: true },
+                }),
+                gaelle: fields.object(
+                  {
+                    name: fields.text({
+                      label: "Nom",
+                      defaultValue: "Gaëlle",
+                      validation: { isRequired: true },
+                    }),
+                    role: fields.text({
+                      label: "Rôle",
+                      defaultValue: "Professeur de Yoga & Napsothérapeute",
+                      validation: { isRequired: true },
+                    }),
+                    paragraphs: fields.array(
+                      fields.text({
+                        label: "Paragraphe",
+                        multiline: true,
+                        validation: { isRequired: true },
+                      }),
+                      {
+                        label: "Biographie",
+                        itemLabel: (props) => props.value,
+                        validation: { length: { min: 1 } },
+                      }
+                    ),
+                    primaryLinkLabel: fields.text({
+                      label: "Libellé du lien principal",
+                      defaultValue: "Contact",
+                      validation: { isRequired: true },
+                    }),
+                    primaryLinkUrl: fields.text({
+                      label: "URL du lien principal",
+                      defaultValue: "/contact/",
+                      validation: { isRequired: true },
+                    }),
+                    secondaryLinkLabel: fields.text({
+                      label: "Libellé du lien secondaire",
+                      defaultValue: "Instagram",
+                    }),
+                    secondaryLinkUrl: fields.text({
+                      label: "URL du lien secondaire",
+                      defaultValue: "#",
+                    }),
+                  },
+                  { label: "Gaëlle" }
+                ),
+                zelie: fields.object(
+                  {
+                    name: fields.text({
+                      label: "Nom",
+                      defaultValue: "Zélie",
+                      validation: { isRequired: true },
+                    }),
+                    role: fields.text({
+                      label: "Rôle",
+                      defaultValue: "Communication & Développement",
+                      validation: { isRequired: true },
+                    }),
+                    paragraphs: fields.array(
+                      fields.text({
+                        label: "Paragraphe",
+                        multiline: true,
+                        validation: { isRequired: true },
+                      }),
+                      {
+                        label: "Biographie",
+                        itemLabel: (props) => props.value,
+                        validation: { length: { min: 1 } },
+                      }
+                    ),
+                    primaryLinkLabel: fields.text({
+                      label: "Libellé du lien principal",
+                      defaultValue: "Contact",
+                      validation: { isRequired: true },
+                    }),
+                    primaryLinkUrl: fields.text({
+                      label: "URL du lien principal",
+                      defaultValue: "/contact/",
+                      validation: { isRequired: true },
+                    }),
+                    secondaryLinkLabel: fields.text({
+                      label: "Libellé du lien secondaire",
+                      defaultValue: "Instagram",
+                    }),
+                    secondaryLinkUrl: fields.text({
+                      label: "URL du lien secondaire",
+                      defaultValue: "#",
+                    }),
+                  },
+                  { label: "Zélie" }
+                ),
+              },
+              { label: "Les fondatrices" }
+            ),
+          },
+          { label: "Page Le lieu" }
+        ),
       },
     },
     blogSettings: {
@@ -498,6 +620,11 @@ export default config({
               label: "Contexte court",
               description: "Exemple : Yoga, Yoga Vinyasa, Pilates...",
               validation: { isRequired: true },
+            }),
+            rating: fields.integer({
+              label: "Nombre d'étoiles",
+              defaultValue: 5,
+              validation: { isRequired: true, min: 1, max: 5 },
             }),
             quote: fields.text({
               label: "Avis",

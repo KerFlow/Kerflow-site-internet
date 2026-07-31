@@ -7,5 +7,40 @@
     "studio": "/uploads/location/studio.pdf",
     "bulle": "/uploads/location/bulle.pdf",
     "cocon": "/uploads/location/cocon.pdf"
+  },
+  "leLieu": {
+    "founders": {
+      "sectionLabel": "04 — Les fondatrices",
+      "titleStart": "Un projet",
+      "titleHighlight": "mère-fille",
+      "intro": "Nous avons imaginé le KerFlow comme un espace où chacun peut prendre soin de soi, se ressourcer et avancer à son rythme. Un lieu chaleureux comme à la maison. Chez nous, la Bretagne n'est jamais bien loin. Même si nous vivons à Clamart, nous avons eu envie de glisser quelques clins d'oeil à notre terre de coeur dans ce projet. D'ailleurs, le mot Ker signifie « maison » en breton !",
+      "gaelle": {
+        "name": "Gaëlle",
+        "role": "Professeur de Yoga & Napsothérapeute",
+        "paragraphs": [
+          "Dans une première vie, Gaëlle était pharmacienne biologiste. Il y a quelques années, elle a choisi d'écouter son instinct et de se lancer dans une reconversion inattendue : devenir professeure de yoga et napsothérapeute.",
+          "Pour elle, la napsothérapie est le prolongement naturel de son premier métier : une approche plus douce, plus concrète et centrée sur la prévention santé. Au fil de son parcours, elle a compris qu'il est souvent plus facile de savoir ce qui est bon pour nous que de réussir à l'appliquer dans notre quotidien.",
+          "Convaincue que chacun devrait pouvoir accéder facilement aux connaissances, aux pratiques et aux outils qui permettent de prendre soin de sa santé, elle a imaginé KerFlow : une maison chaleureuse où l'on peut bouger, comprendre et prendre soin de soi, à son rythme.",
+          "Clamartoise depuis plus de 20 ans et mère de cinq enfants, c'est elle qui apporte la vision, les idées et l'âme de cette maison."
+        ],
+        "primaryLinkLabel": "Contact",
+        "primaryLinkUrl": "/contact/",
+        "secondaryLinkLabel": "Instagram",
+        "secondaryLinkUrl": "#"
+      },
+      "zelie": {
+        "name": "Zélie",
+        "role": "Communication & Développement",
+        "paragraphs": [
+          "Zélie est la deuxième de la fratrie. Sa mère pratiquait déjà le yoga alors qu'elle était encore dans son ventre. Un hasard de la retrouver aujourd'hui dans cette aventure ? Ce n'est pas si sûre.",
+          "Curieuse de nature, attirée par les projets qui ont du sens et profondément sensible aux questions environnementales, elle aime les idées qui paraissent un peu ambitieuses et les chemins dont on ne connaît pas encore exactement la destination. Là où Gaëlle imagine, Zélie transforme les idées en actions.",
+          "Quand KerFlow a commencé à prendre forme, l'occasion était trop belle pour ne pas explorer cette fibre entrepreneuriale qui sommeillait en elle depuis longtemps. Sa mère dit souvent d'elle qu'elle est un peu magicienne. Zélie préfère penser qu'il suffit parfois d'oser."
+        ],
+        "primaryLinkLabel": "Contact",
+        "primaryLinkUrl": "/contact/",
+        "secondaryLinkLabel": "Instagram",
+        "secondaryLinkUrl": "#"
+      }
+    }
   }
 }

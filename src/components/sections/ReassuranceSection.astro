@@ -1,5 +1,7 @@
 ---
 import { homeTestimonials } from "../../data/cmsContent.js";
+
+const getStars = (rating) => "★".repeat(Math.min(Math.max(Number(rating) || 5, 1), 5));
 ---
 
 <section class="reassurance section-pad">
@@ -11,7 +13,9 @@ import { homeTestimonials } from "../../data/cmsContent.js";
           <div class="testimonial-list">
             {homeTestimonials.map((testimonial, index) => (
               <figure class:list={["testimonial-card", index === 0 && "testimonial-card-feature"]}>
-                <div class="stars" aria-label="5 etoiles">★★★★★</div>
+                <div class="stars" aria-label={`${testimonial.rating ?? 5} etoiles`}>
+                  {getStars(testimonial.rating)}
+                </div>
                 <blockquote>{testimonial.quote}</blockquote>
                 <figcaption><span>{testimonial.author}</span><span>{testimonial.context}</span></figcaption>
               </figure>

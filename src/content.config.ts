@@ -109,6 +109,7 @@ const settings = defineCollection({
           visible: z.boolean(),
           author: z.string(),
           context: z.string(),
+          rating: z.number().min(1).max(5).optional(),
           quote: z.string(),
         })
       )
