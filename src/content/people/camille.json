@@ -1,7 +1,7 @@
 {
   "name": "Camille ",
   "order": 2,
-  "visible": true,
+  "visible": false,
   "spaces": [
     "cours",
     "atelier"
