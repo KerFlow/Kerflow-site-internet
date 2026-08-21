@@ -1,7 +1,7 @@
 {
   "name": "Stella ",
   "order": 12,
-  "visible": false,
+  "visible": true,
   "spaces": [
     "cours"
   ],
