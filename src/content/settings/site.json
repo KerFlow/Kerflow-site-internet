@@ -1,12 +1,10 @@
 {
-  "openingLabel": "Ouverture prochaine - automne 26",
+  "openingLabel": "Soirée d'ouverture le 4 septembre à partir de 17h",
   "phoneVisible": false,
-  "phoneDisplay": "",
-  "phoneHref": "",
   "rentalPdfs": {
-    "studio": "/uploads/location/studio.pdf",
-    "bulle": "/uploads/location/bulle.pdf",
-    "cocon": "/uploads/location/cocon.pdf"
+    "studio": "/uploads/location/rentalPdfs/studio.pdf",
+    "bulle": "/uploads/location/rentalPdfs/bulle.pdf",
+    "cocon": "/uploads/location/rentalPdfs/cocon.pdf"
   },
   "leLieu": {
     "founders": {
