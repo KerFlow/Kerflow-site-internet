@@ -1,0 +1,17 @@
+{
+  "name": "Stella ",
+  "order": 12,
+  "visible": true,
+  "spaces": [
+    "cours"
+  ],
+  "specialty": "Renforcement musculaire",
+  "bio": "A venir",
+  "visualMode": "color",
+  "imageClass": "foam",
+  "imageLabel": "A venir",
+  "primaryLinkLabel": "Prendre rendez-vous",
+  "primaryLinkUrl": "/contact/",
+  "secondaryLinkLabel": "Instagram",
+  "secondaryLinkUrl": "#"
+}
