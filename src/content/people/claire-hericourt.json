@@ -1,0 +1,18 @@
+{
+  "name": "Claire Héricourt",
+  "order": 4,
+  "visible": true,
+  "spaces": [
+    "cours",
+    "le-cocon"
+  ],
+  "specialty": "Yoga Rêve",
+  "bio": "A venir",
+  "visualMode": "color",
+  "imageClass": "foam",
+  "imageLabel": "Claire Héricourt",
+  "primaryLinkLabel": "Prendre rendez-vous",
+  "primaryLinkUrl": "/contact/",
+  "secondaryLinkLabel": "@claire_heri",
+  "secondaryLinkUrl": "#"
+}
