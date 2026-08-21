@@ -1,7 +1,7 @@
 {
   "title": "Pilates Progression",
   "order": 11,
-  "visible": true,
+  "visible": false,
   "label": "Pilates sur tapis",
   "description": "Une pratique plus soutenue pour renforcer en profondeur, affiner le contrôle du mouvement et progresser dans sa pratique.",
   "longDescription": "Le Pilates Progression s’adresse aux personnes qui maîtrisent déjà les bases du Pilates et souhaitent aller plus loin dans leur pratique. Les exercices sont plus variés et plus soutenus, avec un travail approfondi du centre du corps, de la stabilité, de la force et de la mobilité. Ballons, élastiques, anneaux et autres petits accessoires viennent enrichir les séances et proposer de nouveaux défis. Une pratique exigeante mais toujours guidée avec précision, sans recherche de performance"
