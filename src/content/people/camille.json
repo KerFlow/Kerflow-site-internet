@@ -1,17 +1,18 @@
 {
+  "name": "Camille ",
   "order": 21,
-  "name": "Thomas Riou",
   "visible": true,
   "spaces": [
-    "le-cocon"
+    "cours",
+    "atelier"
   ],
-  "specialty": "Reflexologie - acupuncture",
-  "bio": "Par les points et les zones : sommeil, digestion, stress et recuperation.",
+  "specialty": "Yoga Gold",
+  "bio": "A venir",
+  "visualMode": "color",
   "imageClass": "sand",
   "imageLabel": "[ portrait - praticien ]",
   "primaryLinkLabel": "Prendre rendez-vous",
   "primaryLinkUrl": "/contact/",
   "secondaryLinkLabel": "Site",
-  "secondaryLinkUrl": "#",
-  "visualMode": "color"
+  "secondaryLinkUrl": "#"
 }
