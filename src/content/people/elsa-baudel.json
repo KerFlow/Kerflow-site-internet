@@ -1,0 +1,18 @@
+{
+  "name": "Elsa Baudel",
+  "order": 5,
+  "visible": true,
+  "spaces": [
+    "cours",
+    "la-bulle"
+  ],
+  "specialty": "Yoga Vinyasa, Yoga Eclat, Yin Yoga",
+  "bio": "C'est à la suite d’une blessure grave il y a une dizaine d’années, et souffrant d'un important stress post-traumatique, que le yoga est revenu dans ma vie petit à petit et m'a accompagnée dans mon parcours de reconstruction physique et psychique. Sur ce chemin, l’envie de transmettre à mon tour les bienfaits de cette pratique est né et m’a\namenée jusqu’en Inde pour me former en Hatha et Vinyasa, puis de retour en France\nau Yin Yoga.\nJe vois mes cours comme des petits laboratoires dans lesquels on vient expérimenter\net explorer ses sensations. Je porte une attention particulière à ce que chacun se sente\nà sa place, le yoga est accessible à tous, il y a toujours des variations possibles aux\npostures ou des ajustements adaptés à chacun.\nEt surtout, je n'envisage pas de transmettre le yoga autrement que dans la joie et la\nbonne humeur, la pratique peut être parfois exigeante, tout passe mieux avec le\nsourire!\n",
+  "visualMode": "color",
+  "imageClass": "foam",
+  "imageLabel": "portrait",
+  "primaryLinkLabel": "Prendre rendez-vous",
+  "primaryLinkUrl": "/contact/",
+  "secondaryLinkLabel": "elsayoga.fr",
+  "secondaryLinkUrl": "#"
+}
