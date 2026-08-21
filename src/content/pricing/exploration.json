@@ -1,14 +1,15 @@
 {
-  "order": 2,
   "name": "Exploration",
-  "intro": "Pour pratiquer régulièrement, sans abonnement.",
+  "order": 2,
+  "visible": true,
   "featured": true,
+  "intro": "Pour pratiquer régulièrement, sans abonnement.",
   "features": [
-    "Carnet de 5 cours",
-    "Carnet de 10 cours",
-    "Carnet de 20 cours"
+    "Carnet de 5 cours-110€",
+    "Carnet de 10 cours-200€",
+    "Carnet de 20 cours - 360€",
+    "Réservations très bientôt sur notre site !"
   ],
   "ctaLabel": "Je réserve",
-  "ctaUrl": "/contact/",
-  "visible": true
+  "ctaUrl": "/contact/"
 }
