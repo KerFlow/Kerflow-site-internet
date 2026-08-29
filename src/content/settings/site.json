@@ -1,6 +1,8 @@
 {
   "openingLabel": "Soirée d'ouverture le 4 septembre à partir de 17h",
-  "phoneVisible": false,
+  "phoneVisible": true,
+  "phoneDisplay": "O622740243",
+  "phoneHref": "+33622740243",
   "rentalPdfs": {
     "studio": "/uploads/location/rentalPdfs/studio.pdf",
     "bulle": "/uploads/location/rentalPdfs/bulle.pdf",
