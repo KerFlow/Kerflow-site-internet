@@ -2,11 +2,11 @@
   "name": "Découverte",
   "order": 1,
   "visible": true,
-  "featured": false,
+  "featured": true,
   "intro": "Pour pousser la porte, tester et choisir ce qui vous convient.",
   "features": [
-    "Cours d'essai à 10 euros - 10€",
-    "Offre découverte 3 cours- 50€ ",
+    "Cours d'essai à 10 euros - valable une fois ",
+    "Offre découverte 3 cours- 50€ valable 2 semaines ",
     "Cours à l'unité-24€",
     "Réservations bientôt disponibles"
   ],
