@@ -1,0 +1,49 @@
+---
+import { HELLORESA_EMBED_URL, HELLORESA_PLANNING_URL } from "../config/booking.js";
+
+const {
+  sectionNumber = "04",
+  intro = "Les horaires et les places disponibles sont mis à jour directement sur notre espace de réservation.",
+} = Astro.props;
+---
+
+<section id="planning" class="planning planning-cards section-pad">
+  <div class="planning-cards-head">
+    <div>
+      <p class="eyebrow">{sectionNumber} - Planning & réservation</p>
+      <h2>Choisissez votre<br /><em>prochain cours.</em></h2>
+    </div>
+    <p>{intro}</p>
+  </div>
+
+  <div class="helloresa-embed">
+    <div class="helloresa-embed-head">
+      <div>
+        <p class="helloresa-label">Planning officiel HelloResa</p>
+        <p>Les horaires et les disponibilités ci-dessous sont actualisés automatiquement.</p>
+      </div>
+      <a
+        class="btn-line"
+        href={HELLORESA_PLANNING_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Ouvrir en plein écran <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+
+    <iframe
+      id="helloresa-planning"
+      name="Planning"
+      src={HELLORESA_EMBED_URL}
+      title="Planning des cours KerFlow sur HelloResa"
+      height="600"
+      loading="lazy"
+    >
+      <p>
+        Votre navigateur ne peut pas afficher le planning intégré.
+        <a href={HELLORESA_PLANNING_URL}>Ouvrir le planning HelloResa</a>.
+      </p>
+    </iframe>
+  </div>
+</section>

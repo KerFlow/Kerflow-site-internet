@@ -2,7 +2,9 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
+import HelloResaBooking from "../components/HelloResaBooking.astro";
 import { courseTypes, peopleForSpace, pricingPlans } from "../data/cmsContent.js";
+import { HELLORESA_PLANNING_URL } from "../config/booking.js";
 
 const teachers = peopleForSpace("cours");
 ---
@@ -24,7 +26,7 @@ const teachers = peopleForSpace("cours");
               Bouger sans pression.
             </h1>
             <div class="cours-actions">
-              <a href="/contact/" class="btn btn-primary">Réserver un cours <span aria-hidden="true">→</span></a>
+              <a href={HELLORESA_PLANNING_URL} target="_blank" rel="noopener noreferrer" class="btn btn-primary">Réserver un cours <span aria-hidden="true">↗</span></a>
               <a href="#planning" class="btn-line">Voir le planning</a>
             </div>
           </div>
@@ -111,63 +113,7 @@ const teachers = peopleForSpace("cours");
       </div>
     </section>
 
-    <section id="planning" class="planning planning-cards section-pad">
-      <div class="planning-cards-head">
-        <div>
-            <p class="eyebrow">04 - Le planning de la semaine</p>
-            <h2>Les cours<br /><em>du moment.</em></h2>
-        </div>
-        <div>
-          <p>Le planning définitif et les réservations se font sur la plateforme dédiée.</p>
-          <a class="btn-line light" href="/contact/">Réserver via HelloResa →</a>
-        </div>
-      </div>
-
-      <div class="course-feature-grid">
-        <article class="course-card course-card-feature">
-          <div class="course-card-copy">
-            <p class="course-kicker">↘ A la une cette semaine</p>
-            <h3>Yin & souffle<br /><em>mardi 18h30</em></h3>
-            <p>75 minutes pour ralentir, ecouter la respiration, deposer la semaine. Format silencieux. Solene M.</p>
-            <footer>
-              <span>1h15</span>
-            </footer>
-          </div>
-          <div class="photo photo-clay"><span>[ photo - cours du soir, lumiere chaude ]</span></div>
-        </article>
-
-        <article class="course-card course-card-photo">
-          <div class="photo photo-petrol"><span>[ photo - tapis et bolster ]</span></div>
-          <div class="course-card-copy">
-            <p class="course-kicker">Mardi - 09h30</p>
-            <h4>Hatha doux</h4>
-            <p>Solene M. - 1h00</p>
-            <footer><a href="/contact/">Réserver →</a></footer>
-          </div>
-        </article>
-
-        <article class="course-card course-card-photo">
-          <div class="photo photo-foam"><span>[ photo - lumiere du matin ]</span></div>
-          <div class="course-card-copy">
-            <p class="course-kicker">Mercredi - 07h15</p>
-            <h4>Vinyasa matin</h4>
-            <p>Lea V. - 1h00</p>
-            <footer><a href="/contact/">Réserver →</a></footer>
-          </div>
-        </article>
-      </div>
-
-      <div class="course-mini-grid" aria-label="Autres cours de la semaine">
-        <article><p>Mer - 12h30</p><h4>Pilates Postural</h4><a href="/contact/">Réserver →</a></article>
-        <article><p>Jeu - 18h00</p><h4>Mobilite & renfo</h4><a href="/contact/">Réserver →</a></article>
-        <article><p>Jeu - 20h00</p><h4>Yoga restoratif</h4><a href="/contact/">Réserver →</a></article>
-        <article><p>Ven - 12h30</p><h4>Mouvement libre</h4><a href="/contact/">Réserver →</a></article>
-        <article><p>Ven - 19h00</p><h4>Yin profond</h4><a href="/contact/">Réserver →</a></article>
-        <article><p>Sam - 10h00</p><h4>Hatha long</h4><a href="/contact/">Réserver →</a></article>
-        <article><p>Sam - 11h45</p><h4>Pilates seniors</h4><a href="/contact/">Réserver →</a></article>
-        <article><p>Sam - 16h00</p><h4>Atelier souffle</h4><a href="/contact/">Réserver →</a></article>
-      </div>
-    </section>
+    <HelloResaBooking />
 
     <section id="tarifs" class="cours-section">
       <div class="cours-wrap">
@@ -184,7 +130,7 @@ const teachers = peopleForSpace("cours");
               <ul>
                 {plan.features.map((feature) => <li>{feature}</li>)}
               </ul>
-              <a href={plan.ctaUrl} class={plan.featured ? "btn btn-primary" : "btn-line"}>{plan.ctaLabel} →</a>
+              <a href={HELLORESA_PLANNING_URL} target="_blank" rel="noopener noreferrer" class={plan.featured ? "btn btn-primary" : "btn-line"}>{plan.ctaLabel} ↗</a>
             </div>
           ))}
         </div>
@@ -243,7 +189,7 @@ const teachers = peopleForSpace("cours");
         <div>
           <p>Vestiaires, casiers, tisanes en libre accès... Tout est pensé pour que vous vous sentiez à l'aise dès votre arrivée.</p>
           <div class="cours-actions">
-            <a href="/contact/" class="btn btn-light">Réserver mon premier cours</a>
+            <a href={HELLORESA_PLANNING_URL} target="_blank" rel="noopener noreferrer" class="btn btn-light">Réserver mon premier cours ↗</a>
             <a href="#planning" class="btn-line on-dark">Voir le planning →</a>
           </div>
         </div>
