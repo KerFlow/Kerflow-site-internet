@@ -1,0 +1,12 @@
+{
+  "name": "Yoga Mama Prénatal",
+  "order": 2,
+  "visible": true,
+  "featured": false,
+  "features": [
+    "1 cours à l'unité - 36€",
+    "Carte de 5 cours - 150€"
+  ],
+  "ctaLabel": "Je réserve",
+  "ctaUrl": "https://kerflow.helloresa.com/public/planning"
+}
