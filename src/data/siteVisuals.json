@@ -229,6 +229,14 @@
         "imageClass": "t-petrol",
         "description": "vue miroir du salon",
         "wide": false
+      },
+      {
+        "label": "Location - Le Salon vue vers les toilettes et le mur du fond",
+        "visualMode": "image",
+        "image": "/uploads/site/rental/studio/5/image.jpg",
+        "imageClass": "t-petrol",
+        "description": "Le salon vue vers les toilettes",
+        "wide": false
       }
     ],
     "bulle": [
