@@ -59,22 +59,25 @@
   ],
   "homeSpaces": {
     "studio": {
-      "label": "Home - espace Le Salon",
-      "visualMode": "color",
+      "label": "Le Salon",
+      "visualMode": "image",
+      "image": "/uploads/site/homeSpaces/studio/image.jpg",
       "imageClass": "photo-petrol",
       "description": "Le Salon KerFlow avec parquet clair",
-      "wide": false
+      "wide": true
     },
     "bulle": {
-      "label": "Home - espace La Bulle",
-      "visualMode": "color",
+      "label": "La Bulle",
+      "visualMode": "image",
+      "image": "/uploads/site/homeSpaces/bulle/image.jpg",
       "imageClass": "photo-foam",
       "description": "Cabinet La Bulle avec fauteuil et lumiere douce",
-      "wide": false
+      "wide": true
     },
     "cocon": {
-      "label": "Home - espace Le Cocon",
-      "visualMode": "color",
+      "label": "Le Cocon",
+      "visualMode": "image",
+      "image": "/uploads/site/homeSpaces/cocon/image.jpg",
       "imageClass": "photo-clay",
       "description": "Table de soin du Cocon avec bougie et drap de lin",
       "wide": false
