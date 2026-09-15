@@ -80,7 +80,7 @@
       "image": "/uploads/site/homeSpaces/cocon/image.jpg",
       "imageClass": "photo-clay",
       "description": "Table de soin du Cocon avec bougie et drap de lin",
-      "wide": false
+      "wide": true
     }
   },
   "homeOffers": {
