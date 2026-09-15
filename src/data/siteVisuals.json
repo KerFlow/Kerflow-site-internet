@@ -121,14 +121,16 @@
       },
       "bulle": {
         "label": "Le lieu - La Bulle",
-        "visualMode": "color",
+        "visualMode": "image",
+        "image": "/uploads/site/leLieu/spaces/bulle/image.jpg",
         "imageClass": "t-foam",
         "description": "Cabinet La Bulle avec grande fenetre sur cour arborée",
         "wide": false
       },
       "cocon": {
         "label": "Le lieu - Le Cocon",
-        "visualMode": "color",
+        "visualMode": "image",
+        "image": "/uploads/site/leLieu/spaces/cocon/image.jpg",
         "imageClass": "t-clay",
         "description": "Box de soin Le Cocon avec table de massage et lumiere tamisee",
         "wide": false
