@@ -2,7 +2,7 @@
   "homeGallery": [
     {
       "label": "Le Salon",
-      "visualMode": "color",
+      "visualMode": "image",
       "image": "/uploads/site/homeGallery/0/image.jpg",
       "imageClass": "t-petrol",
       "description": "test test",
