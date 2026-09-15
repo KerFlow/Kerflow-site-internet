@@ -86,14 +86,16 @@
   "homeOffers": {
     "bulle": {
       "label": "Home - accompagnements La Bulle",
-      "visualMode": "color",
+      "visualMode": "image",
+      "image": "/uploads/site/homeOffers/bulle/image.jpg",
       "imageClass": "photo-foam",
       "description": "Cabinet de La Bulle en lumiere naturelle",
-      "wide": false
+      "wide": true
     },
     "cocon": {
       "label": "Home - soins Le Cocon",
-      "visualMode": "color",
+      "visualMode": "image",
+      "image": "/uploads/site/homeOffers/cocon/image.jpg",
       "imageClass": "photo-clay",
       "description": "Table de soin du Cocon avec drap de lin et bougie",
       "wide": false
