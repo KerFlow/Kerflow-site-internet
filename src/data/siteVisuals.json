@@ -104,7 +104,8 @@
   "leLieu": {
     "hero": {
       "label": "Le lieu - hero maison",
-      "visualMode": "color",
+      "visualMode": "image",
+      "image": "/uploads/site/leLieu/hero/image.jpg",
       "imageClass": "t-petrol",
       "description": "Grande salle de pratique avec parquet clair, miroir toute hauteur et lumiere oblique",
       "wide": true
@@ -112,10 +113,11 @@
     "spaces": {
       "studio": {
         "label": "Le lieu - Le Salon",
-        "visualMode": "color",
+        "visualMode": "image",
+        "image": "/uploads/site/leLieu/spaces/studio/image.jpg",
         "imageClass": "t-petrol",
         "description": "Le Salon de 40 metres carres avec parquet clair et miroir",
-        "wide": false
+        "wide": true
       },
       "bulle": {
         "label": "Le lieu - La Bulle",
