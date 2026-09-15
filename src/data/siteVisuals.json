@@ -1,25 +1,33 @@
 {
   "homeGallery": [
     {
-      "label": "Le Salon",
+      "label": "Cours de Yoga ",
       "visualMode": "image",
       "image": "/uploads/site/homeGallery/0/image.jpg",
+      "imageClass": "t-clay",
+      "description": "Cours de yoga",
+      "wide": true
+    },
+    {
+      "label": "Le Salon",
+      "visualMode": "image",
+      "image": "/uploads/site/homeGallery/1/image.jpg",
       "imageClass": "t-petrol",
       "description": "test test",
       "wide": false
     },
     {
-      "label": "Escalier",
+      "label": "Inversion Gaelle",
       "visualMode": "image",
-      "image": "/uploads/site/homeGallery/1/image.jpg",
+      "image": "/uploads/site/homeGallery/2/image.jpg",
       "imageClass": "t-petrol",
-      "description": "Escalier et grillage",
+      "description": "Photo de Gaelle en inversion/poirier",
       "wide": false
     },
     {
       "label": "Vitrine exterieure",
       "visualMode": "image",
-      "image": "/uploads/site/homeGallery/2/image.jpg",
+      "image": "/uploads/site/homeGallery/3/image.jpg",
       "imageClass": "t-petrol",
       "description": "Vitrine du KerFlow vue de l'intérieure",
       "wide": true
@@ -27,7 +35,7 @@
     {
       "label": "Rangement du matériel de yoga",
       "visualMode": "image",
-      "image": "/uploads/site/homeGallery/3/image.jpg",
+      "image": "/uploads/site/homeGallery/4/image.jpg",
       "imageClass": "t-fern",
       "description": "Vue du meuble en case",
       "wide": false
@@ -35,7 +43,7 @@
     {
       "label": "Cuisine",
       "visualMode": "image",
-      "image": "/uploads/site/homeGallery/4/image.jpg",
+      "image": "/uploads/site/homeGallery/5/image.jpg",
       "imageClass": "t-storm",
       "description": "Couloir cuisine",
       "wide": false
@@ -43,18 +51,10 @@
     {
       "label": "Vestiaire + escalier",
       "visualMode": "image",
-      "image": "/uploads/site/homeGallery/5/image.jpg",
+      "image": "/uploads/site/homeGallery/6/image.jpg",
       "imageClass": "t-foam",
       "description": "Vestiaire avec ballon",
       "wide": true
-    },
-    {
-      "label": "Cours de Yoga ",
-      "visualMode": "image",
-      "image": "/uploads/site/homeGallery/6/image.jpg",
-      "imageClass": "t-clay",
-      "description": "Cours de yoga",
-      "wide": false
     }
   ],
   "homeSpaces": {
