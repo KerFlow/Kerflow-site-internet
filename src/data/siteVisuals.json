@@ -137,14 +137,16 @@
     "founders": {
       "gaelle": {
         "label": "Le lieu - portrait Gaelle",
-        "visualMode": "color",
+        "visualMode": "image",
+        "image": "/uploads/site/leLieu/founders/gaelle/image.jpg",
         "imageClass": "t-fern",
         "description": "Portrait de Gaelle en lumiere naturelle",
         "wide": false
       },
       "zelie": {
         "label": "Le lieu - portrait Zelie",
-        "visualMode": "color",
+        "visualMode": "image",
+        "image": "/uploads/site/leLieu/founders/zelie/image.jpg",
         "imageClass": "t-storm",
         "description": "Portrait de Zelie en lumiere naturelle",
         "wide": false
