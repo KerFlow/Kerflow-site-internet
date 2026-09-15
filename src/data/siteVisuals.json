@@ -49,10 +49,11 @@
       "wide": true
     },
     {
-      "label": "Home - galerie 6 - table de soin",
-      "visualMode": "color",
+      "label": "Cours de Yoga ",
+      "visualMode": "image",
+      "image": "/uploads/site/homeGallery/6/image.jpg",
       "imageClass": "t-clay",
-      "description": "Table de soin avec drap de lin",
+      "description": "Cours de yoga",
       "wide": false
     }
   ],
