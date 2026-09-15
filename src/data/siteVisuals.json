@@ -41,19 +41,19 @@
       "wide": false
     },
     {
-      "label": "Cuisine",
+      "label": "Bras vers le ciel",
       "visualMode": "image",
       "image": "/uploads/site/homeGallery/5/image.jpg",
-      "imageClass": "t-storm",
-      "description": "Couloir cuisine",
+      "imageClass": "t-petrol",
+      "description": "Cours de yoga bras vers le ciel",
       "wide": false
     },
     {
-      "label": "Bras vers le ciel",
+      "label": "Camille de dos",
       "visualMode": "image",
       "image": "/uploads/site/homeGallery/6/image.jpg",
       "imageClass": "t-petrol",
-      "description": "Cours de yoga bras vers le ciel",
+      "description": "Camille de dos, orientation droite ou face",
       "wide": false
     }
   ],
@@ -254,13 +254,6 @@
         "image": "/uploads/site/rental/bulle/1/image.jpg",
         "imageClass": "t-foam t-foam-2",
         "description": "La Bulle, bureau de consultation lumineux",
-        "wide": false
-      },
-      {
-        "label": "Location - La Bulle 3",
-        "visualMode": "color",
-        "imageClass": "t-foam t-foam-3",
-        "description": "La Bulle, ambiance calme et naturelle",
         "wide": false
       }
     ],
