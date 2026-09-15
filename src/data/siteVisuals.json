@@ -33,19 +33,19 @@
       "wide": false
     },
     {
-      "label": "Posture Zélie",
+      "label": "Camille de dos",
       "visualMode": "image",
       "image": "/uploads/site/homeGallery/4/image.jpg",
-      "imageClass": "t-foam",
-      "description": "Posture de Zélie avec sangle",
+      "imageClass": "t-petrol",
+      "description": "Camille de dos, orientation droite ou face",
       "wide": false
     },
     {
-      "label": "Camille de dos",
+      "label": "Posture Zélie",
       "visualMode": "image",
       "image": "/uploads/site/homeGallery/5/image.jpg",
-      "imageClass": "t-petrol",
-      "description": "Camille de dos, orientation droite ou face",
+      "imageClass": "t-foam",
+      "description": "Posture de Zélie avec sangle",
       "wide": false
     },
     {
