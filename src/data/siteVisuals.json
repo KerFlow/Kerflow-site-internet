@@ -1,6 +1,22 @@
 {
   "homeGallery": [
     {
+      "label": "Le Salon",
+      "visualMode": "color",
+      "image": "/uploads/site/homeGallery/0/image.jpg",
+      "imageClass": "t-petrol",
+      "description": "test test",
+      "wide": false
+    },
+    {
+      "label": "Escalier",
+      "visualMode": "image",
+      "image": "/uploads/site/homeGallery/1/image.jpg",
+      "imageClass": "t-petrol",
+      "description": "Escalier et grillage",
+      "wide": false
+    },
+    {
       "label": "Home - galerie 1 - grande salle",
       "visualMode": "color",
       "imageClass": "t-petrol",
@@ -33,21 +49,6 @@
       "visualMode": "color",
       "imageClass": "t-clay",
       "description": "Table de soin avec drap de lin",
-      "wide": false
-    },
-    {
-      "label": "Home - galerie 7 - pierre",
-      "visualMode": "color",
-      "imageClass": "t-stone",
-      "description": "Pierre claire et detail mineral",
-      "wide": false
-    },
-    {
-      "label": "Le Salon",
-      "visualMode": "color",
-      "image": "/uploads/site/homeGallery/6/image.jpg",
-      "imageClass": "t-petrol",
-      "description": "test test",
       "wide": false
     }
   ],
