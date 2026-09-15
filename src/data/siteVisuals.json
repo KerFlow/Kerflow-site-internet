@@ -264,27 +264,6 @@
         "imageClass": "t-petrol",
         "description": "table de massage",
         "wide": false
-      },
-      {
-        "label": "Location - Le Cocon 1",
-        "visualMode": "color",
-        "imageClass": "t-clay",
-        "description": "Le Cocon, espace de soin au sous-sol avec table de massage",
-        "wide": false
-      },
-      {
-        "label": "Location - Le Cocon 2",
-        "visualMode": "color",
-        "imageClass": "t-clay t-clay-2",
-        "description": "Le Cocon, table de soin et lumiere douce",
-        "wide": false
-      },
-      {
-        "label": "Location - Le Cocon 3",
-        "visualMode": "color",
-        "imageClass": "t-clay t-clay-3",
-        "description": "Le Cocon, detail lavabo et ambiance intimiste",
-        "wide": false
       }
     ]
   }
