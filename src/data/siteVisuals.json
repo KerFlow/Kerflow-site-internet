@@ -41,19 +41,19 @@
       "wide": false
     },
     {
-      "label": "Posture Zélie",
+      "label": "tapis et brique",
       "visualMode": "image",
       "image": "/uploads/site/homeGallery/5/image.jpg",
-      "imageClass": "t-foam",
-      "description": "Posture de Zélie avec sangle",
+      "imageClass": "t-petrol",
+      "description": "Morceau de tapis et brique",
       "wide": false
     },
     {
-      "label": "tapis et brique",
+      "label": "Posture Zélie",
       "visualMode": "image",
       "image": "/uploads/site/homeGallery/6/image.jpg",
-      "imageClass": "t-petrol",
-      "description": "Morceau de tapis et brique",
+      "imageClass": "t-foam",
+      "description": "Posture de Zélie avec sangle",
       "wide": false
     }
   ],
