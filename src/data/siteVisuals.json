@@ -49,12 +49,12 @@
       "wide": false
     },
     {
-      "label": "Vestiaire + escalier",
+      "label": "Posture Zélie",
       "visualMode": "image",
       "image": "/uploads/site/homeGallery/6/image.jpg",
       "imageClass": "t-foam",
-      "description": "Vestiaire avec ballon",
-      "wide": true
+      "description": "Posture de Zélie avec sangle",
+      "wide": false
     }
   ],
   "homeSpaces": {
