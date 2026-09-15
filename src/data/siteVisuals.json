@@ -158,10 +158,11 @@
   "care": {
     "overviewBulle": {
       "label": "Prevention Sante - presentation La Bulle",
-      "visualMode": "color",
+      "visualMode": "image",
+      "image": "/uploads/site/care/overviewBulle/image.jpg",
       "imageClass": "pv-foam",
       "description": "La Bulle, cabinet de 11 metres carres avec fauteuil et fenetre sur cour",
-      "wide": false
+      "wide": true
     },
     "overviewCocon": {
       "label": "Prevention Sante - presentation Le Cocon",
@@ -172,14 +173,16 @@
     },
     "bulleHero": {
       "label": "La Bulle - visuel de presentation",
-      "visualMode": "color",
+      "visualMode": "image",
+      "image": "/uploads/site/care/bulleHero/image.jpg",
       "imageClass": "bulle-foam",
       "description": "La Bulle, cabinet lumineux avec fauteuil et grande fenetre sur cour",
       "wide": false
     },
     "coconHero": {
       "label": "Le Cocon - visuel de presentation",
-      "visualMode": "color",
+      "visualMode": "image",
+      "image": "/uploads/site/care/coconHero/image.jpg",
       "imageClass": "cocon-foam",
       "description": "Le Cocon, table de soin avec lumiere douce et ambiance calme",
       "wide": false
@@ -188,38 +191,59 @@
   "rental": {
     "studio": [
       {
-        "label": "Location - Le Salon 1",
-        "visualMode": "color",
+        "label": "Le Salon ",
+        "visualMode": "image",
+        "image": "/uploads/site/rental/studio/0/image.jpg",
         "imageClass": "t-petrol",
         "description": "Le Salon de 40 metres carres avec miroir toute hauteur et lumiere naturelle",
         "wide": false
       },
       {
-        "label": "Location - Le Salon 2",
-        "visualMode": "color",
+        "label": "Tapis",
+        "visualMode": "image",
+        "image": "/uploads/site/rental/studio/1/image.jpg",
         "imageClass": "t-petrol t-petrol-2",
         "description": "Le Salon en configuration atelier avec tapis et materiel",
+        "wide": true
+      },
+      {
+        "label": "Le Salon vue vers vitrine",
+        "visualMode": "image",
+        "image": "/uploads/site/rental/studio/2/image.jpg",
+        "imageClass": "t-petrol t-petrol-3",
+        "description": "Le Salon en configuration formation avec tables et chaises",
         "wide": false
       },
       {
-        "label": "Location - Le Salon 3",
-        "visualMode": "color",
-        "imageClass": "t-petrol t-petrol-3",
-        "description": "Le Salon en configuration formation avec tables et chaises",
+        "label": "Rangements",
+        "visualMode": "image",
+        "image": "/uploads/site/rental/studio/3/image.jpg",
+        "imageClass": "t-petrol",
+        "description": "Rangement du matériel de Yoga",
+        "wide": false
+      },
+      {
+        "label": "Le Salon vue miroir",
+        "visualMode": "image",
+        "image": "/uploads/site/rental/studio/4/image.jpg",
+        "imageClass": "t-petrol",
+        "description": "vue miroir du salon",
         "wide": false
       }
     ],
     "bulle": [
       {
-        "label": "Location - La Bulle 1",
-        "visualMode": "color",
+        "label": "Location - La Bulle bureau + fauteuils",
+        "visualMode": "image",
+        "image": "/uploads/site/rental/bulle/0/image.jpg",
         "imageClass": "t-foam",
         "description": "La Bulle, cabinet de 11 metres carres avec grande fenetre sur cour arborée",
         "wide": false
       },
       {
-        "label": "Location - La Bulle 2",
-        "visualMode": "color",
+        "label": "Location - La Bulle Fauteuils et table basse",
+        "visualMode": "image",
+        "image": "/uploads/site/rental/bulle/1/image.jpg",
         "imageClass": "t-foam t-foam-2",
         "description": "La Bulle, bureau de consultation lumineux",
         "wide": false
@@ -233,6 +257,14 @@
       }
     ],
     "cocon": [
+      {
+        "label": "Le Cocon table de massage",
+        "visualMode": "image",
+        "image": "/uploads/site/rental/cocon/0/image.jpg",
+        "imageClass": "t-petrol",
+        "description": "table de massage",
+        "wide": false
+      },
       {
         "label": "Location - Le Cocon 1",
         "visualMode": "color",
