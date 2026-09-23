@@ -1,0 +1,19 @@
+{
+  "name": "Manon",
+  "order": 1,
+  "visible": true,
+  "spaces": [
+    "la-bulle",
+    "atelier"
+  ],
+  "specialty": "Professeur de danse",
+  "bio": "Professeure de danse depuis une dizaine d’années, j’ai également travaillé pendant 5 ans comme assistante médicale auprès de sages-femmes et de gynécologues. La grossesse, la maternité et l’accompagnement des familles ont toujours été des domaines qui me passionnaient. La naissance de mon fils, à 30 ans, a été un véritable déclic. J’ai eu envie de réunir mes deux passions : la danse et l’accompagnement des femmes et des bébés.\nJe me suis donc formée à la MamDanse auprès de Sonia Duchesne, puis j’ai poursuivi plusieurs formations à l’École du Bien Naître, notamment en réflexologie bébé émotionnelle, pour devenir praticienne en RBE , une pratique pour laquelle j’ai eu un véritable coup de cœur. \nMon objectif est d’offrir aux familles des moments de douceur, de partage et de connexion, tout en leur transmettant des outils simples pour accompagner et aider leur quotidien.",
+  "visualMode": "image",
+  "image": "/uploads/people/manon/image.jpg",
+  "imageClass": "foam",
+  "imageLabel": "Photo de Manon",
+  "primaryLinkLabel": "Prendre rendez-vous",
+  "primaryLinkUrl": "/contact/",
+  "secondaryLinkLabel": "Instagram",
+  "secondaryLinkUrl": "https://www.instagram.com/man.danse92/?hl=fr"
+}
