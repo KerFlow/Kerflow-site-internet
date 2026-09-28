@@ -1,7 +1,7 @@
 {
   "name": "Liberté",
   "order": 4,
-  "visible": true,
+  "visible": false,
   "featured": false,
   "intro": "Pour venir souvent, selon votre rythme et vos envies.",
   "features": [
