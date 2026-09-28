@@ -1,14 +1,15 @@
 {
   "name": "Progression",
   "order": 3,
-  "visible": true,
+  "visible": false,
   "featured": false,
   "intro": "Pour installer une pratique dans la durée. ",
   "features": [
-    "1 cours par semaine toute l'année sur abonnement - 65€/mois",
-    "2 cours par semaine toute l'année sur abonnement - 130€/mois",
-    "Cycle à thème - à venir"
+    "1 cours par semaine toute l'année sur abonnement",
+    "2 cours par semaine toute l'année sur abonnement",
+    "Cycle à thème",
+    "Tarifs et réservations bientôt disponibles"
   ],
   "ctaLabel": "Je réserve",
-  "ctaUrl": "https://kerflow.helloresa.com/public/planning"
+  "ctaUrl": "/contact/"
 }
