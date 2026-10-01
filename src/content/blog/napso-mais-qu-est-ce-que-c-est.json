@@ -1,0 +1,36 @@
+{
+  "title": "NAPSO… mais qu’est-ce que c’est ?",
+  "order": 1,
+  "tag": "Napsothérapie",
+  "date": "Octobre",
+  "readingTime": "3 min",
+  "excerpt": "Nutrition, Activité Physique, Sommeil : une approche encore méconnue qui réunit trois piliers essentiels de notre santé.",
+  "visualMode": "image",
+  "image": "/uploads/blog/napso-mais-qu-est-ce-que-c-est/image.HEIC",
+  "imageClass": "t-sand",
+  "imageLabel": "Nutrition, activité physique et sommeil, les trois piliers de la NAPSOthérapie.",
+  "intro": "NAPSO… Le mot ne vous dit probablement pas grand-chose. Et c’est assez normal : la NAPSOthérapie est une approche récente de la prévention santé.\n\nDerrière ce nom se cachent pourtant trois choses très familières : N comme Nutrition, AP comme Activité Physique et SO comme Sommeil.\n",
+  "sections": [
+    {
+      "heading": "D’où vient la NAPSOthérapie ?",
+      "paragraphs": [
+        "La NAPSOthérapie a été créée par le Dr Laurence Plumey, médecin nutritionniste, avec l’objectif de développer un métier spécifiquement consacré à l’accompagnement et à la prévention en santé.",
+        "La formation de NAPSO-thérapeute comprend 320 heures d’enseignement théorique autour de la nutrition aux différents âges de la vie, des liens entre activité physique et santé et du sommeil.",
+        "Elle permet également d’apprendre à repérer certaines situations qui nécessitent l’avis d’un professionnel de santé."
+      ]
+    },
+    {
+      "heading": "Trois piliers qui fonctionnent ensemble",
+      "paragraphs": [
+        "Mais la véritable originalité de la méthode est ailleurs : ne pas considérer séparément notre alimentation, notre activité physique et notre sommeil, car ces trois comportements s’influencent en permanence.",
+        "C’est justement ce lien entre les trois piliers que nous explorerons dans le prochain article."
+      ]
+    },
+    {
+      "heading": "Envie de faire le point sur vos habitudes ?",
+      "paragraphs": [
+        "Je vous reçois sur rendez-vous à La Bulle, au KerFlow à Clamart, pour un bilan NAPSO personnalisé."
+      ]
+    }
+  ]
+}
