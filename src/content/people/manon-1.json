@@ -1,0 +1,18 @@
+{
+  "name": "Manon",
+  "order": 1,
+  "visible": true,
+  "spaces": [
+    "atelier"
+  ],
+  "specialty": "Coach Mamdanse*",
+  "bio": "crée par Sonia duchesne.\nDanser, bouger et créer du lien avec son bébé.\nÀ travers des mouvements doux, des bercements, du portage et de la danse, vous évoluez ensemble au rythme de la musique et des besoins de votre bébé.\nCela favorise l’éveil et la motricité de bébé, de bouger en douceur après la naissance, se réapproprier son corps, se détendre et prendre confiance et de partager un moment de complicité et de plaisir.\nAucun niveau de danse n’est nécessaire.",
+  "visualMode": "image",
+  "image": "/uploads/people/manon-1/image.jpeg",
+  "imageClass": "foam",
+  "imageLabel": "Manon",
+  "primaryLinkLabel": "Prendre rendez-vous",
+  "primaryLinkUrl": "/contact/",
+  "secondaryLinkLabel": "Instagram",
+  "secondaryLinkUrl": "#"
+}
