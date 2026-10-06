@@ -3,13 +3,12 @@
   "order": 1,
   "visible": true,
   "spaces": [
-    "la-bulle",
-    "atelier"
+    "la-bulle"
   ],
-  "specialty": "Professeur de danse",
-  "bio": "Professeure de danse depuis une dizaine d’années, j’ai également travaillé pendant 5 ans comme assistante médicale auprès de sages-femmes et de gynécologues. La grossesse, la maternité et l’accompagnement des familles ont toujours été des domaines qui me passionnaient. La naissance de mon fils, à 30 ans, a été un véritable déclic. J’ai eu envie de réunir mes deux passions : la danse et l’accompagnement des femmes et des bébés.\nJe me suis donc formée à la MamDanse auprès de Sonia Duchesne, puis j’ai poursuivi plusieurs formations à l’École du Bien Naître, notamment en réflexologie bébé émotionnelle, pour devenir praticienne en RBE , une pratique pour laquelle j’ai eu un véritable coup de cœur. \nMon objectif est d’offrir aux familles des moments de douceur, de partage et de connexion, tout en leur transmettant des outils simples pour accompagner et aider leur quotidien.",
+  "specialty": "Praticienne en réflexologie émotionnelle bébé/enfants ",
+  "bio": "La Réflexologie Bébé Émotionnelle®️, créée par Caroline Hamon, est une approche douce qui accompagne les bébés dès la naissance et les jeunes enfants (0-13ans) à travers le toucher et la stimulation de zones réflexes des pieds.\nLa RBE est la pour apaiser et accompagner dans les maux du quotidien : digestion, sommeil, poussées dentaires, agitation, tensions… \nLa méthode prend également en compte les émotions et le vécu de l'enfant (peur, tristesse, angoisse etc) \nÀ travers des gestes doux et adaptés, je vous accompagne pour créer un moment de détente, de connexion et de douceur avec votre enfant.\nDurant la séance, certains gestes peuvent vous être transmis afin de pouvoir continuer ces moments de bien-être à la maison.",
   "visualMode": "image",
-  "image": "/uploads/people/manon/image.jpg",
+  "image": "/uploads/people/manon/image.jpeg",
   "imageClass": "foam",
   "imageLabel": "Photo de Manon",
   "primaryLinkLabel": "Prendre rendez-vous",
