@@ -1,0 +1,19 @@
+{
+  "name": "sasha",
+  "order": 1,
+  "visible": true,
+  "spaces": [
+    "cours",
+    "atelier"
+  ],
+  "specialty": "Yoga",
+  "bio": "C'est à Hong-Kong en 2018 que je découvre le yoga. Le coup de cœur est absolu si bien que je l'intègre immédiatement dans mon quotidien. Je reconnecte mon corps et mon esprit. Je vois très vite apparaître des bénéfices: meilleure mobilité, force, mouvement en conscience mais aussi amélioration du focus et de la gestion du stress au quotidien. Une meilleure hygiène physique et mentale. Curieuse de mouvement depuis toujours et sportive de nature, j'ai une formation de danseuse contemporaine mais le yoga me fait découvrir un aspect plus \"intérieur\" jusqu'alors inexploré, grâce aux exercices de respiration et de méditation.\nLe yoga s'impose à moi alors comme une évidence, avec une affinité particulière pour la discipline du Yoga Ashtanga et le combo créativité/challenge des Power Vinyasa Flows. \nEn 2019, j'entame ma première formation en Hatha Vinyasa (200h) à Hong-Kong et poursuis mon apprentissage en Ashtanga Vinyasa (200h) à Rishikesh, berceau du yoga en Inde, en février 2023. En 2024, j'approfondis mes connaissances en anatomie fonctionnelle avec Antoine Pommet (75h). Je continue à me former et à pratiquer sur Paris avec des enseignants tels que Gérard Arnaud, Klara Puski.\n",
+  "visualMode": "image",
+  "image": "/uploads/people/sasha/image.jpeg",
+  "imageClass": "foam",
+  "imageLabel": "Sasha",
+  "primaryLinkLabel": "Prendre rendez-vous",
+  "primaryLinkUrl": "/contact/",
+  "secondaryLinkLabel": "Instagram",
+  "secondaryLinkUrl": "#"
+}
