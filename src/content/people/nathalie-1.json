@@ -1,7 +1,7 @@
 {
   "name": "nathalie",
   "order": 3,
-  "visible": true,
+  "visible": false,
   "spaces": [
     "la-bulle"
   ],
