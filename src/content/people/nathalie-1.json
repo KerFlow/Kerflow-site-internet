@@ -1,0 +1,17 @@
+{
+  "name": "nathalie",
+  "order": 3,
+  "visible": true,
+  "spaces": [
+    "la-bulle"
+  ],
+  "specialty": "Sophrologie",
+  "bio": "Sophrologue depuis une dizaine d'année, je vous aide à gérer votre stress et améliorer votre mieux-être. Je suis également  professeur de Yoga Hatha, Yoga Nidra et méditation. ",
+  "visualMode": "color",
+  "imageClass": "foam",
+  "imageLabel": "Nathalie",
+  "primaryLinkLabel": "Prendre rendez-vous",
+  "primaryLinkUrl": "/contact/",
+  "secondaryLinkLabel": "Instagram",
+  "secondaryLinkUrl": "#"
+}
