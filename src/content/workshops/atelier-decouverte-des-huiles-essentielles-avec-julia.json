@@ -8,7 +8,8 @@
   "description": "A venir",
   "duration": "le temps que vous voulez !",
   "price": "Entrée libre",
-  "ctaLabel": "Entrée libre",
+  "ctaLabel": "Sans réservation",
+  "ctaUrl": "https://www.kerflow-studio.fr/",
   "imageClass": "photo-stone",
   "imageLabel": "[ photo - mobilité au sol, petit groupe ]"
 }
