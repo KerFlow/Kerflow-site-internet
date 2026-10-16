@@ -2,126 +2,720 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
+import SiteVisual from "../components/SiteVisual.astro";
 import { peopleForSpace } from "../data/cmsContent.js";
+import { siteVisuals } from "../data/siteVisuals.js";
 
 const bullePeople = peopleForSpace("la-bulle");
 const coconPeople = peopleForSpace("le-cocon");
 ---
 
 <BaseLayout
-  title="Accompagnements & Soins - KerFlow"
-  description="Accompagnements & soins, NAPSOtherapie, sommeil, alimentation, stress, massages et soins corporels a Clamart."
+  title="Accompagnement et soins - KerFlow"
+  description="Découvrez les accompagnements KerFlow Consult et les soins KerFlow Rituel à Clamart, et comment réserver."
 >
   <SiteHeader />
-  <main>
-    <section class="page-hero section-pad accent-consult">
-      <div>
-        <p class="eyebrow">Accompagnements & Soins</p>
-        <h1>Prendre soin de soi <em>autrement</em>.</h1>
-      </div>
-      <div>
-        <div class="service-mark">
-          <img src="/assets/logos/kerflow-consult-web.png" width="1200" height="829" alt="KerFlow Consult" loading="eager" decoding="async" />
-        </div>
-        <p>Deux espaces complémentaires : La Bulle pour les accompagnements, Le Cocon pour les soins corporels.</p>
-        <div class="actions">
-          <a class="btn btn-primary" href="/le-lieu/#espaces">Découvrir nos espaces <span aria-hidden="true">→</span></a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-pad soft-band">
-      <div class="page-card-grid two">
-        <article id="la-bulle" class="page-card accent-consult">
-          <img class="service-card-logo" src="/assets/logos/kerflow-consult-web.png" width="1200" height="829" alt="KerFlow Consult" loading="lazy" decoding="async" />
-          <p class="mini">La Bulle</p>
-          <h3>Accompagnement</h3>
-          <p>Des consultations individuelles pour être accompagné sur des sujets liés à la prévention santé et au mieux-être : alimentation, sommeil, gestion du stress, équilibre de vie ou santé de la femme.</p>
-          <ul>
-            <li>Napsothérapie</li>
-            <li>Diététique</li>
-            <li>Naturopathie</li>
-            <li>Sophrologie</li>
-          </ul>
-        </article>
-        <article id="le-cocon" class="page-card accent-rituel">
-          <img class="service-card-logo" src="/assets/logos/kerflow-rituel-web.png" width="1200" height="829" alt="KerFlow Rituel" loading="lazy" decoding="async" />
-          <p class="mini">Le Cocon</p>
-          <h3>Soins du corps</h3>
-          <p>Des soins manuels pour prendre soin de son corps : massages bien-être, massage prénatal, drainage lymphatique manuel, fasciathérapie et autres pratiques proposées par nos praticiens.</p>
-          <ul>
-            <li>Massage bien-être</li>
-            <li>Massage prénatal</li>
-            <li>Drainage lymphatique</li>
-            <li>Fasciathérapie</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section id="intervenants" class="page-section section-pad">
-      <div class="content-split">
+  <main class="prevention-page">
+    <section class="pv-hero pv-wrap">
+      <div class="pv-hero-grid">
         <div>
-          <p class="eyebrow">02 - Les intervenants</p>
-          <h2>Des praticien·nes<br /><em>à choisir.</em></h2>
+          <p class="pv-kicker">Hors des cours collectifs</p>
+          <h1>Prendre soin<br />de soi<br /><em>autrement.</em></h1>
+          <div class="pv-actions">
+            <a href="#comment-reserver" class="btn btn-primary">Prendre RDV <span aria-hidden="true">→</span></a>
+          </div>
         </div>
-        <div class="body-copy">
-          <p>Chaque praticien·ne possède sa propre spécialité et sa propre approche. Nous les avons choisi·es pour leur professionnalisme, leur expérience et leur sens de l'écoute.</p>
-          <p>Les fiches sont gérées dans le CMS, avec une option de visibilité pour masquer un profil sans le supprimer.</p>
-        </div>
-      </div>
-      <div class="page-card-grid two">
-        {bullePeople.map((person) => (
-          <article class="page-card accent-consult">
-            <img class="service-card-logo service-card-logo-small" src="/assets/logos/kerflow-consult-web.png" width="1200" height="829" alt="KerFlow Consult" loading="lazy" decoding="async" />
-            <p class="mini">À La Bulle · accompagnement</p>
-            <h3>{person.name}</h3>
-            <p><strong>{person.specialty}</strong></p>
-            <p>{person.bio}</p>
-            <a href={person.primaryLinkUrl}>{person.primaryLinkLabel}</a>
-          </article>
-        ))}
-        {coconPeople.map((person) => (
-          <article class="page-card accent-rituel">
-            <img class="service-card-logo service-card-logo-small" src="/assets/logos/kerflow-rituel-web.png" width="1200" height="829" alt="KerFlow Rituel" loading="lazy" decoding="async" />
-            <p class="mini">Au Cocon · soin du corps</p>
-            <h3>{person.name}</h3>
-            <p><strong>{person.specialty}</strong></p>
-            <p>{person.bio}</p>
-            <a href={person.primaryLinkUrl}>{person.primaryLinkLabel}</a>
-          </article>
-        ))}
+        <aside>
+          <p>Deux manières complémentaires de prendre soin de soi : l'accompagnement individuel et le soin du corps. Une approche douce, sérieuse, jamais culpabilisante.</p>
+        </aside>
       </div>
     </section>
 
-    <section class="page-section section-pad deep">
-      <div class="section-head two">
-        <div>
-          <p class="eyebrow">03 - Comment réserver</p>
-          <h2>Choisir un <em>accompagnement ou un soin</em>.</h2>
+    <section class="pv-section pv-paper" id="approches">
+      <div class="pv-wrap">
+        <div class="pv-head">
+          <span>01 - Deux manières de prendre soin de soi</span>
+          <h2>L'accompagnement,<br />et le <em>soin du corps.</em></h2>
+          <p>Des professionnels aux approches variées vous accueillent sur rendez-vous.</p>
         </div>
-        <p>Vous choisissez, vous prenez rendez-vous, on vous accueille.</p>
-      </div>
-      <div class="page-card-grid">
-        <article class="page-card accent-consult"><h3>Vous choisissez</h3><p>Découvrez les différents accompagnements et soins, puis choisissez le professionnel qui correspond le mieux à vos besoins.</p></article>
-        <article class="page-card accent-location"><h3>Vous prenez rendez-vous</h3><p>Prenez directement contact avec le professionnel de votre choix pour convenir d'un rendez-vous.</p></article>
-        <article class="page-card accent-rituel"><h3>On vous accueille</h3><p>Présentez-vous quelques minutes avant votre rendez-vous. Installez-vous confortablement à la tisanerie : on viendra vous chercher dès que possible.</p></article>
+        <div class="pv-choice-grid">
+          <a href="#kerflow-consult" class="pv-choice pv-consult">
+            <span>KerFlow Consult</span>
+            <h3>Accompagnement</h3>
+            <p>Des consultations individuelles autour de la prévention santé et du mieux-être : alimentation, sommeil, gestion du stress, équilibre de vie ou santé de la femme.</p>
+            <strong>Découvrir →</strong>
+          </a>
+          <a href="#kerflow-rituel" class="pv-choice pv-rituel-card">
+            <span>KerFlow Rituel</span>
+            <h3>Soin du corps</h3>
+            <p>Des soins manuels pour prendre soin de son corps : massages bien-être, massage prénatal, drainage lymphatique, fasciathérapie et autres pratiques.</p>
+            <strong>Découvrir →</strong>
+          </a>
+        </div>
       </div>
     </section>
+
+    <section class="pv-section pv-paper" id="comment-reserver">
+      <div class="pv-wrap">
+        <div class="pv-head">
+          <span>02 - Comment réserver</span>
+          <h2>Un parcours simple,<br />en <em>trois temps.</em></h2>
+        </div>
+        <div class="pv-steps">
+          <article><span>01</span><h3>Vous choisissez</h3><p>Découvrez les accompagnements et les soins, puis choisissez le professionnel qui correspond à vos besoins.</p></article>
+          <article><span>02</span><h3>Vous prenez rendez-vous</h3><p>Contactez directement le professionnel de votre choix pour convenir d'un rendez-vous.</p></article>
+          <article><span>03</span><h3>On vous accueille</h3><p>Présentez-vous quelques minutes avant votre rendez-vous. Installez-vous à la tisanerie : on viendra vous chercher dès que possible.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="pv-section pv-consult-band" id="kerflow-consult">
+      <div class="pv-wrap pv-space-grid">
+        <div class="pv-space-main">
+          <p class="pv-kicker">03 - KerFlow Consult</p>
+          <div class="pv-wordmark-logo" aria-label="KerFlow Consult">
+            <span class="pv-logo-word">KerFlow</span><span class="pv-logo-tag">Consult</span>
+          </div>
+          <h2>L'accompagnement,<br /><em>qui vous écoute.</em></h2>
+          <p class="pv-copy">Un bureau de consultation au rez-de-chaussée, baigné de lumière naturelle et ouvert sur une cour calme et arborée. Un cadre apaisant pour des accompagnements individuels.</p>
+          <SiteVisual visual={siteVisuals.care.bulleHero} class="pv-placeholder" />
+        </div>
+        <aside>
+          <p class="pv-label">Pour quels besoins ?</p>
+          <div class="pv-list">
+            <article><span>01</span><div><h3>Alimentation &amp; hygiène de vie</h3><p>Mieux comprendre ses habitudes, retrouver de l'énergie et construire des changements durables.</p><div class="pv-tags pv-inline-tags"><span>Napsothérapie</span><span>Diététique</span><span>Naturopathie</span></div></div></article>
+            <article><span>02</span><div><h3>Sommeil, stress &amp; équilibre émotionnel</h3><p>Retrouver un meilleur équilibre au quotidien et mieux comprendre ce qui influence notre bien-être.</p><div class="pv-tags pv-inline-tags"><span>Psychologie</span><span>Sophrologie</span><span>Hypnose</span></div></div></article>
+            <article><span>03</span><div><h3>Parcours de vie &amp; transitions</h3><p>Être accompagné lors d'une étape de vie, d'un changement ou d'un questionnement personnel.</p><div class="pv-tags pv-inline-tags"><span>Sexologie</span><span>Coaching de vie</span><span>Accompagnement périnatal</span></div></div></article>
+          </div>
+        </aside>
+      </div>
+      <div class="pv-wrap pv-team-wrap">
+        <div class="pv-team-head"><p>Les intervenant·es de KerFlow Consult</p></div>
+        <div class="pv-team">
+          {bullePeople.map((person) => (
+            <article>
+              <div class={`pv-person-media pv-${person.imageClass} ${person.visualMode === "image" && person.image ? "has-upload" : ""}`}>
+                {person.visualMode === "image" && person.image ? <img src={person.image} alt={person.imageLabel} loading="lazy" decoding="async" /> : <span>{person.imageLabel}</span>}
+              </div>
+              <div><h3>{person.name}</h3><p class="pv-role">{person.specialty}</p><p>{person.bio}</p><div><a href={person.primaryLinkUrl}>{person.primaryLinkLabel}</a><a href={person.secondaryLinkUrl}>{person.secondaryLinkLabel}</a></div></div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="pv-section pv-rituel-band" id="kerflow-rituel">
+      <div class="pv-wrap pv-space-grid">
+        <div class="pv-space-main">
+          <p class="pv-kicker pv-kicker-rituel">04 - KerFlow Rituel</p>
+          <div class="pv-wordmark-logo pv-wordmark-logo-rituel" aria-label="KerFlow Rituel">
+            <span class="pv-logo-word">KerFlow</span><span class="pv-logo-tag">Rituel</span>
+          </div>
+          <h2>Le Cocon,<br />le lieu<br /><em>qui enveloppe.</em></h2>
+          <p class="pv-copy">Au sous-sol, un espace intimiste dont l'atmosphère invite au lâcher-prise. Massages, réflexologie et soins du corps : le temps ralentit, on récupère.</p>
+          <SiteVisual visual={siteVisuals.care.overviewCocon} class="pv-placeholder" />
+        </div>
+        <aside>
+          <p class="pv-label pv-label-rituel">Pour quels besoins ?</p>
+          <div class="pv-list pv-list-rituel">
+            <article><span>01</span><div><h3>Détente &amp; récupération</h3><p>S'accorder un temps pour soi, relâcher les tensions et favoriser la récupération physique et mentale.</p><div class="pv-tags pv-tags-rituel pv-inline-tags"><span>Massage bien-être</span><span>Réflexologie</span><span>Relaxation</span></div></div></article>
+            <article><span>02</span><div><h3>Confort corporel &amp; mobilité</h3><p>Prendre soin de son corps, améliorer sa mobilité et retrouver plus de confort au quotidien.</p><div class="pv-tags pv-tags-rituel pv-inline-tags"><span>Fasciathérapie</span><span>Shiatsu</span><span>Drainage lymphatique</span></div></div></article>
+            <article><span>03</span><div><h3>Périnatalité &amp; moments de transition</h3><p>Des soins adaptés aux différentes étapes de la vie et aux besoins spécifiques de chacun.</p><div class="pv-tags pv-tags-rituel pv-inline-tags"><span>Massage prénatal</span><span>Réflexologie</span><span>Fasciathérapie</span></div></div></article>
+          </div>
+        </aside>
+      </div>
+      <div class="pv-wrap pv-team-wrap">
+        <div class="pv-team-head"><p>Les intervenant·es de KerFlow Rituel</p></div>
+        <div class="pv-team">
+          {coconPeople.map((person) => (
+            <article>
+              <div class={`pv-person-media pv-${person.imageClass} ${person.visualMode === "image" && person.image ? "has-upload" : ""}`}>
+                {person.visualMode === "image" && person.image ? <img src={person.image} alt={person.imageLabel} loading="lazy" decoding="async" /> : <span>{person.imageLabel}</span>}
+              </div>
+              <div><h3>{person.name}</h3><p class="pv-role pv-role-rituel">{person.specialty}</p><p>{person.bio}</p><div><a href={person.primaryLinkUrl}>{person.primaryLinkLabel}</a><a href={person.secondaryLinkUrl}>{person.secondaryLinkLabel}</a></div></div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="pv-cta">
+      <div class="pv-wrap">
+        <h2>Choisir un<br /><em>accompagnement ou un soin.</em></h2>
+        <div>
+          <p>On en parle avant de commencer, pour trouver le bon espace, le bon rythme et la bonne personne.</p>
+          <div class="pv-actions">
+            <a href="/le-lieu/#espaces" class="btn btn-primary">Découvrir nos espaces <span aria-hidden="true">→</span></a>
+            <a href="/contact/#nous-ecrire" class="btn-line">Nous contacter <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
   <SiteFooter />
 </BaseLayout>
 
 <style>
-  .service-card-logo {
-    display: block;
-    width: min(190px, 62%);
-    height: auto;
-    margin-bottom: 18px;
+
+  .prevention-page {
+    --base-accent: var(--clay);
+    --consult: #c9dad7;
+    --consult-ink: #2f6a6c;
+    --rituel: #ecd7c8;
+    --rituel-ink: #a05a3a;
+    --ink-soft: #545d57;
+    background: var(--linen);
   }
 
-  .service-card-logo-small {
-    width: min(150px, 54%);
-    margin-bottom: 14px;
+  .pv-wrap {
+    width: min(100%, var(--site-max));
+    margin-inline: auto;
+    padding-inline: var(--site-pad-x);
   }
+
+  .pv-section {
+    padding-block: var(--site-section-y);
+    border-top: 1px solid var(--rule);
+  }
+
+  .pv-paper {
+    background: var(--paper);
+  }
+
+  .pv-hero {
+    display: grid;
+    min-height: var(--site-hero-min-h-fallback);
+    min-height: var(--site-hero-min-h);
+    align-content: center;
+    padding-block: var(--site-hero-pad-block);
+  }
+
+  .pv-kicker,
+  .pv-label,
+  .pv-choice span,
+  .pv-choice strong,
+  .pv-head span,
+  .pv-team-head p,
+  .pv-role,
+  .pv-team article a {
+    font-family: var(--mono);
+    text-transform: uppercase;
+  }
+
+  .pv-kicker,
+  .pv-label,
+  .pv-choice span,
+  .pv-choice strong,
+  .pv-head span,
+  .pv-team-head p,
+  .pv-role {
+    color: var(--base-accent);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+  }
+
+  .pv-hero-grid,
+  .pv-space-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.55fr) minmax(280px, 1fr);
+    gap: clamp(32px, 5vw, 72px);
+    align-items: end;
+  }
+
+  .pv-hero h1,
+  .pv-head h2,
+  .pv-space-grid h2,
+  .pv-cta h2 {
+    margin: 0;
+    color: var(--petrol-deep);
+    font-family: var(--serif);
+    font-weight: 400;
+    font-variation-settings: "opsz" 144;
+    letter-spacing: -0.026em;
+  }
+
+  .pv-hero h1 {
+    max-width: 900px;
+    font-size: clamp(54px, 8vw, 118px);
+    line-height: 0.95;
+  }
+
+  .pv-hero aside p {
+    max-width: 430px;
+    margin: 0;
+    color: var(--petrol-deep);
+    font-family: var(--serif);
+    font-size: clamp(20px, 2vw, 25px);
+    font-weight: 300;
+    line-height: 1.45;
+  }
+
+  .pv-hero em,
+  .pv-head em {
+    color: var(--base-accent);
+  }
+
+  .pv-consult-band em {
+    color: var(--consult-ink);
+  }
+
+  .pv-rituel-band em {
+    color: var(--rituel-ink);
+  }
+
+  .pv-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    margin-top: clamp(28px, 4vw, 48px);
+  }
+
+  .pv-head {
+    max-width: 820px;
+    margin-bottom: clamp(32px, 4vw, 52px);
+  }
+
+  .pv-head h2,
+  .pv-space-grid h2 {
+    margin-top: 12px;
+    font-size: clamp(38px, 5vw, 72px);
+    line-height: 1;
+  }
+
+  .pv-head p,
+  .pv-copy {
+    max-width: 560px;
+    color: var(--ink-soft);
+    font-size: 16.5px;
+    line-height: 1.7;
+  }
+
+  .pv-choice-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-top: 1px solid var(--rule);
+    border-left: 1px solid var(--rule);
+  }
+
+  .pv-choice {
+    display: flex;
+    min-height: 260px;
+    flex-direction: column;
+    gap: 12px;
+    padding: clamp(28px, 3vw, 42px);
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .pv-choice:hover,
+  .pv-choice:focus-visible {
+    filter: brightness(1.02);
+  }
+
+  .pv-consult {
+    background: var(--consult);
+  }
+
+  .pv-rituel-card {
+    background: var(--rituel);
+  }
+
+  .pv-rituel-card span,
+  .pv-rituel-card strong {
+    color: var(--rituel-ink);
+  }
+
+  .pv-consult-band .pv-label,
+  .pv-consult-band .pv-list article > span,
+  .pv-consult-band .pv-tags span {
+    color: var(--consult-ink);
+  }
+
+  .pv-consult-band .pv-tags span {
+    border-color: var(--consult-ink);
+  }
+
+  .pv-consult-band .pv-space-grid {
+    align-items: start;
+  }
+
+  .pv-wordmark-logo {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    width: max-content;
+    margin-bottom: 20px;
+    color: var(--consult-ink);
+  }
+
+  .pv-logo-word {
+    font-family: var(--serif);
+    font-size: clamp(34px, 3.1vw, 44px);
+    font-weight: 400;
+    letter-spacing: -0.018em;
+    line-height: 1;
+    font-variation-settings: "opsz" 144;
+  }
+
+  .pv-logo-tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.34em;
+    line-height: 1.35;
+    text-transform: uppercase;
+  }
+
+  .pv-wordmark-logo-rituel {
+    color: var(--rituel-ink);
+  }
+
+  .pv-choice h3,
+  .pv-list h3,
+  .pv-team h3,
+  .pv-steps h3 {
+    margin: 0;
+    color: var(--petrol-deep);
+    font-family: var(--serif);
+    font-size: clamp(22px, 2.2vw, 30px);
+    font-weight: 400;
+    line-height: 1.06;
+  }
+
+  .pv-choice p,
+  .pv-list p,
+  .pv-team article p,
+  .pv-steps p {
+    margin: 0;
+    color: var(--granite);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .pv-consult-band {
+    background: var(--consult);
+  }
+
+  .pv-rituel-band {
+    background: var(--rituel);
+  }
+
+  .pv-space-grid {
+    align-items: start;
+  }
+
+  .pv-lock {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 22px;
+    color: var(--petrol);
+    font-family: var(--serif);
+    font-size: 30px;
+    line-height: 1;
+  }
+
+  .pv-lock small {
+    color: var(--base-accent);
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+  }
+
+  .pv-space-logo,
+  .pv-team-logo {
+    display: block;
+    width: min(260px, 72vw);
+    height: auto;
+    margin-bottom: 22px;
+  }
+
+  .pv-team-logo {
+    width: min(210px, 62vw);
+    margin-bottom: 0;
+  }
+
+  .pv-consult-band .pv-lock small {
+    color: var(--consult-ink);
+  }
+
+  .pv-lock-rituel small,
+  .pv-label-rituel,
+  .pv-list-rituel article > span,
+  .pv-tags-rituel span {
+    color: var(--rituel-ink);
+  }
+
+  :global(.pv-placeholder),
+  .pv-person-media {
+    display: grid;
+    place-items: center;
+    color: rgba(14, 42, 44, 0.7);
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    line-height: 1.5;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  :global(.pv-placeholder) {
+    position: relative;
+    overflow: hidden;
+    max-width: 480px;
+    aspect-ratio: 4 / 3;
+    margin-top: 30px;
+    border: 12px solid var(--paper);
+    padding: 22px;
+  }
+
+  :global(.pv-placeholder img) {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  :global(.pv-placeholder span) {
+    display: none;
+  }
+
+  .pv-person-media {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pv-person-media img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .pv-foam {
+    background: linear-gradient(135deg, #dce9e5, #eef4ee);
+  }
+
+  .pv-clay {
+    background: linear-gradient(135deg, #d99a78, #ecd7c8);
+  }
+
+  .pv-storm {
+    background: linear-gradient(135deg, #c9dad7, #7e837b);
+  }
+
+  .pv-sand {
+    background: linear-gradient(135deg, #f1ebe1, #d6d8d3);
+  }
+
+  .pv-list {
+    display: grid;
+    margin-top: 18px;
+    border-top: 1px solid rgba(47, 106, 108, 0.25);
+  }
+
+  .pv-list article {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 24px;
+    align-items: baseline;
+    padding: 26px 0;
+    border-bottom: 1px solid rgba(47, 106, 108, 0.25);
+  }
+
+  .pv-list-rituel {
+    border-color: rgba(160, 90, 58, 0.25);
+  }
+
+  .pv-list-rituel article {
+    border-color: rgba(160, 90, 58, 0.25);
+  }
+
+  .pv-list article > span,
+  .pv-steps article > span {
+    color: var(--base-accent);
+    font-family: var(--serif);
+    font-size: 30px;
+    font-style: italic;
+    line-height: 1;
+  }
+
+  .pv-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 24px;
+  }
+
+  .pv-inline-tags {
+    margin-top: 14px;
+  }
+
+  .pv-tags span {
+    border: 1px solid var(--base-accent);
+    padding: 7px 12px;
+    color: var(--base-accent);
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .pv-tags-rituel span {
+    border-color: var(--rituel-ink);
+  }
+
+  .pv-team-head {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    align-items: baseline;
+    margin-bottom: clamp(20px, 2vw, 28px);
+  }
+
+  .pv-team-head p {
+    margin: 0;
+  }
+
+  .pv-team-head-spaced {
+    margin-top: clamp(48px, 6vw, 72px);
+  }
+
+  .pv-team {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(18px, 2vw, 28px);
+  }
+
+  .pv-team article {
+    overflow: hidden;
+    border: 1px solid var(--rule);
+    background: var(--paper);
+  }
+
+  .pv-person-media {
+    aspect-ratio: 4 / 3;
+    padding: 0;
+    background-color: var(--linen);
+  }
+
+  .pv-person-media img {
+    object-position: center 32%;
+  }
+
+  .pv-team article > div:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 22px;
+  }
+
+  .pv-team article > div:last-child > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 8px;
+    padding-top: 12px;
+    border-top: 1px solid var(--rule-soft);
+  }
+
+  .pv-team article a {
+    color: var(--petrol);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+  }
+
+  .pv-team article a:hover,
+  .pv-team article a:focus-visible {
+    color: var(--clay);
+  }
+
+  .pv-steps {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-top: 1px solid var(--rule);
+  }
+
+  .pv-steps article {
+    display: flex;
+    min-height: 210px;
+    flex-direction: column;
+    gap: 12px;
+    padding: clamp(26px, 3vw, 36px);
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .pv-steps article:last-child {
+    border-right: 0;
+  }
+
+  .pv-cta {
+    padding-block: clamp(72px, 8vw, 104px);
+    border-top: 1px solid var(--rule);
+    background: var(--linen);
+    color: var(--petrol-deep);
+  }
+
+  .pv-cta .pv-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(32px, 5vw, 72px);
+    align-items: center;
+  }
+
+  .pv-cta h2 {
+    color: var(--petrol-deep);
+    font-size: clamp(42px, 6vw, 86px);
+    line-height: 0.96;
+  }
+
+  .pv-cta em {
+    color: var(--base-accent);
+  }
+
+  .pv-cta p {
+    max-width: 520px;
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 17px;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 900px) {
+    .pv-hero-grid,
+    .pv-space-grid,
+    .pv-cta .pv-wrap {
+      grid-template-columns: 1fr;
+    }
+
+    .pv-choice-grid,
+    .pv-team,
+    .pv-steps {
+      grid-template-columns: 1fr;
+    }
+
+    .pv-steps article {
+      border-right: 0;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .pv-list article {
+      grid-template-columns: 44px 1fr;
+      gap: 16px;
+    }
+
+    .pv-lock {
+      font-size: 25px;
+    }
+  }
+
+  .pv-team-wrap { padding-top: 42px; }
+  .pv-team-logo { width: min(230px, 65%); margin-bottom: 28px; }
 </style>

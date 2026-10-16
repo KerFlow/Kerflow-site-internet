@@ -10,7 +10,7 @@ const featuredArticle =
 <section id="ateliers" class="workshops section-pad">
         <div class="section-head split">
           <div>
-            <p class="eyebrow">07 - Ateliers du mois</p>
+            <p class="eyebrow">03 - Ateliers du mois</p>
             <h2>Des rendez-vous pour <em>approfondir</em>, pratiquer autrement.</h2>
           </div>
           <a class="btn-line" href="#planning">Voir le calendrier complet</a>
@@ -19,12 +19,30 @@ const featuredArticle =
         <div class="workshop-grid" aria-label="Ateliers du mois">
           {workshops.map((workshop) => (
             <article class="workshop-card">
-              <div class={`photo ${workshop.imageClass}`}><span>{workshop.imageLabel}</span></div>
+              <a class="workshop-card-image" href={`/ateliers/${workshop.slug}/`} aria-label={`Découvrir ${workshop.title}`}>
+                <div class={`photo ${workshop.imageClass} ${workshop.image ? "has-upload" : ""}`}>
+                  {workshop.image ? (
+                    <img src={workshop.image} alt={workshop.imageLabel || workshop.title} loading="lazy" decoding="async" />
+                  ) : (
+                    <span>{workshop.imageLabel}</span>
+                  )}
+                </div>
+              </a>
               <div>
                 <p class="mini clay">{workshop.date} - {workshop.time}</p>
-                <h3>{workshop.title}</h3>
-                <p>{workshop.description}</p>
-                <footer><span>{workshop.duration} - {workshop.price}</span><a href={workshop.ctaUrl}>{workshop.ctaLabel} →</a></footer>
+                <h3><a href={`/ateliers/${workshop.slug}/`}>{workshop.title}</a></h3>
+                <p>{workshop.summary}</p>
+                <footer>
+                  <span class="workshop-meta">{workshop.duration} - {workshop.price}</span>
+                  <div class="workshop-card-actions">
+                    <a class="workshop-details" href={`/ateliers/${workshop.slug}/`}>Découvrir l'atelier <span aria-hidden="true">→</span></a>
+                    {workshop.bookingRequired !== false ? (
+                      <a class="workshop-booking" href={workshop.ctaUrl}>{workshop.ctaLabel} <span aria-hidden="true">→</span></a>
+                    ) : (
+                      <span class="workshop-no-booking">Sans réservation</span>
+                    )}
+                  </div>
+                </footer>
               </div>
             </article>
           ))}

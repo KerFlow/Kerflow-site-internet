@@ -63,10 +63,7 @@ const siteVisualField = (label: string) =>
 
 export default config({
   storage: {
-    kind: "cloud",
-  },
-  cloud: {
-    project: "gaelle-and-zelie/kerflow",
+    kind: "local",
   },
   collections: {
     blog: collection({
@@ -383,7 +380,13 @@ export default config({
           validation: { isRequired: true },
         }),
         description: fields.text({
-          label: "Description",
+          label: "Description complète",
+          multiline: true,
+          validation: { isRequired: true },
+        }),
+        summary: fields.text({
+          label: "Résumé court (page d'accueil)",
+          description: "Quelques lignes pour présenter l'atelier sur la page d'accueil.",
           multiline: true,
           validation: { isRequired: true },
         }),
@@ -400,6 +403,11 @@ export default config({
           defaultValue: "Réserver",
           validation: { isRequired: true },
         }),
+        bookingRequired: fields.checkbox({
+          label: "Réservation nécessaire",
+          defaultValue: true,
+          description: "Désactivez cette option pour afficher « Sans réservation » à la place du bouton.",
+        }),
         ctaUrl: fields.text({
           label: "Lien du bouton",
           defaultValue: "/contact/",
@@ -413,6 +421,12 @@ export default config({
             { label: "Photo argile", value: "photo-clay" },
             { label: "Photo pierre", value: "photo-stone" },
           ],
+        }),
+        image: fields.image({
+          label: "Photo de l'atelier",
+          directory: "public/uploads/workshops",
+          publicPath: "/uploads/workshops/",
+          description: "Photo utilisée sur la page d'accueil et la page de l'atelier.",
         }),
         imageLabel: fields.text({
           label: "Repère visuel",
@@ -667,7 +681,11 @@ export default config({
         ),
         leLieu: fields.object(
           {
-            hero: siteVisualField("Le lieu - hero"),
+            gallery: fields.array(siteVisualField("Le lieu - image de galerie"), {
+              label: "Le lieu - galerie défilante",
+              itemLabel: (props) => props.fields.label.value,
+              validation: { length: { min: 7, max: 7 } },
+            }),
             spaces: fields.object(
               {
                 studio: siteVisualField("Le lieu - Le Salon"),

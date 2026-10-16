@@ -433,10 +433,12 @@
   gap: 16px;
   padding: clamp(26px, 2.4vw, 36px) clamp(24px, 2vw, 30px);
   border: 1px solid var(--rule);
-  background: var(--paper);
+  background: #fff;
+  transition: background 260ms ease, border-color 260ms ease;
 }
 
-.cours-pricing > div.feature {
+.cours-pricing > div:hover,
+.cours-pricing > div:focus-within {
   border-color: var(--cours-accent);
   background: var(--cours-soft);
 }
@@ -1445,6 +1447,20 @@ h3 {
 }
 
 .site-visual.has-upload img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo.has-upload::before,
+.photo.has-upload::after {
+  display: none;
+}
+
+.photo.has-upload img {
   position: absolute;
   inset: 0;
   z-index: 0;
@@ -2585,7 +2601,7 @@ article:hover .photo span,
 
 .workshop-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 18px;
 }
 
@@ -2610,6 +2626,11 @@ article:hover .photo span,
   min-height: 0;
 }
 
+.workshop-card-image {
+  display: block;
+  overflow: hidden;
+}
+
 .workshop-card > div:last-child {
   display: flex;
   flex: 1;
@@ -2624,6 +2645,21 @@ article:hover .photo span,
   line-height: 1.06;
 }
 
+.workshop-card h3 a {
+  color: inherit;
+  text-decoration: none;
+  text-decoration-color: var(--clay);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  transition: color 240ms ease;
+}
+
+.workshop-card h3 a:hover,
+.workshop-card h3 a:focus-visible {
+  color: var(--clay);
+  text-decoration: underline;
+}
+
 .workshop-card p:not(.mini) {
   flex: 1;
   margin: 0;
@@ -2632,11 +2668,10 @@ article:hover .photo span,
 }
 
 .workshop-card footer {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  margin-top: 22px;
-  padding-top: 16px;
+  display: grid;
+  gap: 14px;
+  margin-top: auto;
+  padding-top: 18px;
   border-top: 1px solid var(--rule-soft);
   color: var(--granite-500);
   font-family: var(--mono);
@@ -2645,9 +2680,48 @@ article:hover .photo span,
   text-transform: uppercase;
 }
 
-.workshop-card footer a {
-  color: var(--petrol);
+.workshop-meta {
+  line-height: 1.6;
+}
+
+.workshop-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.workshop-card-actions a {
   white-space: nowrap;
+}
+
+.workshop-details {
+  color: var(--petrol);
+  text-decoration: underline;
+  text-decoration-color: rgba(28, 66, 68, 0.35);
+  text-underline-offset: 4px;
+}
+
+.workshop-booking,
+.workshop-no-booking {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 14px;
+  border: 1px solid var(--petrol);
+  border-radius: 3px;
+  background: var(--petrol);
+  color: var(--linen);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+}
+
+.workshop-no-booking {
+  border-color: var(--rule);
+  background: var(--bone);
+  color: var(--granite-500);
 }
 
 .editorial-feature {
@@ -2675,6 +2749,7 @@ article:hover .photo span,
 
 .editorial-copy {
   display: flex;
+  align-items: flex-start;
   flex-direction: column;
   justify-content: center;
   padding: clamp(32px, 5vw, 56px);

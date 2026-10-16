@@ -6,10 +6,12 @@
   "date": "Dimanche 14 juin",
   "time": "16h00",
   "description": "Un format lent pour délier les tensions, travailler la respiration basse et se déposer sans effort.",
+  "summary": "Une pratique douce de yin yoga et de respiration pour relâcher les tensions et s’offrir un temps de pause.",
   "duration": "2h",
   "price": "42€",
   "ctaLabel": "Réserver",
-  "ctaUrl": "/contact/",
+  "bookingRequired": true,
+  "ctaUrl": "https://kerflow.helloresa.com/public/planning",
   "imageClass": "photo-foam",
   "imageLabel": "[ photo - bolsters et tapis, lumière douce ]"
 }

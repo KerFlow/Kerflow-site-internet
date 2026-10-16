@@ -10,7 +10,7 @@ const teachers = peopleForSpace("cours");
 ---
 
 <BaseLayout
-  title="Cours & planning - KerFlow - Clamart"
+  title="Cours & tarifs - KerFlow - Clamart"
   description="Yoga, Pilates, mobilite, renforcement doux et respiration en petits groupes a Clamart. Planning, tarifs et informations pour reserver un cours KerFlow."
 >
   <SiteHeader />
@@ -26,8 +26,8 @@ const teachers = peopleForSpace("cours");
               Bouger sans pression.
             </h1>
             <div class="cours-actions">
-              <a href={HELLORESA_PLANNING_URL} target="_blank" rel="noopener noreferrer" class="btn btn-primary">Réserver un cours <span aria-hidden="true">↗</span></a>
-              <a href="#planning" class="btn-line">Voir le planning</a>
+              <a href="#tarifs" class="btn btn-primary">Tarifs</a>
+              <a href="/guides/guide-reservation.pdf" target="_blank" rel="noopener noreferrer" class="btn-line">Guide de réservation</a>
             </div>
           </div>
           <aside class="cours-hero-aside">
@@ -76,61 +76,22 @@ const teachers = peopleForSpace("cours");
       </div>
     </section>
 
-    <section class="cours-section paper">
-      <div class="cours-wrap">
-        <div class="cours-head">
-          <span class="cours-num">02 - Pour qui ?</span>
-          <h2>Chacun vient pour<br /><em>une raison différente.</em></h2>
-        </div>
-        <ul class="cours-check-list">
-          <li><span>↘</span><p><strong>Une reprise en douceur</strong> après une pause, une grossesse, un arrêt.</p></li>
-          <li><span>↘</span><p><strong>Sportifs & actifs</strong> - gagner en mobilité, récupérer, compléter sa pratique et prévenir les blessures.</p></li>
-          <li><span>↘</span><p><strong>Seniors actifs</strong> - des cours adaptés, attentifs, sans esprit de compétition.</p></li>
-          <li><span>↘</span><p><strong>Stress & fatigue</strong> - déposer la charge mentale, retrouver du souffle.</p></li>
-          <li><span>↘</span><p><strong>À chaque saison de la vie</strong> - grossesse, post-partum, préménopause ou ménopause : des pratiques adaptées aux évolutions du corps.</p></li>
-          <li><span>↘</span><p><strong>Douleurs & mobilité</strong> - dénouer, assouplir, soulager sans forcer.</p></li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="cours-section">
-      <div class="cours-wrap">
-        <div class="cours-split-head">
-          <div class="cours-head">
-            <span class="cours-num">03 - Pourquoi en petits groupes</span>
-            <h2>Ici,<br /><em>chacun compte.</em></h2>
-          </div>
-          <p>
-            Des cours à taille humaine, où l'on profite à la fois de l'énergie du groupe
-            et de l'attention portée à chacun. Plus de confort, plus de lien et un accompagnement plus personnalisé.
-          </p>
-        </div>
-        <div class="cours-steps">
-          <div><h3>Encadrement attentif</h3><p>Le professeur vous voit, vous accompagne et vous propose des ajustements adaptés à votre pratique.</p></div>
-          <div><h3>Cadre chaleureux</h3><p>Moins de monde, plus de confort. Chacun trouve sa place et pratique dans une ambiance sereine.</p></div>
-          <div><h3>Dynamique de groupe</h3><p>On retrouve les mêmes visages semaine après semaine, dans une atmosphère conviviale et sans anonymat.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <HelloResaBooking />
-
     <section id="tarifs" class="cours-section">
       <div class="cours-wrap">
         <div class="cours-head">
-          <span class="cours-num">05 - Tarifs</span>
+          <span class="cours-num">02 - Tarifs</span>
           <h2>À chacun<br /><em>sa formule.</em></h2>
           <p>Certains poussent la porte pour essayer, d'autres viennent chaque semaine, d'autres choisissent de s'engager dans un cycle.</p>
         </div>
         <div class="cours-pricing">
           {pricingPlans.map((plan) => (
-            <div class={plan.featured ? "feature" : undefined}>
+            <div class={`cours-pricing-card${plan.featured ? " feature" : ""}`}>
               <span>{plan.name}</span>
               {plan.intro && <p>{plan.intro}</p>}
               <ul>
                 {plan.features.map((feature) => <li>{feature}</li>)}
               </ul>
-              <a href={HELLORESA_PLANNING_URL} target="_blank" rel="noopener noreferrer" class={plan.featured ? "btn btn-primary" : "btn-line"}>{plan.ctaLabel} ↗</a>
+              <a href={HELLORESA_PLANNING_URL} target="_blank" rel="noopener noreferrer" class="btn btn-primary">{plan.ctaLabel} ↗</a>
             </div>
           ))}
         </div>
@@ -138,10 +99,19 @@ const teachers = peopleForSpace("cours");
       </div>
     </section>
 
+    <section id="planning" class="cours-section">
+      <div class="cours-wrap">
+        <div class="cours-head">
+          <span class="cours-num">03 - Planning et Réservation</span>
+        </div>
+        <HelloResaBooking sectionNumber="" />
+      </div>
+    </section>
+
     <section class="cours-section paper">
       <div class="cours-wrap">
         <div class="cours-head">
-          <span class="cours-num">06 - Celles et ceux qui enseignent</span>
+          <span class="cours-num">04 - Celles et ceux qui enseignent</span>
           <h2>Une équipe<br /><em>attentive.</em></h2>
         </div>
         <div class="cours-team">
@@ -162,6 +132,43 @@ const teachers = peopleForSpace("cours");
               </div>
             </article>
           ))}
+        </div>
+      </div>
+    </section>
+
+    <section id="public" class="cours-section paper">
+      <div class="cours-wrap">
+        <div class="cours-head">
+          <span class="cours-num">05 - Pour qui ?</span>
+          <h2>Chacun vient pour<br /><em>une raison différente.</em></h2>
+        </div>
+        <ul class="cours-check-list">
+          <li><p><strong>Une reprise en douceur</strong> après une pause, une grossesse, un arrêt.</p></li>
+          <li><p><strong>Sportifs & actifs</strong> - gagner en mobilité, récupérer, compléter sa pratique et prévenir les blessures.</p></li>
+          <li><p><strong>Seniors actifs</strong> - des cours adaptés, attentifs, sans esprit de compétition.</p></li>
+          <li><p><strong>Stress & fatigue</strong> - déposer la charge mentale, retrouver du souffle.</p></li>
+          <li><p><strong>À chaque saison de la vie</strong> - grossesse, post-partum, préménopause ou ménopause : des pratiques adaptées aux évolutions du corps.</p></li>
+          <li><p><strong>Douleurs & mobilité</strong> - dénouer, assouplir, soulager sans forcer.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="petits-groupes" class="cours-section">
+      <div class="cours-wrap">
+        <div class="cours-split-head">
+          <div class="cours-head">
+            <span class="cours-num">06 - Pourquoi en petit groupe ?</span>
+            <h2>Ici,<br /><em>chacun compte.</em></h2>
+          </div>
+          <p>
+            Des cours à taille humaine, où l'on profite à la fois de l'énergie du groupe
+            et de l'attention portée à chacun. Plus de confort, plus de lien et un accompagnement plus personnalisé.
+          </p>
+        </div>
+        <div class="cours-steps">
+          <div><h3>Encadrement attentif</h3><p>Le professeur vous voit, vous accompagne et vous propose des ajustements adaptés à votre pratique.</p></div>
+          <div><h3>Cadre chaleureux</h3><p>Moins de monde, plus de confort. Chacun trouve sa place et pratique dans une ambiance sereine.</p></div>
+          <div><h3>Dynamique de groupe</h3><p>On retrouve les mêmes visages semaine après semaine, dans une atmosphère conviviale et sans anonymat.</p></div>
         </div>
       </div>
     </section>
@@ -187,10 +194,10 @@ const teachers = peopleForSpace("cours");
       <div class="cours-wrap">
         <h2>Votre premier cours<br />est <em>à 10 euros.</em></h2>
         <div>
-          <p>Vestiaires, casiers, tisanes en libre accès... Tout est pensé pour que vous vous sentiez à l'aise dès votre arrivée.</p>
+          <p>Venez avec votre tenue de pratique, pas besoin d'apporter vos chaussures de sport, les tapis et le matériel sont fournis sur place.</p>
           <div class="cours-actions">
             <a href={HELLORESA_PLANNING_URL} target="_blank" rel="noopener noreferrer" class="btn btn-light">Réserver mon premier cours ↗</a>
-            <a href="#planning" class="btn-line on-dark">Voir le planning →</a>
+            <a href="#tarifs" class="btn-line on-dark">Voir les tarifs →</a>
           </div>
         </div>
       </div>

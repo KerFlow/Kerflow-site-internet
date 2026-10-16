@@ -102,14 +102,64 @@
     }
   },
   "leLieu": {
-    "hero": {
-      "label": "Le lieu - hero maison",
-      "visualMode": "image",
-      "image": "/uploads/site/leLieu/hero/image.jpg",
-      "imageClass": "t-petrol",
-      "description": "Grande salle de pratique avec parquet clair, miroir toute hauteur et lumiere oblique",
-      "wide": true
-    },
+    "gallery": [
+      {
+        "label": "Le lieu - galerie 1",
+        "visualMode": "image",
+        "image": "/uploads/site/leLieu/gallery/0/image.jpg",
+        "imageClass": "t-petrol",
+        "description": "Photo de la maison KerFlow",
+        "wide": true
+      },
+      {
+        "label": "Le lieu - galerie 2",
+        "visualMode": "image",
+        "image": "/uploads/site/leLieu/gallery/1/image.jpg",
+        "imageClass": "t-foam",
+        "description": "Photo des espaces KerFlow",
+        "wide": false
+      },
+      {
+        "label": "Le lieu - galerie 3",
+        "visualMode": "image",
+        "image": "/uploads/site/leLieu/gallery/2/image.jpg",
+        "imageClass": "t-clay",
+        "description": "Photo de l'ambiance KerFlow",
+        "wide": false
+      },
+      {
+        "label": "Le lieu - galerie 4",
+        "visualMode": "image",
+        "image": "/uploads/site/leLieu/gallery/3/image.jpg",
+        "imageClass": "t-petrol",
+        "description": "Photo des espaces KerFlow",
+        "wide": false
+      },
+      {
+        "label": "Le lieu - galerie 5",
+        "visualMode": "image",
+        "image": "/uploads/site/leLieu/gallery/4/image.jpg",
+        "imageClass": "t-foam",
+        "description": "Photo de la maison KerFlow",
+        "wide": false
+      },
+      {
+        "label": "Le lieu - galerie 6",
+        "visualMode": "image",
+        "image": "/uploads/site/leLieu/gallery/5/image.jpg",
+        "imageClass": "t-clay",
+        "description": "Photo de l'ambiance KerFlow",
+        "wide": false
+      },
+      {
+        "label": "Le lieu - galerie 7",
+        "visualMode": "image",
+        "image": "/uploads/site/leLieu/gallery/6/image.jpg",
+        "imageClass": "t-petrol",
+        "description": "Photo des espaces KerFlow",
+        "wide": false
+      }
+    ],
     "spaces": {
       "studio": {
         "label": "Le lieu - Le Salon",

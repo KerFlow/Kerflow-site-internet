@@ -6,9 +6,11 @@
   "date": "Samedi 14 novembre ",
   "time": "15h",
   "description": "✨Un moment de détente et de reconnexion à soi !\n\nMarie-Louise vous invite à découvrir la réflexologie faciale à travers des gestes simples à reproduire chez vous.\n\nAu programme : automassage du visage, stimulation de points réflexes, relaxation et méditation. 🌿\n\nLes bienfaits ? Relâcher les tensions, favoriser le drainage du visage et retrouver une sensation de légèreté et de bien-être.\n\nUne parenthèse de douceur pour prendre soin de soi, à prolonger au quotidien !",
+  "summary": "Marie-Louise vous guide dans la découverte de la réflexologie faciale : automassages, points réflexes et relaxation pour une parenthèse de douceur à reproduire chez soi.",
   "duration": "1h30",
   "price": "40€",
   "ctaLabel": "Réserver",
+  "bookingRequired": true,
   "ctaUrl": "https://www.onparticipe.fr/b/LzeT9eRg/participe?show=eyJpdiI6IkxWT2k4M1FxOWFURzErWjVQcVhhQ3c9PSIsInZhbHVlIjoiWXJmUW9QMEFhcEN5VVB0SG1nTVQxZz09IiwibWFjIjoiZjA4ZTRjYjZkMGNhZmJiOTFiMGI3YjYzMzgyMGNjNjYzNjg5NDI0ZWYwM2QwYjJjNjdlMWI4YTc3MWIxZTJhZCIsInRhZyI6IiJ9",
   "imageClass": "photo-clay",
   "imageLabel": "[ photo - carnet, tisane et table ronde ]"

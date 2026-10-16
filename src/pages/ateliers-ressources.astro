@@ -4,6 +4,7 @@ import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import { workshops } from "../data/cmsContent.js";
 import { archivedBlogArticles, featuredBlogArticles } from "../data/blogArticles.js";
+import { HELLORESA_PLANNING_URL } from "../config/booking.js";
 
 const featuredWorkshop = workshops.find((workshop) => workshop.featured) ?? workshops[0];
 const secondaryWorkshops = workshops.filter((workshop) => workshop !== featuredWorkshop).slice(0, 2);
@@ -73,6 +74,9 @@ const archivedEvents = [
               et ses modalités d'inscription. Les réservations se font soit sur HelloResa, soit directement auprès de l'intervenant.
               Les places étant souvent limitées, nous vous conseillons de réserver à l'avance.
             </p>
+            <a class="btn-line light" href={HELLORESA_PLANNING_URL} target="_blank" rel="noopener noreferrer">
+              Voir l’agenda et réserver ↗
+            </a>
           </div>
         </div>
 

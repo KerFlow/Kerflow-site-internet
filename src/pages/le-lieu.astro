@@ -648,6 +648,10 @@ const foundersContent = siteSettings.leLieu.founders;
       .hero-band{ margin-top:clamp(36px,5vw,64px); padding-bottom:clamp(56px,7vw,96px); }
       .hero-band .ph{ width:100%; aspect-ratio:21/8; }
       @media (max-width:820px){ .hero-band .ph{ aspect-ratio:3/2; } }
+
+      /* Galerie de la hero : même gouttière que le contenu, espacement du bandeau remplacé. */
+      .lieu-gallery-section{ padding:clamp(36px,5vw,64px) var(--site-pad-x) clamp(56px,7vw,96px); }
+      .lieu-gallery-section .gallery{ margin-top:0; }
       
       /* =========================================================
          PROSE / éditorial deux colonnes
@@ -762,7 +766,7 @@ const foundersContent = siteSettings.leLieu.founders;
       .person .p-links a{ font-family:var(--mono); font-size:10px; letter-spacing:0.16em; text-transform:uppercase; text-decoration:none; color:var(--petrol); }
       .person .p-links a:hover{ color:var(--clay); }
       .founders-team{ grid-template-columns:repeat(2,minmax(0,1fr)); }
-      .founders-team .person .ph{ aspect-ratio:16/9; }
+      .founders-team .person .ph{ aspect-ratio:3/4; }
       @media (max-width:980px){ .team,.team.cols-3{ grid-template-columns:1fr 1fr; } }
       @media (max-width:520px){ .team,.team.cols-3{ grid-template-columns:1fr; } }
       
@@ -944,10 +948,10 @@ const foundersContent = siteSettings.leLieu.founders;
             trois espaces.
           </h1>
           <div class="hero-cta">
-            <a href="/cours-planning/" class="btn btn-primary">Découvrir les cours
+            <a href="#espaces" class="btn btn-primary">Visiter
               <svg class="ic" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"></path></svg>
             </a>
-            <a href="/contact/" class="btn-line">Prendre rendez-vous</a>
+            <a href="/louer-un-espace/" class="btn-line">Louer un espace</a>
           </div>
         </div>
         <aside class="page-hero-aside">
@@ -962,8 +966,19 @@ const foundersContent = siteSettings.leLieu.founders;
       </div>
     </section>
 
-    <section class="hero-band wrap" aria-label="La maison en image">
-      <SiteVisual visual={siteVisuals.leLieu.hero} />
+    <section class="home-gallery-section lieu-gallery-section" aria-label="Galerie du lieu KerFlow">
+      <div class="gallery">
+        <div class="gallery-head">
+          <span class="gallery-eyebrow">↘ Souffle, Lumière, Mouvement</span>
+          <span class="gallery-label mono">La maison en images</span>
+        </div>
+        <div class="gallery-track-mask">
+          <div class="gallery-track">
+            {siteVisuals.leLieu.gallery.map((visual) => <SiteVisual visual={visual} />)}
+            {siteVisuals.leLieu.gallery.map((visual) => <SiteVisual visual={visual} ariaHidden />)}
+          </div>
+        </div>
+      </div>
     </section>
     
     <!-- ===================== POURQUOI KERFLOW ===================== -->
@@ -1048,7 +1063,7 @@ const foundersContent = siteSettings.leLieu.founders;
     <section id="espaces" class="section-pad rule-top" data-screen-label="Les espaces" style="background:var(--paper)">
       <div class="wrap">
         <div class="sec-head" style="margin-bottom:clamp(40px,5vw,64px)">
-          <span class="sec-num">03 — Trois espaces, sous un même toit</span>
+          <span class="sec-num">03 — Trois espaces sous un même toit</span>
           <h2 class="title">Entrez, on vous fait <i class="h c-petrol">visiter</i></h2>
           <p class="sec-intro">
             Une grande salle de plain-pied, un cabinet calme et lumineux, une pièce feutrée
@@ -1062,7 +1077,7 @@ const foundersContent = siteSettings.leLieu.founders;
             <SiteVisual visual={siteVisuals.leLieu.spaces.studio} />
           </div>
           <div class="feature-body">
-            <span class="tag" style="color:var(--studio-ink)">01 · Le Salon</span>
+            <span class="tag" style="color:var(--studio-ink)">Le Salon</span>
             <h3 class="serif">La pièce où l'on bouge.</h3>
             <p>Quarante mètres carrés de parquet, un miroir toute hauteur, la lumière qui entre
               par des hautes fenêtres. Cours collectifs en petits groupes de 8 à 12 — yoga,
@@ -1079,7 +1094,7 @@ const foundersContent = siteSettings.leLieu.founders;
             <SiteVisual visual={siteVisuals.leLieu.spaces.bulle} />
           </div>
           <div class="feature-body">
-            <span class="tag" style="color:var(--consult-ink)">02 · La Bulle</span>
+            <span class="tag" style="color:var(--consult-ink)">La Bulle</span>
             <h3 class="serif">Le cabinet qui écoute.</h3>
             <p>Un bureau de consultation au rez-de-chaussée, baigné de lumière naturelle,
               une grande fenêtre ouverte sur une cour calme et arborée. Un cadre apaisant
@@ -1096,7 +1111,7 @@ const foundersContent = siteSettings.leLieu.founders;
             <SiteVisual visual={siteVisuals.leLieu.spaces.cocon} />
           </div>
           <div class="feature-body">
-            <span class="tag" style="color:var(--rituel-ink)">03 · Le Cocon</span>
+            <span class="tag" style="color:var(--rituel-ink)">Le Cocon</span>
             <h3 class="serif">Le lieu qui enveloppe</h3>
             <p>Au sous-sol, un espace intimiste. Une atmosphère qui invite au lâcher-prise.
               Massages, réflexologie, soins du corps : le temps ralentit, on récupère.</p>

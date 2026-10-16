@@ -6,9 +6,11 @@
   "date": "Dimanche 15 novembre",
   "time": "10h",
   "description": "A venir",
+  "summary": "Découvrez les huiles essentielles et leurs usages avec Julia, lors d’un atelier ouvert à toutes et tous.",
   "duration": "Le temps que vous voulez !",
   "price": "Entrée libre",
   "ctaLabel": "Sans réservation",
+  "bookingRequired": false,
   "ctaUrl": "https://www.kerflow-studio.fr/",
   "imageClass": "photo-stone",
   "imageLabel": "[ photo - mobilité au sol, petit groupe ]"
