@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
+import WorkshopCard from "../../components/WorkshopCard.astro";
 import { workshops } from "../../data/cmsContent.js";
 
 export function getStaticPaths() {
@@ -12,6 +13,7 @@ export function getStaticPaths() {
 }
 
 const { workshop } = Astro.props;
+const relatedWorkshops = workshops.filter((item) => item.slug !== workshop.slug).slice(0, 3);
 const paragraphs = workshop.description
   .split(/\n\s*\n/)
   .map((paragraph) => paragraph.trim())
@@ -21,74 +23,101 @@ const paragraphs = workshop.description
 <BaseLayout title={`${workshop.title} - Ateliers KerFlow`} description={workshop.summary}>
   <SiteHeader />
   <main class="workshop-page wrapped-sections">
-    <header class="workshop-hero">
-      <div class="workshop-wrap">
-        <a href="/#ateliers" class="workshop-back"><span aria-hidden="true">←</span> Retour aux ateliers</a>
-        <div class="workshop-hero-grid">
-          <div class="workshop-title-block">
-            <p class="workshop-kicker">Atelier · {workshop.date} · {workshop.time}</p>
-            <h1>{workshop.title}</h1>
-            <p class="workshop-lede">{workshop.summary}</p>
-            <div class="workshop-facts">
-              <span>{workshop.duration}</span>
-              <span>{workshop.price}</span>
+    <article>
+      <header class="workshop-hero" data-screen-label="Atelier - Hero">
+        <div class="workshop-wrap">
+          <a href="/#ateliers" class="workshop-back"><span aria-hidden="true">←</span> Retour aux ateliers</a>
+          <div class="workshop-hero-grid">
+            <div class="workshop-title-block">
+              <p class="workshop-kicker">Atelier · {workshop.date} · {workshop.time}</p>
+              <h1 class="serif">{workshop.title}</h1>
+              <p class="workshop-lede">{workshop.summary}</p>
+              <div class="workshop-facts">
+                <span>{workshop.duration}</span>
+                <span>{workshop.price}</span>
+              </div>
+              {workshop.bookingRequired !== false && (
+                <a class="workshop-booking" href={workshop.ctaUrl}>{workshop.ctaLabel} <span aria-hidden="true">→</span></a>
+              )}
+              {workshop.bookingRequired === false && <span class="workshop-no-booking">Sans réservation</span>}
             </div>
-            {workshop.bookingRequired !== false && (
-              <a class="workshop-booking" href={workshop.ctaUrl}>{workshop.ctaLabel} <span aria-hidden="true">→</span></a>
-            )}
-            {workshop.bookingRequired === false && <span class="workshop-no-booking">Sans réservation</span>}
-          </div>
-          <div class={`workshop-hero-photo ${workshop.imageClass} ${workshop.image ? "has-upload" : ""}`}>
-            {workshop.image ? (
-              <img src={workshop.image} alt={workshop.imageLabel || workshop.title} loading="eager" decoding="async" />
-            ) : (
-              <span>{workshop.imageLabel || workshop.title}</span>
-            )}
+            <div class={`workshop-hero-photo photo ${workshop.imageClass} ${workshop.image ? "has-upload" : ""}`}>
+              {workshop.image ? (
+                <img src={workshop.image} alt={workshop.imageLabel || workshop.title} loading="eager" decoding="async" style={`object-position: ${workshop.imagePositionX ?? 50}% ${workshop.imagePositionY ?? 50}%`} />
+              ) : (
+                <span class="cap">{workshop.imageLabel || workshop.title}</span>
+              )}
+            </div>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
 
-    <section class="workshop-content">
-      <div class="workshop-content-inner">
-        <p class="workshop-content-kicker">À propos de l'atelier</p>
-        <div class="workshop-body">
-          {paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+      <section class="workshop-content" data-screen-label="Atelier - Présentation">
+        <div class="workshop-content-inner">
+          <p class="workshop-content-kicker">À propos de l'atelier</p>
+          <div class="workshop-body">
+            {paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </article>
+
+    {relatedWorkshops.length > 0 && (
+      <section class="related-section rule-top band-paper" data-screen-label="Les autres ateliers">
+        <div class="workshop-wrap">
+          <div class="related-head">
+            <span class="sec-num">À découvrir aussi</span>
+            <h2 class="serif">Les autres<br /><i>ateliers KerFlow.</i></h2>
+          </div>
+          <div class="related-grid">
+            {relatedWorkshops.map((item) => <WorkshopCard workshop={item} />)}
+          </div>
+        </div>
+      </section>
+    )}
   </main>
   <SiteFooter />
 </BaseLayout>
 
 <style>
-  .workshop-page { background: var(--paper); color: var(--granite); }
-  .workshop-wrap { width: min(1180px, calc(100% - 48px)); margin-inline: auto; }
-  .workshop-hero { padding: clamp(38px, 6vw, 80px) 0 clamp(60px, 8vw, 112px); background: var(--paper); }
-  .workshop-back { display: inline-flex; gap: 10px; margin-bottom: 42px; color: var(--petrol); font-size: 13px; text-decoration: none; }
-  .workshop-hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, .86fr); gap: clamp(36px, 7vw, 96px); align-items: center; }
-  .workshop-kicker, .workshop-content-kicker { margin: 0 0 18px; color: var(--clay); font-family: var(--mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; }
-  .workshop-title-block h1 { max-width: 720px; margin: 0 0 24px; color: var(--petrol-deep); font-family: var(--serif-display); font-size: clamp(42px, 6.2vw, 82px); font-weight: 400; letter-spacing: -.035em; line-height: .98; }
-  .workshop-lede { max-width: 620px; margin: 0; color: var(--granite-500); font-size: clamp(17px, 1.7vw, 21px); line-height: 1.6; }
-  .workshop-facts { display: flex; flex-wrap: wrap; gap: 12px; margin: 30px 0; }
-  .workshop-facts span { padding: 9px 13px; border: 1px solid var(--rule); border-radius: 999px; color: var(--granite-500); font-size: 13px; }
-  .workshop-booking { display: inline-flex; align-items: center; gap: 12px; padding: 14px 20px; border-radius: 3px; background: var(--petrol); color: white; font-size: 14px; text-decoration: none; }
-  .workshop-no-booking { display: inline-flex; align-items: center; min-height: 46px; padding: 0 16px; border: 1px solid var(--rule); border-radius: 3px; background: var(--bone); color: var(--granite-500); font-size: 13px; }
-  .workshop-hero-photo { position: relative; overflow: hidden; min-height: 420px; aspect-ratio: 4 / 5; border-radius: 6px; background: linear-gradient(145deg, var(--photo-a, #9bbab8), var(--photo-b, #3f6e6f)); }
-  .workshop-hero-photo.has-upload { background: #e4e0d8; }
+  .workshop-page { --blog-accent: var(--clay); --ink-soft: #2a322c; background: var(--linen); color: var(--granite); }
+  .workshop-wrap { width: 100%; max-width: var(--site-max); margin-inline: auto; padding-inline: var(--site-pad-x); }
+  .workshop-hero { padding-block: clamp(42px, 6vw, 84px) clamp(56px, 8vw, 104px); border-bottom: 1px solid var(--rule); background: var(--paper); }
+  .workshop-back { position: relative; display: inline-flex; gap: 8px; align-items: center; margin-bottom: clamp(34px, 5vw, 66px); color: var(--petrol-deep); font-family: var(--mono); font-size: 11px; letter-spacing: .22em; text-decoration: none; text-transform: uppercase; transition: color 260ms ease, transform 300ms var(--ease-out); }
+  .workshop-back::after { position: absolute; right: 0; bottom: -7px; left: 0; height: 1px; background: currentColor; content: ""; transition: transform 360ms var(--ease-out); }
+  .workshop-back span { color: var(--blog-accent); transition: transform 300ms var(--ease-out); }
+  .workshop-back:hover, .workshop-back:focus-visible { color: var(--blog-accent); transform: translateY(-1px); }
+  .workshop-back:hover::after, .workshop-back:focus-visible::after { transform: scaleX(.28); transform-origin: left; }
+  .workshop-back:hover span, .workshop-back:focus-visible span { transform: translate(-3px, -1px); }
+  .workshop-hero-grid { display: grid; grid-template-columns: minmax(0, 1.18fr) minmax(300px, .82fr); gap: clamp(32px, 5vw, 72px); align-items: end; }
+  .workshop-title-block { max-width: 840px; }
+  .workshop-kicker, .workshop-content-kicker, .sec-num { color: var(--blog-accent); font-family: var(--mono); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; }
+  .workshop-kicker { margin: 0 0 22px; }
+  .workshop-title-block h1 { max-width: 840px; margin: 0; color: var(--petrol-deep); font-family: var(--serif); font-size: clamp(42px, 6vw, 92px); font-weight: 400; font-variation-settings: "opsz" 144; letter-spacing: -.02em; line-height: 1; }
+  .workshop-lede { max-width: 720px; margin: clamp(24px, 3vw, 36px) 0 0; color: var(--ink-soft); font-family: var(--serif); font-size: clamp(19px, 1.7vw, 24px); font-weight: 300; line-height: 1.55; }
+  .workshop-facts { display: flex; flex-wrap: wrap; gap: 12px; margin: 26px 0 24px; }
+  .workshop-facts span { padding: 9px 13px; border: 1px solid var(--rule); color: var(--granite-500); font-size: 13px; }
+  .workshop-page .workshop-booking { display: inline-flex; min-height: 46px; align-items: center; justify-content: center; gap: 10px; padding: 0 22px; background: var(--clay); color: var(--linen); font-family: var(--mono); font-size: 11px; letter-spacing: .18em; text-decoration: none; text-transform: uppercase; transition: background 260ms ease, transform 300ms var(--ease-out), box-shadow 300ms var(--ease-out); }
+  .workshop-page .workshop-booking:hover, .workshop-page .workshop-booking:focus-visible { background: var(--petrol-deep); box-shadow: 0 14px 26px rgba(14,42,44,.16); transform: translateY(-2px); }
+  .workshop-no-booking { display: inline-flex; min-height: 46px; align-items: center; padding: 0 16px; border: 1px solid var(--rule); color: var(--granite-500); font-size: 13px; }
+  .workshop-hero-photo { width: 100%; min-height: clamp(320px, 42vw, 560px); justify-self: stretch; border-radius: 6px; }
   .workshop-hero-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-  .workshop-hero-photo > span { position: absolute; inset: auto 20px 18px; color: white; font-family: var(--mono); font-size: 11px; letter-spacing: .1em; }
-  .workshop-content { padding: clamp(60px, 8vw, 112px) 24px; border-top: 1px solid var(--rule); background: var(--paper-soft, #f4f1eb); }
-  .workshop-content-inner { display: grid; grid-template-columns: minmax(170px, .55fr) minmax(0, 1.4fr); column-gap: clamp(30px, 7vw, 100px); row-gap: 28px; max-width: 960px; margin: 0 auto; }
-  .workshop-content-kicker { margin-top: 8px; }
-  .workshop-body { color: var(--granite-500); font-size: 17px; line-height: 1.8; }
-  .workshop-body p { margin: 0 0 1.35em; white-space: pre-line; }
-  .workshop-content-inner > .workshop-booking { grid-column: 2; justify-self: start; }
-  @media (max-width: 760px) {
-    .workshop-wrap { width: min(100% - 36px, 560px); }
-    .workshop-hero-grid { grid-template-columns: 1fr; }
-    .workshop-hero-photo { min-height: 280px; aspect-ratio: 4 / 3; }
-    .workshop-content-inner { grid-template-columns: 1fr; gap: 12px; }
-    .workshop-content-inner > .workshop-booking { grid-column: 1; margin-top: 14px; }
+  .workshop-content { padding-block: var(--site-section-y); border-top: 1px solid var(--rule); background: var(--linen); }
+  .workshop-content-inner { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: clamp(36px, 5vw, 80px); align-items: start; width: 100%; max-width: var(--site-max); margin-inline: auto; padding-inline: var(--site-pad-x); }
+  .workshop-content-kicker { margin: 4px 0 0; }
+  .workshop-body { display: flex; flex-direction: column; gap: 16px; }
+  .workshop-body p { margin: 0; color: var(--granite); font-size: clamp(16px, 1.25vw, 18px); line-height: 1.78; white-space: pre-line; }
+  .related-section { padding-block: var(--site-section-y); }
+  .band-paper { background: var(--paper); }
+  .rule-top { border-top: 1px solid var(--rule); }
+  .related-head { display: flex; flex-direction: column; gap: 16px; margin-bottom: clamp(28px, 3vw, 40px); }
+  .related-head h2 { margin: 0; color: var(--petrol-deep); font-family: var(--serif); font-size: clamp(34px, 5vw, 64px); font-weight: 400; font-variation-settings: "opsz" 144; letter-spacing: -.02em; line-height: 1.03; }
+  .related-head i { color: var(--blog-accent); font-weight: 300; }
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 18px; }
+  @media (max-width: 900px) {
+    .workshop-hero-grid, .workshop-content-inner { grid-template-columns: 1fr; }
+    .workshop-content-inner { gap: 20px; }
+    .workshop-content-kicker { margin: 0; }
   }
+  @media (max-width: 640px) { .workshop-hero-photo { min-height: 280px; } }
 </style>

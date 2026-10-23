@@ -1,0 +1,25 @@
+---
+import WorkshopCardActions from "./WorkshopCardActions.astro";
+const { workshop } = Astro.props;
+---
+
+<article class="workshop-card">
+  <a class="workshop-card-image" href={`/ateliers/${workshop.slug}/`} aria-label={`Découvrir ${workshop.title}`}>
+    <div class={`photo ${workshop.imageClass} ${workshop.image ? "has-upload" : ""}`}>
+      {workshop.image ? (
+        <img src={workshop.image} alt={workshop.imageLabel || workshop.title} loading="lazy" decoding="async" style={`object-position: ${workshop.imagePositionX ?? 50}% ${workshop.imagePositionY ?? 50}%`} />
+      ) : (
+        <span>{workshop.imageLabel || workshop.title}</span>
+      )}
+    </div>
+  </a>
+  <div>
+    <p class="mini clay">{workshop.date} · {workshop.time}</p>
+    <h3><a href={`/ateliers/${workshop.slug}/`}>{workshop.title}</a></h3>
+    <p>{workshop.summary}</p>
+    <footer>
+      <span class="workshop-meta">{workshop.duration} · {workshop.price}</span>
+      <WorkshopCardActions workshop={workshop} />
+    </footer>
+  </div>
+</article>

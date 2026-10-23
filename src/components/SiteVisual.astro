@@ -12,6 +12,7 @@ const description = visual?.description ?? "";
 const imageClass = visual?.imageClass ?? "";
 const wideClass = visual?.wide ? "wide" : "";
 const hasUpload = mode === "image" && image;
+const imagePosition = `${visual?.imagePositionX ?? 50}% ${visual?.imagePositionY ?? 50}%`;
 const className = [
   "site-visual",
   baseClass,
@@ -26,7 +27,7 @@ const className = [
 
 <div class={className} aria-hidden={ariaHidden ? "true" : undefined}>
   {hasUpload ? (
-    <img src={image} alt={ariaHidden ? "" : description} loading="lazy" decoding="async" />
+    <img src={image} alt={ariaHidden ? "" : description} loading="lazy" decoding="async" style={`object-position: ${imagePosition}`} />
   ) : (
     <span class="cap">{description}</span>
   )}

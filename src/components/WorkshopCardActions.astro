@@ -1,0 +1,12 @@
+---
+const { workshop } = Astro.props;
+---
+
+<div class="workshop-card-actions">
+  <a class="btn-line workshop-details" href={`/ateliers/${workshop.slug}/`}>Découvrir l'atelier <span aria-hidden="true">→</span></a>
+  {workshop.bookingRequired !== false ? (
+    <a class="reserve-link workshop-booking" href={workshop.ctaUrl}>{workshop.ctaLabel}</a>
+  ) : (
+    <span class="workshop-no-booking">{workshop.ctaLabel || "Sans réservation"}</span>
+  )}
+</div>

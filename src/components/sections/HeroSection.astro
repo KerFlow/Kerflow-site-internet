@@ -3,13 +3,12 @@ import SiteVisual from "../SiteVisual.astro";
 import { siteSettings } from "../../data/cmsContent.js";
 import { siteVisuals } from "../../data/siteVisuals.js";
 
-const openingLabel = siteSettings.openingLabel ?? "Ouverture prochaine - automne 26";
+const studioNews = siteSettings.openingLabel?.trim();
 ---
 
 <section class="hero section-pad">
         <div class="hero-meta mono">
           <span>Clamart - 92140 - Île-de-France</span>
-          <span>{openingLabel}</span>
         </div>
         <div class="hero-grid">
           <div>

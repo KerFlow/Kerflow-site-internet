@@ -177,7 +177,7 @@ const coconPeople = peopleForSpace("le-cocon");
             <article>
               <div class={`pv-person-media pv-${person.imageClass} ${person.visualMode === "image" && person.image ? "has-upload" : ""}`}>
                 {person.visualMode === "image" && person.image ? (
-                  <img src={person.image} alt={person.imageLabel} loading="lazy" decoding="async" />
+                  <img src={person.image} alt={person.imageLabel} loading="lazy" decoding="async" style={`object-position: ${person.imagePositionX ?? 50}% ${person.imagePositionY ?? 50}%`} />
                 ) : (
                   <span>{person.imageLabel}</span>
                 )}
@@ -204,7 +204,7 @@ const coconPeople = peopleForSpace("le-cocon");
             <article>
               <div class={`pv-person-media pv-${person.imageClass} ${person.visualMode === "image" && person.image ? "has-upload" : ""}`}>
                 {person.visualMode === "image" && person.image ? (
-                  <img src={person.image} alt={person.imageLabel} loading="lazy" decoding="async" />
+                  <img src={person.image} alt={person.imageLabel} loading="lazy" decoding="async" style={`object-position: ${person.imagePositionX ?? 50}% ${person.imagePositionY ?? 50}%`} />
                 ) : (
                   <span>{person.imageLabel}</span>
                 )}

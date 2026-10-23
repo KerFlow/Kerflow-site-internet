@@ -1,0 +1,82 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import { peopleForSpace } from "../data/cmsContent.js";
+
+const teachers = peopleForSpace("cours");
+const instagramIcon = `<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>`;
+---
+
+<BaseLayout title="L'équipe — maquette | KerFlow" description="Essai de présentation des professeures KerFlow.">
+  <SiteHeader />
+  <main class="team-demo">
+    <section class="team-demo-intro">
+      <p class="team-demo-kicker"><span>KerFlow Studio</span><span>Les personnes derrière la pratique</span></p>
+      <div class="team-demo-title">
+        <h1>Des corps différents.<br /><em>Une même attention.</em></h1>
+        <p>Des professeures aux parcours singuliers, réunies par l’envie de transmettre le mouvement avec justesse et bienveillance.</p>
+      </div>
+      <div class="team-demo-rule"><span>01 — L’équipe enseignante</span><span>Clamart · depuis 2026</span></div>
+    </section>
+
+    <section class="team-demo-grid" aria-label="Professeures de cours collectifs">
+      {teachers.map((person, index) => {
+        const hasProfile = person.bio?.trim();
+        const instagram = person.secondaryLinkUrl && person.secondaryLinkUrl !== "#" && person.secondaryLinkUrl.includes("instagram.com");
+        return (
+          <a class={`team-demo-card team-demo-card-${index + 1}`} href={hasProfile ? `/intervenantes/${person.slug}/` : "/cours-planning/#equipe"} aria-label={`Découvrir ${person.name.trim()}, ${person.specialty}`}>
+            <div class="team-demo-image">
+              {person.visualMode === "image" && person.image ? <img src={person.image} alt={person.imageLabel} loading="lazy" decoding="async" style={`object-position: ${person.imagePositionX ?? 50}% ${person.imagePositionY ?? 50}%`} /> : <div class={`team-demo-placeholder ${person.imageClass}`}><span>{person.imageLabel}</span></div>}
+              <span class="team-demo-index">0{index + 1}</span>
+              <span class="team-demo-view">Découvrir <b>↗</b></span>
+            </div>
+            <div class="team-demo-meta">
+              <div><h2>{person.name.trim()}</h2><p>{person.specialty}</p></div>
+              {instagram && <span class="team-demo-instagram" aria-label="Instagram" set:html={instagramIcon} />}
+            </div>
+          </a>
+        );
+      })}
+    </section>
+    <p class="team-demo-note">Une équipe à taille humaine, pour une pratique qui l’est aussi.</p>
+  </main>
+  <SiteFooter />
+</BaseLayout>
+
+<style>
+  .team-demo { --td-ink: var(--petrol); --td-paper: var(--paper); --td-clay: var(--clay); background: var(--td-paper); color: var(--td-ink); padding: clamp(46px, 8vw, 110px) max(24px, calc((100vw - 1180px) / 2)) 90px; }
+  .team-demo-intro { max-width: 1180px; margin: auto; }
+  .team-demo-kicker, .team-demo-rule { display:flex; justify-content:space-between; gap:20px; font: 10px/1.5 'DM Mono', monospace; letter-spacing:.13em; text-transform:uppercase; color:#667674; }
+  .team-demo-kicker span:first-child { color:var(--td-clay); }
+  .team-demo-title { display:grid; grid-template-columns:1fr minmax(240px, 330px); align-items:end; gap:48px; padding:48px 0 54px; }
+  .team-demo-title h1 { margin:0; font:400 clamp(46px, 7vw, 88px)/.98 'Fraunces', Georgia, serif; letter-spacing:-.045em; }
+  .team-demo-title h1 em { color:var(--td-clay); font-weight:300; }
+  .team-demo-title > p { max-width:310px; margin:0 0 8px; color:#586c69; font:15px/1.8 'Manrope', sans-serif; }
+  .team-demo-rule { padding:15px 0; border-top:1px solid rgba(23,62,64,.24); }
+  .team-demo-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:24px; max-width:1180px; margin:16px auto 0; align-items:start; }
+  .team-demo-card { min-width:0; color:inherit; text-decoration:none; }
+  .team-demo-card:nth-child(even) { margin-top:0; }
+  .team-demo-image { position:relative; overflow:hidden; aspect-ratio: .79; background:var(--stone); }
+  .team-demo-image::after { content:""; position:absolute; inset:45% 0 0; background:linear-gradient(transparent,rgba(14,38,38,.35)); opacity:.55; transition:opacity .3s ease; }
+  .team-demo-image img, .team-demo-placeholder { width:100%; height:100%; object-fit:cover; display:block; transition:transform .7s cubic-bezier(.2,.65,.25,1); }
+  .team-demo-card:hover img, .team-demo-card:focus-visible img, .team-demo-card:hover .team-demo-placeholder, .team-demo-card:focus-visible .team-demo-placeholder { transform:scale(1.045); }
+  .team-demo-card:hover .team-demo-image::after { opacity:.9; }
+  .team-demo-placeholder { display:grid; place-items:center; background:radial-gradient(ellipse at 35% 25%,#a9b9a5,#536f66 70%); color:#f6f3ec; font:italic 24px 'Fraunces',serif; }
+  .team-demo-placeholder.storm { background:radial-gradient(ellipse at 35% 25%,#92afad,#315957 70%); }
+  .team-demo-placeholder.clay { background:radial-gradient(ellipse at 35% 25%,#d8a58a,#865742 70%); }
+  .team-demo-placeholder.foam { background:radial-gradient(ellipse at 35% 25%,#c4d2c7,#67817b 70%); }
+  .team-demo-index { position:absolute; z-index:1; top:14px; left:15px; color:white; font:10px 'DM Mono',monospace; letter-spacing:.08em; }
+  .team-demo-view { position:absolute; z-index:1; right:14px; bottom:14px; display:flex; align-items:center; gap:10px; color:white; font:11px 'DM Mono',monospace; letter-spacing:.1em; text-transform:uppercase; opacity:0; transform:translateY(5px); transition:opacity .25s ease, transform .25s ease; }
+  .team-demo-view b { display:grid; place-items:center; width:30px; height:30px; border:1px solid rgba(255,255,255,.75); border-radius:50%; font-size:16px; font-weight:400; }
+  .team-demo-card:hover .team-demo-view, .team-demo-card:focus-visible .team-demo-view { opacity:1; transform:translateY(0); }
+  .team-demo-meta { display:flex; justify-content:space-between; align-items:flex-start; gap:8px; padding:17px 1px 0; }
+  .team-demo-meta h2 { margin:0 0 5px; font:400 clamp(21px,2vw,27px)/1.1 'Fraunces',Georgia,serif; }
+  .team-demo-meta p { margin:0; color:#637472; font:10px/1.6 'DM Mono',monospace; letter-spacing:.04em; text-transform:uppercase; }
+  .team-demo-instagram { flex:0 0 20px; width:20px; height:20px; margin-top:3px; color:var(--td-clay); }
+  .team-demo-instagram :global(svg) { width:100%; height:100%; fill:none; stroke:currentColor; stroke-width:1.6; }
+  .team-demo-note { max-width:1180px; margin:75px auto 0; padding-top:18px; border-top:1px solid rgba(23,62,64,.24); color:#667674; text-align:right; font:italic 19px 'Fraunces',serif; }
+  @media(max-width:900px) { .team-demo-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:30px 20px; } .team-demo-card:nth-child(even) { margin-top:35px; } .team-demo-title { grid-template-columns:1fr minmax(210px,280px); gap:24px; } }
+  @media(max-width:600px) { .team-demo { padding:40px 20px 64px; } .team-demo-kicker span:last-child { text-align:right; } .team-demo-title { display:block; padding:40px 0 34px; } .team-demo-title > p { margin-top:20px; } .team-demo-rule { font-size:8px; } .team-demo-grid { gap:25px 14px; margin-top:8px; } .team-demo-card:nth-child(even) { margin-top:28px; } .team-demo-meta { padding-top:12px; } .team-demo-meta h2 { font-size:22px; } .team-demo-meta p { font-size:8px; } .team-demo-note { margin-top:48px; text-align:left; } }
+  @media(prefers-reduced-motion:reduce) { .team-demo-image img,.team-demo-placeholder,.team-demo-view,.team-demo-image::after { transition:none; } }
+</style>

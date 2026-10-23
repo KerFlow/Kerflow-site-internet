@@ -11,6 +11,8 @@ const blog = defineCollection({
     excerpt: z.string(),
     visualMode: z.enum(["color", "image"]).optional(),
     image: z.string().nullable().optional(),
+    imagePositionX: z.number().optional(),
+    imagePositionY: z.number().optional(),
     imageClass: z.string(),
     imageLabel: z.string(),
     intro: z.string(),
@@ -34,6 +36,8 @@ const people = defineCollection({
     bio: z.string(),
     visualMode: z.enum(["color", "image"]).optional(),
     image: z.string().nullable().optional(),
+    imagePositionX: z.number().optional(),
+    imagePositionY: z.number().optional(),
     imageClass: z.string(),
     imageLabel: z.string(),
     primaryLinkLabel: z.string(),
@@ -85,6 +89,9 @@ const workshops = defineCollection({
     ctaUrl: z.string(),
     imageClass: z.string(),
     imageLabel: z.string(),
+    image: z.string().nullable().optional(),
+    imagePositionX: z.number().optional(),
+    imagePositionY: z.number().optional(),
   }),
 });
 

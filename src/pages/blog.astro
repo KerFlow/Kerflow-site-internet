@@ -51,7 +51,7 @@ const articleDuMoment =
         <article class="blog-editorial-feature" aria-label="Article du moment">
           <div class={`photo blog-feature-photo ${articleDuMoment.imageClass} ${articleDuMoment.visualMode === "image" && articleDuMoment.image ? "has-upload" : ""}`}>
             {articleDuMoment.visualMode === "image" && articleDuMoment.image ? (
-              <img src={articleDuMoment.image} alt={articleDuMoment.imageLabel} loading="lazy" decoding="async" />
+              <img src={articleDuMoment.image} alt={articleDuMoment.imageLabel} loading="lazy" decoding="async" style={`object-position: ${articleDuMoment.imagePositionX ?? 50}% ${articleDuMoment.imagePositionY ?? 50}%`} />
             ) : (
               <span>{articleDuMoment.imageLabel}</span>
             )}
@@ -82,7 +82,7 @@ const articleDuMoment =
             <a href={`/blog/${article.slug}/`} class="art" data-blog-item data-blog-tag={article.tag}>
               <div class={`ph ${article.imageClass} ${article.visualMode === "image" && article.image ? "has-upload" : ""}`}>
                 {article.visualMode === "image" && article.image ? (
-                  <img src={article.image} alt={article.imageLabel} loading="lazy" decoding="async" />
+                  <img src={article.image} alt={article.imageLabel} loading="lazy" decoding="async" style={`object-position: ${article.imagePositionX ?? 50}% ${article.imagePositionY ?? 50}%`} />
                 ) : (
                   <span class="cap">{article.imageLabel}</span>
                 )}

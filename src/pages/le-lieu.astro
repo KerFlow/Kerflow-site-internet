@@ -3,6 +3,7 @@
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import SiteVisual from "../components/SiteVisual.astro";
+import StudioNews from "../components/StudioNews.astro";
 import { siteSettings } from "../data/cmsContent.js";
 import { siteVisuals } from "../data/siteVisuals.js";
 
@@ -142,7 +143,7 @@ const foundersContent = siteSettings.leLieu.founders;
         position:relative; overflow:hidden;
         font-family:var(--sans); font-weight:500; font-size:14px; letter-spacing:0.02em;
         display:inline-flex; align-items:center; gap:11px; cursor:pointer; border:0;
-        padding:15px 26px; text-decoration:none; border-radius:0;
+        min-height:46px; padding:0 20px; text-decoration:none; border-radius:0;
         transition:background 260ms ease, color 260ms ease, transform 360ms var(--ease-out, cubic-bezier(0.22, 1, 0.36, 1)), box-shadow 360ms var(--ease-out, cubic-bezier(0.22, 1, 0.36, 1));
       }
       .btn svg{ width:16px; height:16px; }
@@ -151,28 +152,15 @@ const foundersContent = siteSettings.leLieu.founders;
       .btn-light{ background:var(--linen); color:var(--petrol-deep); }
       .btn-light:hover{ background:#fff; }
       .btn-line{
-        position:relative;
-        display:inline-flex;
-        align-items:center;
-        justify-content:center;
-        min-height:46px;
+        position:relative; display:inline-flex; align-items:center; justify-content:center; min-height:46px;
         font-family:var(--mono); font-size:11px; letter-spacing:0.22em; text-transform:uppercase;
-        background:transparent; color:var(--petrol-deep); padding:11px 0; gap:10px;
-        border-bottom:1px solid transparent;
-        cursor:pointer;
-        text-decoration:none;
+        background:transparent; color:var(--petrol-deep); padding:0; gap:10px;
+        border-bottom:1px solid transparent; cursor:pointer; text-decoration:none;
         transition:color 260ms ease, transform 300ms var(--ease-out, cubic-bezier(0.22, 1, 0.36, 1));
       }
       .btn-line::after{
-        content:"";
-        position:absolute;
-        right:0;
-        bottom:4px;
-        left:0;
-        height:1px;
-        background:currentColor;
-        transform:scaleX(1);
-        transform-origin:left;
+        content:""; position:absolute; right:0; bottom:4px; left:0; height:1px; background:currentColor;
+        transform:scaleX(1); transform-origin:left;
         transition:transform 360ms var(--ease-out, cubic-bezier(0.22, 1, 0.36, 1)), background 260ms ease;
       }
       .btn-line:hover,.btn-line:focus-visible{ color:var(--clay); transform:translateY(-1px); }
@@ -298,12 +286,6 @@ const foundersContent = siteSettings.leLieu.founders;
       .nav-submenu a:hover,.nav-submenu a:focus-visible{ background:var(--bone); }
       .nav-submenu a::after{ display:none; }
       .nav-submenu span{ color:var(--granite); font-family:var(--mono); font-size:9px; letter-spacing:0.16em; text-transform:uppercase; }
-      .reserve-link{
-        flex:0 0 auto; padding:12px 20px; background:var(--petrol); color:var(--linen);
-        font-family:var(--mono); font-size:11px; letter-spacing:0.22em; text-transform:uppercase;
-        text-decoration:none; transition:background 260ms ease, color 260ms ease, transform 360ms var(--ease-out, cubic-bezier(0.22, 1, 0.36, 1)), box-shadow 360ms var(--ease-out, cubic-bezier(0.22, 1, 0.36, 1));
-      }
-      .reserve-link:hover,.reserve-link:focus-visible{ background:var(--clay); transform:translateY(-2px); box-shadow:0 14px 26px rgba(14,42,44,0.16); }
       .header-actions{ display:flex; flex:0 0 auto; align-items:center; gap:12px; }
       .menu-toggle{
         display:none; width:46px; height:46px; flex:0 0 auto; place-items:center;
@@ -336,7 +318,6 @@ const foundersContent = siteSettings.leLieu.founders;
       @media (max-width:760px){
         .site-header{ align-items:center; gap:14px; }
         .header-actions{ gap:8px; }
-        .reserve-link{ padding:10px 14px; font-size:10px; }
         .menu-toggle{ width:42px; height:42px; }
       }
       
@@ -758,11 +739,11 @@ const foundersContent = siteSettings.leLieu.founders;
       .team.cols-3{ grid-template-columns:repeat(3,1fr); }
       .person{ display:flex; flex-direction:column; gap:0; background:var(--paper); border:1px solid var(--rule); }
       .person .ph{ width:100%; aspect-ratio:3/4; }
-      .person .p-body{ padding:22px 22px 24px; display:flex; flex-direction:column; gap:8px; }
+      .person .p-body{ flex:1; padding:22px 22px 24px; display:flex; flex-direction:column; gap:8px; }
       .person .p-name{ font-family:var(--serif); font-weight:400; font-size:22px; line-height:1.05; margin:0; font-variation-settings:"opsz" 144; }
       .person .p-role{ font-family:var(--mono); font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:var(--accent-ink); }
       .person .p-desc{ font-size:13.5px; line-height:1.55; color:var(--granite); margin:6px 0 0; }
-      .person .p-links{ margin-top:12px; padding-top:12px; border-top:1px solid var(--rule-soft); display:flex; gap:16px; }
+      .person .p-links{ margin-top:auto; padding-top:12px; border-top:1px solid var(--rule-soft); display:flex; gap:16px; }
       .person .p-links a{ font-family:var(--mono); font-size:10px; letter-spacing:0.16em; text-transform:uppercase; text-decoration:none; color:var(--petrol); }
       .person .p-links a:hover{ color:var(--clay); }
       .founders-team{ grid-template-columns:repeat(2,minmax(0,1fr)); }
@@ -935,6 +916,7 @@ const foundersContent = siteSettings.leLieu.founders;
     </style>
   </head>
   <body class="page wrapped-sections">
+    <StudioNews />
     <SiteHeader />
     
     <!-- ===================== HERO ===================== -->

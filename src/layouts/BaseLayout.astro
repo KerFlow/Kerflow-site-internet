@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import CookieConsent from "../components/CookieConsent.astro";
+import StudioNews from "../components/StudioNews.astro";
 
 const {
   title = "KerFlow Studio - Maison d'accompagnements & soins à Clamart",
@@ -21,6 +22,7 @@ const {
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
   <body>
+    <StudioNews />
     <slot />
     <CookieConsent />
     <script>

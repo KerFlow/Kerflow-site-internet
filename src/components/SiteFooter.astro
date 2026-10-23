@@ -5,36 +5,44 @@
             <img class="footer-logo" src="/assets/logos/kerflow-solo-web.png" width="1200" height="226" alt="KerFlow" loading="eager" decoding="async" />
           </a>
           <p>Maison de mouvement, mieux-être et prévention-santé.<br>169 avenue Jean Jaurès - 92140 Clamart</p>
+          <a class="footer-instagram" href="https://www.instagram.com/kerflow.studio/?hl=fr" target="_blank" rel="noopener noreferrer" aria-label="KerFlow sur Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect>
+              <circle cx="12" cy="12" r="4"></circle>
+              <circle class="instagram-dot" cx="17.6" cy="6.8" r="1"></circle>
+            </svg>
+          </a>
         </div>
         <div class="footer-nav">
           <div>
-            <h4>Pratiquer</h4>
+            <h4>Bouger</h4>
             <a href="/cours-planning/">Cours & tarifs</a>
-            <a href="/cours-planning/#tarifs">Tarifs & carnets</a>
-            <a href="/faq/#premiere">Première séance</a>
             <a href="/cours-planning/">Réserver un cours</a>
+            <a href="/cours-planning/#equipe">Les intervenantes</a>
           </div>
           <div>
-            <h4>Accompagnements & Soins</h4>
+            <h4>Prendre soin de soi</h4>
             <a href="/accompagnements-sante-soins/">Accompagnement et soins</a>
-            <a href="/accompagnements-sante-soins/#kerflow-consult">KerFlow Consult</a>
-            <a href="/accompagnements-sante-soins/#kerflow-rituel">KerFlow Rituel</a>
             <a href="/contact/">Prendre rendez-vous</a>
           </div>
           <div>
-            <h4>La maison</h4>
+            <h4>La vie de la maison</h4>
             <a href="/le-lieu/">Le lieu</a>
-            <a href="/#charte">Charte de la maison</a>
-            <a href="/louer-un-espace/">Louer un espace</a>
             <a href="/ateliers-ressources/">Ateliers & ressources</a>
+            <a href="/louer-un-espace/">Louer un espace</a>
+          </div>
+          <div>
+            <h4>À votre écoute</h4>
             <a href="/contact/">Contact</a>
-            <a href="/contact/#newsletter">Newsletter</a>
+            <a href="/faq/">FAQ</a>
+            <a href="/blog/">Blog</a>
+            <a href="/contact/#newsletter">Gazette</a>
           </div>
         </div>
       </div>
       <div class="footer-bottom mono">
         <span>© 2026 KerFlow - Clamart - Maison de mouvement, mieux être et de prévention santé</span>
-        <span><a href="https://www.instagram.com/kerflow.studio/?hl=fr">Instagram</a><a href="/faq/">FAQ</a><a href="/blog/">Blog</a><a href="/mentions-legales/">Mentions légales</a><a href="/confidentialite/">Confidentialité</a></span>
+        <span><a href="/mentions-legales/">Mentions légales</a><a href="/confidentialite/">Confidentialité</a></span>
       </div>
     </footer>
 
@@ -57,7 +65,7 @@
 
   .footer .footer-logo-link {
     width: clamp(150px, 16vw, 220px);
-    margin: -12px 0 8px -10px;
+    margin: 0 0 8px;
   }
 
   .footer .footer-logo {
@@ -79,16 +87,52 @@
 
   .footer-nav {
     display: grid;
-    grid-template-columns: repeat(3, max-content);
-    column-gap: clamp(44px, 5.4vw, 88px);
+    grid-template-columns: repeat(4, minmax(0, max-content));
+    column-gap: clamp(20px, 2.8vw, 42px);
     justify-self: end;
   }
 
+  .footer-nav > div {
+    min-width: 0;
+  }
+
   .footer p {
-    margin: 22px 0 0;
+    margin: 14px 0 0;
     max-width: 250px;
     color: var(--granite-500);
     font-size: 13.5px;
+  }
+
+  .footer .footer-instagram {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 34px;
+    height: 34px;
+    margin: 12px 0 0;
+    padding: 0;
+    color: rgba(64, 78, 75, 0.58);
+    text-decoration: none;
+    transition: color 220ms ease;
+  }
+
+  .footer .footer-instagram svg {
+    width: 21px;
+    height: 21px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+  }
+
+  .footer .footer-instagram .instagram-dot {
+    fill: currentColor;
+    stroke: none;
+  }
+
+  .footer .footer-instagram:hover,
+  .footer .footer-instagram:focus-visible {
+    color: var(--clay);
+    text-decoration: none;
   }
 
   .footer h4 {
@@ -102,7 +146,7 @@
     text-transform: uppercase;
   }
 
-  .footer-grid a:not(.brand) {
+  .footer-grid a:not(.brand):not(.footer-instagram) {
     position: relative;
     display: block;
     width: fit-content;
@@ -112,7 +156,7 @@
     text-decoration: none;
   }
 
-  .footer-grid a:not(.brand)::after,
+  .footer-grid a:not(.brand):not(.footer-instagram)::after,
   .footer-bottom a::after {
     content: "";
     position: absolute;
@@ -126,15 +170,15 @@
     transition: transform 260ms ease;
   }
 
-  .footer-grid a:not(.brand):hover,
-  .footer-grid a:not(.brand):focus-visible,
+  .footer-grid a:not(.brand):not(.footer-instagram):hover,
+  .footer-grid a:not(.brand):not(.footer-instagram):focus-visible,
   .footer-bottom a:hover,
   .footer-bottom a:focus-visible {
     color: var(--clay);
   }
 
-  .footer-grid a:not(.brand):hover::after,
-  .footer-grid a:not(.brand):focus-visible::after,
+  .footer-grid a:not(.brand):not(.footer-instagram):hover::after,
+  .footer-grid a:not(.brand):not(.footer-instagram):focus-visible::after,
   .footer-bottom a:hover::after,
   .footer-bottom a:focus-visible::after {
     transform: scaleX(1);
@@ -173,8 +217,9 @@
     }
 
     .footer-nav {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       column-gap: clamp(24px, 4vw, 44px);
+      row-gap: 32px;
       justify-self: stretch;
     }
   }
@@ -187,7 +232,7 @@
 
     .footer .footer-logo-link {
       width: min(180px, 58vw);
-      margin: -10px 0 6px -8px;
+      margin: 0 0 6px;
     }
 
     .footer-bottom,

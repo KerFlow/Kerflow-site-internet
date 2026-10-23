@@ -1,6 +1,7 @@
 ---
 import { blogSettings, workshops } from "../../data/cmsContent.js";
 import { featuredBlogArticles } from "../../data/blogArticles.js";
+import WorkshopCard from "../WorkshopCard.astro";
 
 const featuredArticle =
   featuredBlogArticles.find((article) => article.slug === blogSettings.featuredArticleSlug) ??
@@ -18,40 +19,14 @@ const featuredArticle =
 
         <div class="workshop-grid" aria-label="Ateliers du mois">
           {workshops.map((workshop) => (
-            <article class="workshop-card">
-              <a class="workshop-card-image" href={`/ateliers/${workshop.slug}/`} aria-label={`Découvrir ${workshop.title}`}>
-                <div class={`photo ${workshop.imageClass} ${workshop.image ? "has-upload" : ""}`}>
-                  {workshop.image ? (
-                    <img src={workshop.image} alt={workshop.imageLabel || workshop.title} loading="lazy" decoding="async" />
-                  ) : (
-                    <span>{workshop.imageLabel}</span>
-                  )}
-                </div>
-              </a>
-              <div>
-                <p class="mini clay">{workshop.date} - {workshop.time}</p>
-                <h3><a href={`/ateliers/${workshop.slug}/`}>{workshop.title}</a></h3>
-                <p>{workshop.summary}</p>
-                <footer>
-                  <span class="workshop-meta">{workshop.duration} - {workshop.price}</span>
-                  <div class="workshop-card-actions">
-                    <a class="workshop-details" href={`/ateliers/${workshop.slug}/`}>Découvrir l'atelier <span aria-hidden="true">→</span></a>
-                    {workshop.bookingRequired !== false ? (
-                      <a class="workshop-booking" href={workshop.ctaUrl}>{workshop.ctaLabel} <span aria-hidden="true">→</span></a>
-                    ) : (
-                      <span class="workshop-no-booking">Sans réservation</span>
-                    )}
-                  </div>
-                </footer>
-              </div>
-            </article>
+            <WorkshopCard workshop={workshop} />
           ))}
         </div>
 
         <article class="editorial-feature" aria-label="Contenu éditorial mis en avant">
           <div class={`photo ${featuredArticle.imageClass} ${featuredArticle.visualMode === "image" && featuredArticle.image ? "has-upload" : ""}`}>
             {featuredArticle.visualMode === "image" && featuredArticle.image ? (
-              <img src={featuredArticle.image} alt={featuredArticle.imageLabel} loading="lazy" decoding="async" />
+              <img src={featuredArticle.image} alt={featuredArticle.imageLabel} loading="lazy" decoding="async" style={`object-position: ${featuredArticle.imagePositionX ?? 50}% ${featuredArticle.imagePositionY ?? 50}%`} />
             ) : (
               <span>{featuredArticle.imageLabel}</span>
             )}

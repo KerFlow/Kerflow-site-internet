@@ -1,5 +1,22 @@
 import { collection, config, fields } from "@keystatic/core";
 
+const imagePositionFields = {
+  imagePositionX: fields.number({
+    label: "Cadrage horizontal (%)",
+    defaultValue: 50,
+    step: 1,
+    validation: { min: 0, max: 100 },
+    description: "0 = gauche, 50 = centré, 100 = droite.",
+  }),
+  imagePositionY: fields.number({
+    label: "Cadrage vertical (%)",
+    defaultValue: 50,
+    step: 1,
+    validation: { min: 0, max: 100 },
+    description: "0 = haut, 50 = centré, 100 = bas.",
+  }),
+};
+
 const siteVisualField = (label: string) =>
   fields.object(
     {
@@ -22,6 +39,7 @@ const siteVisualField = (label: string) =>
         publicPath: "/uploads/site/",
         description: "Utilisée si le type de visuel est « Photo importée ».",
       }),
+      ...imagePositionFields,
       imageClass: fields.select({
         label: "Couleur de l'aplat",
         defaultValue: "t-petrol",
@@ -117,6 +135,7 @@ export default config({
           publicPath: "/uploads/blog/",
           description: "Utilisée si le type de visuel est « Photo importée ».",
         }),
+        ...imagePositionFields,
         imageClass: fields.select({
           label: "Couleur de l'aplat",
           defaultValue: "t-sand",
@@ -222,6 +241,7 @@ export default config({
           publicPath: "/uploads/people/",
           description: "Utilisée si le type de visuel est « Photo importée ».",
         }),
+        ...imagePositionFields,
         imageClass: fields.select({
           label: "Aplat / visuel",
           defaultValue: "foam",
@@ -428,6 +448,7 @@ export default config({
           publicPath: "/uploads/workshops/",
           description: "Photo utilisée sur la page d'accueil et la page de l'atelier.",
         }),
+        ...imagePositionFields,
         imageLabel: fields.text({
           label: "Repère visuel",
           validation: { isRequired: true },

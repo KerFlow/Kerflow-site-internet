@@ -26,7 +26,7 @@ const coconPeople = peopleForSpace("le-cocon");
           </div>
         </div>
         <aside>
-          <p>Deux manières complémentaires de prendre soin de soi : l'accompagnement individuel et le soin du corps. Une approche douce, sérieuse, jamais culpabilisante.</p>
+          <p>Deux espaces complémentaires, <em>La Bulle</em> pour l'accompagnement, <em>Le Cocon</em> pour le soin du corps. Une approche douce, sérieuse, jamais culpabilisante.</p>
         </aside>
       </div>
     </section>
@@ -40,13 +40,13 @@ const coconPeople = peopleForSpace("le-cocon");
         </div>
         <div class="pv-choice-grid">
           <a href="#kerflow-consult" class="pv-choice pv-consult">
-            <span>KerFlow Consult</span>
+            <span>La Bulle</span>
             <h3>Accompagnement</h3>
             <p>Des consultations individuelles autour de la prévention santé et du mieux-être : alimentation, sommeil, gestion du stress, équilibre de vie ou santé de la femme.</p>
             <strong>Découvrir →</strong>
           </a>
           <a href="#kerflow-rituel" class="pv-choice pv-rituel-card">
-            <span>KerFlow Rituel</span>
+            <span>Le Cocon</span>
             <h3>Soin du corps</h3>
             <p>Des soins manuels pour prendre soin de son corps : massages bien-être, massage prénatal, drainage lymphatique, fasciathérapie et autres pratiques.</p>
             <strong>Découvrir →</strong>
@@ -95,7 +95,7 @@ const coconPeople = peopleForSpace("le-cocon");
           {bullePeople.map((person) => (
             <article>
               <div class={`pv-person-media pv-${person.imageClass} ${person.visualMode === "image" && person.image ? "has-upload" : ""}`}>
-                {person.visualMode === "image" && person.image ? <img src={person.image} alt={person.imageLabel} loading="lazy" decoding="async" /> : <span>{person.imageLabel}</span>}
+                {person.visualMode === "image" && person.image ? <img src={person.image} alt={person.imageLabel} loading="lazy" decoding="async" style={`object-position: ${person.imagePositionX ?? 50}% ${person.imagePositionY ?? 50}%`} /> : <span>{person.imageLabel}</span>}
               </div>
               <div><h3>{person.name}</h3><p class="pv-role">{person.specialty}</p><p>{person.bio}</p><div><a href={person.primaryLinkUrl}>{person.primaryLinkLabel}</a><a href={person.secondaryLinkUrl}>{person.secondaryLinkLabel}</a></div></div>
             </article>
@@ -130,7 +130,7 @@ const coconPeople = peopleForSpace("le-cocon");
           {coconPeople.map((person) => (
             <article>
               <div class={`pv-person-media pv-${person.imageClass} ${person.visualMode === "image" && person.image ? "has-upload" : ""}`}>
-                {person.visualMode === "image" && person.image ? <img src={person.image} alt={person.imageLabel} loading="lazy" decoding="async" /> : <span>{person.imageLabel}</span>}
+                {person.visualMode === "image" && person.image ? <img src={person.image} alt={person.imageLabel} loading="lazy" decoding="async" style={`object-position: ${person.imagePositionX ?? 50}% ${person.imagePositionY ?? 50}%`} /> : <span>{person.imageLabel}</span>}
               </div>
               <div><h3>{person.name}</h3><p class="pv-role pv-role-rituel">{person.specialty}</p><p>{person.bio}</p><div><a href={person.primaryLinkUrl}>{person.primaryLinkLabel}</a><a href={person.secondaryLinkUrl}>{person.secondaryLinkLabel}</a></div></div>
             </article>

@@ -49,7 +49,7 @@ const articleSections = article.sections.map((section) => ({
             </div>
             <div class={`ph article-photo ${article.imageClass} ${article.visualMode === "image" && article.image ? "has-upload" : ""}`}>
               {article.visualMode === "image" && article.image ? (
-                <img src={article.image} alt={article.imageLabel} loading="eager" decoding="async" />
+                <img src={article.image} alt={article.imageLabel} loading="eager" decoding="async" style={`object-position: ${article.imagePositionX ?? 50}% ${article.imagePositionY ?? 50}%`} />
               ) : (
                 <span class="cap">{article.imageLabel}</span>
               )}
@@ -88,7 +88,7 @@ const articleSections = article.sections.map((section) => ({
             <a href={`/blog/${item.slug}/`} class="art">
               <div class={`ph ${item.imageClass} ${item.visualMode === "image" && item.image ? "has-upload" : ""}`}>
                 {item.visualMode === "image" && item.image ? (
-                  <img src={item.image} alt={item.imageLabel} loading="lazy" decoding="async" />
+                  <img src={item.image} alt={item.imageLabel} loading="lazy" decoding="async" style={`object-position: ${item.imagePositionX ?? 50}% ${item.imagePositionY ?? 50}%`} />
                 ) : (
                   <span class="cap">{item.imageLabel}</span>
                 )}

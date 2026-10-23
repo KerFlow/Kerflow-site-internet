@@ -2,13 +2,15 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
+import WorkshopCardActions from "../components/WorkshopCardActions.astro";
 import { workshops } from "../data/cmsContent.js";
 import { archivedBlogArticles, featuredBlogArticles } from "../data/blogArticles.js";
 import { HELLORESA_PLANNING_URL } from "../config/booking.js";
 
 const featuredWorkshop = workshops.find((workshop) => workshop.featured) ?? workshops[0];
-const secondaryWorkshops = workshops.filter((workshop) => workshop !== featuredWorkshop).slice(0, 2);
-const miniWorkshops = workshops.filter((workshop) => workshop !== featuredWorkshop).slice(2, 4);
+const cardWorkshops = workshops.filter((workshop) => workshop !== featuredWorkshop);
+const secondaryWorkshops = cardWorkshops.slice(0, 2);
+const miniWorkshops = cardWorkshops.slice(2, 4);
 const journalArticles = featuredBlogArticles.slice(0, 3);
 const archivedArticles = archivedBlogArticles.slice(0, 4);
 const archivedEvents = [
@@ -65,45 +67,58 @@ const archivedEvents = [
       <div class="workshops-wrap">
         <div class="planning-cards-head">
           <div>
-            <p class="eyebrow">01 - Événements à venir</p>
+            <p class="eyebrow">01 - Évènement à venir</p>
             <h2>Au-delà<br /><em>des cours.</em></h2>
           </div>
           <div>
             <p>
-              Ateliers pratiques, rencontres, conférences ou expériences ponctuelles : chaque événement possède son propre format
-              et ses modalités d'inscription. Les réservations se font soit sur HelloResa, soit directement auprès de l'intervenant.
-              Les places étant souvent limitées, nous vous conseillons de réserver à l'avance.
+              Ateliers, rencontres et conférences : des formats variés pour découvrir une pratique, approfondir un sujet et échanger.
+              Les modalités d’inscription varient selon l’événement ; les places sont souvent limitées.
             </p>
             <a class="btn-line light" href={HELLORESA_PLANNING_URL} target="_blank" rel="noopener noreferrer">
-              Voir l’agenda et réserver ↗
+              Voir tous les événements ↗
             </a>
           </div>
         </div>
 
         <div class="course-feature-grid">
           {featuredWorkshop && (
-            <article class="course-card course-card-feature" data-event-topic={featuredWorkshop.title}>
+            <article class="course-card course-card-feature workshop-card" data-event-topic={featuredWorkshop.title}>
               <div class="course-card-copy">
-                <p class="course-kicker">↘ À la une ce mois-ci</p>
-                <h3>{featuredWorkshop.title}<br /><em>{featuredWorkshop.date}</em></h3>
-                <p>{featuredWorkshop.time} · {featuredWorkshop.duration} · {featuredWorkshop.description}</p>
+                <h3>{featuredWorkshop.title}</h3>
+                <p class="course-feature-date">{featuredWorkshop.date} · {featuredWorkshop.time}</p>
+                <p>{featuredWorkshop.summary}</p>
                 <footer>
-                  <a href={featuredWorkshop.ctaUrl}>{featuredWorkshop.ctaLabel} →</a>
+                  <span>{featuredWorkshop.duration} · {featuredWorkshop.price}</span>
+                  <WorkshopCardActions workshop={featuredWorkshop} />
                 </footer>
               </div>
-              <div class={`photo ${featuredWorkshop.imageClass}`}><span>{featuredWorkshop.imageLabel}</span></div>
+              <div class={`photo ${featuredWorkshop.imageClass} ${featuredWorkshop.image ? "has-upload" : ""}`}>
+                {featuredWorkshop.image ? (
+                  <img src={featuredWorkshop.image} alt={featuredWorkshop.imageLabel || featuredWorkshop.title} loading="lazy" decoding="async" style={`object-position: ${featuredWorkshop.imagePositionX ?? 50}% ${featuredWorkshop.imagePositionY ?? 50}%`} />
+                ) : (
+                  <span>{featuredWorkshop.imageLabel || featuredWorkshop.title}</span>
+                )}
+              </div>
             </article>
           )}
 
           {secondaryWorkshops.map((workshop) => (
-            <article class="course-card course-card-photo" data-event-topic={workshop.title}>
-              <div class={`photo ${workshop.imageClass}`}><span>{workshop.imageLabel}</span></div>
+            <article class="course-card course-card-photo workshop-card" data-event-topic={workshop.title}>
+              <div class={`photo ${workshop.imageClass} ${workshop.image ? "has-upload" : ""}`}>
+                {workshop.image ? (
+                  <img src={workshop.image} alt={workshop.imageLabel || workshop.title} loading="lazy" decoding="async" style={`object-position: ${workshop.imagePositionX ?? 50}% ${workshop.imagePositionY ?? 50}%`} />
+                ) : (
+                  <span>{workshop.imageLabel || workshop.title}</span>
+                )}
+              </div>
               <div class="course-card-copy">
                 <p class="course-kicker">{workshop.date} · {workshop.time}</p>
                 <h4>{workshop.title}</h4>
-                <p>{workshop.duration} · {workshop.price} · {workshop.description}</p>
+                <p>{workshop.summary}</p>
                 <footer>
-                  <a href={workshop.ctaUrl}>{workshop.ctaLabel} →</a>
+                  <span>{workshop.duration} · {workshop.price}</span>
+                  <WorkshopCardActions workshop={workshop} />
                 </footer>
               </div>
             </article>
@@ -115,7 +130,8 @@ const archivedEvents = [
             <article data-event-topic={workshop.title}>
               <p>{workshop.date} · {workshop.time}</p>
               <h4>{workshop.title}</h4>
-              <a href={workshop.ctaUrl}>{workshop.ctaLabel} →</a>
+              <span>{workshop.duration} · {workshop.price}</span>
+              <WorkshopCardActions workshop={workshop} />
             </article>
           ))}
         </div>
@@ -140,7 +156,7 @@ const archivedEvents = [
             <a href={`/blog/${article.slug}/`} class="art">
               <div class={`ph ${article.imageClass} ${article.visualMode === "image" && article.image ? "has-upload" : ""}`}>
                 {article.visualMode === "image" && article.image ? (
-                  <img src={article.image} alt={article.imageLabel} loading="lazy" decoding="async" />
+                  <img src={article.image} alt={article.imageLabel} loading="lazy" decoding="async" style={`object-position: ${article.imagePositionX ?? 50}% ${article.imagePositionY ?? 50}%`} />
                 ) : (
                   <span class="cap">{article.imageLabel}</span>
                 )}
@@ -210,7 +226,7 @@ const archivedEvents = [
       <div class="workshops-wrap section-pad">
         <div class="news-grid">
           <div>
-            <span class="sec-num">04 - La gazette, dans votre boîte</span>
+            <span class="sec-num">04 - La Gazette dans votre boite</span>
             <h2 class="title">Recevez les <i class="h">rendez-vous</i> & les conseils.</h2>
             <p class="lede">
               Quelques nouvelles du lieu, des rendez-vous à ne pas manquer, des retours d'expérience, des découvertes et des ressources sélectionnées avec soin.
@@ -343,7 +359,8 @@ const archivedEvents = [
     align-items: center;
     justify-content: center;
     border: 1px solid transparent;
-    padding: 13px 22px;
+    min-height: 46px;
+    padding: 0 20px;
     font-family: var(--mono);
     font-size: 11px;
     letter-spacing: 0.22em;
@@ -352,17 +369,8 @@ const archivedEvents = [
     transition: background 260ms ease, color 260ms ease, transform 360ms var(--ease-out, cubic-bezier(0.22, 1, 0.36, 1)), box-shadow 360ms var(--ease-out, cubic-bezier(0.22, 1, 0.36, 1));
   }
 
-  .btn-primary {
-    background: var(--petrol);
-    color: var(--linen);
-  }
-
-  .btn-primary:hover,
-  .btn-primary:focus-visible {
-    background: var(--clay);
-    transform: translateY(-2px);
-    box-shadow: 0 14px 26px rgba(14, 42, 44, 0.16);
-  }
+  .btn-primary { background: var(--petrol); color: var(--linen); }
+  .btn-primary:hover, .btn-primary:focus-visible { background: var(--clay); transform: translateY(-2px); box-shadow: 0 14px 26px rgba(14, 42, 44, 0.16); }
 
   .btn-line {
     position: relative;
@@ -371,7 +379,6 @@ const archivedEvents = [
     color: var(--petrol-deep);
     padding-inline: 0;
   }
-
   .btn-line::after {
     content: "";
     position: absolute;
@@ -384,19 +391,8 @@ const archivedEvents = [
     transform-origin: left;
     transition: transform 360ms var(--ease-out, cubic-bezier(0.22, 1, 0.36, 1)), background 260ms ease;
   }
-
-  .btn-line:hover,
-  .btn-line:focus-visible {
-    background: transparent;
-    color: var(--clay);
-    transform: translateY(-1px);
-    box-shadow: none;
-  }
-
-  .btn-line:hover::after,
-  .btn-line:focus-visible::after {
-    transform: scaleX(0.28);
-  }
+  .btn-line:hover, .btn-line:focus-visible { background: transparent; color: var(--clay); transform: translateY(-1px); box-shadow: none; }
+  .btn-line:hover::after, .btn-line:focus-visible::after { transform: scaleX(0.28); }
 
   .ic {
     width: 22px;
@@ -461,6 +457,112 @@ const archivedEvents = [
   #agenda.events-planning {
     background: var(--paper);
     padding: var(--site-section-y) 0;
+  }
+
+  #agenda .planning-cards-head {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+    gap: clamp(32px, 6vw, 88px);
+    align-items: start;
+  }
+
+  #agenda .planning-cards-head > div:last-child {
+    width: min(100%, 480px);
+    justify-self: end;
+  }
+
+  #agenda .planning-cards-head p:not(.eyebrow) {
+    max-width: none;
+  }
+
+  #agenda .course-card-photo footer span {
+    color: var(--granite-500);
+    letter-spacing: 0.08em;
+  }
+
+  #agenda .course-card-feature .course-feature-date {
+    flex: initial;
+    margin: -4px 0 0;
+    color: var(--studio-500);
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+
+  #agenda .course-card-photo .course-kicker {
+    margin-bottom: 6px;
+  }
+
+  #agenda .course-card-photo .course-card-copy {
+    gap: 14px;
+  }
+
+  #agenda .course-card-feature {
+    min-height: 500px;
+  }
+
+  #agenda .course-card-feature.workshop-card {
+    display: grid;
+    border-radius: 6px;
+    border-color: rgba(31, 38, 34, 0.12);
+    background: var(--studio-100);
+  }
+
+  #agenda .course-card-feature.workshop-card h3 {
+    font-size: 40px;
+    line-height: 1;
+  }
+
+  #agenda .course-card-feature.workshop-card > .photo {
+    height: 100%;
+    aspect-ratio: auto;
+  }
+
+  #agenda .course-card-photo {
+    min-height: 500px;
+  }
+
+  #agenda .course-card-photo.workshop-card {
+    display: flex;
+    border-radius: 6px;
+    background: var(--linen);
+  }
+
+  #agenda .course-card-photo.workshop-card > .photo {
+    aspect-ratio: 3 / 2;
+  }
+
+  #agenda .course-card-photo.workshop-card > .course-card-copy {
+    padding: 22px 24px 24px;
+  }
+
+  #agenda .events-mini-grid article {
+    border-radius: 6px;
+  }
+
+  #agenda .workshop-card footer {
+    display: grid;
+    justify-content: stretch;
+    gap: 12px;
+    letter-spacing: normal;
+  }
+
+  #agenda .course-card-feature.workshop-card footer {
+    padding-top: 14px;
+  }
+
+  #agenda .workshop-card-actions {
+    justify-content: flex-start;
+  }
+
+  #agenda .course-card-photo footer span {
+    max-width: none;
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.4;
+    text-transform: none;
   }
 
   #agenda .eyebrow,
@@ -831,6 +933,11 @@ const archivedEvents = [
 
     #agenda .planning-cards-head h2 {
       font-size: clamp(36px, 4.8vw, 64px);
+    }
+
+    #agenda .course-card-feature,
+    #agenda .course-card-photo {
+      min-height: 0;
     }
 
     .event,

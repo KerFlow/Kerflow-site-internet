@@ -478,7 +478,8 @@ const rentalPdfLink = (spaceKey) => ({
     align-items: center;
     justify-content: center;
     border: 1px solid transparent;
-    padding: 13px 22px;
+    min-height: 46px;
+    padding: 0 20px;
     font-family: var(--mono);
     font-size: 11px;
     letter-spacing: 0.22em;
@@ -486,27 +487,9 @@ const rentalPdfLink = (spaceKey) => ({
     text-transform: uppercase;
     transition: background 260ms ease, color 260ms ease, transform 360ms var(--ease-out, cubic-bezier(0.22, 1, 0.36, 1)), box-shadow 360ms var(--ease-out, cubic-bezier(0.22, 1, 0.36, 1));
   }
-
-  .btn-primary {
-    background: var(--petrol);
-    color: var(--linen);
-  }
-
-  .btn-primary:hover,
-  .btn-primary:focus-visible {
-    background: var(--clay);
-    transform: translateY(-2px);
-    box-shadow: 0 14px 26px rgba(14, 42, 44, 0.16);
-  }
-
-  .btn-line {
-    position: relative;
-    border-bottom: 1px solid transparent;
-    background: transparent;
-    color: var(--petrol-deep);
-    padding-inline: 0;
-  }
-
+  .btn-primary { background: var(--petrol); color: var(--linen); }
+  .btn-primary:hover, .btn-primary:focus-visible { background: var(--clay); transform: translateY(-2px); box-shadow: 0 14px 26px rgba(14, 42, 44, 0.16); }
+  .btn-line { position: relative; border-bottom: 1px solid transparent; background: transparent; color: var(--petrol-deep); padding-inline: 0; }
   .btn-line::after {
     content: "";
     position: absolute;
@@ -519,11 +502,7 @@ const rentalPdfLink = (spaceKey) => ({
     transform-origin: left;
     transition: transform 360ms var(--ease-out, cubic-bezier(0.22, 1, 0.36, 1)), background 260ms ease;
   }
-
-  .btn-line:hover::after,
-  .btn-line:focus-visible::after {
-    transform: scaleX(0.28);
-  }
+  .btn-line:hover::after, .btn-line:focus-visible::after { transform: scaleX(0.28); }
 
   .ic {
     width: 22px;
