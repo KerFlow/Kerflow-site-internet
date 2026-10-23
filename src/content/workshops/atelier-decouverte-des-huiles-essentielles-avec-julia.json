@@ -5,7 +5,14 @@
   "featured": false,
   "date": "Dimanche 15 novembre",
   "time": "10h",
-  "description": "A venir",
+  "sections": [
+    {
+      "heading": "À propos de l’atelier",
+      "paragraphs": [
+        "A venir"
+      ]
+    }
+  ],
   "summary": "Découvrez les huiles essentielles et leurs usages avec Julia, lors d’un atelier ouvert à toutes et tous.",
   "duration": "Le temps que vous voulez !",
   "price": "Entrée libre",

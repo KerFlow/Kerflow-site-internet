@@ -2,13 +2,13 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
-import { featuredBlogArticles } from "../data/blogArticles.js";
+import { blogArticles, featuredBlogArticles } from "../data/blogArticles.js";
 import { blogSettings } from "../data/cmsContent.js";
 
-const blogFilters = ["Tous", ...new Set(featuredBlogArticles.map((article) => article.tag))];
+const blogFilters = ["Tous", ...new Set(blogArticles.map((article) => article.tag))];
 const articleDuMoment =
-  featuredBlogArticles.find((article) => article.slug === blogSettings.featuredArticleSlug) ??
-  featuredBlogArticles[0];
+  blogArticles.find((article) => article.slug === blogSettings.featuredArticleSlug) ??
+  featuredBlogArticles[0] ?? blogArticles[0];
 ---
 
 <BaseLayout
@@ -51,7 +51,7 @@ const articleDuMoment =
         <article class="blog-editorial-feature" aria-label="Article du moment">
           <div class={`photo blog-feature-photo ${articleDuMoment.imageClass} ${articleDuMoment.visualMode === "image" && articleDuMoment.image ? "has-upload" : ""}`}>
             {articleDuMoment.visualMode === "image" && articleDuMoment.image ? (
-              <img src={articleDuMoment.image} alt={articleDuMoment.imageLabel} loading="lazy" decoding="async" style={`object-position: ${articleDuMoment.imagePositionX ?? 50}% ${articleDuMoment.imagePositionY ?? 50}%`} />
+              <img src={articleDuMoment.image} alt={articleDuMoment.imageLabel} loading="lazy" decoding="async" style={`object-position: ${articleDuMoment.imageCrops?.featured?.x ?? articleDuMoment.imagePositionX ?? 50}% ${articleDuMoment.imageCrops?.featured?.y ?? articleDuMoment.imagePositionY ?? 50}%`} />
             ) : (
               <span>{articleDuMoment.imageLabel}</span>
             )}
@@ -78,11 +78,11 @@ const articleDuMoment =
         </div>
 
         <div class="articles" data-filter-region="featured" aria-live="polite">
-          {featuredBlogArticles.map((article) => (
+          {blogArticles.map((article) => (
             <a href={`/blog/${article.slug}/`} class="art" data-blog-item data-blog-tag={article.tag}>
               <div class={`ph ${article.imageClass} ${article.visualMode === "image" && article.image ? "has-upload" : ""}`}>
                 {article.visualMode === "image" && article.image ? (
-                  <img src={article.image} alt={article.imageLabel} loading="lazy" decoding="async" style={`object-position: ${article.imagePositionX ?? 50}% ${article.imagePositionY ?? 50}%`} />
+                  <img src={article.image} alt={article.imageLabel} loading="lazy" decoding="async" style={`object-position: ${article.imageCrops?.list?.x ?? article.imagePositionX ?? 50}% ${article.imageCrops?.list?.y ?? article.imagePositionY ?? 50}%`} />
                 ) : (
                   <span class="cap">{article.imageLabel}</span>
                 )}

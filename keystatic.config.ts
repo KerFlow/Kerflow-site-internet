@@ -17,6 +17,35 @@ const imagePositionFields = {
   }),
 };
 
+const cropPositionField = (label: string) =>
+  fields.object(
+    {
+      x: fields.number({
+        label: "Horizontal (%)",
+        defaultValue: 50,
+        step: 1,
+        validation: { min: 0, max: 100 },
+        description: "0 = gauche, 50 = centré, 100 = droite.",
+      }),
+      y: fields.number({
+        label: "Vertical (%)",
+        defaultValue: 50,
+        step: 1,
+        validation: { min: 0, max: 100 },
+        description: "0 = haut, 50 = centré, 100 = bas.",
+      }),
+    },
+    { label }
+  );
+
+const contextualImageCropField = (usages: Record<string, string>) =>
+  fields.object(
+    Object.fromEntries(
+      Object.entries(usages).map(([key, label]) => [key, cropPositionField(label)])
+    ),
+    { label: "Cadrage selon l'affichage" }
+  );
+
 const siteVisualField = (label: string) =>
   fields.object(
     {
@@ -89,7 +118,7 @@ export default config({
       path: "src/content/blog/*",
       slugField: "title",
       format: "json",
-      columns: ["title", "tag", "date"],
+      columns: ["title", "tag", "date", "archived"],
       schema: {
         title: fields.slug({
           name: {
@@ -101,6 +130,11 @@ export default config({
           label: "Ordre d'affichage",
           defaultValue: 1,
           validation: { isRequired: true },
+        }),
+        archived: fields.checkbox({
+          label: "Placer dans les archives",
+          defaultValue: false,
+          description: "L'article reste accessible et quitte la sélection récente. Les quatre premières entrées selon l'ordre d'affichage apparaissent dans « 03 - Archives ».",
         }),
         tag: fields.text({
           label: "Catégorie",
@@ -136,6 +170,12 @@ export default config({
           description: "Utilisée si le type de visuel est « Photo importée ».",
         }),
         ...imagePositionFields,
+        imageCrops: contextualImageCropField({
+          list: "Carte dans la liste des articles",
+          featured: "Article mis en avant sur la page blog",
+          home: "Article mis en avant sur l’accueil",
+          detail: "Haut de la page de l'article",
+        }),
         imageClass: fields.select({
           label: "Couleur de l'aplat",
           defaultValue: "t-sand",
@@ -222,11 +262,54 @@ export default config({
           label: "Spécialité",
           validation: { isRequired: true },
         }),
-        bio: fields.text({
-          label: "Courte présentation",
+        summary: fields.text({
+          label: "Résumé (cards et introduction du profil)",
           multiline: true,
           validation: { isRequired: true },
         }),
+        approachTitle: fields.text({
+          label: "Première ligne du grand titre",
+          defaultValue: "Prendre le temps",
+          validation: { isRequired: true },
+        }),
+        approachAccent: fields.text({
+          label: "Texte du titre affiché en couleur brique",
+          defaultValue: "de sentir.",
+          description: "Cette partie apparaît en brique sous le titre.",
+          validation: { isRequired: true },
+        }),
+        approachSections: fields.array(
+          fields.object({
+            heading: fields.text({
+              label: "Sous-titre (facultatif)",
+            }),
+            headingStyle: fields.select({
+              label: "Taille du sous-titre",
+              defaultValue: "small",
+              options: [
+                { label: "Petit, en gras", value: "small" },
+                { label: "Grand, mis en avant", value: "large" },
+              ],
+            }),
+            paragraphs: fields.array(
+              fields.text({
+                label: "Paragraphe",
+                multiline: true,
+                validation: { isRequired: true },
+              }),
+              {
+                label: "Paragraphes",
+                itemLabel: (props) => props.value || "Paragraphe",
+                validation: { length: { min: 1 } },
+              }
+            ),
+          }),
+          {
+            label: "Description longue (page intervenante)",
+            itemLabel: (props) => props.fields.heading.value || "Bloc de texte",
+            validation: { length: { min: 1 } },
+          }
+        ),
         visualMode: fields.select({
           label: "Type de visuel",
           defaultValue: "color",
@@ -242,6 +325,12 @@ export default config({
           description: "Utilisée si le type de visuel est « Photo importée ».",
         }),
         ...imagePositionFields,
+        imageCrops: contextualImageCropField({
+          profile: "Grand portrait de la page intervenante",
+          horizontalCard: "Cartes horizontales (autres intervenantes)",
+          portraitCard: "Cartes portrait (Cours et tarifs)",
+          careCard: "Cartes paysage (Accompagnements et soins)",
+        }),
         imageClass: fields.select({
           label: "Aplat / visuel",
           defaultValue: "foam",
@@ -370,7 +459,7 @@ export default config({
       path: "src/content/workshops/*",
       slugField: "title",
       format: "json",
-      columns: ["title", "date", "visible"],
+      columns: ["title", "date", "visible", "archived"],
       schema: {
         title: fields.slug({
           name: {
@@ -386,6 +475,12 @@ export default config({
         visible: fields.checkbox({
           label: "Visible sur le site",
           defaultValue: true,
+          description: "Décochez pour retirer complètement l'atelier du site. Cochez « Archiver » pour le conserver dans les événements passés.",
+        }),
+        archived: fields.checkbox({
+          label: "Placer dans les archives",
+          defaultValue: false,
+          description: "Retire l'atelier des événements à venir. Les quatre premières entrées archivées selon l'ordre d'affichage apparaissent dans « 03 - Archives ».",
         }),
         featured: fields.checkbox({
           label: "Mettre en avant",
@@ -399,11 +494,33 @@ export default config({
           label: "Heure",
           validation: { isRequired: true },
         }),
-        description: fields.text({
-          label: "Description complète",
-          multiline: true,
-          validation: { isRequired: true },
-        }),
+        sections: fields.array(
+          fields.object({
+            heading: fields.text({
+              label: "Titre de section",
+              validation: { isRequired: true },
+            }),
+            paragraphs: fields.array(
+              fields.text({
+                label: "Texte du paragraphe",
+                multiline: true,
+                validation: { isRequired: true },
+              }),
+              {
+                label: "Texte de cette section",
+                description:
+                  "Chaque bloc correspond à un paragraphe affiché sous le titre de section.",
+                itemLabel: (props) => props.value || "Paragraphe",
+                validation: { length: { min: 1 } },
+              }
+            ),
+          }),
+          {
+            label: "Sections",
+            itemLabel: (props) => props.fields.heading.value,
+            validation: { length: { min: 1 } },
+          }
+        ),
         summary: fields.text({
           label: "Résumé court (page d'accueil)",
           description: "Quelques lignes pour présenter l'atelier sur la page d'accueil.",
@@ -449,6 +566,10 @@ export default config({
           description: "Photo utilisée sur la page d'accueil et la page de l'atelier.",
         }),
         ...imagePositionFields,
+        imageCrops: contextualImageCropField({
+          card: "Carte atelier (accueil et liste)",
+          detail: "Grande photo de la page atelier",
+        }),
         imageLabel: fields.text({
           label: "Repère visuel",
           validation: { isRequired: true },
@@ -727,6 +848,26 @@ export default config({
         ),
         care: fields.object(
           {
+            heroCtaLabel: fields.text({
+              label: "Texte du bouton de la Hero",
+              defaultValue: "Prendre RDV",
+              validation: { isRequired: true },
+            }),
+            heroCtaType: fields.select({
+              label: "Destination du bouton de la Hero",
+              defaultValue: "section",
+              options: [
+                { label: "Une section de cette page", value: "section" },
+                { label: "Une page du site", value: "page" },
+                { label: "Un lien externe", value: "external" },
+              ],
+            }),
+            heroCtaUrl: fields.text({
+              label: "Page ou lien du bouton de la Hero",
+              defaultValue: "#comment-reserver",
+              description: "Section : #comment-reserver. Page : /contact/. Lien externe : https://…",
+              validation: { isRequired: true },
+            }),
             overviewBulle: siteVisualField("Prévention santé - La Bulle"),
             overviewCocon: siteVisualField("Prévention santé - Le Cocon"),
             bulleHero: siteVisualField("La Bulle - visuel cabinet"),

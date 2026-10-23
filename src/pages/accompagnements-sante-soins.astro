@@ -3,11 +3,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import SiteVisual from "../components/SiteVisual.astro";
-import { peopleForSpace } from "../data/cmsContent.js";
+import { peopleForSpace, siteSettings } from "../data/cmsContent.js";
 import { siteVisuals } from "../data/siteVisuals.js";
 
 const bullePeople = peopleForSpace("la-bulle");
 const coconPeople = peopleForSpace("le-cocon");
+const heroCta = {
+  label: siteSettings.care?.heroCtaLabel ?? "Prendre RDV",
+  url: siteSettings.care?.heroCtaUrl ?? "#comment-reserver",
+};
 ---
 
 <BaseLayout
@@ -22,7 +26,7 @@ const coconPeople = peopleForSpace("le-cocon");
           <p class="pv-kicker">Hors des cours collectifs</p>
           <h1>Prendre soin<br />de soi<br /><em>autrement.</em></h1>
           <div class="pv-actions">
-            <a href="#comment-reserver" class="btn btn-primary">Prendre RDV <span aria-hidden="true">→</span></a>
+            <a href={heroCta.url} class="btn btn-primary">{heroCta.label} <span aria-hidden="true">→</span></a>
           </div>
         </div>
         <aside>
@@ -93,12 +97,12 @@ const coconPeople = peopleForSpace("le-cocon");
         <div class="pv-team-head"><p>Les intervenant·es de KerFlow Consult</p></div>
         <div class="pv-team">
           {bullePeople.map((person) => (
-            <article>
+            <a class="pv-person-card" href={`/intervenantes/${person.slug}/`} aria-label={`Découvrir le profil de ${person.name.trim()}`}>
               <div class={`pv-person-media pv-${person.imageClass} ${person.visualMode === "image" && person.image ? "has-upload" : ""}`}>
-                {person.visualMode === "image" && person.image ? <img src={person.image} alt={person.imageLabel} loading="lazy" decoding="async" style={`object-position: ${person.imagePositionX ?? 50}% ${person.imagePositionY ?? 50}%`} /> : <span>{person.imageLabel}</span>}
+                {person.visualMode === "image" && person.image ? <img src={person.image} alt={person.imageLabel} loading="lazy" decoding="async" style={`object-position: ${person.imageCrops?.careCard?.x ?? person.imagePositionX ?? 50}% ${person.imageCrops?.careCard?.y ?? person.imagePositionY ?? 50}%`} /> : <span>{person.imageLabel}</span>}
               </div>
-              <div><h3>{person.name}</h3><p class="pv-role">{person.specialty}</p><p>{person.bio}</p><div><a href={person.primaryLinkUrl}>{person.primaryLinkLabel}</a><a href={person.secondaryLinkUrl}>{person.secondaryLinkLabel}</a></div></div>
-            </article>
+              <div class="pv-person-card-copy"><span class="pv-card-tag">{person.specialty.split(/[,–]/)[0].trim()}</span><h3 class="serif">{person.name.trim()}</h3><p class="pv-person-summary">{person.summary ?? ""}</p><span class="pv-card-link">Découvrir son approche →</span></div>
+            </a>
           ))}
         </div>
       </div>
@@ -128,12 +132,12 @@ const coconPeople = peopleForSpace("le-cocon");
         <div class="pv-team-head"><p>Les intervenant·es de KerFlow Rituel</p></div>
         <div class="pv-team">
           {coconPeople.map((person) => (
-            <article>
+            <a class="pv-person-card pv-person-card-rituel" href={`/intervenantes/${person.slug}/`} aria-label={`Découvrir le profil de ${person.name.trim()}`}>
               <div class={`pv-person-media pv-${person.imageClass} ${person.visualMode === "image" && person.image ? "has-upload" : ""}`}>
-                {person.visualMode === "image" && person.image ? <img src={person.image} alt={person.imageLabel} loading="lazy" decoding="async" style={`object-position: ${person.imagePositionX ?? 50}% ${person.imagePositionY ?? 50}%`} /> : <span>{person.imageLabel}</span>}
+                {person.visualMode === "image" && person.image ? <img src={person.image} alt={person.imageLabel} loading="lazy" decoding="async" style={`object-position: ${person.imageCrops?.careCard?.x ?? person.imagePositionX ?? 50}% ${person.imageCrops?.careCard?.y ?? person.imagePositionY ?? 50}%`} /> : <span>{person.imageLabel}</span>}
               </div>
-              <div><h3>{person.name}</h3><p class="pv-role pv-role-rituel">{person.specialty}</p><p>{person.bio}</p><div><a href={person.primaryLinkUrl}>{person.primaryLinkLabel}</a><a href={person.secondaryLinkUrl}>{person.secondaryLinkLabel}</a></div></div>
-            </article>
+              <div class="pv-person-card-copy"><span class="pv-card-tag pv-card-tag-rituel">{person.specialty.split(/[,–]/)[0].trim()}</span><h3 class="serif">{person.name.trim()}</h3><p class="pv-person-summary">{person.summary ?? ""}</p><span class="pv-card-link">Découvrir ses soins →</span></div>
+            </a>
           ))}
         </div>
       </div>
@@ -587,16 +591,25 @@ const coconPeople = peopleForSpace("le-cocon");
   }
 
   .pv-team {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: clamp(18px, 2vw, 28px);
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    padding-bottom: 12px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
   }
 
-  .pv-team article {
-    overflow: hidden;
-    border: 1px solid var(--rule);
-    background: var(--paper);
-  }
+  .pv-person-card { display: flex; flex: 0 0 min(390px, 85%); max-width: 390px; scroll-snap-align: start; overflow: hidden; flex-direction: column; border: 1px solid var(--rule); border-radius: 6px; background: var(--linen); color: inherit; text-decoration: none; transition: border-color 320ms ease, transform 420ms var(--ease-out), box-shadow 420ms var(--ease-out); }
+  .pv-person-card:hover,.pv-person-card:focus-visible { border-color: rgba(160,90,58,.28); box-shadow: 0 20px 40px rgba(31,38,34,.09); transform: translateY(-5px); }
+  .pv-person-card-copy { display: flex; flex: 1; flex-direction: column; padding: 26px 24px 24px; }
+  .pv-person-card-copy h3 { margin: 0 0 14px; color: var(--petrol-deep); font-size: clamp(24px,2vw,30px); font-weight: 400; line-height: 1.06; }
+  .pv-card-tag,.pv-card-link { font-family: var(--mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; }
+  .pv-card-tag { color: var(--consult-ink); }
+  .pv-card-tag-rituel { color: var(--rituel-ink); }
+  .pv-person-summary { display: -webkit-box; overflow: hidden; flex: 1; margin: 0; color: var(--granite-500); font-size: 14px; line-height: 1.58; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
+  .pv-card-link { margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--rule-soft); color: var(--granite-500); transition: color .2s ease; }
+  .pv-person-card:hover .pv-card-link,.pv-person-card:focus-visible .pv-card-link { color: var(--clay); }
 
   .pv-person-media {
     aspect-ratio: 4 / 3;
@@ -606,22 +619,6 @@ const coconPeople = peopleForSpace("le-cocon");
 
   .pv-person-media img {
     object-position: center 32%;
-  }
-
-  .pv-team article > div:last-child {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding: 22px;
-  }
-
-  .pv-team article > div:last-child > div {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    margin-top: 8px;
-    padding-top: 12px;
-    border-top: 1px solid var(--rule-soft);
   }
 
   .pv-team article a {
@@ -695,7 +692,6 @@ const coconPeople = peopleForSpace("le-cocon");
     }
 
     .pv-choice-grid,
-    .pv-team,
     .pv-steps {
       grid-template-columns: 1fr;
     }

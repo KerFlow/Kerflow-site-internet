@@ -6,12 +6,23 @@
     "la-bulle"
   ],
   "specialty": "Sophrologie",
-  "bio": "Sophrologue depuis une dizaine d'année, je vous aide à gérer votre stress et améliorer votre mieux-être. Je suis également  professeur de Yoga Hatha, Yoga Nidra et méditation. ",
   "visualMode": "color",
   "imageClass": "foam",
   "imageLabel": "Nathalie",
   "primaryLinkLabel": "Prendre rendez-vous",
   "primaryLinkUrl": "/contact/",
   "secondaryLinkLabel": "Instagram",
-  "secondaryLinkUrl": "#"
+  "secondaryLinkUrl": "#",
+  "summary": "Sophrologue et professeure de yoga, Nathalie accompagne la gestion du stress et le mieux-être.",
+  "approachTitle": "Prendre le temps",
+  "approachAccent": "de sentir.",
+  "approachSections": [
+    {
+      "heading": "",
+      "headingStyle": "small",
+      "paragraphs": [
+        "Sophrologue depuis une dizaine d'année, je vous aide à gérer votre stress et améliorer votre mieux-être. Je suis également  professeur de Yoga Hatha, Yoga Nidra et méditation."
+      ]
+    }
+  ]
 }

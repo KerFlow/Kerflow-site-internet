@@ -7,12 +7,23 @@
     "atelier"
   ],
   "specialty": "Yoga Gold",
-  "bio": "A venir",
   "visualMode": "color",
   "imageClass": "sand",
   "imageLabel": "[ portrait - praticien ]",
   "primaryLinkLabel": "Prendre rendez-vous",
   "primaryLinkUrl": "/contact/",
   "secondaryLinkLabel": "Site",
-  "secondaryLinkUrl": "#"
+  "secondaryLinkUrl": "#",
+  "summary": "Camille accompagne ses séances de yoga avec une approche attentive et adaptée à chacun.",
+  "approachTitle": "Prendre le temps",
+  "approachAccent": "de sentir.",
+  "approachSections": [
+    {
+      "heading": "",
+      "headingStyle": "small",
+      "paragraphs": [
+        "A venir"
+      ]
+    }
+  ]
 }

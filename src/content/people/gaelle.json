@@ -6,7 +6,6 @@
     "cours"
   ],
   "specialty": "Yoga Flow- Yoga Mama- Napsothérapie",
-  "bio": "Créatrice et cofondatrice de KerFlow, je suis professeure de yoga et praticienne en napsothérapie. J’enseigne un Yoga Flow revisité à travers l’Approche Posturo-Respiratoire (APOR) de la méthode de Gasquet, pour une pratique dynamique, respectueuse du corps et de sa physiologie. Également certifiée de Gasquet en yoga pré et postnatal, j’accompagne les femmes à ces moments particuliers de leur vie.",
   "visualMode": "image",
   "image": "/uploads/people/gaelle/image.jpeg",
   "imageClass": "foam",
@@ -14,5 +13,17 @@
   "primaryLinkLabel": "Prendre rendez-vous",
   "primaryLinkUrl": "ggaudindaprey@gmail.com",
   "secondaryLinkLabel": "Instagram",
-  "secondaryLinkUrl": "#"
+  "secondaryLinkUrl": "#",
+  "summary": "Professeure de Yoga Flow et praticienne en napsothérapie, Gaëlle propose une approche dynamique, respectueuse du corps et de sa physiologie.",
+  "approachTitle": "Prendre le temps",
+  "approachAccent": "de sentir.",
+  "approachSections": [
+    {
+      "heading": "",
+      "headingStyle": "small",
+      "paragraphs": [
+        "Créatrice et cofondatrice de KerFlow, je suis professeure de yoga et praticienne en napsothérapie. J’enseigne un Yoga Flow revisité à travers l’Approche Posturo-Respiratoire (APOR) de la méthode de Gasquet, pour une pratique dynamique, respectueuse du corps et de sa physiologie. Également certifiée de Gasquet en yoga pré et postnatal, j’accompagne les femmes à ces moments particuliers de leur vie."
+      ]
+    }
+  ]
 }

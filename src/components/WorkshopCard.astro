@@ -7,7 +7,7 @@ const { workshop } = Astro.props;
   <a class="workshop-card-image" href={`/ateliers/${workshop.slug}/`} aria-label={`Découvrir ${workshop.title}`}>
     <div class={`photo ${workshop.imageClass} ${workshop.image ? "has-upload" : ""}`}>
       {workshop.image ? (
-        <img src={workshop.image} alt={workshop.imageLabel || workshop.title} loading="lazy" decoding="async" style={`object-position: ${workshop.imagePositionX ?? 50}% ${workshop.imagePositionY ?? 50}%`} />
+        <img src={workshop.image} alt={workshop.imageLabel || workshop.title} loading="lazy" decoding="async" style={`object-position: ${workshop.imageCrops?.card?.x ?? workshop.imagePositionX ?? 50}% ${workshop.imageCrops?.card?.y ?? workshop.imagePositionY ?? 50}%`} />
       ) : (
         <span>{workshop.imageLabel || workshop.title}</span>
       )}

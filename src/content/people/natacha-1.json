@@ -6,7 +6,6 @@
     "le-cocon"
   ],
   "specialty": "Massage californien, massage musculaire suédois, Massage Signature, relaxation coréenne au sol, reflexologie plantaire",
-  "bio": "Après une longue expérience dans la danse et dix années comme coach fitness, j’ai ressenti le besoin de me tourner vers des pratiques plus douces, plus intimes et davantage à l’écoute du corps.\nC’est ainsi que j’ai découvert le massage et ses bienfaits, avant de me former à différentes techniques. Certifiée en massage bien-être depuis 15 ans, j’aime aujourd’hui adapter chaque soin à la personne que je reçois, à ses envies et à ses besoins du moment. Détendre, dénouer les tensions, récupérer ou simplement s’accorder une vraie parenthèse pour soi : je vous accueille avec une approche attentive et personnalisée, dans laquelle le toucher invite peu à peu au relâchement.\nDe ces années de pratique est né mon Massage Signature, un soin sur mesure qui associe différentes techniques pour s’adapter pleinement à vous.\n\nMASSAGE CALIFORNIEN — 1 h\nRelaxant & enveloppant\nDes mouvements longs, fluides et enveloppants pour relâcher les tensions et inviter à une profonde détente.\n\nMASSAGE MUSCULAIRE SUÉDOIS — 1 h\nTonique & décontracturant\nUn massage plus soutenu, particulièrement adapté aux corps sollicités, pour dénouer les tensions musculaires et favoriser la récupération.\n\nMASSAGE SIGNATURE — 1 h\nSur mesure & personnalisé\nLe soin emblématique de Natacha : plusieurs techniques associées et adaptées à vos besoins du moment pour créer un massage véritablement personnalisé.\n\nRELAXATION CORÉENNE AU SOL — 1 h\nLâcher-prise & légèreté\nHabillé(e), au sol, le corps est doucement mobilisé, bercé et étiré pour favoriser le relâchement et une agréable sensation de légèreté.\n\nRÉFLEXOLOGIE PLANTAIRE — 30 min\nDétente & équilibre\nUn soin ciblé des pieds par pressions et stimulations de différentes zones réflexes, pour favoriser la détente et retrouver une sensation d’équilibre.\n",
   "visualMode": "image",
   "image": "/uploads/people/natacha-1/image.jpeg",
   "imageClass": "foam",
@@ -14,5 +13,59 @@
   "primaryLinkLabel": "Prendre rendez-vous",
   "primaryLinkUrl": "https://forms.fillout.com/t/ixQVybjwWkus",
   "secondaryLinkLabel": "Instagram",
-  "secondaryLinkUrl": "https://www.instagram.com/natacha_yoga_zenetsens/"
+  "secondaryLinkUrl": "https://www.instagram.com/natacha_yoga_zenetsens/",
+  "summary": "Certifiée en massage bien-être depuis 15 ans, Natacha adapte chaque soin aux besoins du moment et propose une approche attentive et personnalisée.",
+  "approachTitle": "Prendre le temps",
+  "approachAccent": "de sentir.",
+  "approachSections": [
+    {
+      "heading": "",
+      "headingStyle": "small",
+      "paragraphs": [
+        "Après une longue expérience dans la danse et dix années comme coach fitness, j’ai ressenti le besoin de me tourner vers des pratiques plus douces, plus intimes et davantage à l’écoute du corps.",
+        "C’est ainsi que j’ai découvert le massage et ses bienfaits, avant de me former à différentes techniques. Certifiée en massage bien-être depuis 15 ans, j’aime aujourd’hui adapter chaque soin à la personne que je reçois, à ses envies et à ses besoins du moment. Détendre, dénouer les tensions, récupérer ou simplement s’accorder une vraie parenthèse pour soi : je vous accueille avec une approche attentive et personnalisée, dans laquelle le toucher invite peu à peu au relâchement.",
+        "De ces années de pratique est né mon Massage Signature, un soin sur mesure qui associe différentes techniques pour s’adapter pleinement à vous."
+      ]
+    },
+    {
+      "heading": "Massage californien — 1 h",
+      "headingStyle": "large",
+      "paragraphs": [
+        "Relaxant & enveloppant",
+        "Des mouvements longs, fluides et enveloppants pour relâcher les tensions et inviter à une profonde détente."
+      ]
+    },
+    {
+      "heading": "Massage musculaire suédois — 1 h",
+      "headingStyle": "large",
+      "paragraphs": [
+        "Tonique & décontracturant",
+        "Un massage plus soutenu, particulièrement adapté aux corps sollicités, pour dénouer les tensions musculaires et favoriser la récupération."
+      ]
+    },
+    {
+      "heading": "Massage Signature — 1 h",
+      "headingStyle": "large",
+      "paragraphs": [
+        "Sur mesure & personnalisé",
+        "Le soin emblématique de Natacha : plusieurs techniques associées et adaptées à vos besoins du moment pour créer un massage véritablement personnalisé."
+      ]
+    },
+    {
+      "heading": "Relaxation coréenne au sol — 1 h",
+      "headingStyle": "large",
+      "paragraphs": [
+        "Lâcher-prise & légèreté",
+        "Habillé(e), au sol, le corps est doucement mobilisé, bercé et étiré pour favoriser le relâchement et une agréable sensation de légèreté."
+      ]
+    },
+    {
+      "heading": "Réflexologie plantaire — 30 min",
+      "headingStyle": "large",
+      "paragraphs": [
+        "Détente & équilibre",
+        "Un soin ciblé des pieds par pressions et stimulations de différentes zones réflexes, pour favoriser la détente et retrouver une sensation d’équilibre."
+      ]
+    }
+  ]
 }

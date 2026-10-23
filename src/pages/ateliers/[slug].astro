@@ -3,21 +3,28 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 import WorkshopCard from "../../components/WorkshopCard.astro";
-import { workshops } from "../../data/cmsContent.js";
+import { allVisibleWorkshops } from "../../data/cmsContent.js";
 
 export function getStaticPaths() {
-  return workshops.map((workshop) => ({
+  return allVisibleWorkshops.map((workshop) => ({
     params: { slug: workshop.slug },
     props: { workshop },
   }));
 }
 
 const { workshop } = Astro.props;
-const relatedWorkshops = workshops.filter((item) => item.slug !== workshop.slug).slice(0, 3);
-const paragraphs = workshop.description
-  .split(/\n\s*\n/)
-  .map((paragraph) => paragraph.trim())
-  .filter(Boolean);
+const relatedWorkshops = allVisibleWorkshops.filter((item) => item.slug !== workshop.slug && !item.archived).slice(0, 3);
+const slugifyHeading = (value) =>
+  value
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+const workshopSections = workshop.sections.map((section) => ({
+  ...section,
+  id: slugifyHeading(section.heading),
+}));
 ---
 
 <BaseLayout title={`${workshop.title} - Ateliers KerFlow`} description={workshop.summary}>
@@ -43,7 +50,7 @@ const paragraphs = workshop.description
             </div>
             <div class={`workshop-hero-photo photo ${workshop.imageClass} ${workshop.image ? "has-upload" : ""}`}>
               {workshop.image ? (
-                <img src={workshop.image} alt={workshop.imageLabel || workshop.title} loading="eager" decoding="async" style={`object-position: ${workshop.imagePositionX ?? 50}% ${workshop.imagePositionY ?? 50}%`} />
+                <img src={workshop.image} alt={workshop.imageLabel || workshop.title} loading="eager" decoding="async" style={`object-position: ${workshop.imageCrops?.detail?.x ?? workshop.imagePositionX ?? 50}% ${workshop.imageCrops?.detail?.y ?? workshop.imagePositionY ?? 50}%`} />
               ) : (
                 <span class="cap">{workshop.imageLabel || workshop.title}</span>
               )}
@@ -54,9 +61,18 @@ const paragraphs = workshop.description
 
       <section class="workshop-content" data-screen-label="Atelier - Présentation">
         <div class="workshop-content-inner">
-          <p class="workshop-content-kicker">À propos de l'atelier</p>
+          <nav class="faq-toc workshop-toc" aria-label="Sommaire de l'atelier">
+            {workshopSections.map((section) => (
+              <a href={`#${section.id}`}>{section.heading}</a>
+            ))}
+          </nav>
           <div class="workshop-body">
-            {paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+            {workshopSections.map((section) => (
+              <section id={section.id}>
+                <h2 class="serif">{section.heading}</h2>
+                {section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+              </section>
+            ))}
           </div>
         </div>
       </section>
@@ -69,7 +85,7 @@ const paragraphs = workshop.description
             <span class="sec-num">À découvrir aussi</span>
             <h2 class="serif">Les autres<br /><i>ateliers KerFlow.</i></h2>
           </div>
-          <div class="related-grid">
+          <div class="related-grid workshop-related-grid">
             {relatedWorkshops.map((item) => <WorkshopCard workshop={item} />)}
           </div>
         </div>
@@ -91,7 +107,7 @@ const paragraphs = workshop.description
   .workshop-back:hover span, .workshop-back:focus-visible span { transform: translate(-3px, -1px); }
   .workshop-hero-grid { display: grid; grid-template-columns: minmax(0, 1.18fr) minmax(300px, .82fr); gap: clamp(32px, 5vw, 72px); align-items: end; }
   .workshop-title-block { max-width: 840px; }
-  .workshop-kicker, .workshop-content-kicker, .sec-num { color: var(--blog-accent); font-family: var(--mono); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; }
+  .workshop-kicker, .sec-num { color: var(--blog-accent); font-family: var(--mono); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; }
   .workshop-kicker { margin: 0 0 22px; }
   .workshop-title-block h1 { max-width: 840px; margin: 0; color: var(--petrol-deep); font-family: var(--serif); font-size: clamp(42px, 6vw, 92px); font-weight: 400; font-variation-settings: "opsz" 144; letter-spacing: -.02em; line-height: 1; }
   .workshop-lede { max-width: 720px; margin: clamp(24px, 3vw, 36px) 0 0; color: var(--ink-soft); font-family: var(--serif); font-size: clamp(19px, 1.7vw, 24px); font-weight: 300; line-height: 1.55; }
@@ -104,8 +120,10 @@ const paragraphs = workshop.description
   .workshop-hero-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
   .workshop-content { padding-block: var(--site-section-y); border-top: 1px solid var(--rule); background: var(--linen); }
   .workshop-content-inner { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: clamp(36px, 5vw, 80px); align-items: start; width: 100%; max-width: var(--site-max); margin-inline: auto; padding-inline: var(--site-pad-x); }
-  .workshop-content-kicker { margin: 4px 0 0; }
+  .workshop-toc { padding-top: 4px; }
   .workshop-body { display: flex; flex-direction: column; gap: 16px; }
+  .workshop-body section { display: flex; flex-direction: column; gap: 16px; scroll-margin-top: 120px; }
+  .workshop-body h2 { margin: 0; color: var(--petrol-deep); font-family: var(--serif); font-size: clamp(28px, 3vw, 42px); font-weight: 400; line-height: 1.08; }
   .workshop-body p { margin: 0; color: var(--granite); font-size: clamp(16px, 1.25vw, 18px); line-height: 1.78; white-space: pre-line; }
   .related-section { padding-block: var(--site-section-y); }
   .band-paper { background: var(--paper); }
@@ -117,7 +135,6 @@ const paragraphs = workshop.description
   @media (max-width: 900px) {
     .workshop-hero-grid, .workshop-content-inner { grid-template-columns: 1fr; }
     .workshop-content-inner { gap: 20px; }
-    .workshop-content-kicker { margin: 0; }
   }
   @media (max-width: 640px) { .workshop-hero-photo { min-height: 280px; } }
 </style>

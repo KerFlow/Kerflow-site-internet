@@ -6,7 +6,6 @@
     "atelier"
   ],
   "specialty": "Coach Mamdanse*",
-  "bio": "crée par Sonia duchesne.\nDanser, bouger et créer du lien avec son bébé.\nÀ travers des mouvements doux, des bercements, du portage et de la danse, vous évoluez ensemble au rythme de la musique et des besoins de votre bébé.\nCela favorise l’éveil et la motricité de bébé, de bouger en douceur après la naissance, se réapproprier son corps, se détendre et prendre confiance et de partager un moment de complicité et de plaisir.\nAucun niveau de danse n’est nécessaire.",
   "visualMode": "image",
   "image": "/uploads/people/manon-1/image.jpeg",
   "imageClass": "foam",
@@ -14,5 +13,21 @@
   "primaryLinkLabel": "Prendre rendez-vous",
   "primaryLinkUrl": "/contact/",
   "secondaryLinkLabel": "Instagram",
-  "secondaryLinkUrl": "https://www.instagram.com/man.danse92/?hl=fr"
+  "secondaryLinkUrl": "https://www.instagram.com/man.danse92/?hl=fr",
+  "summary": "MamDanse invite parents et bébés à bouger ensemble à travers la danse, les bercements et le portage, sans prérequis.",
+  "approachTitle": "Prendre le temps",
+  "approachAccent": "de sentir.",
+  "approachSections": [
+    {
+      "heading": "",
+      "headingStyle": "small",
+      "paragraphs": [
+        "crée par Sonia duchesne.",
+        "Danser, bouger et créer du lien avec son bébé.",
+        "À travers des mouvements doux, des bercements, du portage et de la danse, vous évoluez ensemble au rythme de la musique et des besoins de votre bébé.",
+        "Cela favorise l’éveil et la motricité de bébé, de bouger en douceur après la naissance, se réapproprier son corps, se détendre et prendre confiance et de partager un moment de complicité et de plaisir.",
+        "Aucun niveau de danse n’est nécessaire."
+      ]
+    }
+  ]
 }

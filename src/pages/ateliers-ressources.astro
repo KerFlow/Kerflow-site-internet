@@ -2,29 +2,13 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
-import WorkshopCardActions from "../components/WorkshopCardActions.astro";
-import { workshops } from "../data/cmsContent.js";
+import WorkshopCard from "../components/WorkshopCard.astro";
+import { archivedWorkshops, workshops } from "../data/cmsContent.js";
 import { archivedBlogArticles, featuredBlogArticles } from "../data/blogArticles.js";
 import { HELLORESA_PLANNING_URL } from "../config/booking.js";
 
-const featuredWorkshop = workshops.find((workshop) => workshop.featured) ?? workshops[0];
-const cardWorkshops = workshops.filter((workshop) => workshop !== featuredWorkshop);
-const secondaryWorkshops = cardWorkshops.slice(0, 2);
-const miniWorkshops = cardWorkshops.slice(2, 4);
 const journalArticles = featuredBlogArticles.slice(0, 3);
-const archivedArticles = archivedBlogArticles.slice(0, 4);
-const archivedEvents = [
-  {
-    date: "Mai 2026",
-    title: "Atelier douleurs de dos · matinée mobilité",
-    tag: "Mobilité · Événement",
-  },
-  {
-    date: "Avr. 2026",
-    title: "Soirée respiration & lâcher-prise",
-    tag: "Stress · Événement",
-  },
-];
+const archivedEvents = archivedWorkshops.slice(0, 4);
 ---
 
 <BaseLayout
@@ -67,7 +51,7 @@ const archivedEvents = [
       <div class="workshops-wrap">
         <div class="planning-cards-head">
           <div>
-            <p class="eyebrow">01 - Évènement à venir</p>
+            <p class="eyebrow">01 - Événements à venir</p>
             <h2>Au-delà<br /><em>des cours.</em></h2>
           </div>
           <div>
@@ -81,58 +65,9 @@ const archivedEvents = [
           </div>
         </div>
 
-        <div class="course-feature-grid">
-          {featuredWorkshop && (
-            <article class="course-card course-card-feature workshop-card" data-event-topic={featuredWorkshop.title}>
-              <div class="course-card-copy">
-                <h3>{featuredWorkshop.title}</h3>
-                <p class="course-feature-date">{featuredWorkshop.date} · {featuredWorkshop.time}</p>
-                <p>{featuredWorkshop.summary}</p>
-                <footer>
-                  <span>{featuredWorkshop.duration} · {featuredWorkshop.price}</span>
-                  <WorkshopCardActions workshop={featuredWorkshop} />
-                </footer>
-              </div>
-              <div class={`photo ${featuredWorkshop.imageClass} ${featuredWorkshop.image ? "has-upload" : ""}`}>
-                {featuredWorkshop.image ? (
-                  <img src={featuredWorkshop.image} alt={featuredWorkshop.imageLabel || featuredWorkshop.title} loading="lazy" decoding="async" style={`object-position: ${featuredWorkshop.imagePositionX ?? 50}% ${featuredWorkshop.imagePositionY ?? 50}%`} />
-                ) : (
-                  <span>{featuredWorkshop.imageLabel || featuredWorkshop.title}</span>
-                )}
-              </div>
-            </article>
-          )}
-
-          {secondaryWorkshops.map((workshop) => (
-            <article class="course-card course-card-photo workshop-card" data-event-topic={workshop.title}>
-              <div class={`photo ${workshop.imageClass} ${workshop.image ? "has-upload" : ""}`}>
-                {workshop.image ? (
-                  <img src={workshop.image} alt={workshop.imageLabel || workshop.title} loading="lazy" decoding="async" style={`object-position: ${workshop.imagePositionX ?? 50}% ${workshop.imagePositionY ?? 50}%`} />
-                ) : (
-                  <span>{workshop.imageLabel || workshop.title}</span>
-                )}
-              </div>
-              <div class="course-card-copy">
-                <p class="course-kicker">{workshop.date} · {workshop.time}</p>
-                <h4>{workshop.title}</h4>
-                <p>{workshop.summary}</p>
-                <footer>
-                  <span>{workshop.duration} · {workshop.price}</span>
-                  <WorkshopCardActions workshop={workshop} />
-                </footer>
-              </div>
-            </article>
-          ))}
-        </div>
-
-        <div class="course-mini-grid events-mini-grid" aria-label="Autres événements à venir">
-          {miniWorkshops.map((workshop) => (
-            <article data-event-topic={workshop.title}>
-              <p>{workshop.date} · {workshop.time}</p>
-              <h4>{workshop.title}</h4>
-              <span>{workshop.duration} · {workshop.price}</span>
-              <WorkshopCardActions workshop={workshop} />
-            </article>
+        <div class="workshop-grid events-workshop-grid" aria-label="Événements à venir">
+          {workshops.map((workshop) => (
+            <WorkshopCard workshop={workshop} />
           ))}
         </div>
 
@@ -156,7 +91,7 @@ const archivedEvents = [
             <a href={`/blog/${article.slug}/`} class="art">
               <div class={`ph ${article.imageClass} ${article.visualMode === "image" && article.image ? "has-upload" : ""}`}>
                 {article.visualMode === "image" && article.image ? (
-                  <img src={article.image} alt={article.imageLabel} loading="lazy" decoding="async" style={`object-position: ${article.imagePositionX ?? 50}% ${article.imagePositionY ?? 50}%`} />
+                  <img src={article.image} alt={article.imageLabel} loading="lazy" decoding="async" style={`object-position: ${article.imageCrops?.list?.x ?? article.imagePositionX ?? 50}% ${article.imageCrops?.list?.y ?? article.imagePositionY ?? 50}%`} />
                 ) : (
                   <span class="cap">{article.imageLabel}</span>
                 )}
@@ -180,7 +115,7 @@ const archivedEvents = [
       </div>
     </section>
 
-    <section class="section-pad rule-top band-paper" id="archives" data-screen-label="Archives">
+    {(archivedBlogArticles.length > 0 || archivedEvents.length > 0) && <section class="section-pad rule-top band-paper" id="archives" data-screen-label="Archives">
       <div class="workshops-wrap">
         <div class="journal-head">
           <div class="sec-head compact">
@@ -193,10 +128,10 @@ const archivedEvents = [
         </div>
 
         <div class="archive-grid">
-          <section class="archive-panel" aria-labelledby="archive-articles-title">
+          {archivedBlogArticles.length > 0 && <section class="archive-panel" aria-labelledby="archive-articles-title">
             <h3 id="archive-articles-title" class="serif">Articles passés</h3>
             <div class="list-rows">
-              {archivedArticles.map((article) => (
+              {archivedBlogArticles.slice(0, 4).map((article) => (
                 <a href={`/blog/${article.slug}/`} class="list-row">
                   <span class="lr-date">{article.date}</span>
                   <span class="lr-title serif">{article.title}</span>
@@ -204,23 +139,23 @@ const archivedEvents = [
                 </a>
               ))}
             </div>
-          </section>
+          </section>}
 
-          <section class="archive-panel" aria-labelledby="archive-events-title">
+          {archivedEvents.length > 0 && <section class="archive-panel" aria-labelledby="archive-events-title">
             <h3 id="archive-events-title" class="serif">Événements passés</h3>
             <div class="list-rows">
               {archivedEvents.map((event) => (
-                <div class="list-row">
+                <a href={`/ateliers/${event.slug}/`} class="list-row">
                   <span class="lr-date">{event.date}</span>
                   <span class="lr-title serif">{event.title}</span>
-                  <span class="lr-tag">{event.tag}</span>
-                </div>
+                  <span class="lr-tag">Atelier</span>
+                </a>
               ))}
             </div>
-          </section>
+          </section>}
         </div>
       </div>
-    </section>
+    </section>}
 
     <section class="newsletter-section" id="newsletter" data-screen-label="Newsletter">
       <div class="workshops-wrap section-pad">
@@ -474,102 +409,8 @@ const archivedEvents = [
     max-width: none;
   }
 
-  #agenda .course-card-photo footer span {
-    color: var(--granite-500);
-    letter-spacing: 0.08em;
-  }
-
-  #agenda .course-card-feature .course-feature-date {
-    flex: initial;
-    margin: -4px 0 0;
-    color: var(--studio-500);
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-  }
-
-  #agenda .course-card-photo .course-kicker {
-    margin-bottom: 6px;
-  }
-
-  #agenda .course-card-photo .course-card-copy {
-    gap: 14px;
-  }
-
-  #agenda .course-card-feature {
-    min-height: 500px;
-  }
-
-  #agenda .course-card-feature.workshop-card {
-    display: grid;
-    border-radius: 6px;
-    border-color: rgba(31, 38, 34, 0.12);
-    background: var(--studio-100);
-  }
-
-  #agenda .course-card-feature.workshop-card h3 {
-    font-size: 40px;
-    line-height: 1;
-  }
-
-  #agenda .course-card-feature.workshop-card > .photo {
-    height: 100%;
-    aspect-ratio: auto;
-  }
-
-  #agenda .course-card-photo {
-    min-height: 500px;
-  }
-
-  #agenda .course-card-photo.workshop-card {
-    display: flex;
-    border-radius: 6px;
-    background: var(--linen);
-  }
-
-  #agenda .course-card-photo.workshop-card > .photo {
-    aspect-ratio: 3 / 2;
-  }
-
-  #agenda .course-card-photo.workshop-card > .course-card-copy {
-    padding: 22px 24px 24px;
-  }
-
-  #agenda .events-mini-grid article {
-    border-radius: 6px;
-  }
-
-  #agenda .workshop-card footer {
-    display: grid;
-    justify-content: stretch;
-    gap: 12px;
-    letter-spacing: normal;
-  }
-
-  #agenda .course-card-feature.workshop-card footer {
-    padding-top: 14px;
-  }
-
-  #agenda .workshop-card-actions {
-    justify-content: flex-start;
-  }
-
-  #agenda .course-card-photo footer span {
-    max-width: none;
-    font-family: var(--sans);
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: 0;
-    line-height: 1.4;
-    text-transform: none;
-  }
-
   #agenda .eyebrow,
-  #agenda .course-kicker,
-  #agenda h2 em,
-  #agenda .course-card-feature h3 em,
-  #agenda .course-mini-grid p {
+  #agenda h2 em {
     color: var(--ateliers-ink);
   }
 
@@ -933,11 +774,6 @@ const archivedEvents = [
 
     #agenda .planning-cards-head h2 {
       font-size: clamp(36px, 4.8vw, 64px);
-    }
-
-    #agenda .course-card-feature,
-    #agenda .course-card-photo {
-      min-height: 0;
     }
 
     .event,

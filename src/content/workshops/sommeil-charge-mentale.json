@@ -5,7 +5,14 @@
   "featured": false,
   "date": "Samedi 6 juin",
   "time": "10h00",
-  "description": "Une matinée pour comprendre les rythmes, tester des outils simples et repartir avec une routine réaliste.",
+  "sections": [
+    {
+      "heading": "À propos de l’atelier",
+      "paragraphs": [
+        "Une matinée pour comprendre les rythmes, tester des outils simples et repartir avec une routine réaliste."
+      ]
+    }
+  ],
   "summary": "Une matinée pour mieux comprendre le sommeil et la charge mentale, tester des outils simples et repartir avec une routine adaptée à son quotidien.",
   "duration": "3h",
   "price": "55€",

@@ -6,7 +6,6 @@
     "la-bulle"
   ],
   "specialty": "Praticienne en réflexologie émotionnelle bébé/enfants ",
-  "bio": "La Réflexologie Bébé Émotionnelle®️, créée par Caroline Hamon, est une approche douce qui accompagne les bébés dès la naissance et les jeunes enfants (0-13ans) à travers le toucher et la stimulation de zones réflexes des pieds.\nLa RBE est la pour apaiser et accompagner dans les maux du quotidien : digestion, sommeil, poussées dentaires, agitation, tensions… \nLa méthode prend également en compte les émotions et le vécu de l'enfant (peur, tristesse, angoisse etc) \nÀ travers des gestes doux et adaptés, je vous accompagne pour créer un moment de détente, de connexion et de douceur avec votre enfant.\nDurant la séance, certains gestes peuvent vous être transmis afin de pouvoir continuer ces moments de bien-être à la maison.\n\nAu KerFlow dès janvier 2027 tous les lundis matin, sur rendez-vous uniquement",
   "visualMode": "image",
   "image": "/uploads/people/manon/image.jpeg",
   "imageClass": "foam",
@@ -14,5 +13,22 @@
   "primaryLinkLabel": "Prendre rendez-vous",
   "primaryLinkUrl": "/contact/",
   "secondaryLinkLabel": "Instagram",
-  "secondaryLinkUrl": "https://www.instagram.com/man.danse92/?hl=fr"
+  "secondaryLinkUrl": "https://www.instagram.com/man.danse92/?hl=fr",
+  "summary": "La réflexologie bébé émotionnelle accompagne les tout-petits par un toucher doux, pour apaiser les petits maux et partager un moment de connexion.",
+  "approachTitle": "Prendre le temps",
+  "approachAccent": "de sentir.",
+  "approachSections": [
+    {
+      "heading": "",
+      "headingStyle": "small",
+      "paragraphs": [
+        "La Réflexologie Bébé Émotionnelle®️, créée par Caroline Hamon, est une approche douce qui accompagne les bébés dès la naissance et les jeunes enfants (0-13ans) à travers le toucher et la stimulation de zones réflexes des pieds.",
+        "La RBE est la pour apaiser et accompagner dans les maux du quotidien : digestion, sommeil, poussées dentaires, agitation, tensions…",
+        "La méthode prend également en compte les émotions et le vécu de l'enfant (peur, tristesse, angoisse etc)",
+        "À travers des gestes doux et adaptés, je vous accompagne pour créer un moment de détente, de connexion et de douceur avec votre enfant.",
+        "Durant la séance, certains gestes peuvent vous être transmis afin de pouvoir continuer ces moments de bien-être à la maison.",
+        "Au KerFlow dès janvier 2027 tous les lundis matin, sur rendez-vous uniquement"
+      ]
+    }
+  ]
 }

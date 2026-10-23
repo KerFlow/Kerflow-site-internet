@@ -177,7 +177,7 @@ const coconPeople = peopleForSpace("le-cocon");
             <article>
               <div class={`pv-person-media pv-${person.imageClass} ${person.visualMode === "image" && person.image ? "has-upload" : ""}`}>
                 {person.visualMode === "image" && person.image ? (
-                  <img src={person.image} alt={person.imageLabel} loading="lazy" decoding="async" style={`object-position: ${person.imagePositionX ?? 50}% ${person.imagePositionY ?? 50}%`} />
+                  <img src={person.image} alt={person.imageLabel} loading="lazy" decoding="async" style={`object-position: ${person.imageCrops?.careCard?.x ?? person.imagePositionX ?? 50}% ${person.imageCrops?.careCard?.y ?? person.imagePositionY ?? 50}%`} />
                 ) : (
                   <span>{person.imageLabel}</span>
                 )}
@@ -185,7 +185,7 @@ const coconPeople = peopleForSpace("le-cocon");
               <div>
                 <h3>{person.name}</h3>
                 <p class="pv-role">{person.specialty}</p>
-                <p>{person.bio}</p>
+                <p>{person.longDescription}</p>
                 <div>
                   <a href={person.primaryLinkUrl}>{person.primaryLinkLabel}</a>
                   <a href={person.secondaryLinkUrl}>{person.secondaryLinkLabel}</a>
@@ -204,7 +204,7 @@ const coconPeople = peopleForSpace("le-cocon");
             <article>
               <div class={`pv-person-media pv-${person.imageClass} ${person.visualMode === "image" && person.image ? "has-upload" : ""}`}>
                 {person.visualMode === "image" && person.image ? (
-                  <img src={person.image} alt={person.imageLabel} loading="lazy" decoding="async" style={`object-position: ${person.imagePositionX ?? 50}% ${person.imagePositionY ?? 50}%`} />
+                  <img src={person.image} alt={person.imageLabel} loading="lazy" decoding="async" style={`object-position: ${person.imageCrops?.careCard?.x ?? person.imagePositionX ?? 50}% ${person.imageCrops?.careCard?.y ?? person.imagePositionY ?? 50}%`} />
                 ) : (
                   <span>{person.imageLabel}</span>
                 )}
@@ -212,7 +212,7 @@ const coconPeople = peopleForSpace("le-cocon");
               <div>
                 <h3>{person.name}</h3>
                 <p class="pv-role pv-role-rituel">{person.specialty}</p>
-                <p>{person.bio}</p>
+                <p>{person.longDescription}</p>
                 <div>
                   <a href={person.primaryLinkUrl}>{person.primaryLinkLabel}</a>
                   <a href={person.secondaryLinkUrl}>{person.secondaryLinkLabel}</a>

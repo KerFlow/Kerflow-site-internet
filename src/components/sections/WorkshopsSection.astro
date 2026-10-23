@@ -18,7 +18,7 @@ const featuredArticle =
         </div>
 
         <div class="workshop-grid" aria-label="Ateliers du mois">
-          {workshops.map((workshop) => (
+          {workshops.slice(0, 3).map((workshop) => (
             <WorkshopCard workshop={workshop} />
           ))}
         </div>
@@ -26,7 +26,7 @@ const featuredArticle =
         <article class="editorial-feature" aria-label="Contenu éditorial mis en avant">
           <div class={`photo ${featuredArticle.imageClass} ${featuredArticle.visualMode === "image" && featuredArticle.image ? "has-upload" : ""}`}>
             {featuredArticle.visualMode === "image" && featuredArticle.image ? (
-              <img src={featuredArticle.image} alt={featuredArticle.imageLabel} loading="lazy" decoding="async" style={`object-position: ${featuredArticle.imagePositionX ?? 50}% ${featuredArticle.imagePositionY ?? 50}%`} />
+              <img src={featuredArticle.image} alt={featuredArticle.imageLabel} loading="lazy" decoding="async" style={`object-position: ${featuredArticle.imageCrops?.home?.x ?? featuredArticle.imagePositionX ?? 50}% ${featuredArticle.imageCrops?.home?.y ?? featuredArticle.imagePositionY ?? 50}%`} />
             ) : (
               <span>{featuredArticle.imageLabel}</span>
             )}

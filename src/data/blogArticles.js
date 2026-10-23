@@ -8,5 +8,5 @@ export const blogArticles = Object.entries(modules)
   }))
   .sort((a, b) => a.order - b.order);
 
-export const featuredBlogArticles = blogArticles.slice(0, 6);
-export const archivedBlogArticles = blogArticles.slice(3);
+export const featuredBlogArticles = blogArticles.filter((article) => !article.archived);
+export const archivedBlogArticles = blogArticles.filter((article) => article.archived);
