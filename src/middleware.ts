@@ -31,7 +31,8 @@ export const onRequest = defineMiddleware((context, next) => {
     return context.redirect(requestUrl.toString(), 308);
   }
 
-  if (isKeystaticPath(requestUrl.pathname)) {
+  // Production uses Keystatic Cloud authentication; these credentials protect local editing.
+  if (import.meta.env.DEV && isKeystaticPath(requestUrl.pathname)) {
     const username = import.meta.env.KEYSTATIC_ADMIN_USERNAME;
     const password = import.meta.env.KEYSTATIC_ADMIN_PASSWORD;
 

@@ -110,7 +110,10 @@ const siteVisualField = (label: string) =>
 
 export default config({
   storage: {
-    kind: "local",
+    kind: import.meta.env.DEV ? "local" : "cloud",
+  },
+  cloud: {
+    project: "gaelle-and-zelie/kerflow",
   },
   collections: {
     blog: collection({
