@@ -42,7 +42,9 @@
   "image": "/uploads/workshops/atelier-decouverte-des-huiles-essentielles-avec-julia/image.jpg",
   "imagePositionY": 50,
   "imageCrops": {
-    "card": {},
+    "card": {
+      "y": 0
+    },
     "detail": {
       "y": 50
     }
