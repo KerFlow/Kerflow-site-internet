@@ -2,28 +2,33 @@
   "title": "Atelier \"Rituel visage et bien-être\"",
   "order": 3,
   "visible": true,
+  "archived": false,
   "featured": false,
   "date": "Samedi 14 novembre ",
   "time": "15h",
   "sections": [
     {
-      "heading": "Découvrir la réflexologie faciale",
+      "heading": "🌿 Le programme de l'atelier",
       "paragraphs": [
-        "✨Un moment de détente et de reconnexion à soi !",
-        "Marie-Louise vous invite à découvrir la réflexologie faciale à travers des gestes simples à reproduire chez vous."
+        "Découverte de la réflexologie faciale\n\nUne introduction à cette pratique et à ses principes, pour comprendre les gestes et les différentes zones du visage sollicitées.\n\nApprentissage des gestes d'automassage\n\nMarie-Louise vous guidera dans la découverte de gestes fondamentaux et de points de stimulation du visage. Vous apprendrez à réaliser une routine simple, à votre rythme et en autonomie.\n\nRelaxation et méditation\n\nL'atelier se terminera par un temps de relaxation et de méditation, pour prolonger cette parenthèse de détente."
       ]
     },
     {
-      "heading": "Au programme",
+      "heading": "Les bienfaits recherchés",
       "paragraphs": [
-        "Au programme : automassage du visage, stimulation de points réflexes, relaxation et méditation. 🌿"
+        "La réflexologie faciale et les gestes d'automassage peuvent contribuer à :\n\nFavoriser le relâchement des tensions du visage et de la mâchoire.\n\nProcurer une sensation de détente et de légèreté.\n\nStimuler doucement les tissus du visage et accompagner les mouvements de drainage.\n\nFavoriser une sensation de souplesse et de confort de la peau.\n\nS'accorder un moment de calme et de reconnexion à soi.\n\nEt pour prolonger l'expérience ?\n\nÀ la fin de l'atelier, vous repartirez avec un petit flacon d'huile d'amande douce et les gestes nécessaires pour reproduire votre rituel visage chez vous !"
       ]
     },
     {
-      "heading": "Les bienfaits",
+      "heading": "A propos de Marie-Louise",
       "paragraphs": [
-        "Les bienfaits ? Relâcher les tensions, favoriser le drainage du visage et retrouver une sensation de légèreté et de bien-être.",
-        "Une parenthèse de douceur pour prendre soin de soi, à prolonger au quotidien !"
+        "🌸 À propos de Marie-Louise\n\nÉnergéticienne et praticienne en kinésiologie et réflexologie faciale, Marie-Louise propose une approche globale du mieux-être, attentive au corps et aux émotions.\n\nElle accompagne enfants et adultes dans une démarche d'apaisement et de reconnexion à soi, notamment lors de périodes de stress, de fatigue ou de surcharge émotionnelle.\n\nÀ travers ses différentes pratiques, elle privilégie l'écoute, la bienveillance et un accompagnement adapté aux besoins de chacun."
+      ]
+    },
+    {
+      "heading": "Infos pratiques",
+      "paragraphs": [
+        "📍 Informations pratiques\n\nDate : Samedi 14 novembre 2026\n\nHoraire : De 15h à 16h30\n\nDurée : 1h30\n\nTarif : 40 € par personne\n\nLieu : KerFlow — 169 avenue Jean Jaurès, 92140 Clamart\n\nInscription sur réservation — Places limitées.\n\nAucun prérequis nécessaire : cet atelier est ouvert à toutes les personnes souhaitant découvrir une nouvelle routine de bien-être."
       ]
     }
   ],
@@ -34,5 +39,11 @@
   "bookingRequired": true,
   "ctaUrl": "https://www.onparticipe.fr/b/LzeT9eRg/participe?show=eyJpdiI6IkxWT2k4M1FxOWFURzErWjVQcVhhQ3c9PSIsInZhbHVlIjoiWXJmUW9QMEFhcEN5VVB0SG1nTVQxZz09IiwibWFjIjoiZjA4ZTRjYjZkMGNhZmJiOTFiMGI3YjYzMzgyMGNjNjYzNjg5NDI0ZWYwM2QwYjJjNjdlMWI4YTc3MWIxZTJhZCIsInRhZyI6IiJ9",
   "imageClass": "photo-clay",
+  "image": "/uploads/workshops/atelier-rituel-visage-et-bien-etre/image.jpeg",
+  "imagePositionX": 50,
+  "imageCrops": {
+    "card": {},
+    "detail": {}
+  },
   "imageLabel": "[ photo - carnet, tisane et table ronde ]"
 }
