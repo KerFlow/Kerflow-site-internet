@@ -43,6 +43,7 @@
   "imagePositionY": 50,
   "imageCrops": {
     "card": {
+      "x": 50,
       "y": 100
     },
     "detail": {
