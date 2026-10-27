@@ -1,12 +1,21 @@
 {
   "title": "Inauguration du KerFlow",
   "order": 1,
+  "archived": false,
   "tag": "Divers",
   "date": "4 septembre 2026",
   "readingTime": "1 minute",
   "excerpt": "KerFlow ouvre ses portes ! 🌿 Rendez-vous vendredi 4 septembre à partir de 17h pour découvrir notre Maison de mouvement et de mieux-être, visiter les espaces, découvrir le planning, les tarifs et nos offres de lancement… autour d’une tisane !",
   "visualMode": "image",
   "image": "/uploads/blog/inauguration-du-ker-flow/image.jpeg",
+  "imagePositionX": 50,
+  "imagePositionY": 50,
+  "imageCrops": {
+    "list": {},
+    "featured": {},
+    "home": {},
+    "detail": {}
+  },
   "imageClass": "t-sand",
   "imageLabel": "Repère visuel",
   "intro": "KerFlow ouvre ses portes : rendez-vous pour notre inauguration !\n\nAprès plusieurs mois de réflexion, de travaux, de préparation… KerFlow est enfin prêt à vous accueillir ! 🌿\n",
