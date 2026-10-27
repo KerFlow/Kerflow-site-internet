@@ -1,0 +1,50 @@
+{
+  "title": "L'automne au bout des doigts",
+  "order": 2,
+  "visible": true,
+  "archived": false,
+  "featured": false,
+  "date": "21 novembre 2026",
+  "time": "15h",
+  "sections": [
+    {
+      "heading": "Premiers frissons ",
+      "paragraphs": [
+        "À l’automne, la nature nous invite à lever le pied, à nous recentrer et à cultiver la douceur. Cet atelier de 2 heures vous propose une expérience complète autour du mouvement, du souffle et du toucher.\n\n"
+      ]
+    },
+    {
+      "heading": "Au programme",
+      "paragraphs": [
+        "Une pratique de yoga approfondie pour délier le corps et relâcher les tensions.\n\nDes exercices de respiration (pranayama) pour apaiser le mental et retrouver son souffle.\n\nDes techniques d’auto-massage relaxantes ou stimulantes pour réveiller les sensations et prendre soin de soi.\n\nDes propositions de massage thaï en duo pour découvrir le toucher bienveillant et partager un moment de détente.\n\nUn temps pour ralentir, se réchauffer, se reconnecter à soi et repartir plus léger·ère."
+      ]
+    },
+    {
+      "heading": "Pour qui ? ",
+      "paragraphs": [
+        "Atelier ouvert à tous, de préférence à partir de 15/16 ans, pour compléter votre pratique au Kerflow ou pour une pleine découverte, dans une atmosphère chaleureuse et bienveillante."
+      ]
+    }
+  ],
+  "summary": "S'offrir une parenthèse de douceur pour accueillir l’automne 🍁\n\nPendant 2 heures, explorez le yoga, la respiration, l’auto-massage et le massage thaï en duo pour délier les tensions, éveiller vos sensations et vous ressourcer dans la chaleur de la saison.\n\n",
+  "duration": "2 heures",
+  "price": "35€",
+  "ctaLabel": "Réserver",
+  "bookingRequired": true,
+  "ctaUrl": "https://kerflow.helloresa.com",
+  "imageClass": "photo-clay",
+  "image": "/uploads/workshops/l-automne-au-bout-des-doigts/image.png",
+  "imagePositionX": 50,
+  "imagePositionY": 50,
+  "imageCrops": {
+    "card": {
+      "x": 50,
+      "y": 50
+    },
+    "detail": {
+      "x": 50,
+      "y": 50
+    }
+  },
+  "imageLabel": "photo l'automne au bout des doigts"
+}
