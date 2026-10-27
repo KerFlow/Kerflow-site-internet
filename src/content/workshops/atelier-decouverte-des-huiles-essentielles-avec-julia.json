@@ -44,7 +44,7 @@
   "imageCrops": {
     "card": {
       "x": 50,
-      "y": 100
+      "y": 0
     },
     "detail": {
       "x": 50,
