@@ -2,6 +2,7 @@
   "title": "MamDanse – Danser, bouger et créer du lien avec son bébé",
   "order": 1,
   "visible": true,
+  "archived": false,
   "featured": false,
   "date": "Dimanche 22 novembre",
   "time": "10h",
@@ -31,5 +32,10 @@
   "bookingRequired": true,
   "ctaUrl": "/contact/",
   "imageClass": "photo-petrol",
+  "image": "/uploads/workshops/mam-danse-danser-bouger-et-creer-du-lien-avec-son-bebe/image.jpg",
+  "imageCrops": {
+    "card": {},
+    "detail": {}
+  },
   "imageLabel": "Danse"
 }
