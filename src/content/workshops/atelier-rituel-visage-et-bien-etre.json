@@ -42,7 +42,10 @@
   "image": "/uploads/workshops/atelier-rituel-visage-et-bien-etre/image.jpeg",
   "imagePositionX": 50,
   "imageCrops": {
-    "card": {},
+    "card": {
+      "x": 50,
+      "y": 35
+    },
     "detail": {}
   },
   "imageLabel": "[ photo - carnet, tisane et table ronde ]"
