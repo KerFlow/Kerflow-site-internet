@@ -30,7 +30,7 @@
   "price": "35€",
   "ctaLabel": "Réserver",
   "bookingRequired": true,
-  "ctaUrl": "/contact/",
+  "ctaUrl": "https://kerflow.helloresa.com/public/planning?semaine=47&annee=2026",
   "imageClass": "photo-petrol",
   "image": "/uploads/workshops/mam-danse-danser-bouger-et-creer-du-lien-avec-son-bebe/image.jpg",
   "imageCrops": {
