@@ -1,7 +1,8 @@
 {
   "title": "Yin, souffle & relâchement",
   "order": 2,
-  "visible": false,
+  "visible": true,
+  "archived": false,
   "featured": false,
   "date": "Dimanche 14 juin",
   "time": "16h00",
@@ -20,5 +21,9 @@
   "bookingRequired": true,
   "ctaUrl": "https://kerflow.helloresa.com/public/planning",
   "imageClass": "photo-foam",
+  "imageCrops": {
+    "card": {},
+    "detail": {}
+  },
   "imageLabel": "[ photo - bolsters et tapis, lumière douce ]"
 }
