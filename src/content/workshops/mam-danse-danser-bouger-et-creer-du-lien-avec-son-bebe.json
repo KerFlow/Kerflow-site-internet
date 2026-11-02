@@ -33,8 +33,11 @@
   "ctaUrl": "https://kerflow.helloresa.com/public/planning?semaine=47&annee=2026",
   "imageClass": "photo-petrol",
   "image": "/uploads/workshops/mam-danse-danser-bouger-et-creer-du-lien-avec-son-bebe/image.jpg",
+  "imagePositionY": 30,
   "imageCrops": {
-    "card": {},
+    "card": {
+      "y": 30
+    },
     "detail": {}
   },
   "imageLabel": "Danse"
