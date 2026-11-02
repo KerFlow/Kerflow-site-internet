@@ -1,15 +1,13 @@
 {
   "name": "Progression",
   "order": 3,
-  "visible": false,
+  "visible": true,
   "featured": false,
   "intro": "Pour installer une pratique dans la durée. ",
   "features": [
-    "1 cours par semaine toute l'année sur abonnement",
-    "2 cours par semaine toute l'année sur abonnement",
-    "Cycle à thème",
-    "Tarifs et réservations bientôt disponibles"
+    "4 cours par mois",
+    "8 cours par mois"
   ],
   "ctaLabel": "Je réserve",
-  "ctaUrl": "/contact/"
+  "ctaUrl": "https://kerflow.helloresa.com/acheter-des-credits"
 }
