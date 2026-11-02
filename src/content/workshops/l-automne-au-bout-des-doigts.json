@@ -1,0 +1,56 @@
+{
+  "title": "L'automne au bout des doigts",
+  "order": 1,
+  "visible": true,
+  "archived": false,
+  "featured": false,
+  "date": "Le 21 novembre",
+  "time": "15 à 17h",
+  "sections": [
+    {
+      "heading": "📍 Informations pratiques",
+      "paragraphs": [
+        "Date : Samedi 21 novembre 2026\n\nHoraire : De 15h à 17h\n\nDurée : 2h\n\nLieu : KerFlow — 169 avenue Jean Jaurès, 92140 Clamart\n\nMatériel : Fourni sur place\n\nPublic : Adultes, à partir de 18 ans\n\nInscription sur réservation — Places limitées.\n\nAucun prérequis nécessaire : cet atelier est accessible à tous, que vous pratiquiez déjà le yoga ou souhaitiez découvrir ces différentes approches du bien-être."
+      ]
+    },
+    {
+      "heading": "🌸 À propos de Natacha.",
+      "paragraphs": [
+        "Professeure de yoga et massothérapeute, Natacha Lusignan associe le mouvement, la respiration et le toucher dans une approche globale du bien-être.\n\nÀ travers ses ateliers, elle invite chacun à ralentir, à porter davantage attention à ses sensations et à explorer différentes façons de prendre soin de son corps."
+      ]
+    },
+    {
+      "heading": "🌿 Les bienfaits recherchés",
+      "paragraphs": [
+        "Les différentes pratiques proposées durant cet atelier peuvent contribuer à :\n\nFavoriser le relâchement des tensions musculaires.\n\nAméliorer la souplesse et la mobilité du corps.\n\nApaiser le mental et réduire les sensations de stress.\n\nDévelopper la conscience corporelle et l'attention aux sensations.\n\nDécouvrir des gestes simples de relaxation à reproduire chez soi.\n\nS'accorder un moment de calme et de reconnexion à soi.\n\nEt pour prolonger l'expérience ?\n\nÀ l'issue de l'atelier, ceux qui le souhaitent pourront prolonger cette parenthèse de douceur autour d'une boisson chaude, pour partager un moment convivial et échanger avec Natacha."
+      ]
+    },
+    {
+      "heading": "🍁 Le programme de l'atelier",
+      "paragraphs": [
+        "Yoga : mouvement et détente\n\nUne pratique de yoga accessible à tous pour délier le corps, améliorer la mobilité et relâcher les tensions accumulées.\n\nRespiration et recentrage\n\nDécouverte d'exercices de respiration (pranayama) pour apaiser le mental, ralentir le rythme et favoriser la détente.\n\nInitiation à l'automassage\n\nNatacha vous guidera dans la découverte de gestes d'automassage relaxants ou stimulants, pour éveiller les sensations et apprendre à prendre soin de votre corps en autonomie.\n\nDécouverte du massage thaï en duo\n\nUne initiation au massage thaï à travers des gestes simples pratiqués à deux, pour explorer le toucher bienveillant, relâcher les tensions et partager un moment de détente."
+      ]
+    }
+  ],
+  "summary": "🍁 Yoga & Massages — L'Automne au bout des doigts\n\nOffrez-vous une parenthèse de douceur pour accueillir l'automne.\n\nPendant 2 heures, Natacha vous invite à explorer le yoga, la respiration, l'automassage et le massage thaï en duo. Une expérience pour relâcher les tensions, éveiller les sensations et prendre soin de soi.\n\nL'atelier se prolongera, pour ceux qui le souhaitent, autour d'une boisson chaude et d'un moment d'échange convivial.",
+  "duration": "2h",
+  "price": "35",
+  "ctaLabel": "Réserver",
+  "bookingRequired": true,
+  "ctaUrl": "https://kerflow.helloresa.com/public/planning?semaine=47&annee=2026",
+  "imageClass": "photo-clay",
+  "image": "/uploads/workshops/l-automne-au-bout-des-doigts/image.png",
+  "imagePositionX": 50,
+  "imagePositionY": 50,
+  "imageCrops": {
+    "card": {
+      "x": 50,
+      "y": 50
+    },
+    "detail": {
+      "x": 50,
+      "y": 50
+    }
+  },
+  "imageLabel": "Feuille d'automne"
+}
