@@ -28,9 +28,15 @@
       "x": 50,
       "y": 0
     },
-    "horizontalCard": {},
+    "horizontalCard": {
+      "x": 50,
+      "y": 0
+    },
     "portraitCard": {},
-    "careCard": {}
+    "careCard": {
+      "x": 50,
+      "y": 0
+    }
   },
   "imageClass": "foam",
   "imageLabel": "Napsothérapie, trois piliers pour une vie équilibrée !",
