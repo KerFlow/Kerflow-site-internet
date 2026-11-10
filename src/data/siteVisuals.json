@@ -110,7 +110,7 @@
         "imagePositionX": 50,
         "imagePositionY": 50,
         "imageClass": "t-petrol",
-        "description": "Le salon",
+        "description": "La salon vue vers la tisannerie",
         "wide": true
       },
       {
@@ -120,7 +120,7 @@
         "imagePositionX": 50,
         "imagePositionY": 50,
         "imageClass": "t-petrol",
-        "description": "La bulle",
+        "description": "Le salon vue depuis la tisannerie",
         "wide": false
       },
       {
@@ -130,8 +130,8 @@
         "imagePositionX": 50,
         "imagePositionY": 50,
         "imageClass": "t-petrol",
-        "description": "le salon vue depuis la tisannerie",
-        "wide": true
+        "description": "la bulle",
+        "wide": false
       },
       {
         "label": "Le lieu - image de galerie",
@@ -140,7 +140,7 @@
         "imagePositionX": 50,
         "imagePositionY": 50,
         "imageClass": "t-petrol",
-        "description": "La tisannerie",
+        "description": "l'accueil",
         "wide": false
       },
       {
@@ -150,7 +150,7 @@
         "imagePositionX": 50,
         "imagePositionY": 50,
         "imageClass": "t-petrol",
-        "description": "La bulle (les petits fauteuils)",
+        "description": "les petits fauteuils",
         "wide": true
       },
       {
@@ -160,7 +160,7 @@
         "imagePositionX": 50,
         "imagePositionY": 50,
         "imageClass": "t-petrol",
-        "description": "Escalier",
+        "description": "la tisannerie",
         "wide": false
       },
       {
@@ -170,7 +170,7 @@
         "imagePositionX": 50,
         "imagePositionY": 50,
         "imageClass": "t-petrol",
-        "description": "le materiel",
+        "description": "Rangements",
         "wide": true
       }
     ],
