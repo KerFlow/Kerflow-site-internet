@@ -47,7 +47,7 @@ const people = defineCollection({
     approachAccent: z.string(),
     approachSections: z.array(
       z.object({
-        heading: z.string(),
+        heading: z.string().default(""),
         headingStyle: z.enum(["small", "large"]),
         paragraphs: z.array(z.string()),
       })
