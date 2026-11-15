@@ -1,0 +1,56 @@
+{
+  "title": "Éveil corporel & mouvement",
+  "order": 2,
+  "visible": true,
+  "archived": false,
+  "featured": false,
+  "date": "12 décembre ",
+  "time": "15h00",
+  "sections": [
+    {
+      "heading": "Un atelier ludique pour les enfants de 6 à 8 ans, avec Juliette Winkelman",
+      "paragraphs": [
+        "Et si bouger devenait un véritable terrain de découverte ?\n\nLe KerFlow accueille Juliette Winkelman pour un atelier d'éveil corporel destiné aux enfants de 6 à 8 ans.\n\nÀ travers des jeux moteurs et des exercices d'équilibre et de coordination, les enfants sont invités à explorer les possibilités de leur corps, à expérimenter différentes façons de bouger et à prendre plaisir à pratiquer une activité en petit groupe."
+      ]
+    },
+    {
+      "heading": "🌿 Au programme",
+      "paragraphs": [
+        "Des jeux pour découvrir le mouvement\n\nÀ travers différentes activités motrices, les enfants explorent les mouvements de leur corps tout en s'amusant.\n\nÉquilibre et coordination\n\nDes exercices ludiques pour travailler l'équilibre, la coordination et la conscience corporelle.\n\nUne pratique avec du matériel\n\nTapis et ballons accompagnent les différentes activités et permettent aux enfants de varier leurs expériences motrices.\n\nLe tout dans un petit groupe de 6 enfants maximum, pour que chacun puisse participer à son rythme."
+      ]
+    },
+    {
+      "heading": "🌸 À propos de Juliette",
+      "paragraphs": [
+        "Depuis plusieurs années, Juliette Winkelman propose des séances d'éveil corporel en petits groupes pour les enfants.\n\nElle les accompagne dans la découverte du mouvement à travers des activités adaptées à leur âge.\n\nLe premier métier de Juliette est d'être Kinésithérapeute, elle est spécialisé dans la petite enfance. "
+      ]
+    },
+    {
+      "heading": " 📍 Informations pratiques",
+      "paragraphs": [
+        "Date : Samedi 12 décembre 2026\n\nHoraire : 15h à 15h45\n\nDurée : 45 minutes\n\nÂge : 6 à 8 ans\n\nTarif : 15 € par enfant\n\nEffectif : 6 enfants maximum\n\nLieu : KerFlow — 169 avenue Jean Jaurès, 92140 Clamart\n\nÀ prévoir : Une tenue confortable et des chaussettes. L'atelier se pratique sans chaussures.\n\nLes enfants participent à l'atelier sans leurs parents.\n\nRéservation obligatoire — Places limitées !"
+      ]
+    }
+  ],
+  "summary": "Et si les enfants découvraient le plaisir de bouger autrement ?\n\nJuliette Winkelman propose un atelier ludique d'éveil corporel en petit groupe, autour de jeux moteurs, d'exercices d'équilibre et de coordination.\n\nÀ l'aide de tapis et de ballons, les enfants explorent différentes façons de bouger, dans une ambiance conviviale et bienveillante.",
+  "duration": "Une heure",
+  "price": "15€",
+  "ctaLabel": "Réserver",
+  "bookingRequired": true,
+  "ctaUrl": "/contact/",
+  "imageClass": "photo-clay",
+  "image": "/uploads/workshops/eveil-corporel-and-mouvement/image.png",
+  "imagePositionX": 50,
+  "imagePositionY": 50,
+  "imageCrops": {
+    "card": {
+      "x": 50,
+      "y": 50
+    },
+    "detail": {
+      "x": 50,
+      "y": 50
+    }
+  },
+  "imageLabel": "Enfant faisant du Yoga"
+}
