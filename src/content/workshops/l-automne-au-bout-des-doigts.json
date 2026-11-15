@@ -3,7 +3,7 @@
   "order": 1,
   "visible": true,
   "archived": false,
-  "featured": false,
+  "featured": true,
   "date": "Le 21 novembre",
   "time": "15 à 17h",
   "sections": [
