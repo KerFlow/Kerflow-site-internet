@@ -45,11 +45,11 @@
   "imageCrops": {
     "card": {
       "x": 50,
-      "y": 50
+      "y": 30
     },
     "detail": {
       "x": 50,
-      "y": 50
+      "y": 40
     }
   },
   "imageLabel": "Magali et une cliente"
