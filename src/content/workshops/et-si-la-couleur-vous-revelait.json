@@ -1,0 +1,56 @@
+{
+  "title": "Et si la couleur vous révélait ?",
+  "order": 3,
+  "visible": true,
+  "archived": false,
+  "featured": false,
+  "date": "6 décembre 2026",
+  "time": "10h à 12h",
+  "sections": [
+    {
+      "heading": "Atelier découverte de la colorimétrie avec Magali — Rév'elle Nuance",
+      "paragraphs": [
+        "Pourquoi certaines couleurs illuminent-elles votre teint, font-elles ressortir votre regard, tandis que d'autres semblent moins vous mettre en valeur ?\n\nEt si vous appreniez à reconnaître les couleurs qui vous vont naturellement ?\n\nLe KerFlow accueille Magali Clairgeau, conseillère en image spécialisée en colorimétrie, pour un atelier de découverte ludique et participatif.\n\nDans une ambiance conviviale et bienveillante, explorez le pouvoir des couleurs et apprenez à porter un nouveau regard sur votre image."
+      ]
+    },
+    {
+      "heading": "🎨 Au programme",
+      "paragraphs": [
+        "Comprendre les bases de la colorimétrie\n\nDécouvrez les principes de la colorimétrie et apprenez à distinguer les couleurs chaudes et froides, les nuances et les contrastes.\n\nExpérimenter les couleurs sur votre visage\n\nÀ l'aide de différents duos de tissus colorés, Magali réalisera un test individuel pour vous permettre d'observer concrètement l'effet des couleurs sur votre teint et votre visage.\n\nDécouvrir les harmonies qui vous mettent en valeur\n\nObservez les réactions des autres participantes, échangez vos impressions et repartez avec de premiers conseils pour choisir les couleurs qui vous correspondent."
+      ]
+    },
+    {
+      "heading": "🌸 À propos de Magali",
+      "paragraphs": [
+        "Après 25 ans dans l'accompagnement de projets en entreprise, Magali Clairgeau a choisi de donner une nouvelle direction à sa vie professionnelle en suivant sa passion pour les couleurs.\n\nFormée à la colorimétrie auprès de l'École Supérieure de Relooking de Paris, elle a créé Rév'elle Nuance pour accompagner les femmes dans la découverte et la valorisation de leur image.\n\nSon approche repose sur l'écoute, la bienveillance et la conviction que les couleurs peuvent être un formidable moyen d'exprimer sa personnalité et de renforcer la confiance en soi.\n\n« La couleur vous va si bien. Osez la révéler. »"
+      ]
+    },
+    {
+      "heading": "📍 Informations pratiques",
+      "paragraphs": [
+        "Date : Dimanche 6 décembre 2026\n\nHoraires : De 10h à 12h\n\nDurée : 20 minutes par groupe de 4 participantes maximum\n\nTarif : 10 € par personne\n\nLieu : KerFlow — 169 avenue Jean Jaurès, 92140 Clamart\n\nRéservation obligatoire — Places limitées.\n\nUn atelier accessible à toutes, sans connaissances préalables, pour découvrir les couleurs autrement et repartir avec un nouveau regard sur soi "
+      ]
+    }
+  ],
+  "summary": "Pourquoi certaines couleurs illuminent-elles votre visage tandis que d'autres vous mettent moins en valeur ?\n\nMagali, conseillère en image spécialisée en colorimétrie, vous invite à découvrir les couleurs qui vous ressemblent lors d'un atelier convivial et participatif.\n\nAu programme : découverte des bases de la colorimétrie, tests individuels avec des tissus colorés et premiers conseils pour trouver les nuances qui vous mettent en lumière !",
+  "duration": "20 min",
+  "price": "10€",
+  "ctaLabel": "Réserver",
+  "bookingRequired": true,
+  "ctaUrl": "/contact/",
+  "imageClass": "photo-clay",
+  "image": "/uploads/workshops/et-si-la-couleur-vous-revelait/image.png",
+  "imagePositionX": 50,
+  "imagePositionY": 50,
+  "imageCrops": {
+    "card": {
+      "x": 50,
+      "y": 50
+    },
+    "detail": {
+      "x": 50,
+      "y": 50
+    }
+  },
+  "imageLabel": "Magali et une cliente"
+}
