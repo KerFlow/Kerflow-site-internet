@@ -38,7 +38,9 @@
     "card": {
       "y": 30
     },
-    "detail": {}
+    "detail": {
+      "y": 20
+    }
   },
   "imageLabel": "Danse"
 }
