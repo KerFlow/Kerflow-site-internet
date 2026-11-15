@@ -41,7 +41,7 @@
   "imageClass": "photo-clay",
   "image": "/uploads/workshops/et-si-la-couleur-vous-revelait/image.png",
   "imagePositionX": 50,
-  "imagePositionY": 50,
+  "imagePositionY": 80,
   "imageCrops": {
     "card": {
       "x": 50,
