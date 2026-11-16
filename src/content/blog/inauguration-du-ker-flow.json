@@ -23,7 +23,10 @@
       "x": 50,
       "y": 50
     },
-    "detail": {}
+    "detail": {
+      "x": 50,
+      "y": 50
+    }
   },
   "imageClass": "t-sand",
   "imageLabel": "Repère visuel",
