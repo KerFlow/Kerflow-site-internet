@@ -24,7 +24,7 @@
   "visualMode": "image",
   "image": "/uploads/people/gaelle-1/image.jpg",
   "imagePositionX": 50,
-  "imagePositionY": 0,
+  "imagePositionY": 25,
   "imageCrops": {
     "profile": {
       "x": 50,
