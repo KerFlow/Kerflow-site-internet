@@ -11,9 +11,18 @@
   "imagePositionX": 50,
   "imagePositionY": 50,
   "imageCrops": {
-    "list": {},
-    "featured": {},
-    "home": {},
+    "list": {
+      "x": 50,
+      "y": 50
+    },
+    "featured": {
+      "x": 50,
+      "y": 50
+    },
+    "home": {
+      "x": 50,
+      "y": 50
+    },
     "detail": {}
   },
   "imageClass": "t-sand",
