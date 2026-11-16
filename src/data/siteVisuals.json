@@ -234,6 +234,7 @@
     "overviewCocon": {
       "label": "Prevention Sante - presentation Le Cocon",
       "visualMode": "color",
+      "image": "/uploads/site/care/overviewCocon/image.HEIC",
       "imageClass": "pv-clay",
       "description": "Le Cocon, espace de soin avec table de massage et lumiere tamisee",
       "wide": false
@@ -249,7 +250,7 @@
     "coconHero": {
       "label": "Le Cocon - visuel de presentation",
       "visualMode": "image",
-      "image": "/uploads/site/care/coconHero/image.jpg",
+      "image": "/uploads/site/care/coconHero/image.HEIC",
       "imageClass": "cocon-foam",
       "description": "Le Cocon, table de soin avec lumiere douce et ambiance calme",
       "wide": false
