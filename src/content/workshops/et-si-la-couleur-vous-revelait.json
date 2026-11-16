@@ -37,7 +37,7 @@
   "price": "10€",
   "ctaLabel": "Réserver",
   "bookingRequired": true,
-  "ctaUrl": "/contact/",
+  "ctaUrl": "https://cal.com/un-atelier-couleur",
   "imageClass": "photo-clay",
   "image": "/uploads/workshops/et-si-la-couleur-vous-revelait/image.png",
   "imagePositionX": 50,
