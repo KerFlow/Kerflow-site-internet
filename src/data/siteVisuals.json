@@ -194,7 +194,7 @@
       "cocon": {
         "label": "Le lieu - Le Cocon",
         "visualMode": "image",
-        "image": "/uploads/site/leLieu/spaces/cocon/image.jpg",
+        "image": "/uploads/site/leLieu/spaces/cocon/image.HEIC",
         "imageClass": "t-clay",
         "description": "Box de soin Le Cocon avec table de massage et lumiere tamisee",
         "wide": false
