@@ -9,7 +9,7 @@
   "visualMode": "image",
   "image": "/uploads/blog/napso-mais-qu-est-ce-que-c-est/image.jpg",
   "imagePositionX": 50,
-  "imagePositionY": 50,
+  "imagePositionY": 40,
   "imageCrops": {
     "list": {
       "x": 50,
