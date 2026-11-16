@@ -7,13 +7,13 @@
   "readingTime": "3 min",
   "excerpt": "Nutrition, Activité Physique, Sommeil : une approche encore méconnue qui réunit trois piliers essentiels de notre santé.",
   "visualMode": "image",
-  "image": "/uploads/blog/napso-mais-qu-est-ce-que-c-est/image.jpg",
+  "image": "/uploads/blog/napso-mais-qu-est-ce-que-c-est/image.png",
   "imagePositionX": 50,
-  "imagePositionY": 40,
+  "imagePositionY": 50,
   "imageCrops": {
     "list": {
       "x": 50,
-      "y": 40
+      "y": 50
     },
     "featured": {
       "x": 50,
