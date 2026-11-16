@@ -333,6 +333,46 @@
         "imageClass": "t-petrol",
         "description": "table de massage",
         "wide": false
+      },
+      {
+        "label": "Location - Le Cocon",
+        "visualMode": "image",
+        "image": "/uploads/site/rental/cocon/1/image.HEIC",
+        "imagePositionX": 50,
+        "imagePositionY": 50,
+        "imageClass": "t-petrol",
+        "description": "tete de la table de massage\n",
+        "wide": false
+      },
+      {
+        "label": "Location - Le Cocon",
+        "visualMode": "image",
+        "image": "/uploads/site/rental/cocon/2/image.HEIC",
+        "imagePositionX": 50,
+        "imagePositionY": 50,
+        "imageClass": "t-petrol",
+        "description": "Huile de massage",
+        "wide": false
+      },
+      {
+        "label": "Location - Le Cocon",
+        "visualMode": "image",
+        "image": "/uploads/site/rental/cocon/3/image.HEIC",
+        "imagePositionX": 50,
+        "imagePositionY": 50,
+        "imageClass": "t-petrol",
+        "description": "serviette",
+        "wide": false
+      },
+      {
+        "label": "Location - Le Cocon",
+        "visualMode": "image",
+        "image": "/uploads/site/rental/cocon/4/image.HEIC",
+        "imagePositionX": 50,
+        "imagePositionY": 50,
+        "imageClass": "t-petrol",
+        "description": "vasque et miroir",
+        "wide": false
       }
     ]
   }
