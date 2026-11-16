@@ -95,7 +95,7 @@
     "cocon": {
       "label": "Home - soins Le Cocon",
       "visualMode": "image",
-      "image": "/uploads/site/homeOffers/cocon/image.jpg",
+      "image": "/uploads/site/homeOffers/cocon/image.HEIC",
       "imageClass": "photo-clay",
       "description": "Table de soin du Cocon avec drap de lin et bougie",
       "wide": false
