@@ -6,24 +6,33 @@
     "cours"
   ],
   "specialty": "Yin Yoga - Yoga Mama prénatal - Massage Bien-être",
-  "visualMode": "image",
-  "image": "/uploads/people/claire/image.jpeg",
-  "imageClass": "foam",
-  "imageLabel": "Claire ",
-  "primaryLinkLabel": "Prendre rendez-vous",
-  "primaryLinkUrl": "/contact/",
-  "secondaryLinkLabel": "Instagram",
-  "secondaryLinkUrl": "https://www.instagram.com/claire_heri/",
   "summary": "Claire enseigne le yoga avec une approche consciente et profonde, accessible aux débutants comme aux pratiquants expérimentés.",
   "approachTitle": "Prendre le temps",
-  "approachAccent": "de sentir.",
+  "approachAccent": "de resentir.",
   "approachSections": [
     {
-      "heading": "",
+      "headingStyle": "small",
+      "paragraphs": [
+        "Anciennement avocate et professeure des écoles, j’ai découvert le hatha yoga en 2000. Ce fût un coup de foudre instantané. Après des années de pratique de ce yoga intense et profond, j’ai décidé de me former à l'enseignement de cette magnifique pratique. Forte d'un premier 200h certifié Yoga Alliance, je me forme également au yin yoga, au yoga pré et post-natal, au yin-yang yoga. Toujours avec appétence, je ne cesse de découvrir de nouvelles pratiques afin d'enrichir mon enseignement et d'accompagner au mieux mes élèves. Mon enseignement, lent, profond et engageant, est emprunt de conscience de soi, corps et esprit. Ma pédagogie permet de recommander mes cours aussi bien aux débutants qui souhaitent découvrir le yoga qu'aux expérimentés qui souhaitent approfondir leur pratique."
+      ]
+    },
+    {
       "headingStyle": "small",
       "paragraphs": [
         "Anciennement avocate et professeure des écoles, j’ai découvert le hatha yoga en 2000. Ce fût un coup de foudre instantané. Après des années de pratique de ce yoga intense et profond, j’ai décidé de me former à l'enseignement de cette magnifique pratique. Forte d'un premier 200h certifié Yoga Alliance, je me forme également au yin yoga, au yoga pré et post-natal, au yin-yang yoga. Toujours avec appétence, je ne cesse de découvrir de nouvelles pratiques afin d'enrichir mon enseignement et d'accompagner au mieux mes élèves. Mon enseignement, lent, profond et engageant, est emprunt de conscience de soi, corps et esprit. Ma pédagogie permet de recommander mes cours aussi bien aux débutants qui souhaitent découvrir le yoga qu'aux expérimentés qui souhaitent approfondir leur pratique."
       ]
     }
-  ]
+  ],
+  "visualMode": "image",
+  "image": "/uploads/people/claire/image.jpeg",
+  "imageCrops": {
+    "profile": {},
+    "horizontalCard": {},
+    "portraitCard": {},
+    "careCard": {}
+  },
+  "imageClass": "foam",
+  "imageLabel": "Claire ",
+  "primaryLinkLabel": "Instagram",
+  "primaryLinkUrl": "https://www.instagram.com/claire_heri/"
 }
