@@ -34,8 +34,6 @@
   },
   "imageClass": "fern",
   "imageLabel": "Aurore",
-  "primaryLinkLabel": "Prendre rendez-vous",
-  "primaryLinkUrl": "/contact/",
-  "secondaryLinkLabel": "Instagram",
-  "secondaryLinkUrl": "https://www.instagram.com/aurorebyoga/"
+  "primaryLinkLabel": "Instagram",
+  "primaryLinkUrl": "https://www.instagram.com/aurorebyoga/"
 }
