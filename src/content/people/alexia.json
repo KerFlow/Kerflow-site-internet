@@ -1,0 +1,46 @@
+{
+  "name": "Alexia",
+  "order": 14,
+  "visible": true,
+  "spaces": [
+    "cours"
+  ],
+  "specialty": "Yoga Flow",
+  "summary": "Issue de la danse, Alexia propose un yoga Vinyasa doux et fluide, mêlant force, souplesse et respiration, dans une ambiance chaleureuse et bienveillante.\n",
+  "approachTitle": "Retrouver",
+  "approachAccent": "l'équilibre",
+  "approachSections": [
+    {
+      "headingStyle": "small",
+      "paragraphs": [
+        "Après de nombreuses années de danse, Alexia enseigne un yoga vinyasa alliant le mouvement qui la passionne depuis toujours et la respiration dans une pratique douce qui allie force et souplesse pour un corps délié et un mental apaisé. Ses flow s’adaptent au corps de chacun dans une atmosphère chaleureuse, détendue et bienveillante."
+      ]
+    }
+  ],
+  "visualMode": "image",
+  "image": "/uploads/people/alexia/image.jpg",
+  "imagePositionX": 100,
+  "imagePositionY": 25,
+  "imageCrops": {
+    "profile": {
+      "x": 50,
+      "y": 50
+    },
+    "horizontalCard": {
+      "x": 50,
+      "y": 50
+    },
+    "portraitCard": {
+      "x": 50,
+      "y": 50
+    },
+    "careCard": {
+      "x": 50,
+      "y": 50
+    }
+  },
+  "imageClass": "foam",
+  "imageLabel": "portrait Alexia",
+  "primaryLinkLabel": "Instagram",
+  "primaryLinkUrl": "https://www.instagram.com/lexi.yoga/"
+}
