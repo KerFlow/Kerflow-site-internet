@@ -813,14 +813,14 @@ export default config({
           {
             studio: siteVisualField("Accueil - Le Salon"),
             bulle: siteVisualField("Accueil - La Bulle"),
-            cocon: siteVisualField("Accueil - Le Cocon"),
+            cocon: siteVisualField("Accueil – Le Cocon dans la section Trois espaces"),
           },
           { label: "Accueil - Trois espaces" }
         ),
         homeOffers: fields.object(
           {
             bulle: siteVisualField("Accueil - Accompagnements La Bulle"),
-            cocon: siteVisualField("Accueil - Soins Le Cocon"),
+            cocon: siteVisualField("Accueil – Le Cocon dans la section Rendez-vous individuels"),
           },
           { label: "Accueil - Accompagnements & soins" }
         ),
@@ -851,30 +851,8 @@ export default config({
         ),
         care: fields.object(
           {
-            heroCtaLabel: fields.text({
-              label: "Texte du bouton de la Hero",
-              defaultValue: "Prendre RDV",
-              validation: { isRequired: true },
-            }),
-            heroCtaType: fields.select({
-              label: "Destination du bouton de la Hero",
-              defaultValue: "section",
-              options: [
-                { label: "Une section de cette page", value: "section" },
-                { label: "Une page du site", value: "page" },
-                { label: "Un lien externe", value: "external" },
-              ],
-            }),
-            heroCtaUrl: fields.text({
-              label: "Page ou lien du bouton de la Hero",
-              defaultValue: "#comment-reserver",
-              description: "Section : #comment-reserver. Page : /contact/. Lien externe : https://…",
-              validation: { isRequired: true },
-            }),
-            overviewBulle: siteVisualField("Prévention santé - La Bulle"),
-            overviewCocon: siteVisualField("Prévention santé - Le Cocon"),
-            bulleHero: siteVisualField("La Bulle - visuel cabinet"),
-            coconHero: siteVisualField("Le Cocon - visuel cabinet"),
+            bulleHero: siteVisualField("La Bulle – photo de la section KerFlow Consult"),
+            overviewCocon: siteVisualField("Le Cocon – photo de la section KerFlow Rituel"),
           },
           { label: "Accompagnements & soins" }
         ),
