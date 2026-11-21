@@ -1,12 +1,10 @@
 {
   "name": "Aurore ",
-  "order": 1,
-  "visible": true,
+  "specialty": "Yoga Flow",
   "spaces": [
     "cours"
   ],
-  "specialty": "Yoga Flow",
-  "summary": "Aurore enseigne le Hatha et le Vinyasa en adaptant les pratiques au corps et au ressenti de chacun.",
+  "summary": "test",
   "approachTitle": "Renforcer son corps,",
   "approachAccent": "libérer son esprit",
   "approachSections": [
@@ -25,14 +23,8 @@
     }
   ],
   "visualMode": "image",
-  "imageClass": "fern",
-  "imageLabel": "Aurore",
-  "links": {
-    "primaryLinkLabel": "Instagram",
-    "primaryLinkUrl": "https://www.instagram.com/aurorebyoga/"
-  },
   "photo": {
-    "image": "/uploads/people/aurore/image.jpg",
+    "image": "/uploads/people/aurore/photo/image.jpg",
     "crops": {
       "profile": {
         "x": 50,
@@ -60,5 +52,13 @@
         "zoom": 1
       }
     }
-  }
+  },
+  "imageClass": "fern",
+  "imageLabel": "Aurore",
+  "links": {
+    "primaryLinkLabel": "Instagram",
+    "primaryLinkUrl": "https://www.instagram.com/aurorebyoga/"
+  },
+  "visible": true,
+  "order": 1
 }
