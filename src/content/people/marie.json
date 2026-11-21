@@ -9,10 +9,12 @@
   "visualMode": "image",
   "imageClass": "foam",
   "imageLabel": "Marie",
-  "primaryLinkLabel": "Prendre rendez-vous",
-  "primaryLinkUrl": "/contact/",
-  "secondaryLinkLabel": "Instagram",
-  "secondaryLinkUrl": "#",
+  "links": {
+    "primaryLinkLabel": "Prendre rendez-vous",
+    "primaryLinkUrl": "/contact/",
+    "secondaryLinkLabel": "Instagram",
+    "secondaryLinkUrl": "#"
+  },
   "summary": "Une approche du Pilates nourrie par le sport-santé et la nutrition, pour mieux comprendre son corps et progresser avec attention.",
   "approachTitle": "Prendre le temps",
   "approachAccent": "de sentir.",

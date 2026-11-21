@@ -9,10 +9,12 @@
   "visualMode": "image",
   "imageClass": "foam",
   "imageLabel": "Natacha",
-  "primaryLinkLabel": "Prendre rendez-vous",
-  "primaryLinkUrl": "https://forms.fillout.com/t/ixQVybjwWkus",
-  "secondaryLinkLabel": "Instagram",
-  "secondaryLinkUrl": "https://www.instagram.com/natacha_yoga_zenetsens/",
+  "links": {
+    "primaryLinkLabel": "Prendre rendez-vous",
+    "primaryLinkUrl": "https://forms.fillout.com/t/ixQVybjwWkus",
+    "secondaryLinkLabel": "Instagram",
+    "secondaryLinkUrl": "https://www.instagram.com/natacha_yoga_zenetsens/"
+  },
   "summary": "Certifiée en massage bien-être depuis 15 ans, Natacha adapte chaque soin aux besoins du moment et propose une approche attentive et personnalisée.",
   "approachTitle": "Prendre le temps",
   "approachAccent": "de sentir.",

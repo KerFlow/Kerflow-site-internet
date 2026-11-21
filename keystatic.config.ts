@@ -1,5 +1,6 @@
 import { collection, config, fields } from "@keystatic/core";
 
+import { personLinksField, personSpacesField } from "./src/keystatic/person-fields";
 import { photoField } from "./src/keystatic/photo-field";
 import { blogFormats, peopleFormats, workshopFormats } from "./src/keystatic/photo-formats";
 
@@ -187,6 +188,7 @@ export default config({
             validation: { isRequired: true },
           },
         }),
+        spaces: personSpacesField,
         order: fields.integer({
           label: "Ordre d'affichage",
           defaultValue: 1,
@@ -195,16 +197,6 @@ export default config({
         visible: fields.checkbox({
           label: "Visible sur le site",
           defaultValue: true,
-        }),
-        spaces: fields.multiselect({
-          label: "Espace associé",
-          defaultValue: ["la-bulle"],
-          options: [
-            { label: "Cours", value: "cours" },
-            { label: "La Bulle", value: "la-bulle" },
-            { label: "Le Cocon", value: "le-cocon" },
-            { label: "Atelier", value: "atelier" },
-          ],
         }),
         specialty: fields.text({
           label: "Spécialité",
@@ -270,6 +262,7 @@ export default config({
           directory: "public/uploads/people",
           publicPath: "/uploads/people/",
           formats: peopleFormats,
+          compact: true,
         }),
         imageClass: fields.select({
           label: "Aplat / visuel",
@@ -286,22 +279,7 @@ export default config({
           label: "Texte du visuel",
           validation: { isRequired: true },
         }),
-        primaryLinkLabel: fields.text({
-          label: "Libellé du lien principal",
-          defaultValue: "Prendre rendez-vous",
-        }),
-        primaryLinkUrl: fields.text({
-          label: "URL du lien principal",
-          defaultValue: "/contact/",
-        }),
-        secondaryLinkLabel: fields.text({
-          label: "Libellé du lien secondaire",
-          defaultValue: "Instagram",
-        }),
-        secondaryLinkUrl: fields.text({
-          label: "URL du lien secondaire",
-          defaultValue: "#",
-        }),
+        links: personLinksField,
       },
     }),
     courses: collection({

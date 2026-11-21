@@ -35,8 +35,10 @@
   "visualMode": "image",
   "imageClass": "foam",
   "imageLabel": "Elsa",
-  "primaryLinkLabel": "Site internet",
-  "primaryLinkUrl": "https://elsayoga.fr/",
+  "links": {
+    "primaryLinkLabel": "Site internet",
+    "primaryLinkUrl": "https://elsayoga.fr/"
+  },
   "photo": {
     "image": "/uploads/people/elsa/image.jpg",
     "crops": {

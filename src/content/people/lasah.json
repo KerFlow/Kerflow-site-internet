@@ -9,10 +9,12 @@
   "visualMode": "image",
   "imageClass": "clay",
   "imageLabel": "Lasah",
-  "primaryLinkLabel": "Prendre rendez-vous",
-  "primaryLinkUrl": "/contact/",
-  "secondaryLinkLabel": "Instagram",
-  "secondaryLinkUrl": "https://www.instagram.com/lasahyoga/",
+  "links": {
+    "primaryLinkLabel": "Prendre rendez-vous",
+    "primaryLinkUrl": "/contact/",
+    "secondaryLinkLabel": "Instagram",
+    "secondaryLinkUrl": "https://www.instagram.com/lasahyoga/"
+  },
   "summary": "Nourrie par ses séjours et formations en Inde, Lasah enseigne un yoga conscient qui s’adapte à l’énergie et aux possibilités de chacun.",
   "approachTitle": "Prendre le temps",
   "approachAccent": "de sentir.",

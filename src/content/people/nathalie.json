@@ -9,10 +9,12 @@
   "visualMode": "image",
   "imageClass": "foam",
   "imageLabel": "Nathalie",
-  "primaryLinkLabel": "Prendre rendez-vous",
-  "primaryLinkUrl": "/contact/",
-  "secondaryLinkLabel": "Instagram",
-  "secondaryLinkUrl": "#",
+  "links": {
+    "primaryLinkLabel": "Prendre rendez-vous",
+    "primaryLinkUrl": "/contact/",
+    "secondaryLinkLabel": "Instagram",
+    "secondaryLinkUrl": "#"
+  },
   "summary": "Professeure de yoga et sophrologue, Nathalie propose des pratiques accessibles pour revenir à soi et retrouver le calme intérieur.",
   "approachTitle": "Prendre le temps",
   "approachAccent": "de sentir.",

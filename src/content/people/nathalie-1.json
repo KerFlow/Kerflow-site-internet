@@ -9,10 +9,12 @@
   "visualMode": "color",
   "imageClass": "foam",
   "imageLabel": "Nathalie",
-  "primaryLinkLabel": "Prendre rendez-vous",
-  "primaryLinkUrl": "/contact/",
-  "secondaryLinkLabel": "Instagram",
-  "secondaryLinkUrl": "#",
+  "links": {
+    "primaryLinkLabel": "Prendre rendez-vous",
+    "primaryLinkUrl": "/contact/",
+    "secondaryLinkLabel": "Instagram",
+    "secondaryLinkUrl": "#"
+  },
   "summary": "Sophrologue et professeure de yoga, Nathalie accompagne la gestion du stress et le mieux-être.",
   "approachTitle": "Prendre le temps",
   "approachAccent": "de sentir.",

@@ -27,8 +27,10 @@
   "visualMode": "image",
   "imageClass": "fern",
   "imageLabel": "Aurore",
-  "primaryLinkLabel": "Instagram",
-  "primaryLinkUrl": "https://www.instagram.com/aurorebyoga/",
+  "links": {
+    "primaryLinkLabel": "Instagram",
+    "primaryLinkUrl": "https://www.instagram.com/aurorebyoga/"
+  },
   "photo": {
     "image": "/uploads/people/aurore/image.jpg",
     "crops": {

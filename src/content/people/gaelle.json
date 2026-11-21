@@ -9,10 +9,12 @@
   "visualMode": "image",
   "imageClass": "foam",
   "imageLabel": "Gaëlle",
-  "primaryLinkLabel": "Prendre rendez-vous",
-  "primaryLinkUrl": "ggaudindaprey@gmail.com",
-  "secondaryLinkLabel": "Instagram",
-  "secondaryLinkUrl": "#",
+  "links": {
+    "primaryLinkLabel": "Prendre rendez-vous",
+    "primaryLinkUrl": "ggaudindaprey@gmail.com",
+    "secondaryLinkLabel": "Instagram",
+    "secondaryLinkUrl": "#"
+  },
   "summary": "Professeure de Yoga Flow et praticienne en napsothérapie, Gaëlle propose une approche dynamique, respectueuse du corps et de sa physiologie.",
   "approachTitle": "Prendre le temps",
   "approachAccent": "de sentir.",

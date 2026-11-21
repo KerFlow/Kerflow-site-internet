@@ -10,10 +10,12 @@
   "visualMode": "image",
   "imageClass": "storm",
   "imageLabel": "Huyen",
-  "primaryLinkLabel": "Prendre rendez-vous",
-  "primaryLinkUrl": "/contact/",
-  "secondaryLinkLabel": "@huyen_manotte_",
-  "secondaryLinkUrl": "#",
+  "links": {
+    "primaryLinkLabel": "Prendre rendez-vous",
+    "primaryLinkUrl": "/contact/",
+    "secondaryLinkLabel": "@huyen_manotte_",
+    "secondaryLinkUrl": "#"
+  },
   "summary": "Avec plus de 30 ans d’expérience, Huyen accompagne adultes et seniors dans une pratique adaptée, progressive et sécurisée.",
   "approachTitle": "Prendre le temps",
   "approachAccent": "de sentir.",

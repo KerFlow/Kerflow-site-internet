@@ -10,10 +10,12 @@
   "visualMode": "image",
   "imageClass": "foam",
   "imageLabel": "Natacha",
-  "primaryLinkLabel": "Prendre rendez-vous",
-  "primaryLinkUrl": "https://forms.fillout.com/t/ixQVybjwWkus",
-  "secondaryLinkLabel": "@natacha_yoga_zenetsens",
-  "secondaryLinkUrl": "https://www.instagram.com/natacha_yoga_zenetsens/?hl=fr",
+  "links": {
+    "primaryLinkLabel": "Prendre rendez-vous",
+    "primaryLinkUrl": "https://forms.fillout.com/t/ixQVybjwWkus",
+    "secondaryLinkLabel": "@natacha_yoga_zenetsens",
+    "secondaryLinkUrl": "https://www.instagram.com/natacha_yoga_zenetsens/?hl=fr"
+  },
   "summary": "Après la danse et le coaching fitness, Natacha s’est tournée vers le massage et le yoga pour partager des pratiques douces et accessibles.",
   "approachTitle": "Prendre le temps",
   "approachAccent": "de sentir.",

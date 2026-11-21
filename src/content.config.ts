@@ -35,35 +35,6 @@ const blog = defineCollection({
   }),
 });
 
-const people = defineCollection({
-  type: "data",
-  schema: z.object({
-    order: z.number(),
-    name: z.string(),
-    visible: z.boolean(),
-    spaces: z.array(z.string()),
-    specialty: z.string(),
-    summary: z.string(),
-    approachTitle: z.string(),
-    approachAccent: z.string(),
-    approachSections: z.array(
-      z.object({
-        heading: z.string().default(""),
-        headingStyle: z.enum(["small", "large"]),
-        paragraphs: z.array(z.string()),
-      })
-    ),
-    visualMode: z.enum(["color", "image"]).optional(),
-    photo: photoSchema.optional(),
-    imageClass: z.string(),
-    imageLabel: z.string(),
-    primaryLinkLabel: z.string().default(""),
-    primaryLinkUrl: z.string().default(""),
-    secondaryLinkLabel: z.string().default(""),
-    secondaryLinkUrl: z.string().default(""),
-  }),
-});
-
 const courses = defineCollection({
   type: "data",
   schema: z.object({
@@ -146,5 +117,8 @@ const settings = defineCollection({
       .optional(),
   }),
 });
+
+// Keystatic validates profiles before saving. The site reads their JSON directly.
+const people = defineCollection({ type: "data" });
 
 export const collections = { blog, people, courses, pricing, workshops, settings };

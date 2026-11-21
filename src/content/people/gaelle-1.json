@@ -24,10 +24,12 @@
   "visualMode": "image",
   "imageClass": "foam",
   "imageLabel": "Napsothérapie, trois piliers pour une vie équilibrée !",
-  "primaryLinkLabel": "Prendre rendez-vous",
-  "primaryLinkUrl": "/contact/",
-  "secondaryLinkLabel": "Site Napso",
-  "secondaryLinkUrl": "https://www.napso-therapie.org/praticien/gaelle-gaudin/",
+  "links": {
+    "primaryLinkLabel": "Prendre rendez-vous",
+    "primaryLinkUrl": "/contact/",
+    "secondaryLinkLabel": "Site Napso",
+    "secondaryLinkUrl": "https://www.napso-therapie.org/praticien/gaelle-gaudin/"
+  },
   "photo": {
     "image": "/uploads/people/gaelle-1/image.jpg",
     "crops": {

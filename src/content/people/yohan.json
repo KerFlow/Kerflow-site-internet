@@ -10,10 +10,12 @@
   "visualMode": "image",
   "imageClass": "foam",
   "imageLabel": "Yohan",
-  "primaryLinkLabel": "Prendre rendez-vous",
-  "primaryLinkUrl": "/contact/",
-  "secondaryLinkLabel": "Instagram",
-  "secondaryLinkUrl": "#",
+  "links": {
+    "primaryLinkLabel": "Prendre rendez-vous",
+    "primaryLinkUrl": "/contact/",
+    "secondaryLinkLabel": "Instagram",
+    "secondaryLinkUrl": "#"
+  },
   "summary": "Coach sportif, Yohan associe renforcement, mobilité et endurance dans des séances adaptées aux capacités et objectifs de chacun.",
   "approachTitle": "Prendre le temps",
   "approachAccent": "de sentir.",

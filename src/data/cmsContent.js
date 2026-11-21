@@ -15,7 +15,10 @@ const fromModules = (modules) =>
     }))
     .sort((a, b) => a.order - b.order);
 
-export const people = fromModules(peopleModules);
+export const people = fromModules(peopleModules).map(({ links, ...person }) => ({
+  ...person,
+  ...links,
+}));
 export const visiblePeople = people.filter((person) => person.visible);
 export const courseTypes = fromModules(courseModules).filter((course) => course.visible);
 export const pricingPlans = fromModules(pricingModules).filter((plan) => plan.visible);

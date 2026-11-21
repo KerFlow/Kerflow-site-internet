@@ -20,8 +20,10 @@
   "visualMode": "image",
   "imageClass": "foam",
   "imageLabel": "portrait Alexia",
-  "primaryLinkLabel": "Instagram",
-  "primaryLinkUrl": "https://www.instagram.com/lexi.yoga/",
+  "links": {
+    "primaryLinkLabel": "Instagram",
+    "primaryLinkUrl": "https://www.instagram.com/lexi.yoga/"
+  },
   "photo": {
     "image": "/uploads/people/alexia/image.jpg",
     "crops": {

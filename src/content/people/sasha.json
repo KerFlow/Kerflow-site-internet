@@ -10,10 +10,12 @@
   "visualMode": "image",
   "imageClass": "foam",
   "imageLabel": "Sasha",
-  "primaryLinkLabel": "Prendre rendez-vous",
-  "primaryLinkUrl": "/contact/",
-  "secondaryLinkLabel": "Instagram",
-  "secondaryLinkUrl": "https://www.instagram.com/sasha.yoga.flow/",
+  "links": {
+    "primaryLinkLabel": "Prendre rendez-vous",
+    "primaryLinkUrl": "/contact/",
+    "secondaryLinkLabel": "Instagram",
+    "secondaryLinkUrl": "https://www.instagram.com/sasha.yoga.flow/"
+  },
   "summary": "Formée en Hatha, Vinyasa et Ashtanga, Sasha transmet un yoga curieux et vivant, entre mouvement, respiration et exploration intérieure.",
   "approachTitle": "Prendre le temps",
   "approachAccent": "de sentir.",

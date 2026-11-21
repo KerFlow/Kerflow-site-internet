@@ -26,8 +26,10 @@
   "visualMode": "image",
   "imageClass": "foam",
   "imageLabel": "Claire ",
-  "primaryLinkLabel": "Instagram",
-  "primaryLinkUrl": "https://www.instagram.com/claire_heri/",
+  "links": {
+    "primaryLinkLabel": "Instagram",
+    "primaryLinkUrl": "https://www.instagram.com/claire_heri/"
+  },
   "photo": {
     "image": "/uploads/people/claire/image.jpeg",
     "crops": {

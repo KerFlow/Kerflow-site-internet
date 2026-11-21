@@ -9,10 +9,12 @@
   "visualMode": "image",
   "imageClass": "foam",
   "imageLabel": "Photo de Manon",
-  "primaryLinkLabel": "Prendre rendez-vous",
-  "primaryLinkUrl": "/contact/",
-  "secondaryLinkLabel": "Instagram",
-  "secondaryLinkUrl": "https://www.instagram.com/man.danse92/?hl=fr",
+  "links": {
+    "primaryLinkLabel": "Prendre rendez-vous",
+    "primaryLinkUrl": "/contact/",
+    "secondaryLinkLabel": "Instagram",
+    "secondaryLinkUrl": "https://www.instagram.com/man.danse92/?hl=fr"
+  },
   "summary": "La réflexologie bébé émotionnelle accompagne les tout-petits par un toucher doux, pour apaiser les petits maux et partager un moment de connexion.",
   "approachTitle": "Prendre le temps",
   "approachAccent": "de sentir.",

@@ -9,10 +9,12 @@
   "visualMode": "image",
   "imageClass": "foam",
   "imageLabel": "Manon",
-  "primaryLinkLabel": "Prendre rendez-vous",
-  "primaryLinkUrl": "/contact/",
-  "secondaryLinkLabel": "Instagram",
-  "secondaryLinkUrl": "https://www.instagram.com/man.danse92/?hl=fr",
+  "links": {
+    "primaryLinkLabel": "Prendre rendez-vous",
+    "primaryLinkUrl": "/contact/",
+    "secondaryLinkLabel": "Instagram",
+    "secondaryLinkUrl": "https://www.instagram.com/man.danse92/?hl=fr"
+  },
   "summary": "MamDanse invite parents et bébés à bouger ensemble à travers la danse, les bercements et le portage, sans prérequis.",
   "approachTitle": "Prendre le temps",
   "approachAccent": "de sentir.",

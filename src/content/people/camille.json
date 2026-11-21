@@ -10,10 +10,12 @@
   "visualMode": "color",
   "imageClass": "sand",
   "imageLabel": "[ portrait - praticien ]",
-  "primaryLinkLabel": "Prendre rendez-vous",
-  "primaryLinkUrl": "/contact/",
-  "secondaryLinkLabel": "Site",
-  "secondaryLinkUrl": "#",
+  "links": {
+    "primaryLinkLabel": "Prendre rendez-vous",
+    "primaryLinkUrl": "/contact/",
+    "secondaryLinkLabel": "Site",
+    "secondaryLinkUrl": "#"
+  },
   "summary": "Camille accompagne ses séances de yoga avec une approche attentive et adaptée à chacun.",
   "approachTitle": "Prendre le temps",
   "approachAccent": "de sentir.",

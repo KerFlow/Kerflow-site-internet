@@ -10,10 +10,12 @@
   "visualMode": "image",
   "imageClass": "foam",
   "imageLabel": "Stella",
-  "primaryLinkLabel": "Prendre rendez-vous",
-  "primaryLinkUrl": "/contact/",
-  "secondaryLinkLabel": "Instagram",
-  "secondaryLinkUrl": "#",
+  "links": {
+    "primaryLinkLabel": "Prendre rendez-vous",
+    "primaryLinkUrl": "/contact/",
+    "secondaryLinkLabel": "Instagram",
+    "secondaryLinkUrl": "#"
+  },
   "summary": "Stella enseigne le renforcement musculaire et le stretching avec une approche dynamique, bienveillante et accessible à tous.",
   "approachTitle": "Prendre le temps",
   "approachAccent": "de sentir.",
