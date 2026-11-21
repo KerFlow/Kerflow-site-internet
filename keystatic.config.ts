@@ -25,6 +25,7 @@ const siteVisualField = (label: string, aspect = 4 / 3, gallery = false) =>
         publicPath: "/uploads/site/",
         formats: [{ key: "default", label: "Cadrage sur le site", aspect }],
         gallery,
+        compact: true,
       }),
       imageClass: fields.select({
         label: "Couleur de l'aplat",
@@ -69,6 +70,15 @@ export default config({
   cloud: {
     project: "gaelle-and-zelie/kerflow",
   },
+  locale: "fr-FR",
+  ui: {
+    brand: { name: "KerFlow" },
+    navigation: {
+      "Activités et équipe": ["workshops", "courses", "pricing", "people"],
+      Blog: ["blog", "blogSettings"],
+      "Pages et réglages": ["homeContent", "siteVisuals", "siteSettings"],
+    },
+  },
   collections: {
     blog: collection({
       label: "Articles du blog",
@@ -82,16 +92,6 @@ export default config({
             label: "Titre",
             validation: { isRequired: true },
           },
-        }),
-        order: fields.integer({
-          label: "Ordre d'affichage",
-          defaultValue: 1,
-          validation: { isRequired: true },
-        }),
-        archived: fields.checkbox({
-          label: "Placer dans les archives",
-          defaultValue: false,
-          description: "L'article reste accessible et quitte la sélection récente. Les quatre premières entrées selon l'ordre d'affichage apparaissent dans « 03 - Archives ».",
         }),
         tag: fields.text({
           label: "Catégorie",
@@ -110,35 +110,6 @@ export default config({
         excerpt: fields.text({
           label: "Résumé court",
           multiline: true,
-          validation: { isRequired: true },
-        }),
-        visualMode: fields.select({
-          label: "Type de visuel",
-          defaultValue: "color",
-          options: [
-            { label: "Aplat couleur", value: "color" },
-            { label: "Photo importée", value: "image" },
-          ],
-        }),
-        photo: photoField({
-          directory: "public/uploads/blog",
-          publicPath: "/uploads/blog/",
-          formats: blogFormats,
-        }),
-        imageClass: fields.select({
-          label: "Couleur de l'aplat",
-          defaultValue: "t-sand",
-          options: [
-            { label: "Sable", value: "t-sand" },
-            { label: "Orage", value: "t-storm" },
-            { label: "Fougère", value: "t-fern" },
-            { label: "Argile", value: "t-clay" },
-            { label: "Écume", value: "t-foam" },
-            { label: "Brume", value: "t-mist" },
-          ],
-        }),
-        imageLabel: fields.text({
-          label: "Texte alternatif / repère visuel",
           validation: { isRequired: true },
         }),
         intro: fields.text({
@@ -173,10 +144,49 @@ export default config({
             validation: { length: { min: 1 } },
           }
         ),
+        visualMode: fields.select({
+          label: "Type de visuel",
+          defaultValue: "color",
+          options: [
+            { label: "Aplat couleur", value: "color" },
+            { label: "Photo importée", value: "image" },
+          ],
+        }),
+        photo: photoField({
+          directory: "public/uploads/blog",
+          publicPath: "/uploads/blog/",
+          formats: blogFormats,
+        }),
+        imageClass: fields.select({
+          label: "Couleur de l'aplat",
+          defaultValue: "t-sand",
+          options: [
+            { label: "Sable", value: "t-sand" },
+            { label: "Orage", value: "t-storm" },
+            { label: "Fougère", value: "t-fern" },
+            { label: "Argile", value: "t-clay" },
+            { label: "Écume", value: "t-foam" },
+            { label: "Brume", value: "t-mist" },
+          ],
+        }),
+        imageLabel: fields.text({
+          label: "Texte alternatif / repère visuel",
+          validation: { isRequired: true },
+        }),
+        archived: fields.checkbox({
+          label: "Placer dans les archives",
+          defaultValue: false,
+          description: "L'article reste accessible et quitte la sélection récente. Les quatre premières entrées selon l'ordre d'affichage apparaissent dans « 03 - Archives ».",
+        }),
+        order: fields.integer({
+          label: "Ordre d'affichage",
+          defaultValue: 1,
+          validation: { isRequired: true },
+        }),
       },
     }),
     people: collection({
-      label: "Profils intervenants",
+      label: "Équipe et profils",
       path: "src/content/people/*",
       slugField: "name",
       format: "json",
@@ -188,22 +198,14 @@ export default config({
             validation: { isRequired: true },
           },
         }),
-        spaces: personSpacesField,
-        order: fields.integer({
-          label: "Ordre d'affichage",
-          defaultValue: 1,
-          validation: { isRequired: true },
-        }),
-        visible: fields.checkbox({
-          label: "Visible sur le site",
-          defaultValue: true,
-        }),
         specialty: fields.text({
           label: "Spécialité",
           validation: { isRequired: true },
         }),
+        spaces: personSpacesField,
         summary: fields.text({
-          label: "Résumé (cards et introduction du profil)",
+          label: "Résumé du profil",
+          description: "Apparaît dans la liste de l’équipe et en haut de la fiche.",
           multiline: true,
           validation: { isRequired: true },
         }),
@@ -280,10 +282,19 @@ export default config({
           validation: { isRequired: true },
         }),
         links: personLinksField,
+        visible: fields.checkbox({
+          label: "Visible sur le site",
+          defaultValue: true,
+        }),
+        order: fields.integer({
+          label: "Ordre d'affichage",
+          defaultValue: 1,
+          validation: { isRequired: true },
+        }),
       },
     }),
     courses: collection({
-      label: "Descriptifs des cours",
+      label: "Cours",
       path: "src/content/courses/*",
       slugField: "title",
       format: "json",
@@ -322,7 +333,7 @@ export default config({
       },
     }),
     pricing: collection({
-      label: "Formules cours",
+      label: "Tarifs et formules",
       path: "src/content/pricing/*",
       slugField: "name",
       format: "json",
@@ -385,11 +396,6 @@ export default config({
             validation: { isRequired: true },
           },
         }),
-        order: fields.integer({
-          label: "Ordre d'affichage",
-          defaultValue: 1,
-          validation: { isRequired: true },
-        }),
         visible: fields.checkbox({
           label: "Visible sur le site",
           defaultValue: true,
@@ -400,16 +406,40 @@ export default config({
           defaultValue: false,
           description: "Retire l'atelier des événements à venir. Les quatre premières entrées archivées selon l'ordre d'affichage apparaissent dans « 03 - Archives ».",
         }),
-        featured: fields.checkbox({
-          label: "Mettre en avant",
-          defaultValue: false,
-        }),
         date: fields.text({
           label: "Date",
           validation: { isRequired: true },
         }),
         time: fields.text({
           label: "Heure",
+          validation: { isRequired: true },
+        }),
+        duration: fields.text({
+          label: "Durée",
+          validation: { isRequired: true },
+        }),
+        price: fields.text({
+          label: "Prix",
+          validation: { isRequired: true },
+        }),
+        bookingRequired: fields.checkbox({
+          label: "Réservation nécessaire",
+          defaultValue: true,
+          description: "Désactivez cette option pour afficher « Sans réservation » à la place du bouton.",
+        }),
+        ctaLabel: fields.text({
+          label: "Texte du bouton",
+          defaultValue: "Réserver",
+          validation: { isRequired: true },
+        }),
+        ctaUrl: fields.text({
+          label: "Lien de réservation",
+          defaultValue: "/contact/",
+        }),
+        summary: fields.text({
+          label: "Résumé court",
+          description: "Quelques lignes pour présenter l'atelier sur la page d'accueil.",
+          multiline: true,
           validation: { isRequired: true },
         }),
         sections: fields.array(
@@ -434,38 +464,15 @@ export default config({
             ),
           }),
           {
-            label: "Sections",
+            label: "Description de l’atelier",
             itemLabel: (props) => props.fields.heading.value,
             validation: { length: { min: 1 } },
           }
         ),
-        summary: fields.text({
-          label: "Résumé court (page d'accueil)",
-          description: "Quelques lignes pour présenter l'atelier sur la page d'accueil.",
-          multiline: true,
-          validation: { isRequired: true },
-        }),
-        duration: fields.text({
-          label: "Durée",
-          validation: { isRequired: true },
-        }),
-        price: fields.text({
-          label: "Prix",
-          validation: { isRequired: true },
-        }),
-        ctaLabel: fields.text({
-          label: "Texte du bouton",
-          defaultValue: "Réserver",
-          validation: { isRequired: true },
-        }),
-        bookingRequired: fields.checkbox({
-          label: "Réservation nécessaire",
-          defaultValue: true,
-          description: "Désactivez cette option pour afficher « Sans réservation » à la place du bouton.",
-        }),
-        ctaUrl: fields.text({
-          label: "Lien du bouton",
-          defaultValue: "/contact/",
+        photo: photoField({
+          directory: "public/uploads/workshops",
+          publicPath: "/uploads/workshops/",
+          formats: workshopFormats,
         }),
         imageClass: fields.select({
           label: "Couleur du visuel",
@@ -477,13 +484,17 @@ export default config({
             { label: "Photo pierre", value: "photo-stone" },
           ],
         }),
-        photo: photoField({
-          directory: "public/uploads/workshops",
-          publicPath: "/uploads/workshops/",
-          formats: workshopFormats,
-        }),
         imageLabel: fields.text({
           label: "Repère visuel",
+          validation: { isRequired: true },
+        }),
+        featured: fields.checkbox({
+          label: "Mettre en avant",
+          defaultValue: false,
+        }),
+        order: fields.integer({
+          label: "Ordre d'affichage",
+          defaultValue: 1,
           validation: { isRequired: true },
         }),
       },
@@ -491,7 +502,7 @@ export default config({
   },
   singletons: {
     siteSettings: {
-      label: "Réglages du site",
+      label: "Contact, documents et fondatrices",
       path: "src/content/settings/site",
       format: "json",
       schema: {
@@ -658,7 +669,7 @@ export default config({
       },
     },
     blogSettings: {
-      label: "Réglages du blog",
+      label: "Article mis en avant",
       path: "src/content/settings/blog",
       format: "json",
       schema: {
@@ -670,7 +681,7 @@ export default config({
       },
     },
     homeContent: {
-      label: "Accueil - contenus éditables",
+      label: "Avis sur l’accueil",
       path: "src/content/settings/home",
       format: "json",
       schema: {
@@ -709,7 +720,7 @@ export default config({
       },
     },
     siteVisuals: {
-      label: "Visuels du site",
+      label: "Photos et galeries des pages",
       path: "src/data/siteVisuals",
       format: "json",
       schema: {
