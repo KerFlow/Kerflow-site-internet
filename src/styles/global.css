@@ -2751,7 +2751,9 @@ article:hover .photo span,
 }
 
 .offer-grid .photo {
-  min-height: 320px;
+  min-height: 0;
+  aspect-ratio: 4 / 3;
+  align-self: start;
 }
 
 .workshops {
@@ -2927,7 +2929,9 @@ article:hover .photo span,
 }
 
 .editorial-feature .photo {
-  min-height: 360px;
+  min-height: 0;
+  aspect-ratio: 4 / 3;
+  align-self: start;
 }
 
 .editorial-copy {
@@ -4967,7 +4971,7 @@ article:hover .photo span,
   }
 
   .editorial-feature .photo {
-    min-height: 260px;
+    min-height: 0;
   }
 
   .editorial-copy {

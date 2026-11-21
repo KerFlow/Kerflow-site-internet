@@ -8,7 +8,6 @@
   ],
   "specialty": "Yoga Flow, Force et Mobilité, Massage bien-être",
   "visualMode": "image",
-  "image": "/uploads/people/natacha/image.jpeg",
   "imageClass": "foam",
   "imageLabel": "Natacha",
   "primaryLinkLabel": "Prendre rendez-vous",
@@ -27,5 +26,35 @@
         "En parallèle, je développe ma pratique du Yoga et réalise les changements intérieurs qui se créent. Certifiée Yoga Alliance RYT200 Hatha et Vinyasa, je vous partage une pratique complète, accessible à tous, où les postures se ressentent, la respiration s’amplifie, l’équilibre et le calme s’invitent. Une perception subtile corps/mental/spirit."
       ]
     }
-  ]
+  ],
+  "photo": {
+    "image": "/uploads/people/natacha/image.jpeg",
+    "crops": {
+      "profile": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "horizontalCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "portraitCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "careCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "preventionCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      }
+    }
+  }
 }

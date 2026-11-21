@@ -1,4 +1,5 @@
 ---
+import { cropStyle } from "../../lib/photo.js";
 return Astro.redirect("/accompagnements-sante-soins/", 301);
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
@@ -177,7 +178,7 @@ const coconPeople = peopleForSpace("le-cocon");
             <article>
               <div class={`pv-person-media pv-${person.imageClass} ${person.visualMode === "image" && person.image ? "has-upload" : ""}`}>
                 {person.visualMode === "image" && person.image ? (
-                  <img src={person.image} alt={person.imageLabel} loading="lazy" decoding="async" style={`object-position: ${person.imageCrops?.careCard?.x ?? person.imagePositionX ?? 50}% ${person.imageCrops?.careCard?.y ?? person.imagePositionY ?? 50}%`} />
+                  <img src={person.image} alt={person.imageLabel} loading="lazy" decoding="async" style={cropStyle(person.imageCrops?.preventionCard)} />
                 ) : (
                   <span>{person.imageLabel}</span>
                 )}
@@ -204,7 +205,7 @@ const coconPeople = peopleForSpace("le-cocon");
             <article>
               <div class={`pv-person-media pv-${person.imageClass} ${person.visualMode === "image" && person.image ? "has-upload" : ""}`}>
                 {person.visualMode === "image" && person.image ? (
-                  <img src={person.image} alt={person.imageLabel} loading="lazy" decoding="async" style={`object-position: ${person.imageCrops?.careCard?.x ?? person.imagePositionX ?? 50}% ${person.imageCrops?.careCard?.y ?? person.imagePositionY ?? 50}%`} />
+                  <img src={person.image} alt={person.imageLabel} loading="lazy" decoding="async" style={cropStyle(person.imageCrops?.preventionCard)} />
                 ) : (
                   <span>{person.imageLabel}</span>
                 )}

@@ -7,7 +7,6 @@
   ],
   "specialty": "Coach Mamdanse*",
   "visualMode": "image",
-  "image": "/uploads/people/manon-1/image.jpeg",
   "imageClass": "foam",
   "imageLabel": "Manon",
   "primaryLinkLabel": "Prendre rendez-vous",
@@ -29,5 +28,35 @@
         "Aucun niveau de danse n’est nécessaire."
       ]
     }
-  ]
+  ],
+  "photo": {
+    "image": "/uploads/people/manon-1/image.jpeg",
+    "crops": {
+      "profile": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "horizontalCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "portraitCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "careCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "preventionCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      }
+    }
+  }
 }

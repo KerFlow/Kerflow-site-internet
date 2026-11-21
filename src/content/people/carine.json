@@ -25,13 +25,36 @@
     }
   ],
   "visualMode": "image",
-  "image": "/uploads/people/carine/image.jpeg",
-  "imageCrops": {
-    "profile": {},
-    "horizontalCard": {},
-    "portraitCard": {},
-    "careCard": {}
-  },
   "imageClass": "foam",
-  "imageLabel": "Carine "
+  "imageLabel": "Carine ",
+  "photo": {
+    "image": "/uploads/people/carine/image.jpeg",
+    "crops": {
+      "profile": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "horizontalCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "portraitCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "careCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "preventionCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      }
+    }
+  }
 }

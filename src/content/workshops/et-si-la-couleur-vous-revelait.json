@@ -39,18 +39,20 @@
   "bookingRequired": true,
   "ctaUrl": "https://www.onparticipe.fr/b/colorimetrie",
   "imageClass": "photo-clay",
-  "image": "/uploads/workshops/et-si-la-couleur-vous-revelait/image.png",
-  "imagePositionX": 50,
-  "imagePositionY": 80,
-  "imageCrops": {
-    "card": {
-      "x": 50,
-      "y": 30
-    },
-    "detail": {
-      "x": 50,
-      "y": 40
+  "imageLabel": "Magali et une cliente",
+  "photo": {
+    "image": "/uploads/workshops/et-si-la-couleur-vous-revelait/image.png",
+    "crops": {
+      "card": {
+        "x": 50,
+        "y": 30,
+        "zoom": 1
+      },
+      "detail": {
+        "x": 50,
+        "y": 40,
+        "zoom": 1
+      }
     }
-  },
-  "imageLabel": "Magali et une cliente"
+  }
 }

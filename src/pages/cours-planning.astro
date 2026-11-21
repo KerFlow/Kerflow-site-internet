@@ -1,4 +1,5 @@
 ---
+import { cropStyle } from "../lib/photo.js";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
@@ -114,7 +115,7 @@ const teachers = peopleForSpace("cours");
             return (
               <a class={`cours-team-card cours-team-card-${index + 1}`} href={`/intervenantes/${person.slug}/`} aria-label={`Découvrir ${person.name.trim()}, ${person.specialty}`}>
                 <div class="cours-team-image">
-                  {person.visualMode === "image" && person.image ? <img src={person.image} alt={person.imageLabel || person.name} loading="lazy" decoding="async" style={`object-position: ${person.imageCrops?.portraitCard?.x ?? person.imagePositionX ?? 50}% ${person.imageCrops?.portraitCard?.y ?? person.imagePositionY ?? 50}%`} /> : <div class={`cours-team-placeholder ${person.imageClass}`}><span>{person.imageLabel || person.name}</span></div>}
+                  {person.visualMode === "image" && person.image ? <img src={person.image} alt={person.imageLabel || person.name} loading="lazy" decoding="async" style={cropStyle(person.imageCrops?.portraitCard)} /> : <div class={`cours-team-placeholder ${person.imageClass}`}><span>{person.imageLabel || person.name}</span></div>}
                   <span class="cours-team-index">{String(index + 1).padStart(2, "0")}</span>
                   <span class="cours-team-view">Découvrir <b aria-hidden="true">↗</b></span>
                 </div>

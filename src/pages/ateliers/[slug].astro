@@ -1,4 +1,5 @@
 ---
+import { cropStyle } from "../../lib/photo.js";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
@@ -50,7 +51,7 @@ const workshopSections = workshop.sections.map((section) => ({
             </div>
             <div class={`workshop-hero-photo photo ${workshop.imageClass} ${workshop.image ? "has-upload" : ""}`}>
               {workshop.image ? (
-                <img src={workshop.image} alt={workshop.imageLabel || workshop.title} loading="eager" decoding="async" style={`object-position: ${workshop.imageCrops?.detail?.x ?? workshop.imagePositionX ?? 50}% ${workshop.imageCrops?.detail?.y ?? workshop.imagePositionY ?? 50}%`} />
+                <img src={workshop.image} alt={workshop.imageLabel || workshop.title} loading="eager" decoding="async" style={cropStyle(workshop.imageCrops?.detail)} />
               ) : (
                 <span class="cap">{workshop.imageLabel || workshop.title}</span>
               )}
@@ -116,7 +117,7 @@ const workshopSections = workshop.sections.map((section) => ({
   .workshop-page .workshop-booking { display: inline-flex; min-height: 46px; align-items: center; justify-content: center; gap: 10px; padding: 0 22px; background: var(--clay); color: var(--linen); font-family: var(--mono); font-size: 11px; letter-spacing: .18em; text-decoration: none; text-transform: uppercase; transition: background 260ms ease, transform 300ms var(--ease-out), box-shadow 300ms var(--ease-out); }
   .workshop-page .workshop-booking:hover, .workshop-page .workshop-booking:focus-visible { background: var(--petrol-deep); box-shadow: 0 14px 26px rgba(14,42,44,.16); transform: translateY(-2px); }
   .workshop-no-booking { display: inline-flex; min-height: 46px; align-items: center; padding: 0 16px; border: 1px solid var(--rule); color: var(--granite-500); font-size: 13px; }
-  .workshop-hero-photo { width: 100%; min-height: clamp(320px, 42vw, 560px); justify-self: stretch; border-radius: 6px; }
+  .workshop-hero-photo { width: 100%; min-height: 0; aspect-ratio: 4 / 5; justify-self: stretch; border-radius: 6px; }
   .workshop-hero-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
   .workshop-content { padding-block: var(--site-section-y); border-top: 1px solid var(--rule); background: var(--linen); }
   .workshop-content-inner { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: clamp(36px, 5vw, 80px); align-items: start; width: 100%; max-width: var(--site-max); margin-inline: auto; padding-inline: var(--site-pad-x); }
@@ -134,7 +135,8 @@ const workshopSections = workshop.sections.map((section) => ({
   .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 18px; }
   @media (max-width: 900px) {
     .workshop-hero-grid, .workshop-content-inner { grid-template-columns: 1fr; }
+    .workshop-hero-photo { aspect-ratio: 4 / 3; }
     .workshop-content-inner { gap: 20px; }
   }
-  @media (max-width: 640px) { .workshop-hero-photo { min-height: 280px; } }
+  @media (max-width: 640px) { .workshop-hero-photo { min-height: 0; aspect-ratio: 4 / 3; } }
 </style>

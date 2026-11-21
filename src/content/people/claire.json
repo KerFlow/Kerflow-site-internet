@@ -24,15 +24,38 @@
     }
   ],
   "visualMode": "image",
-  "image": "/uploads/people/claire/image.jpeg",
-  "imageCrops": {
-    "profile": {},
-    "horizontalCard": {},
-    "portraitCard": {},
-    "careCard": {}
-  },
   "imageClass": "foam",
   "imageLabel": "Claire ",
   "primaryLinkLabel": "Instagram",
-  "primaryLinkUrl": "https://www.instagram.com/claire_heri/"
+  "primaryLinkUrl": "https://www.instagram.com/claire_heri/",
+  "photo": {
+    "image": "/uploads/people/claire/image.jpeg",
+    "crops": {
+      "profile": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "horizontalCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "portraitCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "careCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "preventionCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      }
+    }
+  }
 }

@@ -32,15 +32,20 @@
   "bookingRequired": true,
   "ctaUrl": "https://kerflow.helloresa.com/public/planning?semaine=47&annee=2026",
   "imageClass": "photo-petrol",
-  "image": "/uploads/workshops/mam-danse-danser-bouger-et-creer-du-lien-avec-son-bebe/image.jpg",
-  "imagePositionY": 40,
-  "imageCrops": {
-    "card": {
-      "y": 25
-    },
-    "detail": {
-      "y": 20
+  "imageLabel": "Danse",
+  "photo": {
+    "image": "/uploads/workshops/mam-danse-danser-bouger-et-creer-du-lien-avec-son-bebe/image.jpg",
+    "crops": {
+      "card": {
+        "x": 50,
+        "y": 25,
+        "zoom": 1
+      },
+      "detail": {
+        "x": 50,
+        "y": 20,
+        "zoom": 1
+      }
     }
-  },
-  "imageLabel": "Danse"
+  }
 }

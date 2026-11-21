@@ -1,6 +1,15 @@
 import { defineCollection, z } from "astro:content";
 
-const imageCropSchema = z.object({ x: z.number().optional(), y: z.number().optional() });
+const imageCropSchema = z.object({
+  x: z.number().min(0).max(100),
+  y: z.number().min(0).max(100),
+  zoom: z.number().min(1).max(3).optional(),
+});
+const photoSchema = z.object({
+  image: z.string().nullable().optional(),
+  crops: z.record(imageCropSchema),
+  wide: z.boolean().optional(),
+});
 
 const blog = defineCollection({
   type: "data",
@@ -13,15 +22,7 @@ const blog = defineCollection({
     readingTime: z.string(),
     excerpt: z.string(),
     visualMode: z.enum(["color", "image"]).optional(),
-    image: z.string().nullable().optional(),
-    imagePositionX: z.number().optional(),
-    imagePositionY: z.number().optional(),
-    imageCrops: z.object({
-      list: imageCropSchema.optional(),
-      featured: imageCropSchema.optional(),
-      home: imageCropSchema.optional(),
-      detail: imageCropSchema.optional(),
-    }).optional(),
+    photo: photoSchema.optional(),
     imageClass: z.string(),
     imageLabel: z.string(),
     intro: z.string(),
@@ -53,21 +54,13 @@ const people = defineCollection({
       })
     ),
     visualMode: z.enum(["color", "image"]).optional(),
-    image: z.string().nullable().optional(),
-    imagePositionX: z.number().optional(),
-    imagePositionY: z.number().optional(),
-    imageCrops: z.object({
-      profile: imageCropSchema.optional(),
-      horizontalCard: imageCropSchema.optional(),
-      portraitCard: imageCropSchema.optional(),
-      careCard: imageCropSchema.optional(),
-    }).optional(),
+    photo: photoSchema.optional(),
     imageClass: z.string(),
     imageLabel: z.string(),
-    primaryLinkLabel: z.string(),
-    primaryLinkUrl: z.string(),
-    secondaryLinkLabel: z.string(),
-    secondaryLinkUrl: z.string(),
+    primaryLinkLabel: z.string().default(""),
+    primaryLinkUrl: z.string().default(""),
+    secondaryLinkLabel: z.string().default(""),
+    secondaryLinkUrl: z.string().default(""),
   }),
 });
 
@@ -121,13 +114,7 @@ const workshops = defineCollection({
     bookingRequired: z.boolean(),
     imageClass: z.string(),
     imageLabel: z.string(),
-    image: z.string().nullable().optional(),
-    imagePositionX: z.number().optional(),
-    imagePositionY: z.number().optional(),
-    imageCrops: z.object({
-      card: imageCropSchema.optional(),
-      detail: imageCropSchema.optional(),
-    }).optional(),
+    photo: photoSchema.optional(),
   }),
 });
 

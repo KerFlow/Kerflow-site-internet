@@ -1,10 +1,11 @@
+import { withPhoto } from "../lib/photo.js";
 const modules = import.meta.glob("../content/blog/*.json", { eager: true });
 
 export const blogArticles = Object.entries(modules)
   .map(([path, module]) => ({
     visualMode: "color",
     slug: path.split("/").pop().replace(".json", ""),
-    ...module.default,
+    ...withPhoto(module.default),
   }))
   .sort((a, b) => a.order - b.order);
 

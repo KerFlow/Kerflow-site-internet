@@ -39,18 +39,20 @@
   "bookingRequired": true,
   "ctaUrl": "/contact/",
   "imageClass": "photo-clay",
-  "image": "/uploads/workshops/eveil-corporel-and-mouvement/image.png",
-  "imagePositionX": 50,
-  "imagePositionY": 50,
-  "imageCrops": {
-    "card": {
-      "x": 50,
-      "y": 50
-    },
-    "detail": {
-      "x": 50,
-      "y": 50
+  "imageLabel": "Enfant faisant du Yoga",
+  "photo": {
+    "image": "/uploads/workshops/eveil-corporel-and-mouvement/image.png",
+    "crops": {
+      "card": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "detail": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      }
     }
-  },
-  "imageLabel": "Enfant faisant du Yoga"
+  }
 }

@@ -8,7 +8,6 @@
   ],
   "specialty": "Elan Santé, coach APA, Pilates, Yoga",
   "visualMode": "image",
-  "image": "/uploads/people/huyen/image.jpg",
   "imageClass": "storm",
   "imageLabel": "Huyen",
   "primaryLinkLabel": "Prendre rendez-vous",
@@ -29,5 +28,35 @@
         "Avec Élan Santé, je propose une approche globale et bienveillante qui associe mouvement, mobilité, équilibre et conscience corporelle, pour vous aider à entretenir votre capital santé, retrouver de l’énergie et vous sentir durablement mieux dans votre corps."
       ]
     }
-  ]
+  ],
+  "photo": {
+    "image": "/uploads/people/huyen/image.jpg",
+    "crops": {
+      "profile": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "horizontalCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "portraitCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "careCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "preventionCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      }
+    }
+  }
 }

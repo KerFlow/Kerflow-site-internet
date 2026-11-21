@@ -1,4 +1,5 @@
 ---
+import { cropStyle } from "../../lib/photo.js";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
@@ -49,7 +50,7 @@ const articleSections = article.sections.map((section) => ({
             </div>
             <div class={`ph article-photo ${article.imageClass} ${article.visualMode === "image" && article.image ? "has-upload" : ""}`}>
               {article.visualMode === "image" && article.image ? (
-                <img src={article.image} alt={article.imageLabel} loading="eager" decoding="async" style={`object-position: ${article.imageCrops?.detail?.x ?? article.imagePositionX ?? 50}% ${article.imageCrops?.detail?.y ?? article.imagePositionY ?? 50}%`} />
+                <img src={article.image} alt={article.imageLabel} loading="eager" decoding="async" style={cropStyle(article.imageCrops?.detail)} />
               ) : (
                 <span class="cap">{article.imageLabel}</span>
               )}
@@ -88,7 +89,7 @@ const articleSections = article.sections.map((section) => ({
             <a href={`/blog/${item.slug}/`} class="art">
               <div class={`ph ${item.imageClass} ${item.visualMode === "image" && item.image ? "has-upload" : ""}`}>
                 {item.visualMode === "image" && item.image ? (
-                  <img src={item.image} alt={item.imageLabel} loading="lazy" decoding="async" style={`object-position: ${item.imageCrops?.list?.x ?? item.imagePositionX ?? 50}% ${item.imageCrops?.list?.y ?? item.imagePositionY ?? 50}%`} />
+                  <img src={item.image} alt={item.imageLabel} loading="lazy" decoding="async" style={cropStyle(item.imageCrops?.list)} />
                 ) : (
                   <span class="cap">{item.imageLabel}</span>
                 )}
@@ -303,7 +304,8 @@ const articleSections = article.sections.map((section) => ({
 
   .article-photo {
     width: 100%;
-    min-height: clamp(320px, 42vw, 560px);
+    min-height: 0;
+    aspect-ratio: 4 / 5;
     justify-self: stretch;
   }
 
@@ -605,6 +607,8 @@ const articleSections = article.sections.map((section) => ({
       grid-template-columns: 1fr;
     }
 
+    .article-photo { aspect-ratio: 4 / 3; }
+
     .article-toc {
       position: static;
       flex-direction: row;
@@ -621,7 +625,8 @@ const articleSections = article.sections.map((section) => ({
 
   @media (max-width: 640px) {
     .article-photo {
-      min-height: 280px;
+      min-height: 0;
+      aspect-ratio: 4 / 3;
     }
 
     .art {

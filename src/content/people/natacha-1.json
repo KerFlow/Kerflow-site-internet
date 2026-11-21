@@ -7,7 +7,6 @@
   ],
   "specialty": "Massage californien, massage musculaire suédois, Massage Signature, relaxation coréenne au sol, reflexologie plantaire",
   "visualMode": "image",
-  "image": "/uploads/people/natacha-1/image.jpeg",
   "imageClass": "foam",
   "imageLabel": "Natacha",
   "primaryLinkLabel": "Prendre rendez-vous",
@@ -67,5 +66,35 @@
         "Un soin ciblé des pieds par pressions et stimulations de différentes zones réflexes, pour favoriser la détente et retrouver une sensation d’équilibre."
       ]
     }
-  ]
+  ],
+  "photo": {
+    "image": "/uploads/people/natacha-1/image.jpeg",
+    "crops": {
+      "profile": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "horizontalCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "portraitCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "careCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "preventionCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      }
+    }
+  }
 }

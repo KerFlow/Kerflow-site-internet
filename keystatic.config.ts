@@ -1,52 +1,9 @@
 import { collection, config, fields } from "@keystatic/core";
 
-const imagePositionFields = {
-  imagePositionX: fields.number({
-    label: "Cadrage horizontal (%)",
-    defaultValue: 50,
-    step: 1,
-    validation: { min: 0, max: 100 },
-    description: "0 = gauche, 50 = centré, 100 = droite.",
-  }),
-  imagePositionY: fields.number({
-    label: "Cadrage vertical (%)",
-    defaultValue: 50,
-    step: 1,
-    validation: { min: 0, max: 100 },
-    description: "0 = haut, 50 = centré, 100 = bas.",
-  }),
-};
+import { photoField } from "./src/keystatic/photo-field";
+import { blogFormats, peopleFormats, workshopFormats } from "./src/keystatic/photo-formats";
 
-const cropPositionField = (label: string) =>
-  fields.object(
-    {
-      x: fields.number({
-        label: "Horizontal (%)",
-        defaultValue: 50,
-        step: 1,
-        validation: { min: 0, max: 100 },
-        description: "0 = gauche, 50 = centré, 100 = droite.",
-      }),
-      y: fields.number({
-        label: "Vertical (%)",
-        defaultValue: 50,
-        step: 1,
-        validation: { min: 0, max: 100 },
-        description: "0 = haut, 50 = centré, 100 = bas.",
-      }),
-    },
-    { label }
-  );
-
-const contextualImageCropField = (usages: Record<string, string>) =>
-  fields.object(
-    Object.fromEntries(
-      Object.entries(usages).map(([key, label]) => [key, cropPositionField(label)])
-    ),
-    { label: "Cadrage selon l'affichage" }
-  );
-
-const siteVisualField = (label: string) =>
+const siteVisualField = (label: string, aspect = 4 / 3, gallery = false) =>
   fields.object(
     {
       label: fields.text({
@@ -62,13 +19,12 @@ const siteVisualField = (label: string) =>
           { label: "Photo importée", value: "image" },
         ],
       }),
-      image: fields.image({
-        label: "Photo importée",
+      photo: photoField({
         directory: "public/uploads/site",
         publicPath: "/uploads/site/",
-        description: "Utilisée si le type de visuel est « Photo importée ».",
+        formats: [{ key: "default", label: "Cadrage sur le site", aspect }],
+        gallery,
       }),
-      ...imagePositionFields,
       imageClass: fields.select({
         label: "Couleur de l'aplat",
         defaultValue: "t-petrol",
@@ -100,10 +56,7 @@ const siteVisualField = (label: string) =>
         multiline: true,
         validation: { isRequired: true },
       }),
-      wide: fields.checkbox({
-        label: "Format large",
-        defaultValue: false,
-      }),
+      ...(!gallery ? { wide: fields.checkbox({ label: "Format large", defaultValue: false }) } : {}),
     },
     { label }
   );
@@ -166,18 +119,10 @@ export default config({
             { label: "Photo importée", value: "image" },
           ],
         }),
-        image: fields.image({
-          label: "Photo importée",
+        photo: photoField({
           directory: "public/uploads/blog",
           publicPath: "/uploads/blog/",
-          description: "Utilisée si le type de visuel est « Photo importée ».",
-        }),
-        ...imagePositionFields,
-        imageCrops: contextualImageCropField({
-          list: "Carte dans la liste des articles",
-          featured: "Article mis en avant sur la page blog",
-          home: "Article mis en avant sur l’accueil",
-          detail: "Haut de la page de l'article",
+          formats: blogFormats,
         }),
         imageClass: fields.select({
           label: "Couleur de l'aplat",
@@ -321,18 +266,10 @@ export default config({
             { label: "Photo importée", value: "image" },
           ],
         }),
-        image: fields.image({
-          label: "Photo importée",
+        photo: photoField({
           directory: "public/uploads/people",
           publicPath: "/uploads/people/",
-          description: "Utilisée si le type de visuel est « Photo importée ».",
-        }),
-        ...imagePositionFields,
-        imageCrops: contextualImageCropField({
-          profile: "Grand portrait de la page intervenante",
-          horizontalCard: "Cartes horizontales (autres intervenantes)",
-          portraitCard: "Cartes portrait (Cours et tarifs)",
-          careCard: "Cartes paysage (Accompagnements et soins)",
+          formats: peopleFormats,
         }),
         imageClass: fields.select({
           label: "Aplat / visuel",
@@ -562,16 +499,10 @@ export default config({
             { label: "Photo pierre", value: "photo-stone" },
           ],
         }),
-        image: fields.image({
-          label: "Photo de l'atelier",
+        photo: photoField({
           directory: "public/uploads/workshops",
           publicPath: "/uploads/workshops/",
-          description: "Photo utilisée sur la page d'accueil et la page de l'atelier.",
-        }),
-        ...imagePositionFields,
-        imageCrops: contextualImageCropField({
-          card: "Carte atelier (accueil et liste)",
-          detail: "Grande photo de la page atelier",
+          formats: workshopFormats,
         }),
         imageLabel: fields.text({
           label: "Repère visuel",
@@ -804,7 +735,7 @@ export default config({
       path: "src/data/siteVisuals",
       format: "json",
       schema: {
-        homeGallery: fields.array(siteVisualField("Image de galerie"), {
+        homeGallery: fields.array(siteVisualField("Image de galerie", 4 / 5, true), {
           label: "Accueil - galerie défilante",
           itemLabel: (props) => props.fields.label.value,
           validation: { length: { min: 7, max: 7 } },
@@ -826,14 +757,14 @@ export default config({
         ),
         leLieu: fields.object(
           {
-            gallery: fields.array(siteVisualField("Le lieu - image de galerie"), {
+            gallery: fields.array(siteVisualField("Le lieu - image de galerie", 4 / 5, true), {
               label: "Le lieu - galerie défilante",
               itemLabel: (props) => props.fields.label.value,
               validation: { length: { min: 7, max: 7 } },
             }),
             spaces: fields.object(
               {
-                studio: siteVisualField("Le lieu - Le Salon"),
+                studio: siteVisualField("Le lieu - Le Salon", 16 / 10),
                 bulle: siteVisualField("Le lieu - La Bulle"),
                 cocon: siteVisualField("Le lieu - Le Cocon"),
               },
@@ -841,8 +772,8 @@ export default config({
             ),
             founders: fields.object(
               {
-                gaelle: siteVisualField("Le lieu - Gaëlle"),
-                zelie: siteVisualField("Le lieu - Zélie"),
+                gaelle: siteVisualField("Le lieu - Gaëlle", 3 / 4),
+                zelie: siteVisualField("Le lieu - Zélie", 3 / 4),
               },
               { label: "Le lieu - fondatrices" }
             ),

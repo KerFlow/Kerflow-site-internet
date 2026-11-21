@@ -8,7 +8,6 @@
   ],
   "specialty": "Yoga",
   "visualMode": "image",
-  "image": "/uploads/people/sasha/image.jpeg",
   "imageClass": "foam",
   "imageLabel": "Sasha",
   "primaryLinkLabel": "Prendre rendez-vous",
@@ -28,5 +27,35 @@
         "En 2019, j'entame ma première formation en Hatha Vinyasa (200h) à Hong-Kong et poursuis mon apprentissage en Ashtanga Vinyasa (200h) à Rishikesh, berceau du yoga en Inde, en février 2023. En 2024, j'approfondis mes connaissances en anatomie fonctionnelle avec Antoine Pommet (75h). Je continue à me former et à pratiquer sur Paris avec des enseignants tels que Gérard Arnaud, Klara Puski."
       ]
     }
-  ]
+  ],
+  "photo": {
+    "image": "/uploads/people/sasha/image.jpeg",
+    "crops": {
+      "profile": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "horizontalCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "portraitCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "careCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "preventionCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      }
+    }
+  }
 }

@@ -1,0 +1,26 @@
+.kf-photo { display: grid; gap: 16px; min-width: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: inherit; }
+.kf-photo-heading { display: grid; gap: 12px; }
+.kf-photo label { display: grid; gap: 8px; font-size: 14px; font-weight: 600; }
+.kf-photo select, .kf-photo button { box-sizing: border-box; min-height: 44px; font: inherit; color: inherit; border: 1px solid color-mix(in srgb, currentColor 30%, transparent); border-radius: 6px; padding: 8px 12px; background: transparent; }
+.kf-photo select { width: 100%; background: Canvas; color: CanvasText; }
+.kf-photo button { cursor: pointer; }
+.kf-photo button:hover { background: color-mix(in srgb, currentColor 8%, transparent); }
+.kf-photo button[aria-pressed=true] { background: #174b46; border-color: #174b46; color: #fff; }
+.kf-photo button:disabled { cursor: default; opacity: .5; }
+.kf-photo :is(button, select, input, .kf-photo-frame):focus-visible { outline: 3px solid #3a9e95; outline-offset: 3px; }
+.kf-photo-devices { display: flex; gap: 8px; flex-wrap: wrap; }
+.kf-photo-help { margin: 0; font-size: 13px; line-height: 1.6; }
+.kf-photo-stage { display: grid; justify-items: center; padding: 12px; border-radius: 6px; background: color-mix(in srgb, currentColor 6%, transparent); }
+.kf-photo-frame { position: relative; overflow: hidden; background: #172d2b; color: #fff; touch-action: none; cursor: grab; }
+.kf-photo-frame[data-dragging=true] { cursor: grabbing; }
+.kf-photo-frame > img { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; user-select: none; }
+.kf-photo-grid { position: absolute; inset: 0; pointer-events: none; }
+.kf-photo-grid i { position: absolute; background: rgba(255,255,255,.45); }
+.kf-photo-grid i:nth-child(1), .kf-photo-grid i:nth-child(2) { top: 0; bottom: 0; width: 1px; }
+.kf-photo-grid i:nth-child(1) { left: 33.333%; } .kf-photo-grid i:nth-child(2) { left: 66.667%; }
+.kf-photo-grid i:nth-child(3), .kf-photo-grid i:nth-child(4) { left: 0; right: 0; height: 1px; }
+.kf-photo-grid i:nth-child(3) { top: 33.333%; } .kf-photo-grid i:nth-child(4) { top: 66.667%; }
+.kf-photo-tools { display: flex; align-items: end; gap: 20px; flex-wrap: wrap; }
+.kf-photo-tools label { flex: 1; min-width: 140px; }
+.kf-photo-tools input { width: 100%; min-height: 44px; margin: 0; accent-color: #216e64; cursor: pointer; }
+.kf-photo-loading { position: absolute; inset: 0; display: grid; place-items: center; padding: 20px; text-align: center; font-size: 14px; line-height: 1.5; }

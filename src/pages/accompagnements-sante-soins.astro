@@ -1,4 +1,5 @@
 ---
+import { cropStyle } from "../lib/photo.js";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
@@ -99,7 +100,7 @@ const heroCta = {
           {bullePeople.map((person) => (
             <a class="pv-person-card" href={`/intervenantes/${person.slug}/`} aria-label={`Découvrir le profil de ${person.name.trim()}`}>
               <div class={`pv-person-media pv-${person.imageClass} ${person.visualMode === "image" && person.image ? "has-upload" : ""}`}>
-                {person.visualMode === "image" && person.image ? <img src={person.image} alt={person.imageLabel} loading="lazy" decoding="async" style={`object-position: ${person.imageCrops?.careCard?.x ?? person.imagePositionX ?? 50}% ${person.imageCrops?.careCard?.y ?? person.imagePositionY ?? 50}%`} /> : <span>{person.imageLabel}</span>}
+                {person.visualMode === "image" && person.image ? <img src={person.image} alt={person.imageLabel} loading="lazy" decoding="async" style={cropStyle(person.imageCrops?.careCard)} /> : <span>{person.imageLabel}</span>}
               </div>
               <div class="pv-person-card-copy"><span class="pv-card-tag">{person.specialty.split(/[,–]/)[0].trim()}</span><h3 class="serif">{person.name.trim()}</h3><p class="pv-person-summary">{person.summary ?? ""}</p><span class="pv-card-link">Découvrir son approche →</span></div>
             </a>
@@ -134,7 +135,7 @@ const heroCta = {
           {coconPeople.map((person) => (
             <a class="pv-person-card pv-person-card-rituel" href={`/intervenantes/${person.slug}/`} aria-label={`Découvrir le profil de ${person.name.trim()}`}>
               <div class={`pv-person-media pv-${person.imageClass} ${person.visualMode === "image" && person.image ? "has-upload" : ""}`}>
-                {person.visualMode === "image" && person.image ? <img src={person.image} alt={person.imageLabel} loading="lazy" decoding="async" style={`object-position: ${person.imageCrops?.careCard?.x ?? person.imagePositionX ?? 50}% ${person.imageCrops?.careCard?.y ?? person.imagePositionY ?? 50}%`} /> : <span>{person.imageLabel}</span>}
+                {person.visualMode === "image" && person.image ? <img src={person.image} alt={person.imageLabel} loading="lazy" decoding="async" style={cropStyle(person.imageCrops?.careCard)} /> : <span>{person.imageLabel}</span>}
               </div>
               <div class="pv-person-card-copy"><span class="pv-card-tag pv-card-tag-rituel">{person.specialty.split(/[,–]/)[0].trim()}</span><h3 class="serif">{person.name.trim()}</h3><p class="pv-person-summary">{person.summary ?? ""}</p><span class="pv-card-link">Découvrir ses soins →</span></div>
             </a>

@@ -7,7 +7,6 @@
   ],
   "specialty": "Praticienne en réflexologie émotionnelle bébé/enfants ",
   "visualMode": "image",
-  "image": "/uploads/people/manon/image.jpeg",
   "imageClass": "foam",
   "imageLabel": "Photo de Manon",
   "primaryLinkLabel": "Prendre rendez-vous",
@@ -30,5 +29,35 @@
         "Au KerFlow dès janvier 2027 tous les lundis matin, sur rendez-vous uniquement"
       ]
     }
-  ]
+  ],
+  "photo": {
+    "image": "/uploads/people/manon/image.jpeg",
+    "crops": {
+      "profile": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "horizontalCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "portraitCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "careCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "preventionCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      }
+    }
+  }
 }

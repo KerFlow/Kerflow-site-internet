@@ -7,7 +7,6 @@
   ],
   "specialty": "Pilates - Force et Mobilité - Massage bien-être",
   "visualMode": "image",
-  "image": "/uploads/people/marie/image.jpg",
   "imageClass": "foam",
   "imageLabel": "Marie",
   "primaryLinkLabel": "Prendre rendez-vous",
@@ -28,5 +27,35 @@
         "Mon approche est à la fois dynamique, bienveillante et personnalisée, pour vous accompagner dans votre progression et vous donner les clés pour prendre soin de votre corps."
       ]
     }
-  ]
+  ],
+  "photo": {
+    "image": "/uploads/people/marie/image.jpg",
+    "crops": {
+      "profile": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "horizontalCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "portraitCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "careCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "preventionCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      }
+    }
+  }
 }

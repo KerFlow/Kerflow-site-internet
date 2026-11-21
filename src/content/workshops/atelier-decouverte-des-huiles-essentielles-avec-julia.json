@@ -39,17 +39,20 @@
   "bookingRequired": false,
   "ctaUrl": "https://www.kerflow-studio.fr/",
   "imageClass": "photo-stone",
-  "image": "/uploads/workshops/atelier-decouverte-des-huiles-essentielles-avec-julia/image.jpg",
-  "imagePositionY": 50,
-  "imageCrops": {
-    "card": {
-      "x": 50,
-      "y": 0
-    },
-    "detail": {
-      "x": 50,
-      "y": 50
+  "imageLabel": "Affiche de l'Atelier",
+  "photo": {
+    "image": "/uploads/workshops/atelier-decouverte-des-huiles-essentielles-avec-julia/image.jpg",
+    "crops": {
+      "card": {
+        "x": 50,
+        "y": 0,
+        "zoom": 1
+      },
+      "detail": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      }
     }
-  },
-  "imageLabel": "Affiche de l'Atelier"
+  }
 }

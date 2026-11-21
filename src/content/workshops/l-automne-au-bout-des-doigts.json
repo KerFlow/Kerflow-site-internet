@@ -39,18 +39,20 @@
   "bookingRequired": true,
   "ctaUrl": "https://kerflow.helloresa.com/public/planning?semaine=47&annee=2026",
   "imageClass": "photo-clay",
-  "image": "/uploads/workshops/l-automne-au-bout-des-doigts/image.png",
-  "imagePositionX": 50,
-  "imagePositionY": 50,
-  "imageCrops": {
-    "card": {
-      "x": 50,
-      "y": 50
-    },
-    "detail": {
-      "x": 50,
-      "y": 50
+  "imageLabel": "Feuille d'automne",
+  "photo": {
+    "image": "/uploads/workshops/l-automne-au-bout-des-doigts/image.png",
+    "crops": {
+      "card": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "detail": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      }
     }
-  },
-  "imageLabel": "Feuille d'automne"
+  }
 }

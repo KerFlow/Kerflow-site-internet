@@ -39,14 +39,20 @@
   "bookingRequired": true,
   "ctaUrl": "https://www.onparticipe.fr/b/LzeT9eRg/participe?show=eyJpdiI6IkxWT2k4M1FxOWFURzErWjVQcVhhQ3c9PSIsInZhbHVlIjoiWXJmUW9QMEFhcEN5VVB0SG1nTVQxZz09IiwibWFjIjoiZjA4ZTRjYjZkMGNhZmJiOTFiMGI3YjYzMzgyMGNjNjYzNjg5NDI0ZWYwM2QwYjJjNjdlMWI4YTc3MWIxZTJhZCIsInRhZyI6IiJ9",
   "imageClass": "photo-clay",
-  "image": "/uploads/workshops/atelier-rituel-visage-et-bien-etre/image.jpeg",
-  "imagePositionX": 50,
-  "imageCrops": {
-    "card": {
-      "x": 50,
-      "y": 35
-    },
-    "detail": {}
-  },
-  "imageLabel": "[ photo - carnet, tisane et table ronde ]"
+  "imageLabel": "[ photo - carnet, tisane et table ronde ]",
+  "photo": {
+    "image": "/uploads/workshops/atelier-rituel-visage-et-bien-etre/image.jpeg",
+    "crops": {
+      "card": {
+        "x": 50,
+        "y": 35,
+        "zoom": 1
+      },
+      "detail": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      }
+    }
+  }
 }

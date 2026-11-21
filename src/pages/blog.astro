@@ -1,4 +1,5 @@
 ---
+import { cropStyle } from "../lib/photo.js";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
@@ -51,7 +52,7 @@ const articleDuMoment =
         <article class="blog-editorial-feature" aria-label="Article du moment">
           <div class={`photo blog-feature-photo ${articleDuMoment.imageClass} ${articleDuMoment.visualMode === "image" && articleDuMoment.image ? "has-upload" : ""}`}>
             {articleDuMoment.visualMode === "image" && articleDuMoment.image ? (
-              <img src={articleDuMoment.image} alt={articleDuMoment.imageLabel} loading="lazy" decoding="async" style={`object-position: ${articleDuMoment.imageCrops?.featured?.x ?? articleDuMoment.imagePositionX ?? 50}% ${articleDuMoment.imageCrops?.featured?.y ?? articleDuMoment.imagePositionY ?? 50}%`} />
+              <img src={articleDuMoment.image} alt={articleDuMoment.imageLabel} loading="lazy" decoding="async" style={cropStyle(articleDuMoment.imageCrops?.featured)} />
             ) : (
               <span>{articleDuMoment.imageLabel}</span>
             )}
@@ -82,7 +83,7 @@ const articleDuMoment =
             <a href={`/blog/${article.slug}/`} class="art" data-blog-item data-blog-tag={article.tag}>
               <div class={`ph ${article.imageClass} ${article.visualMode === "image" && article.image ? "has-upload" : ""}`}>
                 {article.visualMode === "image" && article.image ? (
-                  <img src={article.image} alt={article.imageLabel} loading="lazy" decoding="async" style={`object-position: ${article.imageCrops?.list?.x ?? article.imagePositionX ?? 50}% ${article.imageCrops?.list?.y ?? article.imagePositionY ?? 50}%`} />
+                  <img src={article.image} alt={article.imageLabel} loading="lazy" decoding="async" style={cropStyle(article.imageCrops?.list)} />
                 ) : (
                   <span class="cap">{article.imageLabel}</span>
                 )}
@@ -373,7 +374,9 @@ const articleDuMoment =
   }
 
   .blog-feature-photo {
-    min-height: 360px;
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+    align-self: start;
   }
 
   .blog-feature-copy {
@@ -720,7 +723,7 @@ const articleDuMoment =
     }
 
     .blog-feature-photo {
-      min-height: clamp(260px, 58vw, 420px);
+      min-height: 0;
     }
 
     .articles {

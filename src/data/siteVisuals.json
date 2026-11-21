@@ -3,102 +3,210 @@
     {
       "label": "Cours de Yoga ",
       "visualMode": "image",
-      "image": "/uploads/site/homeGallery/0/image.jpg",
       "imageClass": "t-clay",
       "description": "Cours de yoga",
-      "wide": true
+      "photo": {
+        "image": "/uploads/site/homeGallery/0/image.jpg",
+        "crops": {
+          "default": {
+            "x": 50,
+            "y": 50,
+            "zoom": 1
+          }
+        },
+        "wide": true
+      }
     },
     {
       "label": "Bras vers le ciel",
       "visualMode": "image",
-      "image": "/uploads/site/homeGallery/1/image.jpg",
       "imageClass": "t-petrol",
       "description": "Cours de yoga bras vers le ciel",
-      "wide": false
+      "photo": {
+        "image": "/uploads/site/homeGallery/1/image.jpg",
+        "crops": {
+          "default": {
+            "x": 50,
+            "y": 50,
+            "zoom": 1
+          }
+        },
+        "wide": false
+      }
     },
     {
       "label": "Inversion Gaelle",
       "visualMode": "image",
-      "image": "/uploads/site/homeGallery/2/image.jpg",
       "imageClass": "t-petrol",
       "description": "Photo de Gaelle en inversion/poirier",
-      "wide": false
+      "photo": {
+        "image": "/uploads/site/homeGallery/2/image.jpg",
+        "crops": {
+          "default": {
+            "x": 50,
+            "y": 50,
+            "zoom": 1
+          }
+        },
+        "wide": false
+      }
     },
     {
       "label": "Camille de dos",
       "visualMode": "image",
-      "image": "/uploads/site/homeGallery/3/image.jpg",
       "imageClass": "t-petrol",
       "description": "Camille de dos, orientation droite ou face",
-      "wide": false
+      "photo": {
+        "image": "/uploads/site/homeGallery/3/image.jpg",
+        "crops": {
+          "default": {
+            "x": 50,
+            "y": 50,
+            "zoom": 1
+          }
+        },
+        "wide": false
+      }
     },
     {
       "label": "fente Zélie, Pascale, Agathe",
       "visualMode": "image",
-      "image": "/uploads/site/homeGallery/4/image.jpg",
       "imageClass": "t-petrol",
       "description": "Cours de yoga avec 4 personnes en fente + torsion",
-      "wide": false
+      "photo": {
+        "image": "/uploads/site/homeGallery/4/image.jpg",
+        "crops": {
+          "default": {
+            "x": 50,
+            "y": 50,
+            "zoom": 1
+          }
+        },
+        "wide": false
+      }
     },
     {
       "label": "tapis et brique",
       "visualMode": "image",
-      "image": "/uploads/site/homeGallery/5/image.jpg",
       "imageClass": "t-petrol",
       "description": "Morceau de tapis et brique",
-      "wide": false
+      "photo": {
+        "image": "/uploads/site/homeGallery/5/image.jpg",
+        "crops": {
+          "default": {
+            "x": 50,
+            "y": 50,
+            "zoom": 1
+          }
+        },
+        "wide": false
+      }
     },
     {
       "label": "Posture Zélie",
       "visualMode": "image",
-      "image": "/uploads/site/homeGallery/6/image.jpg",
       "imageClass": "t-foam",
       "description": "Posture de Zélie avec sangle",
-      "wide": false
+      "photo": {
+        "image": "/uploads/site/homeGallery/6/image.jpg",
+        "crops": {
+          "default": {
+            "x": 50,
+            "y": 50,
+            "zoom": 1
+          }
+        },
+        "wide": false
+      }
     }
   ],
   "homeSpaces": {
     "studio": {
       "label": "Le Salon",
       "visualMode": "image",
-      "image": "/uploads/site/homeSpaces/studio/image.jpg",
       "imageClass": "photo-petrol",
       "description": "Le Salon KerFlow avec parquet clair",
-      "wide": true
+      "wide": true,
+      "photo": {
+        "image": "/uploads/site/homeSpaces/studio/image.jpg",
+        "crops": {
+          "default": {
+            "x": 50,
+            "y": 50,
+            "zoom": 1
+          }
+        }
+      }
     },
     "bulle": {
       "label": "La Bulle",
       "visualMode": "image",
-      "image": "/uploads/site/homeSpaces/bulle/image.jpg",
       "imageClass": "photo-foam",
       "description": "Cabinet La Bulle avec fauteuil et lumiere douce",
-      "wide": true
+      "wide": true,
+      "photo": {
+        "image": "/uploads/site/homeSpaces/bulle/image.jpg",
+        "crops": {
+          "default": {
+            "x": 50,
+            "y": 50,
+            "zoom": 1
+          }
+        }
+      }
     },
     "cocon": {
       "label": "Le Cocon",
       "visualMode": "image",
-      "image": "/uploads/site/homeSpaces/cocon/image.jpg",
       "imageClass": "photo-clay",
       "description": "Table de soin du Cocon avec bougie et drap de lin",
-      "wide": true
+      "wide": true,
+      "photo": {
+        "image": "/uploads/site/homeSpaces/cocon/image.jpg",
+        "crops": {
+          "default": {
+            "x": 50,
+            "y": 50,
+            "zoom": 1
+          }
+        }
+      }
     }
   },
   "homeOffers": {
     "bulle": {
       "label": "Home - accompagnements La Bulle",
       "visualMode": "image",
-      "image": "/uploads/site/homeOffers/bulle/image.jpg",
       "imageClass": "photo-foam",
       "description": "Cabinet de La Bulle en lumiere naturelle",
-      "wide": true
+      "wide": true,
+      "photo": {
+        "image": "/uploads/site/homeOffers/bulle/image.jpg",
+        "crops": {
+          "default": {
+            "x": 50,
+            "y": 50,
+            "zoom": 1
+          }
+        }
+      }
     },
     "cocon": {
       "label": "Home - soins Le Cocon",
       "visualMode": "image",
-      "image": "/uploads/site/homeOffers/cocon/image.jpg",
       "imageClass": "photo-clay",
       "description": "Table de soin du Cocon avec drap de lin et bougie",
-      "wide": false
+      "wide": false,
+      "photo": {
+        "image": "/uploads/site/homeOffers/cocon/image.jpg",
+        "crops": {
+          "default": {
+            "x": 50,
+            "y": 50,
+            "zoom": 1
+          }
+        }
+      }
     }
   },
   "leLieu": {
@@ -106,116 +214,210 @@
       {
         "label": "le salon",
         "visualMode": "image",
-        "image": "/uploads/site/leLieu/gallery/0/image.jpg",
-        "imagePositionX": 50,
-        "imagePositionY": 50,
         "imageClass": "t-petrol",
         "description": "La salon vue vers la tisannerie",
-        "wide": true
+        "photo": {
+          "image": "/uploads/site/leLieu/gallery/0/image.jpg",
+          "crops": {
+            "default": {
+              "x": 50,
+              "y": 50,
+              "zoom": 1
+            }
+          },
+          "wide": true
+        }
       },
       {
         "label": "le salon vue depuis la tisannerie",
         "visualMode": "image",
-        "image": "/uploads/site/leLieu/gallery/1/image.jpg",
-        "imagePositionX": 50,
-        "imagePositionY": 50,
         "imageClass": "t-petrol",
         "description": "Le salon vue depuis la tisannerie",
-        "wide": false
+        "photo": {
+          "image": "/uploads/site/leLieu/gallery/1/image.jpg",
+          "crops": {
+            "default": {
+              "x": 50,
+              "y": 50,
+              "zoom": 1
+            }
+          },
+          "wide": false
+        }
       },
       {
         "label": "la bulle",
         "visualMode": "image",
-        "image": "/uploads/site/leLieu/gallery/2/image.jpg",
-        "imagePositionX": 50,
-        "imagePositionY": 50,
         "imageClass": "t-petrol",
         "description": "la bulle",
-        "wide": false
+        "photo": {
+          "image": "/uploads/site/leLieu/gallery/2/image.jpg",
+          "crops": {
+            "default": {
+              "x": 50,
+              "y": 50,
+              "zoom": 1
+            }
+          },
+          "wide": false
+        }
       },
       {
         "label": "l'accueil",
         "visualMode": "image",
-        "image": "/uploads/site/leLieu/gallery/3/image.jpg",
-        "imagePositionX": 50,
-        "imagePositionY": 50,
         "imageClass": "t-petrol",
         "description": "l'accueil",
-        "wide": false
+        "photo": {
+          "image": "/uploads/site/leLieu/gallery/3/image.jpg",
+          "crops": {
+            "default": {
+              "x": 50,
+              "y": 50,
+              "zoom": 1
+            }
+          },
+          "wide": false
+        }
       },
       {
         "label": "les petits fauteuils",
         "visualMode": "image",
-        "image": "/uploads/site/leLieu/gallery/4/image.jpg",
-        "imagePositionX": 50,
-        "imagePositionY": 50,
         "imageClass": "t-petrol",
         "description": "les petits fauteuils",
-        "wide": true
+        "photo": {
+          "image": "/uploads/site/leLieu/gallery/4/image.jpg",
+          "crops": {
+            "default": {
+              "x": 50,
+              "y": 50,
+              "zoom": 1
+            }
+          },
+          "wide": true
+        }
       },
       {
         "label": "la tisannerie",
         "visualMode": "image",
-        "image": "/uploads/site/leLieu/gallery/5/image.jpg",
-        "imagePositionX": 50,
-        "imagePositionY": 50,
         "imageClass": "t-petrol",
         "description": "la tisannerie",
-        "wide": false
+        "photo": {
+          "image": "/uploads/site/leLieu/gallery/5/image.jpg",
+          "crops": {
+            "default": {
+              "x": 50,
+              "y": 50,
+              "zoom": 1
+            }
+          },
+          "wide": false
+        }
       },
       {
         "label": "les rangements",
         "visualMode": "image",
-        "image": "/uploads/site/leLieu/gallery/6/image.jpg",
-        "imagePositionX": 50,
-        "imagePositionY": 50,
         "imageClass": "t-petrol",
         "description": "Rangements",
-        "wide": true
+        "photo": {
+          "image": "/uploads/site/leLieu/gallery/6/image.jpg",
+          "crops": {
+            "default": {
+              "x": 50,
+              "y": 50,
+              "zoom": 1
+            }
+          },
+          "wide": true
+        }
       }
     ],
     "spaces": {
       "studio": {
         "label": "Le lieu - Le Salon",
         "visualMode": "image",
-        "image": "/uploads/site/leLieu/spaces/studio/image.jpg",
         "imageClass": "t-petrol",
         "description": "Le Salon de 40 metres carres avec parquet clair et miroir",
-        "wide": true
+        "wide": true,
+        "photo": {
+          "image": "/uploads/site/leLieu/spaces/studio/image.jpg",
+          "crops": {
+            "default": {
+              "x": 50,
+              "y": 50,
+              "zoom": 1
+            }
+          }
+        }
       },
       "bulle": {
         "label": "Le lieu - La Bulle",
         "visualMode": "image",
-        "image": "/uploads/site/leLieu/spaces/bulle/image.jpg",
         "imageClass": "t-foam",
         "description": "Cabinet La Bulle avec grande fenetre sur cour arborée",
-        "wide": false
+        "wide": false,
+        "photo": {
+          "image": "/uploads/site/leLieu/spaces/bulle/image.jpg",
+          "crops": {
+            "default": {
+              "x": 50,
+              "y": 50,
+              "zoom": 1
+            }
+          }
+        }
       },
       "cocon": {
         "label": "Le lieu - Le Cocon",
         "visualMode": "image",
-        "image": "/uploads/site/leLieu/spaces/cocon/image.HEIC",
         "imageClass": "t-clay",
         "description": "Box de soin Le Cocon avec table de massage et lumiere tamisee",
-        "wide": false
+        "wide": false,
+        "photo": {
+          "image": "/uploads/site/leLieu/spaces/cocon/image-compatible.jpg",
+          "crops": {
+            "default": {
+              "x": 50,
+              "y": 50,
+              "zoom": 1
+            }
+          }
+        }
       }
     },
     "founders": {
       "gaelle": {
         "label": "Le lieu - portrait Gaelle",
         "visualMode": "image",
-        "image": "/uploads/site/leLieu/founders/gaelle/image.jpg",
         "imageClass": "t-fern",
         "description": "Portrait de Gaelle en lumiere naturelle",
-        "wide": false
+        "wide": false,
+        "photo": {
+          "image": "/uploads/site/leLieu/founders/gaelle/image.jpg",
+          "crops": {
+            "default": {
+              "x": 50,
+              "y": 50,
+              "zoom": 1
+            }
+          }
+        }
       },
       "zelie": {
         "label": "Le lieu - portrait Zelie",
         "visualMode": "image",
-        "image": "/uploads/site/leLieu/founders/zelie/image.jpg",
         "imageClass": "t-storm",
         "description": "Portrait de Zelie en lumiere naturelle",
-        "wide": false
+        "wide": false,
+        "photo": {
+          "image": "/uploads/site/leLieu/founders/zelie/image.jpg",
+          "crops": {
+            "default": {
+              "x": 50,
+              "y": 50,
+              "zoom": 1
+            }
+          }
+        }
       }
     }
   },
@@ -223,18 +425,36 @@
     "overviewCocon": {
       "label": "Le Cocon – photo de la section KerFlow Rituel",
       "visualMode": "image",
-      "image": "/uploads/site/care/overviewCocon/image.jpg",
       "imageClass": "pv-clay",
       "description": "Le Cocon, espace de soin avec table de massage et lumiere tamisee",
-      "wide": false
+      "wide": false,
+      "photo": {
+        "image": "/uploads/site/care/overviewCocon/image.jpg",
+        "crops": {
+          "default": {
+            "x": 50,
+            "y": 50,
+            "zoom": 1
+          }
+        }
+      }
     },
     "bulleHero": {
       "label": "La Bulle - visuel de presentation",
       "visualMode": "image",
-      "image": "/uploads/site/care/bulleHero/image.jpg",
       "imageClass": "bulle-foam",
       "description": "La Bulle, cabinet lumineux avec fauteuil et grande fenetre sur cour",
-      "wide": false
+      "wide": false,
+      "photo": {
+        "image": "/uploads/site/care/bulleHero/image.jpg",
+        "crops": {
+          "default": {
+            "x": 50,
+            "y": 50,
+            "zoom": 1
+          }
+        }
+      }
     }
   },
   "rental": {
@@ -242,120 +462,227 @@
       {
         "label": "Le Salon ",
         "visualMode": "image",
-        "image": "/uploads/site/rental/studio/0/image.jpg",
         "imageClass": "t-petrol",
         "description": "Le Salon de 40 metres carres avec miroir toute hauteur et lumiere naturelle",
-        "wide": false
+        "wide": false,
+        "photo": {
+          "image": "/uploads/site/rental/studio/0/image.jpg",
+          "crops": {
+            "default": {
+              "x": 50,
+              "y": 50,
+              "zoom": 1
+            }
+          }
+        }
       },
       {
         "label": "Tapis",
         "visualMode": "image",
-        "image": "/uploads/site/rental/studio/1/image.jpg",
         "imageClass": "t-petrol t-petrol-2",
         "description": "Le Salon en configuration atelier avec tapis et materiel",
-        "wide": true
+        "wide": true,
+        "photo": {
+          "image": "/uploads/site/rental/studio/1/image.jpg",
+          "crops": {
+            "default": {
+              "x": 50,
+              "y": 50,
+              "zoom": 1
+            }
+          }
+        }
       },
       {
         "label": "Le Salon vue vers vitrine",
         "visualMode": "image",
-        "image": "/uploads/site/rental/studio/2/image.jpg",
         "imageClass": "t-petrol t-petrol-3",
         "description": "Le Salon en configuration formation avec tables et chaises",
-        "wide": false
+        "wide": false,
+        "photo": {
+          "image": "/uploads/site/rental/studio/2/image.jpg",
+          "crops": {
+            "default": {
+              "x": 50,
+              "y": 50,
+              "zoom": 1
+            }
+          }
+        }
       },
       {
         "label": "Rangements",
         "visualMode": "image",
-        "image": "/uploads/site/rental/studio/3/image.jpg",
         "imageClass": "t-petrol",
         "description": "Rangement du matériel de Yoga",
-        "wide": false
+        "wide": false,
+        "photo": {
+          "image": "/uploads/site/rental/studio/3/image.jpg",
+          "crops": {
+            "default": {
+              "x": 50,
+              "y": 50,
+              "zoom": 1
+            }
+          }
+        }
       },
       {
         "label": "Le Salon vue miroir",
         "visualMode": "image",
-        "image": "/uploads/site/rental/studio/4/image.jpg",
         "imageClass": "t-petrol",
         "description": "vue miroir du salon",
-        "wide": false
+        "wide": false,
+        "photo": {
+          "image": "/uploads/site/rental/studio/4/image.jpg",
+          "crops": {
+            "default": {
+              "x": 50,
+              "y": 50,
+              "zoom": 1
+            }
+          }
+        }
       },
       {
         "label": "Location - Le Salon vue vers les toilettes et le mur du fond",
         "visualMode": "image",
-        "image": "/uploads/site/rental/studio/5/image.jpg",
         "imageClass": "t-petrol",
         "description": "Le salon vue vers les toilettes",
-        "wide": false
+        "wide": false,
+        "photo": {
+          "image": "/uploads/site/rental/studio/5/image.jpg",
+          "crops": {
+            "default": {
+              "x": 50,
+              "y": 50,
+              "zoom": 1
+            }
+          }
+        }
       }
     ],
     "bulle": [
       {
         "label": "Location - La Bulle bureau + fauteuils",
         "visualMode": "image",
-        "image": "/uploads/site/rental/bulle/0/image.jpg",
         "imageClass": "t-foam",
         "description": "La Bulle, cabinet de 11 metres carres avec grande fenetre sur cour arborée",
-        "wide": false
+        "wide": false,
+        "photo": {
+          "image": "/uploads/site/rental/bulle/0/image.jpg",
+          "crops": {
+            "default": {
+              "x": 50,
+              "y": 50,
+              "zoom": 1
+            }
+          }
+        }
       },
       {
         "label": "Location - La Bulle Fauteuils et table basse",
         "visualMode": "image",
-        "image": "/uploads/site/rental/bulle/1/image.jpg",
         "imageClass": "t-foam t-foam-2",
         "description": "La Bulle, bureau de consultation lumineux",
-        "wide": false
+        "wide": false,
+        "photo": {
+          "image": "/uploads/site/rental/bulle/1/image.jpg",
+          "crops": {
+            "default": {
+              "x": 50,
+              "y": 50,
+              "zoom": 1
+            }
+          }
+        }
       }
     ],
     "cocon": [
       {
         "label": "Location - Le Cocon",
         "visualMode": "image",
-        "image": "/uploads/site/rental/cocon/0/image.HEIC",
-        "imagePositionX": 50,
-        "imagePositionY": 50,
         "imageClass": "t-petrol",
         "description": "tete de la table de massage\n",
-        "wide": false
+        "wide": false,
+        "photo": {
+          "image": "/uploads/site/rental/cocon/0/image-compatible.jpg",
+          "crops": {
+            "default": {
+              "x": 50,
+              "y": 50,
+              "zoom": 1
+            }
+          }
+        }
       },
       {
         "label": "Location - Le Cocon",
         "visualMode": "image",
-        "image": "/uploads/site/rental/cocon/1/image.HEIC",
-        "imagePositionX": 50,
-        "imagePositionY": 50,
         "imageClass": "t-petrol",
         "description": "Huile de massage",
-        "wide": false
+        "wide": false,
+        "photo": {
+          "image": "/uploads/site/rental/cocon/1/image-compatible.jpg",
+          "crops": {
+            "default": {
+              "x": 50,
+              "y": 50,
+              "zoom": 1
+            }
+          }
+        }
       },
       {
         "label": "Location - Le Cocon",
         "visualMode": "image",
-        "image": "/uploads/site/rental/cocon/2/image.HEIC",
-        "imagePositionX": 50,
-        "imagePositionY": 50,
         "imageClass": "t-petrol",
         "description": "serviette",
-        "wide": false
+        "wide": false,
+        "photo": {
+          "image": "/uploads/site/rental/cocon/2/image-compatible.jpg",
+          "crops": {
+            "default": {
+              "x": 50,
+              "y": 50,
+              "zoom": 1
+            }
+          }
+        }
       },
       {
         "label": "Location - Le Cocon",
         "visualMode": "image",
-        "image": "/uploads/site/rental/cocon/3/image.HEIC",
-        "imagePositionX": 50,
-        "imagePositionY": 50,
         "imageClass": "t-petrol",
         "description": "vasque et miroir",
-        "wide": false
+        "wide": false,
+        "photo": {
+          "image": "/uploads/site/rental/cocon/3/image-compatible.jpg",
+          "crops": {
+            "default": {
+              "x": 50,
+              "y": 50,
+              "zoom": 1
+            }
+          }
+        }
       },
       {
         "label": "Location - Le Cocon",
         "visualMode": "image",
-        "image": "/uploads/site/rental/cocon/4/image.HEIC",
-        "imagePositionX": 50,
-        "imagePositionY": 50,
         "imageClass": "t-petrol",
         "description": "Table et miroir végétal ",
-        "wide": false
+        "wide": false,
+        "photo": {
+          "image": "/uploads/site/rental/cocon/4/image-compatible.jpg",
+          "crops": {
+            "default": {
+              "x": 50,
+              "y": 50,
+              "zoom": 1
+            }
+          }
+        }
       }
     ]
   }

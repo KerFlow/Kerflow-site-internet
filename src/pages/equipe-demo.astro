@@ -1,4 +1,5 @@
 ---
+import { cropStyle } from "../lib/photo.js";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
@@ -27,7 +28,7 @@ const instagramIcon = `<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y
         return (
           <a class={`team-demo-card team-demo-card-${index + 1}`} href={hasProfile ? `/intervenantes/${person.slug}/` : "/cours-planning/#equipe"} aria-label={`Découvrir ${person.name.trim()}, ${person.specialty}`}>
             <div class="team-demo-image">
-              {person.visualMode === "image" && person.image ? <img src={person.image} alt={person.imageLabel} loading="lazy" decoding="async" style={`object-position: ${person.imageCrops?.portraitCard?.x ?? person.imagePositionX ?? 50}% ${person.imageCrops?.portraitCard?.y ?? person.imagePositionY ?? 50}%`} /> : <div class={`team-demo-placeholder ${person.imageClass}`}><span>{person.imageLabel}</span></div>}
+              {person.visualMode === "image" && person.image ? <img src={person.image} alt={person.imageLabel} loading="lazy" decoding="async" style={cropStyle(person.imageCrops?.portraitCard)} /> : <div class={`team-demo-placeholder ${person.imageClass}`}><span>{person.imageLabel}</span></div>}
               <span class="team-demo-index">0{index + 1}</span>
               <span class="team-demo-view">Découvrir <b>↗</b></span>
             </div>

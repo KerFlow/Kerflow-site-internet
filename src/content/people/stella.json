@@ -8,7 +8,6 @@
   ],
   "specialty": "Force et Mobilité",
   "visualMode": "image",
-  "image": "/uploads/people/stella/image.jpeg",
   "imageClass": "foam",
   "imageLabel": "Stella",
   "primaryLinkLabel": "Prendre rendez-vous",
@@ -28,5 +27,35 @@
         "Mon objectif : que chacun reparte de mon cours avec le sourire, fier de lui et surtout avec l’envie de revenir ! Et bien sûr, le tout avec une bonne playlist et une ambiance chaleureuse."
       ]
     }
-  ]
+  ],
+  "photo": {
+    "image": "/uploads/people/stella/image.jpeg",
+    "crops": {
+      "profile": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "horizontalCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "portraitCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "careCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "preventionCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      }
+    }
+  }
 }

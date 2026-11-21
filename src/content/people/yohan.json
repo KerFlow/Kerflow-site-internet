@@ -8,7 +8,6 @@
   ],
   "specialty": "Force et Mobilité ",
   "visualMode": "image",
-  "image": "/uploads/people/yohan/image.jpeg",
   "imageClass": "foam",
   "imageLabel": "Yohan",
   "primaryLinkLabel": "Prendre rendez-vous",
@@ -29,5 +28,35 @@
         "En parallèle de mon activité de coach, je suis également éducateur sportif auprès d’enfants dans les écoles de la Ville de Paris, par l’intermédiaire d’une association que j’ai créée il y a deux ans."
       ]
     }
-  ]
+  ],
+  "photo": {
+    "image": "/uploads/people/yohan/image.jpeg",
+    "crops": {
+      "profile": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "horizontalCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "portraitCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "careCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "preventionCard": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      }
+    }
+  }
 }
