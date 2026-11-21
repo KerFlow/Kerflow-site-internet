@@ -1,3 +1,5 @@
+import { withPhoto } from "../lib/photo.js";
+
 const peopleModules = import.meta.glob("../content/people/*.json", { eager: true });
 const courseModules = import.meta.glob("../content/courses/*.json", { eager: true });
 const pricingModules = import.meta.glob("../content/pricing/*.json", { eager: true });
@@ -9,7 +11,7 @@ const fromModules = (modules) =>
     .map(([path, module]) => ({
       visualMode: "color",
       slug: path.split("/").pop().replace(".json", ""),
-      ...module.default,
+      ...withPhoto(module.default),
     }))
     .sort((a, b) => a.order - b.order);
 
