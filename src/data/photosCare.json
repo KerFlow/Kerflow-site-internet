@@ -1,0 +1,38 @@
+{
+  "care": {
+    "overviewCocon": {
+      "label": "Le Cocon – photo de la section KerFlow Rituel",
+      "visualMode": "image",
+      "imageClass": "pv-clay",
+      "description": "Le Cocon, espace de soin avec table de massage et lumiere tamisee",
+      "wide": false,
+      "photo": {
+        "image": "/uploads/site/care/overviewCocon/image.jpg",
+        "crops": {
+          "default": {
+            "x": 50,
+            "y": 50,
+            "zoom": 1
+          }
+        }
+      }
+    },
+    "bulleHero": {
+      "label": "La Bulle - visuel de presentation",
+      "visualMode": "image",
+      "imageClass": "bulle-foam",
+      "description": "La Bulle, cabinet lumineux avec fauteuil et grande fenetre sur cour",
+      "wide": false,
+      "photo": {
+        "image": "/uploads/site/care/bulleHero/image.jpg",
+        "crops": {
+          "default": {
+            "x": 50,
+            "y": 50,
+            "zoom": 1
+          }
+        }
+      }
+    }
+  }
+}

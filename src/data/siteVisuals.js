@@ -1,4 +1,7 @@
-import rawVisuals from "./siteVisuals.json";
+import homeVisuals from "./siteVisuals.json";
+import venueVisuals from "./photosLeLieu.json";
+import careVisuals from "./photosCare.json";
+import rentalVisuals from "./photosRental.json";
 import { withPhoto } from "../lib/photo.js";
 const normalize = (value) => {
   if (Array.isArray(value)) return value.map(normalize);
@@ -8,4 +11,4 @@ const normalize = (value) => {
   }
   return value;
 };
-export const siteVisuals = normalize(rawVisuals);
+export const siteVisuals = normalize({ ...homeVisuals, ...venueVisuals, ...careVisuals, ...rentalVisuals });

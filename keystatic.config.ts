@@ -76,7 +76,8 @@ export default config({
     navigation: {
       "Activités et équipe": ["workshops", "courses", "pricing", "people"],
       Blog: ["blog", "blogSettings"],
-      "Pages et réglages": ["homeContent", "siteVisuals", "siteSettings"],
+      "Photos et galeries": ["siteVisuals", "photosLeLieu", "photosCare", "photosRental"],
+      "Pages et réglages": ["homeContent", "siteSettings"],
     },
   },
   collections: {
@@ -720,12 +721,12 @@ export default config({
       },
     },
     siteVisuals: {
-      label: "Photos et galeries des pages",
+      label: "Accueil",
       path: "src/data/siteVisuals",
       format: "json",
       schema: {
         homeGallery: fields.array(siteVisualField("Image de galerie", 4 / 5, true), {
-          label: "Accueil - galerie défilante",
+          label: "Galerie défilante",
           itemLabel: (props) => props.fields.label.value,
           validation: { length: { min: 7, max: 7 } },
         }),
@@ -735,19 +736,26 @@ export default config({
             bulle: siteVisualField("Accueil - La Bulle"),
             cocon: siteVisualField("Accueil – Le Cocon dans la section Trois espaces"),
           },
-          { label: "Accueil - Trois espaces" }
+          { label: "Trois espaces" }
         ),
         homeOffers: fields.object(
           {
             bulle: siteVisualField("Accueil - Accompagnements La Bulle"),
             cocon: siteVisualField("Accueil – Le Cocon dans la section Rendez-vous individuels"),
           },
-          { label: "Accueil - Accompagnements & soins" }
+          { label: "Rendez-vous individuels" }
         ),
+      },
+    },
+    photosLeLieu: {
+      label: "Le lieu",
+      path: "src/data/photosLeLieu",
+      format: "json",
+      schema: {
         leLieu: fields.object(
           {
             gallery: fields.array(siteVisualField("Le lieu - image de galerie", 4 / 5, true), {
-              label: "Le lieu - galerie défilante",
+              label: "Galerie défilante",
               itemLabel: (props) => props.fields.label.value,
               validation: { length: { min: 7, max: 7 } },
             }),
@@ -757,44 +765,56 @@ export default config({
                 bulle: siteVisualField("Le lieu - La Bulle"),
                 cocon: siteVisualField("Le lieu - Le Cocon"),
               },
-              { label: "Le lieu - espaces" }
+              { label: "Les trois espaces" }
             ),
             founders: fields.object(
               {
                 gaelle: siteVisualField("Le lieu - Gaëlle", 3 / 4),
                 zelie: siteVisualField("Le lieu - Zélie", 3 / 4),
               },
-              { label: "Le lieu - fondatrices" }
+              { label: "Portraits des fondatrices" }
             ),
-          },
-          { label: "Page Le lieu" }
+          }
         ),
+      },
+    },
+    photosCare: {
+      label: "Accompagnements & soins",
+      path: "src/data/photosCare",
+      format: "json",
+      schema: {
         care: fields.object(
           {
             bulleHero: siteVisualField("La Bulle – photo de la section KerFlow Consult"),
             overviewCocon: siteVisualField("Le Cocon – photo de la section KerFlow Rituel"),
           },
-          { label: "Accompagnements & soins" }
+          { label: "Photos aussi affichées sur la page Prévention santé" }
         ),
+      },
+    },
+    photosRental: {
+      label: "Louer un espace",
+      path: "src/data/photosRental",
+      format: "json",
+      schema: {
         rental: fields.object(
           {
             studio: fields.array(siteVisualField("Location - Le Salon"), {
-              label: "Location - galerie Le Salon",
+              label: "Galerie du Salon",
               itemLabel: (props) => props.fields.label.value,
               validation: { length: { min: 1 } },
             }),
             bulle: fields.array(siteVisualField("Location - La Bulle"), {
-              label: "Location - galerie La Bulle",
+              label: "Galerie de La Bulle",
               itemLabel: (props) => props.fields.label.value,
               validation: { length: { min: 1 } },
             }),
             cocon: fields.array(siteVisualField("Location - Le Cocon"), {
-              label: "Location - galerie Le Cocon",
+              label: "Galerie du Cocon",
               itemLabel: (props) => props.fields.label.value,
               validation: { length: { min: 1 } },
             }),
-          },
-          { label: "Location d'espace - galeries" }
+          }
         ),
       },
     },
