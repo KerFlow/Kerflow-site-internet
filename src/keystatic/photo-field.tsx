@@ -2,7 +2,7 @@ import React, { useEffect, useId, useRef, useState } from 'react';
 import { fields } from '@keystatic/core';
 import { cropImageStyle, panCrop, readCrop } from '../lib/photo.js';
 import type { PhotoFormat } from './photo-formats';
-import './photo-field.css';
+import photoStyles from './photo-field.css?raw';
 
 type Options = { directory: string; publicPath: string; formats: PhotoFormat[]; gallery?: boolean; compact?: boolean };
 // ObjectField.Input receives Keystatic's field preview props. Keeping native field
@@ -51,17 +51,27 @@ function PhotoInput(props: FieldProps & { options: Options }) {
   const NativeWide = props.fields.wide?.schema.Input;
   const changeImage = (image: unknown) => {
     setEditing(true);
-    props.onChange({ image, crops: Object.fromEntries(options.formats.map(item => [item.key, { x: 50, y: 50, zoom: 1 }])) });
+    props.onChange({
+      image,
+      crops: Object.fromEntries(options.formats.map(item => [item.key, readCrop()])),
+      ...(options.gallery ? { wide: props.fields.wide.value } : {}),
+    });
   };
   const move = (initial: typeof crop, dx: number, dy: number, size: { width: number; height: number }) => {
     if (loaded) cropField.onChange(panCrop(initial, dx, dy, size, naturalSize.current));
   };
   return <section className="kf-photo" aria-label="Photo et cadrage">
-    <NativeImage {...props.fields.image} autoFocus={props.autoFocus} forceValidation={props.forceValidation} onChange={changeImage} />
+    {/* Keystatic's client entry can omit CSS imported through its config. */}
+    <style href="kerflow-photo-field" precedence="default">{photoStyles}</style>
+    <div className={data && editing ? 'kf-photo-upload kf-photo-upload--editing' : 'kf-photo-upload'}>
+      <NativeImage {...props.fields.image} autoFocus={props.autoFocus} forceValidation={props.forceValidation} onChange={changeImage} />
+    </div>
     {NativeWide && <NativeWide {...props.fields.wide} autoFocus={false} forceValidation={props.forceValidation} />}
     {!data ? <p className="kf-photo-help">Ajoutez une photo pour la cadrer ici.</p> : <>
       {options.compact && <button type="button" aria-expanded={editing} onClick={() => setEditing(!editing)}>{editing ? 'Masquer le cadrage' : 'Ajuster le cadrage'}</button>}
-      {editing && <><div className="kf-photo-heading">
+      {editing && <div className="kf-photo-editor">
+      <h3>Cadrer une photo</h3>
+      <div className="kf-photo-heading">
         {options.formats.length > 1 ? <label htmlFor={`${id}-format`}>Affichage à régler
           <select id={`${id}-format`} aria-label="Affichage à régler" value={format.key} onChange={event => { setFormatKey(event.target.value); setMobile(false); }}>
             {options.formats.map(item => <option key={item.key} value={item.key}>{item.label}</option>)}
@@ -75,7 +85,7 @@ function PhotoInput(props: FieldProps & { options: Options }) {
       <p id={`${id}-help`} className="kf-photo-help">Déplacez la photo dans le cadre. Vous pouvez aussi utiliser les flèches du clavier et le zoom.</p>
       <div className="kf-photo-stage">
         <div ref={frame} className="kf-photo-frame" tabIndex={loaded ? 0 : -1} role="group" aria-label={`Cadrer : ${format.label}`} aria-describedby={`${id}-help`} aria-busy={!loaded && !error}
-          data-dragging={dragging} style={{ aspectRatio: String(aspect), width: `min(100%, ${Math.min(480, 360 * aspect)}px)` }}
+          data-dragging={dragging} style={{ position: 'relative', overflow: 'hidden', aspectRatio: String(aspect), width: `min(100%, ${Math.min(480, 360 * aspect)}px)` }}
           onPointerDown={event => {
             if (!loaded || (event.pointerType === 'mouse' && event.button !== 0)) return;
             event.preventDefault(); event.currentTarget.focus(); event.currentTarget.setPointerCapture(event.pointerId);
@@ -91,7 +101,7 @@ function PhotoInput(props: FieldProps & { options: Options }) {
             const directions: Record<string, [number, number]> = { ArrowLeft: [-amount, 0], ArrowRight: [amount, 0], ArrowUp: [0, -amount], ArrowDown: [0, amount] };
             if (directions[event.key] && frame.current) { event.preventDefault(); move(crop, ...directions[event.key], frame.current.getBoundingClientRect()); }
           }}>
-          {source && <img src={source} alt="" draggable={false} style={cropImageStyle(crop)} onLoad={event => {
+          {source && <img src={source} alt="" draggable={false} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', ...cropImageStyle(crop) }} onLoad={event => {
             naturalSize.current = { width: event.currentTarget.naturalWidth, height: event.currentTarget.naturalHeight }; setLoaded(true);
           }} onError={() => { setError(true); setLoaded(false); }} />}
           {loaded && <div className="kf-photo-grid" aria-hidden="true"><i /><i /><i /><i /></div>}
@@ -104,7 +114,7 @@ function PhotoInput(props: FieldProps & { options: Options }) {
         </label>
         <button type="button" disabled={!loaded} onClick={() => cropField.onChange({ x: 50, y: 50, zoom: 1 })}>Recentrer</button>
       </div>
-      <p className="kf-photo-help">L’aperçu se met à jour immédiatement. Enregistrez la fiche pour conserver vos cadrages.</p></>}
+      <p className="kf-photo-help">L’aperçu se met à jour immédiatement. Enregistrez la fiche pour conserver vos cadrages.</p></div>}
     </>}
   </section>;
 }
