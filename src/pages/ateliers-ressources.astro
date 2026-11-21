@@ -558,6 +558,18 @@ const archivedEvents = archivedWorkshops.slice(0, 4);
     aspect-ratio: 3 / 2;
   }
 
+  .art .ph.has-upload::before,
+  .art .ph.has-upload::after {
+    display: none;
+  }
+
+  .art .ph > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
   .cap {
     display: none;
     position: absolute;

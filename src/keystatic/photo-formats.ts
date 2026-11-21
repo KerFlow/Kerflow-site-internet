@@ -7,7 +7,7 @@ export const peopleFormats: PhotoFormat[] = [
   { key: 'preventionCard', label: 'Prévention santé · carte large', aspect: 16 / 9 },
 ];
 export const blogFormats: PhotoFormat[] = [
-  { key: 'list', label: 'Liste et articles associés', aspect: 3 / 2 },
+  { key: 'list', label: 'Cartes · Ateliers & ressources, blog et articles associés', aspect: 3 / 2 },
   { key: 'featured', label: 'Mise en avant · page blog', aspect: 4 / 3 },
   { key: 'home', label: 'Mise en avant · accueil', aspect: 4 / 3 },
   { key: 'detail', label: 'Grande photo · page article', aspect: 4 / 5, mobileAspect: 4 / 3 },
