@@ -1,11 +1,15 @@
 {
   "title": "Éveil corporel & mouvement",
-  "order": 2,
   "visible": true,
   "archived": false,
-  "featured": true,
   "date": "12 décembre ",
   "time": "15h00",
+  "duration": "Une heure",
+  "price": "15€",
+  "bookingRequired": true,
+  "ctaLabel": "Réservation bientôt disponible",
+  "ctaUrl": "/contact/",
+  "summary": "Et si les enfants découvraient le plaisir de bouger autrement ?\n\nJuliette Winkelman propose un atelier ludique d'éveil corporel en petit groupe, autour de jeux moteurs, d'exercices d'équilibre et de coordination.\n\nÀ l'aide de tapis et de ballons, les enfants explorent différentes façons de bouger, dans une ambiance conviviale et bienveillante.",
   "sections": [
     {
       "heading": "Un atelier ludique pour les enfants de 6 à 8 ans, avec Juliette Winkelman",
@@ -32,16 +36,8 @@
       ]
     }
   ],
-  "summary": "Et si les enfants découvraient le plaisir de bouger autrement ?\n\nJuliette Winkelman propose un atelier ludique d'éveil corporel en petit groupe, autour de jeux moteurs, d'exercices d'équilibre et de coordination.\n\nÀ l'aide de tapis et de ballons, les enfants explorent différentes façons de bouger, dans une ambiance conviviale et bienveillante.",
-  "duration": "Une heure",
-  "price": "15€",
-  "ctaLabel": "Réservation bientôt disponible",
-  "bookingRequired": true,
-  "ctaUrl": "/contact/",
-  "imageClass": "photo-clay",
-  "imageLabel": "Enfant faisant du Yoga",
   "photo": {
-    "image": "/uploads/workshops/eveil-corporel-and-mouvement/image.png",
+    "image": "/uploads/workshops/eveil-corporel-and-mouvement/photo/image.png",
     "crops": {
       "card": {
         "x": 50,
@@ -54,5 +50,9 @@
         "zoom": 1
       }
     }
-  }
+  },
+  "imageClass": "photo-clay",
+  "imageLabel": "Enfant faisant du Yoga",
+  "featured": true,
+  "order": 1
 }
