@@ -1,11 +1,15 @@
 {
   "title": "L'automne au bout des doigts",
-  "order": 1,
   "visible": true,
-  "archived": false,
-  "featured": true,
+  "archived": true,
   "date": "Le 21 novembre",
   "time": "15 à 17h",
+  "duration": "2h",
+  "price": "35€",
+  "bookingRequired": true,
+  "ctaLabel": "Réserver",
+  "ctaUrl": "https://kerflow.helloresa.com/public/planning?semaine=47&annee=2026",
+  "summary": "🍁 Yoga & Massages — L'Automne au bout des doigts\n\nOffrez-vous une parenthèse de douceur pour accueillir l'automne.\n\nPendant 2 heures, Natacha vous invite à explorer le yoga, la respiration, l'automassage et le massage thaï en duo. Une expérience pour relâcher les tensions, éveiller les sensations et prendre soin de soi.\n\nL'atelier se prolongera, pour ceux qui le souhaitent, autour d'une boisson chaude et d'un moment d'échange convivial.",
   "sections": [
     {
       "heading": "🍁 Le programme de l'atelier",
@@ -32,16 +36,8 @@
       ]
     }
   ],
-  "summary": "🍁 Yoga & Massages — L'Automne au bout des doigts\n\nOffrez-vous une parenthèse de douceur pour accueillir l'automne.\n\nPendant 2 heures, Natacha vous invite à explorer le yoga, la respiration, l'automassage et le massage thaï en duo. Une expérience pour relâcher les tensions, éveiller les sensations et prendre soin de soi.\n\nL'atelier se prolongera, pour ceux qui le souhaitent, autour d'une boisson chaude et d'un moment d'échange convivial.",
-  "duration": "2h",
-  "price": "35€",
-  "ctaLabel": "Réserver",
-  "bookingRequired": true,
-  "ctaUrl": "https://kerflow.helloresa.com/public/planning?semaine=47&annee=2026",
-  "imageClass": "photo-clay",
-  "imageLabel": "Feuille d'automne",
   "photo": {
-    "image": "/uploads/workshops/l-automne-au-bout-des-doigts/image.png",
+    "image": "/uploads/workshops/l-automne-au-bout-des-doigts/photo/image.png",
     "crops": {
       "card": {
         "x": 50,
@@ -54,5 +50,9 @@
         "zoom": 1
       }
     }
-  }
+  },
+  "imageClass": "photo-clay",
+  "imageLabel": "Feuille d'automne",
+  "featured": true,
+  "order": 1
 }
