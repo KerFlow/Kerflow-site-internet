@@ -1,11 +1,15 @@
 {
   "title": "MamDanse – Danser, bouger et créer du lien avec son bébé",
-  "order": 1,
   "visible": true,
-  "archived": false,
-  "featured": false,
+  "archived": true,
   "date": "Dimanche 22 novembre",
   "time": "10h",
+  "duration": "1h30",
+  "price": "35€",
+  "bookingRequired": true,
+  "ctaLabel": "Réserver",
+  "ctaUrl": "https://kerflow.helloresa.com/public/planning?semaine=47&annee=2026",
+  "summary": "Un atelier de danse et de mouvements doux pour partager un moment complice avec votre bébé, reprendre confiance et bouger à votre rythme, sans prérequis en danse.",
   "sections": [
     {
       "heading": "La pratique",
@@ -25,16 +29,8 @@
       ]
     }
   ],
-  "summary": "Un atelier de danse et de mouvements doux pour partager un moment complice avec votre bébé, reprendre confiance et bouger à votre rythme, sans prérequis en danse.",
-  "duration": "1h30",
-  "price": "35€",
-  "ctaLabel": "Réserver",
-  "bookingRequired": true,
-  "ctaUrl": "https://kerflow.helloresa.com/public/planning?semaine=47&annee=2026",
-  "imageClass": "photo-petrol",
-  "imageLabel": "Danse",
   "photo": {
-    "image": "/uploads/workshops/mam-danse-danser-bouger-et-creer-du-lien-avec-son-bebe/image.jpg",
+    "image": "/uploads/workshops/mam-danse-danser-bouger-et-creer-du-lien-avec-son-bebe/photo/image.jpg",
     "crops": {
       "card": {
         "x": 50,
@@ -47,5 +43,9 @@
         "zoom": 1
       }
     }
-  }
+  },
+  "imageClass": "photo-petrol",
+  "imageLabel": "Danse",
+  "featured": false,
+  "order": 1
 }
